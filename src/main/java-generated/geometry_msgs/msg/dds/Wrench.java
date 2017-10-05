@@ -11,7 +11,7 @@ public class Wrench
 {
     public Wrench()
     {
-        	force_ = new geometry_msgs.msg.dds.Vector3();torque_ = new geometry_msgs.msg.dds.Vector3();        
+        	force_ = new us.ihmc.euclid.tuple3D.Vector3D();torque_ = new us.ihmc.euclid.tuple3D.Vector3D();        
         
     }
 
@@ -20,14 +20,14 @@ public class Wrench
            	geometry_msgs.msg.dds.Vector3PubSubType.staticCopy(other.force_, force_);geometry_msgs.msg.dds.Vector3PubSubType.staticCopy(other.torque_, torque_);    }
 
 
-    public geometry_msgs.msg.dds.Vector3 getForce()
+    public us.ihmc.euclid.tuple3D.Vector3D getForce()
     {
         return force_;
     }
 
         
 
-    public geometry_msgs.msg.dds.Vector3 getTorque()
+    public us.ihmc.euclid.tuple3D.Vector3D getTorque()
     {
         return torque_;
     }
@@ -72,7 +72,7 @@ public class Wrench
 		return builder.toString();
     }
 
-    private geometry_msgs.msg.dds.Vector3 force_; 
-    private geometry_msgs.msg.dds.Vector3 torque_; 
+    private us.ihmc.euclid.tuple3D.Vector3D force_; 
+    private us.ihmc.euclid.tuple3D.Vector3D torque_; 
 
 }

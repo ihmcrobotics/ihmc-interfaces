@@ -11,7 +11,7 @@ public class PoseStamped
 {
     public PoseStamped()
     {
-        	header_ = new std_msgs.msg.dds.Header();pose_ = new geometry_msgs.msg.dds.Pose();        
+        	header_ = new std_msgs.msg.dds.Header();pose_ = new us.ihmc.euclid.geometry.Pose3D();        
         
     }
 
@@ -27,7 +27,7 @@ public class PoseStamped
 
         
 
-    public geometry_msgs.msg.dds.Pose getPose()
+    public us.ihmc.euclid.geometry.Pose3D getPose()
     {
         return pose_;
     }
@@ -73,6 +73,6 @@ public class PoseStamped
     }
 
     private std_msgs.msg.dds.Header header_; 
-    private geometry_msgs.msg.dds.Pose pose_; 
+    private us.ihmc.euclid.geometry.Pose3D pose_; 
 
 }

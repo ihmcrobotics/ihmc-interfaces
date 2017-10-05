@@ -12,7 +12,7 @@ public class TransformStamped
     public TransformStamped()
     {
         	header_ = new std_msgs.msg.dds.Header();child_frame_id_ = new java.lang.StringBuilder(255); 
-        	transform_ = new geometry_msgs.msg.dds.Transform();        
+        	transform_ = new us.ihmc.euclid.transform.QuaternionBasedTransform();        
         
     }
 
@@ -47,7 +47,7 @@ public class TransformStamped
 
         
 
-    public geometry_msgs.msg.dds.Transform getTransform()
+    public us.ihmc.euclid.transform.QuaternionBasedTransform getTransform()
     {
         return transform_;
     }
@@ -100,6 +100,6 @@ public class TransformStamped
 
     private std_msgs.msg.dds.Header header_; 
     private java.lang.StringBuilder child_frame_id_; 
-    private geometry_msgs.msg.dds.Transform transform_; 
+    private us.ihmc.euclid.transform.QuaternionBasedTransform transform_; 
 
 }

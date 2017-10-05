@@ -11,9 +11,9 @@ public class Imu
 {
     public Imu()
     {
-        	header_ = new std_msgs.msg.dds.Header();orientation_ = new geometry_msgs.msg.dds.Quaternion();orientation_covariance_ = new double[9];
-        	angular_velocity_ = new geometry_msgs.msg.dds.Vector3();angular_velocity_covariance_ = new double[9];
-        	linear_acceleration_ = new geometry_msgs.msg.dds.Vector3();linear_acceleration_covariance_ = new double[9];
+        	header_ = new std_msgs.msg.dds.Header();orientation_ = new us.ihmc.euclid.tuple4D.Quaternion();orientation_covariance_ = new double[9];
+        	angular_velocity_ = new us.ihmc.euclid.tuple3D.Vector3D();angular_velocity_covariance_ = new double[9];
+        	linear_acceleration_ = new us.ihmc.euclid.tuple3D.Vector3D();linear_acceleration_covariance_ = new double[9];
         
         
     }
@@ -48,7 +48,7 @@ public class Imu
 
         
 
-    public geometry_msgs.msg.dds.Quaternion getOrientation()
+    public us.ihmc.euclid.tuple4D.Quaternion getOrientation()
     {
         return orientation_;
     }
@@ -62,7 +62,7 @@ public class Imu
 
         
 
-    public geometry_msgs.msg.dds.Vector3 getAngular_velocity()
+    public us.ihmc.euclid.tuple3D.Vector3D getAngular_velocity()
     {
         return angular_velocity_;
     }
@@ -76,7 +76,7 @@ public class Imu
 
         
 
-    public geometry_msgs.msg.dds.Vector3 getLinear_acceleration()
+    public us.ihmc.euclid.tuple3D.Vector3D getLinear_acceleration()
     {
         return linear_acceleration_;
     }
@@ -168,11 +168,11 @@ public class Imu
     }
 
     private std_msgs.msg.dds.Header header_; 
-    private geometry_msgs.msg.dds.Quaternion orientation_; 
+    private us.ihmc.euclid.tuple4D.Quaternion orientation_; 
     private double[] orientation_covariance_; 
-    private geometry_msgs.msg.dds.Vector3 angular_velocity_; 
+    private us.ihmc.euclid.tuple3D.Vector3D angular_velocity_; 
     private double[] angular_velocity_covariance_; 
-    private geometry_msgs.msg.dds.Vector3 linear_acceleration_; 
+    private us.ihmc.euclid.tuple3D.Vector3D linear_acceleration_; 
     private double[] linear_acceleration_covariance_; 
 
 }

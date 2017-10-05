@@ -12,7 +12,7 @@ public class ImageMarker
     public ImageMarker()
     {
         	header_ = new std_msgs.msg.dds.Header();ns_ = new java.lang.StringBuilder(255); 
-        	position_ = new geometry_msgs.msg.dds.Point();outline_color_ = new std_msgs.msg.dds.ColorRGBA();fill_color_ = new std_msgs.msg.dds.ColorRGBA();lifetime_ = new builtin_interfaces.msg.dds.Duration();points_ = new us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Point> (100, geometry_msgs.msg.dds.Point.class, new geometry_msgs.msg.dds.PointPubSubType());
+        	position_ = new us.ihmc.euclid.tuple3D.Point3D();outline_color_ = new std_msgs.msg.dds.ColorRGBA();fill_color_ = new std_msgs.msg.dds.ColorRGBA();lifetime_ = new builtin_interfaces.msg.dds.Duration();points_ = new us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D> (100, us.ihmc.euclid.tuple3D.Point3D.class, new geometry_msgs.msg.dds.PointPubSubType());
 
         	outline_colors_ = new us.ihmc.idl.IDLSequence.Object<std_msgs.msg.dds.ColorRGBA> (100, std_msgs.msg.dds.ColorRGBA.class, new std_msgs.msg.dds.ColorRGBAPubSubType());
 
@@ -91,7 +91,7 @@ public class ImageMarker
 
         
 
-    public geometry_msgs.msg.dds.Point getPosition()
+    public us.ihmc.euclid.tuple3D.Point3D getPosition()
     {
         return position_;
     }
@@ -141,7 +141,7 @@ public class ImageMarker
 
         
 
-    public us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Point>  getPoints()
+    public us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D>  getPoints()
     {
         return points_;
     }
@@ -269,13 +269,13 @@ public class ImageMarker
     private int id_; 
     private int type_; 
     private int action_; 
-    private geometry_msgs.msg.dds.Point position_; 
+    private us.ihmc.euclid.tuple3D.Point3D position_; 
     private float scale_; 
     private std_msgs.msg.dds.ColorRGBA outline_color_; 
     private byte filled_; 
     private std_msgs.msg.dds.ColorRGBA fill_color_; 
     private builtin_interfaces.msg.dds.Duration lifetime_; 
-    private us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Point>  points_; 
+    private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D>  points_; 
     private us.ihmc.idl.IDLSequence.Object<std_msgs.msg.dds.ColorRGBA>  outline_colors_; 
 
 }

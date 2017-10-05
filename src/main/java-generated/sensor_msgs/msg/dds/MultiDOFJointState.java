@@ -11,7 +11,7 @@ public class MultiDOFJointState
 {
     public MultiDOFJointState()
     {
-        	header_ = new std_msgs.msg.dds.Header();joint_names_ = new us.ihmc.idl.IDLSequence.StringBuilderHolder (100, "type_d");   transforms_ = new us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Transform> (100, geometry_msgs.msg.dds.Transform.class, new geometry_msgs.msg.dds.TransformPubSubType());
+        	header_ = new std_msgs.msg.dds.Header();joint_names_ = new us.ihmc.idl.IDLSequence.StringBuilderHolder (100, "type_d");   transforms_ = new us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.transform.QuaternionBasedTransform> (100, us.ihmc.euclid.transform.QuaternionBasedTransform.class, new geometry_msgs.msg.dds.TransformPubSubType());
 
         	twist_ = new us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Twist> (100, geometry_msgs.msg.dds.Twist.class, new geometry_msgs.msg.dds.TwistPubSubType());
 
@@ -42,7 +42,7 @@ public class MultiDOFJointState
 
         
 
-    public us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Transform>  getTransforms()
+    public us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.transform.QuaternionBasedTransform>  getTransforms()
     {
         return transforms_;
     }
@@ -121,7 +121,7 @@ public class MultiDOFJointState
 
     private std_msgs.msg.dds.Header header_; 
     private us.ihmc.idl.IDLSequence.StringBuilderHolder  joint_names_; 
-    private us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Transform>  transforms_; 
+    private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.transform.QuaternionBasedTransform>  transforms_; 
     private us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Twist>  twist_; 
     private us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Wrench>  wrench_; 
 

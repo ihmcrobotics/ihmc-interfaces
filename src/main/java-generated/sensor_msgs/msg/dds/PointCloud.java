@@ -11,7 +11,7 @@ public class PointCloud
 {
     public PointCloud()
     {
-        	header_ = new std_msgs.msg.dds.Header();points_ = new us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Point32> (100, geometry_msgs.msg.dds.Point32.class, new geometry_msgs.msg.dds.Point32PubSubType());
+        	header_ = new std_msgs.msg.dds.Header();points_ = new us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D32> (100, us.ihmc.euclid.tuple3D.Point3D32.class, new geometry_msgs.msg.dds.Point32PubSubType());
 
         	channels_ = new us.ihmc.idl.IDLSequence.Object<sensor_msgs.msg.dds.ChannelFloat32> (100, sensor_msgs.msg.dds.ChannelFloat32.class, new sensor_msgs.msg.dds.ChannelFloat32PubSubType());
 
@@ -33,7 +33,7 @@ public class PointCloud
 
         
 
-    public us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Point32>  getPoints()
+    public us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D32>  getPoints()
     {
         return points_;
     }
@@ -92,7 +92,7 @@ public class PointCloud
     }
 
     private std_msgs.msg.dds.Header header_; 
-    private us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Point32>  points_; 
+    private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D32>  points_; 
     private us.ihmc.idl.IDLSequence.Object<sensor_msgs.msg.dds.ChannelFloat32>  channels_; 
 
 }

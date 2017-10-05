@@ -12,7 +12,7 @@ public class Marker
     public Marker()
     {
         	header_ = new std_msgs.msg.dds.Header();ns_ = new java.lang.StringBuilder(255); 
-        	pose_ = new geometry_msgs.msg.dds.Pose();scale_ = new geometry_msgs.msg.dds.Vector3();color_ = new std_msgs.msg.dds.ColorRGBA();lifetime_ = new builtin_interfaces.msg.dds.Duration();points_ = new us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Point> (100, geometry_msgs.msg.dds.Point.class, new geometry_msgs.msg.dds.PointPubSubType());
+        	pose_ = new us.ihmc.euclid.geometry.Pose3D();scale_ = new us.ihmc.euclid.tuple3D.Vector3D();color_ = new std_msgs.msg.dds.ColorRGBA();lifetime_ = new builtin_interfaces.msg.dds.Duration();points_ = new us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D> (100, us.ihmc.euclid.tuple3D.Point3D.class, new geometry_msgs.msg.dds.PointPubSubType());
 
         	colors_ = new us.ihmc.idl.IDLSequence.Object<std_msgs.msg.dds.ColorRGBA> (100, std_msgs.msg.dds.ColorRGBA.class, new std_msgs.msg.dds.ColorRGBAPubSubType());
 
@@ -97,14 +97,14 @@ public class Marker
 
         
 
-    public geometry_msgs.msg.dds.Pose getPose()
+    public us.ihmc.euclid.geometry.Pose3D getPose()
     {
         return pose_;
     }
 
         
 
-    public geometry_msgs.msg.dds.Vector3 getScale()
+    public us.ihmc.euclid.tuple3D.Vector3D getScale()
     {
         return scale_;
     }
@@ -136,7 +136,7 @@ public class Marker
 
         
 
-    public us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Point>  getPoints()
+    public us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D>  getPoints()
     {
         return points_;
     }
@@ -321,12 +321,12 @@ public class Marker
     private int id_; 
     private int type_; 
     private int action_; 
-    private geometry_msgs.msg.dds.Pose pose_; 
-    private geometry_msgs.msg.dds.Vector3 scale_; 
+    private us.ihmc.euclid.geometry.Pose3D pose_; 
+    private us.ihmc.euclid.tuple3D.Vector3D scale_; 
     private std_msgs.msg.dds.ColorRGBA color_; 
     private builtin_interfaces.msg.dds.Duration lifetime_; 
     private boolean frame_locked_; 
-    private us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Point>  points_; 
+    private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D>  points_; 
     private us.ihmc.idl.IDLSequence.Object<std_msgs.msg.dds.ColorRGBA>  colors_; 
     private java.lang.StringBuilder text_; 
     private java.lang.StringBuilder mesh_resource_; 

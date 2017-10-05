@@ -11,7 +11,7 @@ public class InteractiveMarker
 {
     public InteractiveMarker()
     {
-        	header_ = new std_msgs.msg.dds.Header();pose_ = new geometry_msgs.msg.dds.Pose();name_ = new java.lang.StringBuilder(255); 
+        	header_ = new std_msgs.msg.dds.Header();pose_ = new us.ihmc.euclid.geometry.Pose3D();name_ = new java.lang.StringBuilder(255); 
         	description_ = new java.lang.StringBuilder(255); 
         	menu_entries_ = new us.ihmc.idl.IDLSequence.Object<visualization_msgs.msg.dds.MenuEntry> (100, visualization_msgs.msg.dds.MenuEntry.class, new visualization_msgs.msg.dds.MenuEntryPubSubType());
 
@@ -40,7 +40,7 @@ public class InteractiveMarker
 
         
 
-    public geometry_msgs.msg.dds.Pose getPose()
+    public us.ihmc.euclid.geometry.Pose3D getPose()
     {
         return pose_;
     }
@@ -176,7 +176,7 @@ public class InteractiveMarker
     }
 
     private std_msgs.msg.dds.Header header_; 
-    private geometry_msgs.msg.dds.Pose pose_; 
+    private us.ihmc.euclid.geometry.Pose3D pose_; 
     private java.lang.StringBuilder name_; 
     private java.lang.StringBuilder description_; 
     private float scale_; 

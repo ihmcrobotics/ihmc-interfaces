@@ -11,7 +11,7 @@ public class Accel
 {
     public Accel()
     {
-        	linear_ = new geometry_msgs.msg.dds.Vector3();angular_ = new geometry_msgs.msg.dds.Vector3();        
+        	linear_ = new us.ihmc.euclid.tuple3D.Vector3D();angular_ = new us.ihmc.euclid.tuple3D.Vector3D();        
         
     }
 
@@ -20,14 +20,14 @@ public class Accel
            	geometry_msgs.msg.dds.Vector3PubSubType.staticCopy(other.linear_, linear_);geometry_msgs.msg.dds.Vector3PubSubType.staticCopy(other.angular_, angular_);    }
 
 
-    public geometry_msgs.msg.dds.Vector3 getLinear()
+    public us.ihmc.euclid.tuple3D.Vector3D getLinear()
     {
         return linear_;
     }
 
         
 
-    public geometry_msgs.msg.dds.Vector3 getAngular()
+    public us.ihmc.euclid.tuple3D.Vector3D getAngular()
     {
         return angular_;
     }
@@ -72,7 +72,7 @@ public class Accel
 		return builder.toString();
     }
 
-    private geometry_msgs.msg.dds.Vector3 linear_; 
-    private geometry_msgs.msg.dds.Vector3 angular_; 
+    private us.ihmc.euclid.tuple3D.Vector3D linear_; 
+    private us.ihmc.euclid.tuple3D.Vector3D angular_; 
 
 }

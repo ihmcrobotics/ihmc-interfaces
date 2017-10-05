@@ -11,7 +11,7 @@ public class Inertia
 {
     public Inertia()
     {
-        	com_ = new geometry_msgs.msg.dds.Vector3();        
+        	com_ = new us.ihmc.euclid.tuple3D.Vector3D();        
         
     }
 
@@ -39,7 +39,7 @@ public class Inertia
 
         
 
-    public geometry_msgs.msg.dds.Vector3 getCom()
+    public us.ihmc.euclid.tuple3D.Vector3D getCom()
     {
         return com_;
     }
@@ -194,7 +194,7 @@ public class Inertia
     }
 
     private double m_; 
-    private geometry_msgs.msg.dds.Vector3 com_; 
+    private us.ihmc.euclid.tuple3D.Vector3D com_; 
     private double ixx_; 
     private double ixy_; 
     private double ixz_; 

@@ -11,7 +11,7 @@ public class GridCells
 {
     public GridCells()
     {
-        	header_ = new std_msgs.msg.dds.Header();cells_ = new us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Point> (100, geometry_msgs.msg.dds.Point.class, new geometry_msgs.msg.dds.PointPubSubType());
+        	header_ = new std_msgs.msg.dds.Header();cells_ = new us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D> (100, us.ihmc.euclid.tuple3D.Point3D.class, new geometry_msgs.msg.dds.PointPubSubType());
 
 
         
@@ -55,7 +55,7 @@ public class GridCells
 
         
 
-    public us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Point>  getCells()
+    public us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D>  getCells()
     {
         return cells_;
     }
@@ -117,6 +117,6 @@ public class GridCells
     private std_msgs.msg.dds.Header header_; 
     private float cell_width_; 
     private float cell_height_; 
-    private us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Point>  cells_; 
+    private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D>  cells_; 
 
 }

@@ -11,7 +11,7 @@ public class MapMetaData
 {
     public MapMetaData()
     {
-        	map_load_time_ = new builtin_interfaces.msg.dds.Time();origin_ = new geometry_msgs.msg.dds.Pose();        
+        	map_load_time_ = new builtin_interfaces.msg.dds.Time();origin_ = new us.ihmc.euclid.geometry.Pose3D();        
         
     }
 
@@ -64,7 +64,7 @@ public class MapMetaData
 
         
 
-    public geometry_msgs.msg.dds.Pose getOrigin()
+    public us.ihmc.euclid.geometry.Pose3D getOrigin()
     {
         return origin_;
     }
@@ -134,6 +134,6 @@ public class MapMetaData
     private float resolution_; 
     private long width_; 
     private long height_; 
-    private geometry_msgs.msg.dds.Pose origin_; 
+    private us.ihmc.euclid.geometry.Pose3D origin_; 
 
 }

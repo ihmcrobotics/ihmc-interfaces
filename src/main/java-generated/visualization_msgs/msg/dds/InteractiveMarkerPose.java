@@ -11,7 +11,7 @@ public class InteractiveMarkerPose
 {
     public InteractiveMarkerPose()
     {
-        	header_ = new std_msgs.msg.dds.Header();pose_ = new geometry_msgs.msg.dds.Pose();name_ = new java.lang.StringBuilder(255); 
+        	header_ = new std_msgs.msg.dds.Header();pose_ = new us.ihmc.euclid.geometry.Pose3D();name_ = new java.lang.StringBuilder(255); 
         
         
     }
@@ -30,7 +30,7 @@ public class InteractiveMarkerPose
 
         
 
-    public geometry_msgs.msg.dds.Pose getPose()
+    public us.ihmc.euclid.geometry.Pose3D getPose()
     {
         return pose_;
     }
@@ -99,7 +99,7 @@ public class InteractiveMarkerPose
     }
 
     private std_msgs.msg.dds.Header header_; 
-    private geometry_msgs.msg.dds.Pose pose_; 
+    private us.ihmc.euclid.geometry.Pose3D pose_; 
     private java.lang.StringBuilder name_; 
 
 }

@@ -19,6 +19,7 @@ module dds
 
 
 @TypeCode(type="geometry_msgs::msg::dds_::Transform_")
+@Abstract(type="us.ihmc.euclid.transform.QuaternionBasedTransform", impl="new us.ihmc.ros2.rosidl.geometry_msgs.msg.dds.TransformPubSubTypeImpl()")
 struct Transform
 {
 

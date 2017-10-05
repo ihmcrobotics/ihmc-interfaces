@@ -11,7 +11,7 @@ public class PoseArray
 {
     public PoseArray()
     {
-        	header_ = new std_msgs.msg.dds.Header();poses_ = new us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Pose> (100, geometry_msgs.msg.dds.Pose.class, new geometry_msgs.msg.dds.PosePubSubType());
+        	header_ = new std_msgs.msg.dds.Header();poses_ = new us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.geometry.Pose3D> (100, us.ihmc.euclid.geometry.Pose3D.class, new geometry_msgs.msg.dds.PosePubSubType());
 
 
         
@@ -31,7 +31,7 @@ public class PoseArray
 
         
 
-    public us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Pose>  getPoses()
+    public us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.geometry.Pose3D>  getPoses()
     {
         return poses_;
     }
@@ -77,6 +77,6 @@ public class PoseArray
     }
 
     private std_msgs.msg.dds.Header header_; 
-    private us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Pose>  poses_; 
+    private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.geometry.Pose3D>  poses_; 
 
 }

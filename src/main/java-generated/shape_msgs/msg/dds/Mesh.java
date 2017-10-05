@@ -13,7 +13,7 @@ public class Mesh
     {
         	triangles_ = new us.ihmc.idl.IDLSequence.Object<shape_msgs.msg.dds.MeshTriangle> (100, shape_msgs.msg.dds.MeshTriangle.class, new shape_msgs.msg.dds.MeshTrianglePubSubType());
 
-        	vertices_ = new us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Point> (100, geometry_msgs.msg.dds.Point.class, new geometry_msgs.msg.dds.PointPubSubType());
+        	vertices_ = new us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D> (100, us.ihmc.euclid.tuple3D.Point3D.class, new geometry_msgs.msg.dds.PointPubSubType());
 
 
         
@@ -33,7 +33,7 @@ public class Mesh
 
         
 
-    public us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Point>  getVertices()
+    public us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D>  getVertices()
     {
         return vertices_;
     }
@@ -79,6 +79,6 @@ public class Mesh
     }
 
     private us.ihmc.idl.IDLSequence.Object<shape_msgs.msg.dds.MeshTriangle>  triangles_; 
-    private us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Point>  vertices_; 
+    private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D>  vertices_; 
 
 }

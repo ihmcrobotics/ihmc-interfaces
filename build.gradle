@@ -33,6 +33,7 @@ ihmc {
 
 mainDependencies {
       compile group: 'us.ihmc', name: 'euclid-core', version: '0.4.6'
+      compile group: 'us.ihmc', name: 'euclid', version: '0.6.0'
       compile group: 'us.ihmc', name: 'IHMCPubSub', version: '0.3.4.1'
 }
 
@@ -44,7 +45,7 @@ task show << {
 
 task generateROSTypeSupport(type: us.ihmc.ros2.rosidl.RosInterfaceGeneratorTask) {
 	
-	rosPackages = files("external_interfaces/common_interfaces", "ihmc_interfaces")
+	rosPackages = files("src/thirdparty/rosidl/common_interfaces", "src/main/rosidl/ihmc_interfaces")
 	outputDirectory = file("src/main/java-generated")
 	customIDL = files("src/main/idl")
 }

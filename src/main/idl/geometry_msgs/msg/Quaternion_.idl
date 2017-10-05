@@ -17,6 +17,7 @@ module dds
 
 
 @TypeCode(type="geometry_msgs::msg::dds_::Quaternion_")
+@Abstract(type="us.ihmc.euclid.tuple4D.Quaternion", impl="new us.ihmc.ros2.rosidl.geometry_msgs.msg.dds.QuaternionPubSubTypeImpl()")
 struct Quaternion
 {
 

@@ -11,7 +11,7 @@ public class Vector3Stamped
 {
     public Vector3Stamped()
     {
-        	header_ = new std_msgs.msg.dds.Header();vector_ = new geometry_msgs.msg.dds.Vector3();        
+        	header_ = new std_msgs.msg.dds.Header();vector_ = new us.ihmc.euclid.tuple3D.Vector3D();        
         
     }
 
@@ -27,7 +27,7 @@ public class Vector3Stamped
 
         
 
-    public geometry_msgs.msg.dds.Vector3 getVector()
+    public us.ihmc.euclid.tuple3D.Vector3D getVector()
     {
         return vector_;
     }
@@ -73,6 +73,6 @@ public class Vector3Stamped
     }
 
     private std_msgs.msg.dds.Header header_; 
-    private geometry_msgs.msg.dds.Vector3 vector_; 
+    private us.ihmc.euclid.tuple3D.Vector3D vector_; 
 
 }

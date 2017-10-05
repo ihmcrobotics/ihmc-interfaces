@@ -11,7 +11,7 @@ public class Polygon
 {
     public Polygon()
     {
-        	points_ = new us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Point32> (100, geometry_msgs.msg.dds.Point32.class, new geometry_msgs.msg.dds.Point32PubSubType());
+        	points_ = new us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D32> (100, us.ihmc.euclid.tuple3D.Point3D32.class, new geometry_msgs.msg.dds.Point32PubSubType());
 
 
         
@@ -24,7 +24,7 @@ public class Polygon
     }
 
 
-    public us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Point32>  getPoints()
+    public us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D32>  getPoints()
     {
         return points_;
     }
@@ -63,6 +63,6 @@ public class Polygon
 		return builder.toString();
     }
 
-    private us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Point32>  points_; 
+    private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D32>  points_; 
 
 }

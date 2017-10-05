@@ -11,7 +11,7 @@ public class MultiDOFJointTrajectoryPoint
 {
     public MultiDOFJointTrajectoryPoint()
     {
-        	transforms_ = new us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Transform> (100, geometry_msgs.msg.dds.Transform.class, new geometry_msgs.msg.dds.TransformPubSubType());
+        	transforms_ = new us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.transform.QuaternionBasedTransform> (100, us.ihmc.euclid.transform.QuaternionBasedTransform.class, new geometry_msgs.msg.dds.TransformPubSubType());
 
         	velocities_ = new us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Twist> (100, geometry_msgs.msg.dds.Twist.class, new geometry_msgs.msg.dds.TwistPubSubType());
 
@@ -28,7 +28,7 @@ public class MultiDOFJointTrajectoryPoint
     }
 
 
-    public us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Transform>  getTransforms()
+    public us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.transform.QuaternionBasedTransform>  getTransforms()
     {
         return transforms_;
     }
@@ -106,7 +106,7 @@ public class MultiDOFJointTrajectoryPoint
 		return builder.toString();
     }
 
-    private us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Transform>  transforms_; 
+    private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.transform.QuaternionBasedTransform>  transforms_; 
     private us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Twist>  velocities_; 
     private us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Twist>  accelerations_; 
     private builtin_interfaces.msg.dds.Duration time_from_start_; 

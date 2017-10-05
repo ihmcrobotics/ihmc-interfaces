@@ -11,7 +11,7 @@ public class PoseWithCovariance
 {
     public PoseWithCovariance()
     {
-        	pose_ = new geometry_msgs.msg.dds.Pose();covariance_ = new double[36];
+        	pose_ = new us.ihmc.euclid.geometry.Pose3D();covariance_ = new double[36];
         
         
     }
@@ -27,7 +27,7 @@ public class PoseWithCovariance
     }
 
 
-    public geometry_msgs.msg.dds.Pose getPose()
+    public us.ihmc.euclid.geometry.Pose3D getPose()
     {
         return pose_;
     }
@@ -82,7 +82,7 @@ public class PoseWithCovariance
 		return builder.toString();
     }
 
-    private geometry_msgs.msg.dds.Pose pose_; 
+    private us.ihmc.euclid.geometry.Pose3D pose_; 
     private double[] covariance_; 
 
 }

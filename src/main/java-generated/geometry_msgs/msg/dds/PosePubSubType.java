@@ -8,7 +8,7 @@ package geometry_msgs.msg.dds;
 * Do not update this file directly, edit Pose_.idl instead.
 *
 */
-public class PosePubSubType implements us.ihmc.pubsub.TopicDataType<geometry_msgs.msg.dds.Pose>
+public class PosePubSubType implements us.ihmc.pubsub.TopicDataType<us.ihmc.euclid.geometry.Pose3D>
 {
 	public static final java.lang.String name = "geometry_msgs::msg::dds_::Pose_";
 	
@@ -19,25 +19,74 @@ public class PosePubSubType implements us.ihmc.pubsub.TopicDataType<geometry_msg
         
     }
 
+
 	private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
 	private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
 
-    
-    @Override
-   public void serialize(geometry_msgs.msg.dds.Pose data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, geometry_msgs.msg.dds.Pose data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
-   }
-   
+
+
+	private static AbstractPosePubSubTypeImplementation impl = new us.ihmc.ros2.rosidl.geometry_msgs.msg.dds.Pose3DPubSubTypeImpl();
+	
+	/**
+	 * Abstract implementation of PosePubSubType. 
+	 * 
+	 * Extend this class to create a custom PubSubType for @Abstract idl datatypes. 
+	 *
+	 */
+	public static abstract class AbstractPosePubSubTypeImplementation
+	{
+
+		
+		/**
+		 * Copy src into dest. 
+		 * 
+		 * @param src Source object to copy data from
+		 * @param dest Destination object to copy data to
+		 */
+		protected abstract void copy(us.ihmc.euclid.geometry.Pose3D src, us.ihmc.euclid.geometry.Pose3D dest);
+		
+		
+		
+	    /**
+        * Getter for Position 
+        * 
+        * @param data object to read from
+        * @return value of X
+        */
+		protected abstract us.ihmc.euclid.tuple3D.Point3D getPosition(us.ihmc.euclid.geometry.Pose3D data);
+
+		
+		
+	    /**
+        * Getter for Orientation 
+        * 
+        * @param data object to read from
+        * @return value of X
+        */
+		protected abstract us.ihmc.euclid.tuple4D.Quaternion getOrientation(us.ihmc.euclid.geometry.Pose3D data);
+
+		
+
+
+   		public abstract us.ihmc.euclid.geometry.Pose3D createData();
+	}
+
+	private static AbstractPosePubSubTypeImplementation getImpl()
+	{
+		if(impl == null)
+		{
+			throw new RuntimeException("Abstract pub/sub type implementation not set. Call setImplementation(AbstractPosePubSubTypeImplementation implementation) before using this type.");
+		}
+		return impl;
+	}
+	
+	public static void setImplementation(AbstractPosePubSubTypeImplementation implementation)
+	{
+		PosePubSubType.impl = implementation;
+	}
+
+		
+		
 	public static int getMaxCdrSerializedSize()
 	{
 		return getMaxCdrSerializedSize(0);
@@ -45,7 +94,7 @@ public class PosePubSubType implements us.ihmc.pubsub.TopicDataType<geometry_msg
 
 	public static int getMaxCdrSerializedSize(int current_alignment)
 	{
-	    int initial_alignment = current_alignment;
+		int initial_alignment = current_alignment;
 	            
 	    current_alignment += geometry_msgs.msg.dds.PointPubSubType.getMaxCdrSerializedSize(current_alignment);
 	    current_alignment += geometry_msgs.msg.dds.QuaternionPubSubType.getMaxCdrSerializedSize(current_alignment);
@@ -54,71 +103,92 @@ public class PosePubSubType implements us.ihmc.pubsub.TopicDataType<geometry_msg
 	}
 
 
-	public final static int getCdrSerializedSize(geometry_msgs.msg.dds.Pose data)
+	public final static int getCdrSerializedSize(us.ihmc.euclid.geometry.Pose3D data)
 	{
 		return getCdrSerializedSize(data, 0);
 	}
 
-	public final static int getCdrSerializedSize(geometry_msgs.msg.dds.Pose data, int current_alignment)
+	public final static int getCdrSerializedSize(us.ihmc.euclid.geometry.Pose3D data, int current_alignment)
 	{
-	    int initial_alignment = current_alignment;
+		int initial_alignment = current_alignment;
 	            
-	    current_alignment += geometry_msgs.msg.dds.PointPubSubType.getCdrSerializedSize(data.getPosition(), current_alignment);
-	    current_alignment += geometry_msgs.msg.dds.QuaternionPubSubType.getCdrSerializedSize(data.getOrientation(), current_alignment);
+	    	current_alignment += geometry_msgs.msg.dds.PointPubSubType.getCdrSerializedSize(getImpl().getPosition(data), current_alignment);
+	    	current_alignment += geometry_msgs.msg.dds.QuaternionPubSubType.getCdrSerializedSize(getImpl().getOrientation(data), current_alignment);
 	
-	    return current_alignment - initial_alignment;
+	    	return current_alignment - initial_alignment;
 	}
-	
-   public static void write(geometry_msgs.msg.dds.Pose data, us.ihmc.idl.CDR cdr)
+
+
+       @Override
+   public void serialize(us.ihmc.euclid.geometry.Pose3D data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
    {
+   		
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
 
-	    geometry_msgs.msg.dds.PointPubSubType.write(data.getPosition(), cdr);
-
-	    geometry_msgs.msg.dds.QuaternionPubSubType.write(data.getOrientation(), cdr);
    }
 
-   public static void read(geometry_msgs.msg.dds.Pose data, us.ihmc.idl.CDR cdr)
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, us.ihmc.euclid.geometry.Pose3D data) throws java.io.IOException
+   {
+	 deserializeCDR.deserialize(serializedPayload);
+     read(data, deserializeCDR);
+	 deserializeCDR.finishDeserialize();
+   }
+   
+
+   public static void write(us.ihmc.euclid.geometry.Pose3D data, us.ihmc.idl.CDR cdr)
    {
 
-	    	geometry_msgs.msg.dds.PointPubSubType.read(data.getPosition(), cdr);	
+   		geometry_msgs.msg.dds.PointPubSubType.write(getImpl().getPosition(data), cdr);
 
-	    	geometry_msgs.msg.dds.QuaternionPubSubType.read(data.getOrientation(), cdr);	
+   		geometry_msgs.msg.dds.QuaternionPubSubType.write(getImpl().getOrientation(data), cdr);
+   }
+
+   public static void read(us.ihmc.euclid.geometry.Pose3D data, us.ihmc.idl.CDR cdr)
+   {
+
+			geometry_msgs.msg.dds.PointPubSubType.read(getImpl().getPosition(data), cdr);	
+
+			geometry_msgs.msg.dds.QuaternionPubSubType.read(getImpl().getOrientation(data), cdr);	
    }
    
 	@Override
-	public final void serialize(geometry_msgs.msg.dds.Pose data, us.ihmc.idl.InterchangeSerializer ser)
+	public final void serialize(us.ihmc.euclid.geometry.Pose3D data, us.ihmc.idl.InterchangeSerializer ser)
 	{
-			    ser.write_type_a("position", new geometry_msgs.msg.dds.PointPubSubType(), data.getPosition());
+			    ser.write_type_a("position", new geometry_msgs.msg.dds.PointPubSubType(), getImpl().getPosition(data));
 
 			    
-			    ser.write_type_a("orientation", new geometry_msgs.msg.dds.QuaternionPubSubType(), data.getOrientation());
+			    ser.write_type_a("orientation", new geometry_msgs.msg.dds.QuaternionPubSubType(), getImpl().getOrientation(data));
 
 			    
 	}
 	
 	@Override
-	public final void deserialize(us.ihmc.idl.InterchangeSerializer ser, geometry_msgs.msg.dds.Pose data)
+	public final void deserialize(us.ihmc.idl.InterchangeSerializer ser, us.ihmc.euclid.geometry.Pose3D data)
 	{
-	    			ser.read_type_a("position", new geometry_msgs.msg.dds.PointPubSubType(), data.getPosition());
+	    			ser.read_type_a("position", new geometry_msgs.msg.dds.PointPubSubType(), getImpl().getPosition(data));
 	    	
 	    	    
-	    			ser.read_type_a("orientation", new geometry_msgs.msg.dds.QuaternionPubSubType(), data.getOrientation());
+	    			ser.read_type_a("orientation", new geometry_msgs.msg.dds.QuaternionPubSubType(), getImpl().getOrientation(data));
 	    	
 	    	    
 	}
 
-   public static void staticCopy(geometry_msgs.msg.dds.Pose src, geometry_msgs.msg.dds.Pose dest)
+
+   public static void staticCopy(us.ihmc.euclid.geometry.Pose3D src, us.ihmc.euclid.geometry.Pose3D dest)
    {
-      dest.set(src);
+   		getImpl().copy(src, dest);
    }
    
    
    @Override
-   public geometry_msgs.msg.dds.Pose createData()
+   public us.ihmc.euclid.geometry.Pose3D createData()
    {
-      return new geometry_msgs.msg.dds.Pose();
+      return getImpl().createData();
    }
-      
+	   
 
    @Override
    public int getTypeSize()
@@ -132,17 +202,17 @@ public class PosePubSubType implements us.ihmc.pubsub.TopicDataType<geometry_msg
       return name;
    }
    
-   public void serialize(geometry_msgs.msg.dds.Pose data, us.ihmc.idl.CDR cdr)
+   public void serialize(us.ihmc.euclid.geometry.Pose3D data, us.ihmc.idl.CDR cdr)
 	{
 		write(data, cdr);
 	}
 
-   public void deserialize(geometry_msgs.msg.dds.Pose data, us.ihmc.idl.CDR cdr)
+   public void deserialize(us.ihmc.euclid.geometry.Pose3D data, us.ihmc.idl.CDR cdr)
    {
         read(data, cdr);
    }
    
-   public void copy(geometry_msgs.msg.dds.Pose src, geometry_msgs.msg.dds.Pose dest)
+   public void copy(us.ihmc.euclid.geometry.Pose3D src, us.ihmc.euclid.geometry.Pose3D dest)
    {
       staticCopy(src, dest);
    }	

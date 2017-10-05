@@ -11,7 +11,7 @@ public class PointStamped
 {
     public PointStamped()
     {
-        	header_ = new std_msgs.msg.dds.Header();point_ = new geometry_msgs.msg.dds.Point();        
+        	header_ = new std_msgs.msg.dds.Header();point_ = new us.ihmc.euclid.tuple3D.Point3D();        
         
     }
 
@@ -27,7 +27,7 @@ public class PointStamped
 
         
 
-    public geometry_msgs.msg.dds.Point getPoint()
+    public us.ihmc.euclid.tuple3D.Point3D getPoint()
     {
         return point_;
     }
@@ -73,6 +73,6 @@ public class PointStamped
     }
 
     private std_msgs.msg.dds.Header header_; 
-    private geometry_msgs.msg.dds.Point point_; 
+    private us.ihmc.euclid.tuple3D.Point3D point_; 
 
 }

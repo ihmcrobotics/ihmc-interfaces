@@ -11,7 +11,7 @@ public class MagneticField
 {
     public MagneticField()
     {
-        	header_ = new std_msgs.msg.dds.Header();magnetic_field_ = new geometry_msgs.msg.dds.Vector3();magnetic_field_covariance_ = new double[9];
+        	header_ = new std_msgs.msg.dds.Header();magnetic_field_ = new us.ihmc.euclid.tuple3D.Vector3D();magnetic_field_covariance_ = new double[9];
         
         
     }
@@ -34,7 +34,7 @@ public class MagneticField
 
         
 
-    public geometry_msgs.msg.dds.Vector3 getMagnetic_field()
+    public us.ihmc.euclid.tuple3D.Vector3D getMagnetic_field()
     {
         return magnetic_field_;
     }
@@ -96,7 +96,7 @@ public class MagneticField
     }
 
     private std_msgs.msg.dds.Header header_; 
-    private geometry_msgs.msg.dds.Vector3 magnetic_field_; 
+    private us.ihmc.euclid.tuple3D.Vector3D magnetic_field_; 
     private double[] magnetic_field_covariance_; 
 
 }

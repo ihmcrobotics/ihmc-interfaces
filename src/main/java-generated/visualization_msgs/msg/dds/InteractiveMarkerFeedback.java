@@ -14,7 +14,7 @@ public class InteractiveMarkerFeedback
         	header_ = new std_msgs.msg.dds.Header();client_id_ = new java.lang.StringBuilder(255); 
         	marker_name_ = new java.lang.StringBuilder(255); 
         	control_name_ = new java.lang.StringBuilder(255); 
-        	pose_ = new geometry_msgs.msg.dds.Pose();mouse_point_ = new geometry_msgs.msg.dds.Point();        
+        	pose_ = new us.ihmc.euclid.geometry.Pose3D();mouse_point_ = new us.ihmc.euclid.tuple3D.Point3D();        
         
     }
 
@@ -102,7 +102,7 @@ public class InteractiveMarkerFeedback
 
         
 
-    public geometry_msgs.msg.dds.Pose getPose()
+    public us.ihmc.euclid.geometry.Pose3D getPose()
     {
         return pose_;
     }
@@ -120,7 +120,7 @@ public class InteractiveMarkerFeedback
 
         
 
-    public geometry_msgs.msg.dds.Point getMouse_point()
+    public us.ihmc.euclid.tuple3D.Point3D getMouse_point()
     {
         return mouse_point_;
     }
@@ -226,9 +226,9 @@ public class InteractiveMarkerFeedback
     private java.lang.StringBuilder marker_name_; 
     private java.lang.StringBuilder control_name_; 
     private byte event_type_; 
-    private geometry_msgs.msg.dds.Pose pose_; 
+    private us.ihmc.euclid.geometry.Pose3D pose_; 
     private long menu_entry_id_; 
-    private geometry_msgs.msg.dds.Point mouse_point_; 
+    private us.ihmc.euclid.tuple3D.Point3D mouse_point_; 
     private boolean mouse_point_valid_; 
 
 }

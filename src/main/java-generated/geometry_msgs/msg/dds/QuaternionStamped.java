@@ -11,7 +11,7 @@ public class QuaternionStamped
 {
     public QuaternionStamped()
     {
-        	header_ = new std_msgs.msg.dds.Header();quaternion_ = new geometry_msgs.msg.dds.Quaternion();        
+        	header_ = new std_msgs.msg.dds.Header();quaternion_ = new us.ihmc.euclid.tuple4D.Quaternion();        
         
     }
 
@@ -27,7 +27,7 @@ public class QuaternionStamped
 
         
 
-    public geometry_msgs.msg.dds.Quaternion getQuaternion()
+    public us.ihmc.euclid.tuple4D.Quaternion getQuaternion()
     {
         return quaternion_;
     }
@@ -73,6 +73,6 @@ public class QuaternionStamped
     }
 
     private std_msgs.msg.dds.Header header_; 
-    private geometry_msgs.msg.dds.Quaternion quaternion_; 
+    private us.ihmc.euclid.tuple4D.Quaternion quaternion_; 
 
 }

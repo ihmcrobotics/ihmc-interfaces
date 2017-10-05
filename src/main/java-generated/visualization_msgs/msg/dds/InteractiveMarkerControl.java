@@ -12,7 +12,7 @@ public class InteractiveMarkerControl
     public InteractiveMarkerControl()
     {
         	name_ = new java.lang.StringBuilder(255); 
-        	orientation_ = new geometry_msgs.msg.dds.Quaternion();markers_ = new us.ihmc.idl.IDLSequence.Object<visualization_msgs.msg.dds.Marker> (100, visualization_msgs.msg.dds.Marker.class, new visualization_msgs.msg.dds.MarkerPubSubType());
+        	orientation_ = new us.ihmc.euclid.tuple4D.Quaternion();markers_ = new us.ihmc.idl.IDLSequence.Object<visualization_msgs.msg.dds.Marker> (100, visualization_msgs.msg.dds.Marker.class, new visualization_msgs.msg.dds.MarkerPubSubType());
 
         	description_ = new java.lang.StringBuilder(255); 
 
@@ -51,7 +51,7 @@ public class InteractiveMarkerControl
 
         
 
-    public geometry_msgs.msg.dds.Quaternion getOrientation()
+    public us.ihmc.euclid.tuple4D.Quaternion getOrientation()
     {
         return orientation_;
     }
@@ -205,7 +205,7 @@ public class InteractiveMarkerControl
     }
 
     private java.lang.StringBuilder name_; 
-    private geometry_msgs.msg.dds.Quaternion orientation_; 
+    private us.ihmc.euclid.tuple4D.Quaternion orientation_; 
     private byte orientation_mode_; 
     private byte interaction_mode_; 
     private boolean always_visible_; 
