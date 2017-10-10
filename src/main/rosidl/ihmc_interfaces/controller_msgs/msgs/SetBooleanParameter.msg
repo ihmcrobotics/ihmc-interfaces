@@ -1,0 +1,2 @@
+string parameterName
+bool parameterValue
