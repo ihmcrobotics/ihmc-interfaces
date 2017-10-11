@@ -1,2 +1,2 @@
-string parameterName
-string parameterValue
+string parameter_name
+string parameter_value

@@ -1,2 +1,2 @@
-string parameterName
-bool parameterValue
+string parameter_name
+bool parameter_value

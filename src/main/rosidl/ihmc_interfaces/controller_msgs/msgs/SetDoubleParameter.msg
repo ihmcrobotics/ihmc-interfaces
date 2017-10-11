@@ -1,2 +1,2 @@
-string parameterName
-float64 parameterValue
+string parameter_name
+float64 parameter_value
