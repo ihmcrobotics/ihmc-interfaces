@@ -7,7 +7,7 @@ buildscript {
    }
    dependencies {
       classpath "gradle.plugin.us.ihmc:ihmc-build:0.9.5"
-      classpath 'us.ihmc.ros2:rosidl-typesupport-ihmcpubsub-java:0.1'
+      classpath 'us.ihmc:rosidl-typesupport-ihmcpubsub-java:0.1'
 
    }
 }
