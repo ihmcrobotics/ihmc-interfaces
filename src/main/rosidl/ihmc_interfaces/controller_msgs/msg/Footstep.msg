@@ -6,7 +6,7 @@ geometry_msgs/Point[] predicted_contact_points_2d
 uint8 trajectory_type
 float64 swing_height
 geometry_msgs/Point[] position_waypoints
-controller_msgs/TaskspaceTrajectoryStamped[] swing_trajectory
+TaskspaceTrajectoryStamped[] swing_trajectory
 float64 swing_trajectory_blend_duration
 float64 swing_duration
 float64 transfer_duration
