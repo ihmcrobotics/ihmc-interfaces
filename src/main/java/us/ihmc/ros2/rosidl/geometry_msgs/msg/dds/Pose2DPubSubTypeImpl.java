@@ -18,7 +18,7 @@ package us.ihmc.ros2.rosidl.geometry_msgs.msg.dds;
 import geometry_msgs.msg.dds.Pose2DPubSubType.AbstractPose2DPubSubTypeImplementation;
 import us.ihmc.euclid.geometry.Pose2D;
 
-class Pose2DPubSubTypeImpl extends AbstractPose2DPubSubTypeImplementation
+public class Pose2DPubSubTypeImpl extends AbstractPose2DPubSubTypeImplementation
 {
 
    @Override

@@ -18,7 +18,7 @@ package us.ihmc.ros2.rosidl.geometry_msgs.msg.dds;
 import geometry_msgs.msg.dds.Vector3PubSubType.AbstractVector3PubSubTypeImplementation;
 import us.ihmc.euclid.tuple3D.Vector3D;
 
-class Vector3PubSubTypeImpl extends AbstractVector3PubSubTypeImplementation
+public class Vector3PubSubTypeImpl extends AbstractVector3PubSubTypeImplementation
 {
 
    @Override

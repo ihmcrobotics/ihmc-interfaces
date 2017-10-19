@@ -18,7 +18,7 @@ package us.ihmc.ros2.rosidl.geometry_msgs.msg.dds;
 import geometry_msgs.msg.dds.PointPubSubType.AbstractPointPubSubTypeImplementation;
 import us.ihmc.euclid.tuple3D.Point3D;
 
-class Point3DPubSubTypeImpl extends AbstractPointPubSubTypeImplementation
+public class Point3DPubSubTypeImpl extends AbstractPointPubSubTypeImplementation
 {
 
    @Override
