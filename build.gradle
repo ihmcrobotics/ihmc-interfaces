@@ -8,7 +8,7 @@ buildscript {
    }
    dependencies {
       classpath "gradle.plugin.us.ihmc:ihmc-build:0.9.10"
-      classpath 'us.ihmc:rosidl-typesupport-ihmcpubsub-java:0.1'
+      classpath 'us.ihmc:rosidl-typesupport-ihmcpubsub-java:0.2'
    }
 }
 
@@ -18,7 +18,7 @@ import us.ihmc.ros2.rosidl.RosInterfaceGeneratorTask
 apply plugin: "us.ihmc.ihmc-build"
 
 ihmc {
-   group = "us.ihmc.ros2"
+   group = "us.ihmc"
    version = "0.1"
    vcsUrl = "https://github.com/ihmcrobotics/ihmc-interfaces"
    openSource = true
