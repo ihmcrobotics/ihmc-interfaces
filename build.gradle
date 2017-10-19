@@ -1,19 +1,19 @@
 buildscript {
    repositories {
       mavenCentral()
-      maven { url "http://dl.bintray.com/ihmcrobotics/maven-release" }      
+      maven { url "http://dl.bintray.com/ihmcrobotics/maven-release" }
+      maven { url "http://dl.bintray.com/ihmcrobotics/maven-vendor" }
       maven { url "https://plugins.gradle.org/m2/" }
       mavenLocal()
    }
    dependencies {
-      classpath "gradle.plugin.us.ihmc:ihmc-build:0.9.5"
-      classpath 'us.ihmc.ros2:rosidl-typesupport-ihmcpubsub-java:0.1'
-
+      classpath "gradle.plugin.us.ihmc:ihmc-build:0.9.10"
+      classpath 'us.ihmc:rosidl-typesupport-ihmcpubsub-java:0.1'
    }
 }
 
- import us.ihmc.idl.generator.IDLGeneratorTask
- import us.ihmc.ros2.rosidl.RosInterfaceGeneratorTask
+import us.ihmc.idl.generator.IDLGeneratorTask
+import us.ihmc.ros2.rosidl.RosInterfaceGeneratorTask
 
 apply plugin: "us.ihmc.ihmc-build"
 
@@ -22,34 +22,30 @@ ihmc {
    version = "0.1"
    vcsUrl = "https://github.com/ihmcrobotics/ihmc-interfaces"
    openSource = true
-    
+
    configureDependencyResolution()
+   resourceDirectory("main", "idl")
+   resourceDirectory("main", "rosidl")
+   javaDirectory("main", "java-generated")
+   resourceDirectory("thirdparty", "rosidl")
    configurePublications()
 }
 
-
-
-
-
 mainDependencies {
-      compile group: 'us.ihmc', name: 'euclid-core', version: '0.4.6'
-      compile group: 'us.ihmc', name: 'euclid', version: '0.6.0'
-      compile group: 'us.ihmc', name: 'IHMCPubSub', version: '0.3.4.1'
+   compile group: 'us.ihmc', name: 'euclid-core', version: '0.4.6'
+   compile group: 'us.ihmc', name: 'euclid', version: '0.6.0'
+   compile group: 'us.ihmc', name: 'IHMCPubSub', version: '0.3.4.1'
 }
-
 
 task show << {
    buildscript.configurations.classpath.each { println it }
 }
 
-
 task generateROSTypeSupport(type: us.ihmc.ros2.rosidl.RosInterfaceGeneratorTask) {
-	
-	rosPackages = files("src/thirdparty/rosidl/common_interfaces", "src/main/rosidl/ihmc_interfaces")
-	outputDirectory = file("src/main/java-generated")
-	customIDL = files("src/main/idl")
+   rosPackages = files("src/thirdparty/rosidl/common_interfaces", "src/main/rosidl/ihmc_interfaces")
+   outputDirectory = file("src/main/java-generated")
+   customIDL = files("src/main/idl")
 }
-
 
 compileJava.dependsOn generateROSTypeSupport
 
