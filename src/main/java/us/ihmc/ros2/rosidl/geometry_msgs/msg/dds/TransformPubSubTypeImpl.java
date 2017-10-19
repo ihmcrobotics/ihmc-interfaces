@@ -20,7 +20,7 @@ import us.ihmc.euclid.transform.QuaternionBasedTransform;
 import us.ihmc.euclid.tuple3D.Vector3D;
 import us.ihmc.euclid.tuple4D.Quaternion;
 
-public class TransformPubSubTypeImpl extends AbstractTransformPubSubTypeImplementation
+class TransformPubSubTypeImpl extends AbstractTransformPubSubTypeImplementation
 {
 
    @Override

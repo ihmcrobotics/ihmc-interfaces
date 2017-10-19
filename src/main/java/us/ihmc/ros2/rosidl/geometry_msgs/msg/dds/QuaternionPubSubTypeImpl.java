@@ -18,7 +18,7 @@ package us.ihmc.ros2.rosidl.geometry_msgs.msg.dds;
 import geometry_msgs.msg.dds.QuaternionPubSubType.AbstractQuaternionPubSubTypeImplementation;
 import us.ihmc.euclid.tuple4D.Quaternion;
 
-public class QuaternionPubSubTypeImpl extends AbstractQuaternionPubSubTypeImplementation
+class QuaternionPubSubTypeImpl extends AbstractQuaternionPubSubTypeImplementation
 {
 
    @Override

@@ -20,7 +20,7 @@ import us.ihmc.euclid.geometry.Pose3D;
 import us.ihmc.euclid.tuple3D.Point3D;
 import us.ihmc.euclid.tuple4D.Quaternion;
 
-public class Pose3DPubSubTypeImpl extends AbstractPosePubSubTypeImplementation
+class Pose3DPubSubTypeImpl extends AbstractPosePubSubTypeImplementation
 {
 
    @Override
