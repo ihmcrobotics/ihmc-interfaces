@@ -1,7 +1,5 @@
 package geometry_msgs.msg.dds;
 
-import us.ihmc.ros2.rosidl.geometry_msgs.msg.dds.Vector3PubSubTypeImpl;
-
 /**
 * 
 * Topic data type of the struct "Vector3" defined in "Vector3_.idl". Use this class to provide the TopicDataType to a Participant. 
