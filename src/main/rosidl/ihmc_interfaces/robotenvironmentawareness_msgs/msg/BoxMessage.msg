@@ -1,0 +1,2 @@
+bool is_empty
+geometry_msgs/Vector
