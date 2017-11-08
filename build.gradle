@@ -7,7 +7,7 @@ buildscript {
       //mavenLocal()
    }
    dependencies {
-      classpath "gradle.plugin.us.ihmc:ihmc-build:0.10.2"
+      classpath "gradle.plugin.us.ihmc:ihmc-build:0.10.4"
       classpath "us.ihmc:rosidl-typesupport-ihmcpubsub-java:0.2"
       classpath "us.ihmc:ihmc-pub-sub-generator:0.3.7"
    }
