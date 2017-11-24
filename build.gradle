@@ -34,8 +34,10 @@ mainDependencies {
    compile group: 'us.ihmc', name: 'IHMCPubSub', version: '0.3.4.1'
 }
 
-task show << {
-   buildscript.configurations.classpath.each { println it }
+task show {
+   doLast {
+      buildscript.configurations.classpath.each { println it }
+   }
 }
 
 task generateROSTypeSupport(type: us.ihmc.ros2.rosidl.RosInterfaceGeneratorTask) {
