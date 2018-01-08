@@ -1,0 +1,20 @@
+int64 timestamp
+int64 sensor_head_pps_timestamp
+int32 joint_name_hash
+float32[] joint_angles
+float32[] joint_velocities
+float32[] joint_torques
+
+geometry_msgs/Vector3 root_translation
+geometry_msgs/Vector3 pelvis_linear_velocity
+geometry_msgs/Vector3 pelvis_angular_velocity
+geometry_msgs/Quaternion root_orientation
+
+geometry_msgs/Vector3 pelvis_linear_acceleration
+std_msgs/Float32MultiArray moment_and_force_data_all_force_sensors
+controller_msgs/IMUPacket[] imu_sensor_data
+byte robot_motion_status
+
+int32 last_received_packet_type_id
+int64 last_received_packet_unique_id
+int64 last_received_packet_robot_timestamp

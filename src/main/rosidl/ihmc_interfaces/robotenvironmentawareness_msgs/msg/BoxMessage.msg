@@ -1,2 +1,2 @@
 bool is_empty
-geometry_msgs/Vector
+geometry_msgs/Vector3 some_vector
