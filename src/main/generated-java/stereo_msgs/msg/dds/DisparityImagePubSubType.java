@@ -1,35 +1,33 @@
 package stereo_msgs.msg.dds;
 
 /**
-* 
-* Topic data type of the struct "DisparityImage" defined in "DisparityImage_.idl". Use this class to provide the TopicDataType to a Participant. 
-*
-* This file was automatically generated from DisparityImage_.idl by us.ihmc.idl.generator.IDLGenerator. 
-* Do not update this file directly, edit DisparityImage_.idl instead.
-*
-*/
+ *
+ * Topic data type of the struct "DisparityImage" defined in "DisparityImage_.idl". Use this class to provide the TopicDataType to a Participant.
+ *
+ * This file was automatically generated from DisparityImage_.idl by us.ihmc.idl.generator.IDLGenerator.
+ * Do not update this file directly, edit DisparityImage_.idl instead.
+ *
+ */
 public class DisparityImagePubSubType implements us.ihmc.pubsub.TopicDataType<stereo_msgs.msg.dds.DisparityImage>
 {
-	public static final java.lang.String name = "stereo_msgs::msg::dds_::DisparityImage_";
-	
-	
-	
-    public DisparityImagePubSubType()
-    {
-        
-    }
+   public static final java.lang.String name = "stereo_msgs::msg::dds_::DisparityImage_";
 
-	private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-	private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+   public DisparityImagePubSubType()
+   {
 
-    
-    @Override
+   }
+
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
+   @Override
    public void serialize(stereo_msgs.msg.dds.DisparityImage data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
    {
       serializeCDR.serialize(serializedPayload);
       write(data, serializeCDR);
       serializeCDR.finishSerialize();
    }
+
    @Override
    public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, stereo_msgs.msg.dds.DisparityImage data) throws java.io.IOException
    {
@@ -37,165 +35,150 @@ public class DisparityImagePubSubType implements us.ihmc.pubsub.TopicDataType<st
       read(data, deserializeCDR);
       deserializeCDR.finishDeserialize();
    }
-   
-	public static int getMaxCdrSerializedSize()
-	{
-		return getMaxCdrSerializedSize(0);
-	}
 
-	public static int getMaxCdrSerializedSize(int current_alignment)
-	{
-	    int initial_alignment = current_alignment;
-	            
-	    current_alignment += std_msgs.msg.dds.HeaderPubSubType.getMaxCdrSerializedSize(current_alignment);
-	    current_alignment += sensor_msgs.msg.dds.ImagePubSubType.getMaxCdrSerializedSize(current_alignment);
-	    current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+   public static int getMaxCdrSerializedSize()
+   {
+      return getMaxCdrSerializedSize(0);
+   }
 
-	    current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+   public static int getMaxCdrSerializedSize(int current_alignment)
+   {
+      int initial_alignment = current_alignment;
 
-	    current_alignment += sensor_msgs.msg.dds.RegionOfInterestPubSubType.getMaxCdrSerializedSize(current_alignment);
-	    current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+      current_alignment += std_msgs.msg.dds.HeaderPubSubType.getMaxCdrSerializedSize(current_alignment);
+      current_alignment += sensor_msgs.msg.dds.ImagePubSubType.getMaxCdrSerializedSize(current_alignment);
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
-	    current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
-	    current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+      current_alignment += sensor_msgs.msg.dds.RegionOfInterestPubSubType.getMaxCdrSerializedSize(current_alignment);
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
-	
-	    return current_alignment - initial_alignment;
-	}
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
-	public final static int getCdrSerializedSize(stereo_msgs.msg.dds.DisparityImage data)
-	{
-		return getCdrSerializedSize(data, 0);
-	}
+      return current_alignment - initial_alignment;
+   }
 
-	public final static int getCdrSerializedSize(stereo_msgs.msg.dds.DisparityImage data, int current_alignment)
-	{
-	    int initial_alignment = current_alignment;
-	            
-	    current_alignment += std_msgs.msg.dds.HeaderPubSubType.getCdrSerializedSize(data.getHeader(), current_alignment);
-	    current_alignment += sensor_msgs.msg.dds.ImagePubSubType.getCdrSerializedSize(data.getImage(), current_alignment);
-	    current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+   public final static int getCdrSerializedSize(stereo_msgs.msg.dds.DisparityImage data)
+   {
+      return getCdrSerializedSize(data, 0);
+   }
 
-	    current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+   public final static int getCdrSerializedSize(stereo_msgs.msg.dds.DisparityImage data, int current_alignment)
+   {
+      int initial_alignment = current_alignment;
 
-	    current_alignment += sensor_msgs.msg.dds.RegionOfInterestPubSubType.getCdrSerializedSize(data.getValid_window(), current_alignment);
-	    current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+      current_alignment += std_msgs.msg.dds.HeaderPubSubType.getCdrSerializedSize(data.getHeader(), current_alignment);
+      current_alignment += sensor_msgs.msg.dds.ImagePubSubType.getCdrSerializedSize(data.getImage(), current_alignment);
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
-	    current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
-	    current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+      current_alignment += sensor_msgs.msg.dds.RegionOfInterestPubSubType.getCdrSerializedSize(data.getValid_window(), current_alignment);
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
-	
-	    return current_alignment - initial_alignment;
-	}
-	
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+
+      return current_alignment - initial_alignment;
+   }
+
    public static void write(stereo_msgs.msg.dds.DisparityImage data, us.ihmc.idl.CDR cdr)
    {
 
-	    std_msgs.msg.dds.HeaderPubSubType.write(data.getHeader(), cdr);
+      std_msgs.msg.dds.HeaderPubSubType.write(data.getHeader(), cdr);
 
-	    sensor_msgs.msg.dds.ImagePubSubType.write(data.getImage(), cdr);
+      sensor_msgs.msg.dds.ImagePubSubType.write(data.getImage(), cdr);
 
-	    cdr.write_type_5(data.getF());
+      cdr.write_type_5(data.getF());
 
-	    cdr.write_type_5(data.getT());
+      cdr.write_type_5(data.getT());
 
-	    sensor_msgs.msg.dds.RegionOfInterestPubSubType.write(data.getValid_window(), cdr);
+      sensor_msgs.msg.dds.RegionOfInterestPubSubType.write(data.getValid_window(), cdr);
 
-	    cdr.write_type_5(data.getMin_disparity());
+      cdr.write_type_5(data.getMin_disparity());
 
-	    cdr.write_type_5(data.getMax_disparity());
+      cdr.write_type_5(data.getMax_disparity());
 
-	    cdr.write_type_5(data.getDelta_d());
+      cdr.write_type_5(data.getDelta_d());
    }
 
    public static void read(stereo_msgs.msg.dds.DisparityImage data, us.ihmc.idl.CDR cdr)
    {
 
-	    	std_msgs.msg.dds.HeaderPubSubType.read(data.getHeader(), cdr);	
+      std_msgs.msg.dds.HeaderPubSubType.read(data.getHeader(), cdr);
 
-	    	sensor_msgs.msg.dds.ImagePubSubType.read(data.getImage(), cdr);	
+      sensor_msgs.msg.dds.ImagePubSubType.read(data.getImage(), cdr);
 
-	    	data.setF(cdr.read_type_5());
-	    	
+      data.setF(cdr.read_type_5());
 
-	    	data.setT(cdr.read_type_5());
-	    	
+      data.setT(cdr.read_type_5());
 
-	    	sensor_msgs.msg.dds.RegionOfInterestPubSubType.read(data.getValid_window(), cdr);	
+      sensor_msgs.msg.dds.RegionOfInterestPubSubType.read(data.getValid_window(), cdr);
 
-	    	data.setMin_disparity(cdr.read_type_5());
-	    	
+      data.setMin_disparity(cdr.read_type_5());
 
-	    	data.setMax_disparity(cdr.read_type_5());
-	    	
+      data.setMax_disparity(cdr.read_type_5());
 
-	    	data.setDelta_d(cdr.read_type_5());
-	    	
+      data.setDelta_d(cdr.read_type_5());
+
    }
-   
-	@Override
-	public final void serialize(stereo_msgs.msg.dds.DisparityImage data, us.ihmc.idl.InterchangeSerializer ser)
-	{
-			    ser.write_type_a("header", new std_msgs.msg.dds.HeaderPubSubType(), data.getHeader());
 
-			    
-			    ser.write_type_a("image", new sensor_msgs.msg.dds.ImagePubSubType(), data.getImage());
+   @Override
+   public final void serialize(stereo_msgs.msg.dds.DisparityImage data, us.ihmc.idl.InterchangeSerializer ser)
+   {
+      ser.write_type_a("header", new std_msgs.msg.dds.HeaderPubSubType(), data.getHeader());
 
-			    
-			    ser.write_type_5("f", data.getF());
-			    
-			    ser.write_type_5("t", data.getT());
-			    
-			    ser.write_type_a("valid_window", new sensor_msgs.msg.dds.RegionOfInterestPubSubType(), data.getValid_window());
+      ser.write_type_a("image", new sensor_msgs.msg.dds.ImagePubSubType(), data.getImage());
 
-			    
-			    ser.write_type_5("min_disparity", data.getMin_disparity());
-			    
-			    ser.write_type_5("max_disparity", data.getMax_disparity());
-			    
-			    ser.write_type_5("delta_d", data.getDelta_d());
-			    
-	}
-	
-	@Override
-	public final void deserialize(us.ihmc.idl.InterchangeSerializer ser, stereo_msgs.msg.dds.DisparityImage data)
-	{
-	    			ser.read_type_a("header", new std_msgs.msg.dds.HeaderPubSubType(), data.getHeader());
-	    	
-	    	    
-	    			ser.read_type_a("image", new sensor_msgs.msg.dds.ImagePubSubType(), data.getImage());
-	    	
-	    	    
-	    			data.setF(ser.read_type_5("f"));	
-	    	    
-	    			data.setT(ser.read_type_5("t"));	
-	    	    
-	    			ser.read_type_a("valid_window", new sensor_msgs.msg.dds.RegionOfInterestPubSubType(), data.getValid_window());
-	    	
-	    	    
-	    			data.setMin_disparity(ser.read_type_5("min_disparity"));	
-	    	    
-	    			data.setMax_disparity(ser.read_type_5("max_disparity"));	
-	    	    
-	    			data.setDelta_d(ser.read_type_5("delta_d"));	
-	    	    
-	}
+      ser.write_type_5("f", data.getF());
+
+      ser.write_type_5("t", data.getT());
+
+      ser.write_type_a("valid_window", new sensor_msgs.msg.dds.RegionOfInterestPubSubType(), data.getValid_window());
+
+      ser.write_type_5("min_disparity", data.getMin_disparity());
+
+      ser.write_type_5("max_disparity", data.getMax_disparity());
+
+      ser.write_type_5("delta_d", data.getDelta_d());
+
+   }
+
+   @Override
+   public final void deserialize(us.ihmc.idl.InterchangeSerializer ser, stereo_msgs.msg.dds.DisparityImage data)
+   {
+      ser.read_type_a("header", new std_msgs.msg.dds.HeaderPubSubType(), data.getHeader());
+
+      ser.read_type_a("image", new sensor_msgs.msg.dds.ImagePubSubType(), data.getImage());
+
+      data.setF(ser.read_type_5("f"));
+
+      data.setT(ser.read_type_5("t"));
+
+      ser.read_type_a("valid_window", new sensor_msgs.msg.dds.RegionOfInterestPubSubType(), data.getValid_window());
+
+      data.setMin_disparity(ser.read_type_5("min_disparity"));
+
+      data.setMax_disparity(ser.read_type_5("max_disparity"));
+
+      data.setDelta_d(ser.read_type_5("delta_d"));
+
+   }
 
    public static void staticCopy(stereo_msgs.msg.dds.DisparityImage src, stereo_msgs.msg.dds.DisparityImage dest)
    {
       dest.set(src);
    }
-   
-   
+
    @Override
    public stereo_msgs.msg.dds.DisparityImage createData()
    {
       return new stereo_msgs.msg.dds.DisparityImage();
    }
-      
 
    @Override
    public int getTypeSize()
@@ -208,26 +191,25 @@ public class DisparityImagePubSubType implements us.ihmc.pubsub.TopicDataType<st
    {
       return name;
    }
-   
+
    public void serialize(stereo_msgs.msg.dds.DisparityImage data, us.ihmc.idl.CDR cdr)
-	{
-		write(data, cdr);
-	}
+   {
+      write(data, cdr);
+   }
 
    public void deserialize(stereo_msgs.msg.dds.DisparityImage data, us.ihmc.idl.CDR cdr)
    {
-        read(data, cdr);
+      read(data, cdr);
    }
-   
+
    public void copy(stereo_msgs.msg.dds.DisparityImage src, stereo_msgs.msg.dds.DisparityImage dest)
    {
       staticCopy(src, dest);
-   }	
+   }
 
-   
    @Override
    public DisparityImagePubSubType newInstance()
    {
-   	  return new DisparityImagePubSubType();
+      return new DisparityImagePubSubType();
    }
 }

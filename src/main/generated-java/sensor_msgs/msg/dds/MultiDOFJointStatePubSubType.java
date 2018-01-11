@@ -1,35 +1,33 @@
 package sensor_msgs.msg.dds;
 
 /**
-* 
-* Topic data type of the struct "MultiDOFJointState" defined in "MultiDOFJointState_.idl". Use this class to provide the TopicDataType to a Participant. 
-*
-* This file was automatically generated from MultiDOFJointState_.idl by us.ihmc.idl.generator.IDLGenerator. 
-* Do not update this file directly, edit MultiDOFJointState_.idl instead.
-*
-*/
+ *
+ * Topic data type of the struct "MultiDOFJointState" defined in "MultiDOFJointState_.idl". Use this class to provide the TopicDataType to a Participant.
+ *
+ * This file was automatically generated from MultiDOFJointState_.idl by us.ihmc.idl.generator.IDLGenerator.
+ * Do not update this file directly, edit MultiDOFJointState_.idl instead.
+ *
+ */
 public class MultiDOFJointStatePubSubType implements us.ihmc.pubsub.TopicDataType<sensor_msgs.msg.dds.MultiDOFJointState>
 {
-	public static final java.lang.String name = "sensor_msgs::msg::dds_::MultiDOFJointState_";
-	
-	
-	
-    public MultiDOFJointStatePubSubType()
-    {
-        
-    }
+   public static final java.lang.String name = "sensor_msgs::msg::dds_::MultiDOFJointState_";
 
-	private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-	private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+   public MultiDOFJointStatePubSubType()
+   {
 
-    
-    @Override
+   }
+
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
+   @Override
    public void serialize(sensor_msgs.msg.dds.MultiDOFJointState data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
    {
       serializeCDR.serialize(serializedPayload);
       write(data, serializeCDR);
       serializeCDR.finishSerialize();
    }
+
    @Override
    public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, sensor_msgs.msg.dds.MultiDOFJointState data) throws java.io.IOException
    {
@@ -37,156 +35,159 @@ public class MultiDOFJointStatePubSubType implements us.ihmc.pubsub.TopicDataTyp
       read(data, deserializeCDR);
       deserializeCDR.finishDeserialize();
    }
-   
-	public static int getMaxCdrSerializedSize()
-	{
-		return getMaxCdrSerializedSize(0);
-	}
 
-	public static int getMaxCdrSerializedSize(int current_alignment)
-	{
-	    int initial_alignment = current_alignment;
-	            
-	    current_alignment += std_msgs.msg.dds.HeaderPubSubType.getMaxCdrSerializedSize(current_alignment);
-	    current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
-	    for(int a = 0; a < 100; ++a)
-	    {
-	        current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4) + 255 + 1;
-	    }
-	    current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
-	    for(int a = 0; a < 100; ++a)
-	    {
-	        current_alignment += geometry_msgs.msg.dds.TransformPubSubType.getMaxCdrSerializedSize(current_alignment);}
+   public static int getMaxCdrSerializedSize()
+   {
+      return getMaxCdrSerializedSize(0);
+   }
 
-	    current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
-	    for(int a = 0; a < 100; ++a)
-	    {
-	        current_alignment += geometry_msgs.msg.dds.TwistPubSubType.getMaxCdrSerializedSize(current_alignment);}
+   public static int getMaxCdrSerializedSize(int current_alignment)
+   {
+      int initial_alignment = current_alignment;
 
-	    current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
-	    for(int a = 0; a < 100; ++a)
-	    {
-	        current_alignment += geometry_msgs.msg.dds.WrenchPubSubType.getMaxCdrSerializedSize(current_alignment);}
+      current_alignment += std_msgs.msg.dds.HeaderPubSubType.getMaxCdrSerializedSize(current_alignment);
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+      for (int a = 0; a < 100; ++a)
+      {
+         current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4) + 255 + 1;
+      }
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+      for (int a = 0; a < 100; ++a)
+      {
+         current_alignment += geometry_msgs.msg.dds.TransformPubSubType.getMaxCdrSerializedSize(current_alignment);
+      }
 
-	
-	    return current_alignment - initial_alignment;
-	}
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+      for (int a = 0; a < 100; ++a)
+      {
+         current_alignment += geometry_msgs.msg.dds.TwistPubSubType.getMaxCdrSerializedSize(current_alignment);
+      }
 
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+      for (int a = 0; a < 100; ++a)
+      {
+         current_alignment += geometry_msgs.msg.dds.WrenchPubSubType.getMaxCdrSerializedSize(current_alignment);
+      }
 
-	public final static int getCdrSerializedSize(sensor_msgs.msg.dds.MultiDOFJointState data)
-	{
-		return getCdrSerializedSize(data, 0);
-	}
+      return current_alignment - initial_alignment;
+   }
 
-	public final static int getCdrSerializedSize(sensor_msgs.msg.dds.MultiDOFJointState data, int current_alignment)
-	{
-	    int initial_alignment = current_alignment;
-	            
-	    current_alignment += std_msgs.msg.dds.HeaderPubSubType.getCdrSerializedSize(data.getHeader(), current_alignment);
-	    current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
-	    for(int a = 0; a < data.getJoint_names().size(); ++a)
-	    {
-	        current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4) + data.getJoint_names().get(a).length() + 1;
-	    }
-	    current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
-	    for(int a = 0; a < data.getTransforms().size(); ++a)
-	    {
-	        current_alignment += geometry_msgs.msg.dds.TransformPubSubType.getCdrSerializedSize(data.getTransforms().get(a), current_alignment);}
+   public final static int getCdrSerializedSize(sensor_msgs.msg.dds.MultiDOFJointState data)
+   {
+      return getCdrSerializedSize(data, 0);
+   }
 
-	    current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
-	    for(int a = 0; a < data.getTwist().size(); ++a)
-	    {
-	        current_alignment += geometry_msgs.msg.dds.TwistPubSubType.getCdrSerializedSize(data.getTwist().get(a), current_alignment);}
+   public final static int getCdrSerializedSize(sensor_msgs.msg.dds.MultiDOFJointState data, int current_alignment)
+   {
+      int initial_alignment = current_alignment;
 
-	    current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
-	    for(int a = 0; a < data.getWrench().size(); ++a)
-	    {
-	        current_alignment += geometry_msgs.msg.dds.WrenchPubSubType.getCdrSerializedSize(data.getWrench().get(a), current_alignment);}
+      current_alignment += std_msgs.msg.dds.HeaderPubSubType.getCdrSerializedSize(data.getHeader(), current_alignment);
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+      for (int a = 0; a < data.getJoint_names().size(); ++a)
+      {
+         current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4) + data.getJoint_names().get(a).length() + 1;
+      }
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+      for (int a = 0; a < data.getTransforms().size(); ++a)
+      {
+         current_alignment += geometry_msgs.msg.dds.TransformPubSubType.getCdrSerializedSize(data.getTransforms().get(a), current_alignment);
+      }
 
-	
-	    return current_alignment - initial_alignment;
-	}
-	
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+      for (int a = 0; a < data.getTwist().size(); ++a)
+      {
+         current_alignment += geometry_msgs.msg.dds.TwistPubSubType.getCdrSerializedSize(data.getTwist().get(a), current_alignment);
+      }
+
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+      for (int a = 0; a < data.getWrench().size(); ++a)
+      {
+         current_alignment += geometry_msgs.msg.dds.WrenchPubSubType.getCdrSerializedSize(data.getWrench().get(a), current_alignment);
+      }
+
+      return current_alignment - initial_alignment;
+   }
+
    public static void write(sensor_msgs.msg.dds.MultiDOFJointState data, us.ihmc.idl.CDR cdr)
    {
 
-	    std_msgs.msg.dds.HeaderPubSubType.write(data.getHeader(), cdr);
+      std_msgs.msg.dds.HeaderPubSubType.write(data.getHeader(), cdr);
 
-	    if(data.getJoint_names().size() <= 100)
-	    cdr.write_type_e(data.getJoint_names());else
-	        throw new RuntimeException("joint_names field exceeds the maximum length");
+      if (data.getJoint_names().size() <= 100)
+         cdr.write_type_e(data.getJoint_names());
+      else
+         throw new RuntimeException("joint_names field exceeds the maximum length");
 
-	    if(data.getTransforms().size() <= 100)
-	    cdr.write_type_e(data.getTransforms());else
-	        throw new RuntimeException("transforms field exceeds the maximum length");
+      if (data.getTransforms().size() <= 100)
+         cdr.write_type_e(data.getTransforms());
+      else
+         throw new RuntimeException("transforms field exceeds the maximum length");
 
-	    if(data.getTwist().size() <= 100)
-	    cdr.write_type_e(data.getTwist());else
-	        throw new RuntimeException("twist field exceeds the maximum length");
+      if (data.getTwist().size() <= 100)
+         cdr.write_type_e(data.getTwist());
+      else
+         throw new RuntimeException("twist field exceeds the maximum length");
 
-	    if(data.getWrench().size() <= 100)
-	    cdr.write_type_e(data.getWrench());else
-	        throw new RuntimeException("wrench field exceeds the maximum length");
+      if (data.getWrench().size() <= 100)
+         cdr.write_type_e(data.getWrench());
+      else
+         throw new RuntimeException("wrench field exceeds the maximum length");
    }
 
    public static void read(sensor_msgs.msg.dds.MultiDOFJointState data, us.ihmc.idl.CDR cdr)
    {
 
-	    	std_msgs.msg.dds.HeaderPubSubType.read(data.getHeader(), cdr);	
+      std_msgs.msg.dds.HeaderPubSubType.read(data.getHeader(), cdr);
 
-	    	cdr.read_type_e(data.getJoint_names());	
+      cdr.read_type_e(data.getJoint_names());
 
-	    	cdr.read_type_e(data.getTransforms());	
+      cdr.read_type_e(data.getTransforms());
 
-	    	cdr.read_type_e(data.getTwist());	
+      cdr.read_type_e(data.getTwist());
 
-	    	cdr.read_type_e(data.getWrench());	
+      cdr.read_type_e(data.getWrench());
    }
-   
-	@Override
-	public final void serialize(sensor_msgs.msg.dds.MultiDOFJointState data, us.ihmc.idl.InterchangeSerializer ser)
-	{
-			    ser.write_type_a("header", new std_msgs.msg.dds.HeaderPubSubType(), data.getHeader());
 
-			    
-			    ser.write_type_e("joint_names", data.getJoint_names());
-			    
-			    ser.write_type_e("transforms", data.getTransforms());
-			    
-			    ser.write_type_e("twist", data.getTwist());
-			    
-			    ser.write_type_e("wrench", data.getWrench());
-			    
-	}
-	
-	@Override
-	public final void deserialize(us.ihmc.idl.InterchangeSerializer ser, sensor_msgs.msg.dds.MultiDOFJointState data)
-	{
-	    			ser.read_type_a("header", new std_msgs.msg.dds.HeaderPubSubType(), data.getHeader());
-	    	
-	    	    
-	    			ser.read_type_e("joint_names", data.getJoint_names());	
-	    	    
-	    			ser.read_type_e("transforms", data.getTransforms());	
-	    	    
-	    			ser.read_type_e("twist", data.getTwist());	
-	    	    
-	    			ser.read_type_e("wrench", data.getWrench());	
-	    	    
-	}
+   @Override
+   public final void serialize(sensor_msgs.msg.dds.MultiDOFJointState data, us.ihmc.idl.InterchangeSerializer ser)
+   {
+      ser.write_type_a("header", new std_msgs.msg.dds.HeaderPubSubType(), data.getHeader());
+
+      ser.write_type_e("joint_names", data.getJoint_names());
+
+      ser.write_type_e("transforms", data.getTransforms());
+
+      ser.write_type_e("twist", data.getTwist());
+
+      ser.write_type_e("wrench", data.getWrench());
+
+   }
+
+   @Override
+   public final void deserialize(us.ihmc.idl.InterchangeSerializer ser, sensor_msgs.msg.dds.MultiDOFJointState data)
+   {
+      ser.read_type_a("header", new std_msgs.msg.dds.HeaderPubSubType(), data.getHeader());
+
+      ser.read_type_e("joint_names", data.getJoint_names());
+
+      ser.read_type_e("transforms", data.getTransforms());
+
+      ser.read_type_e("twist", data.getTwist());
+
+      ser.read_type_e("wrench", data.getWrench());
+
+   }
 
    public static void staticCopy(sensor_msgs.msg.dds.MultiDOFJointState src, sensor_msgs.msg.dds.MultiDOFJointState dest)
    {
       dest.set(src);
    }
-   
-   
+
    @Override
    public sensor_msgs.msg.dds.MultiDOFJointState createData()
    {
       return new sensor_msgs.msg.dds.MultiDOFJointState();
    }
-      
 
    @Override
    public int getTypeSize()
@@ -199,26 +200,25 @@ public class MultiDOFJointStatePubSubType implements us.ihmc.pubsub.TopicDataTyp
    {
       return name;
    }
-   
+
    public void serialize(sensor_msgs.msg.dds.MultiDOFJointState data, us.ihmc.idl.CDR cdr)
-	{
-		write(data, cdr);
-	}
+   {
+      write(data, cdr);
+   }
 
    public void deserialize(sensor_msgs.msg.dds.MultiDOFJointState data, us.ihmc.idl.CDR cdr)
    {
-        read(data, cdr);
+      read(data, cdr);
    }
-   
+
    public void copy(sensor_msgs.msg.dds.MultiDOFJointState src, sensor_msgs.msg.dds.MultiDOFJointState dest)
    {
       staticCopy(src, dest);
-   }	
+   }
 
-   
    @Override
    public MultiDOFJointStatePubSubType newInstance()
    {
-   	  return new MultiDOFJointStatePubSubType();
+      return new MultiDOFJointStatePubSubType();
    }
 }
