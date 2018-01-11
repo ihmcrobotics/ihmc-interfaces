@@ -10,6 +10,9 @@ package std_msgs.msg.dds;
  */
 public class UInt16MultiArray
 {
+   private std_msgs.msg.dds.MultiArrayLayout layout_;
+   private us.ihmc.idl.IDLSequence.Integer data_;
+
    public UInt16MultiArray()
    {
       layout_ = new std_msgs.msg.dds.MultiArrayLayout();
@@ -68,8 +71,5 @@ public class UInt16MultiArray
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.MultiArrayLayout layout_;
-   private us.ihmc.idl.IDLSequence.Integer data_;
 
 }

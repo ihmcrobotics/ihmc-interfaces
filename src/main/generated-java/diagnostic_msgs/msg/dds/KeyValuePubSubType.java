@@ -11,29 +11,11 @@ package diagnostic_msgs.msg.dds;
 public class KeyValuePubSubType implements us.ihmc.pubsub.TopicDataType<diagnostic_msgs.msg.dds.KeyValue>
 {
    public static final java.lang.String name = "diagnostic_msgs::msg::dds_::KeyValue_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public KeyValuePubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(diagnostic_msgs.msg.dds.KeyValue data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, diagnostic_msgs.msg.dds.KeyValue data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -90,6 +72,27 @@ public class KeyValuePubSubType implements us.ihmc.pubsub.TopicDataType<diagnost
       cdr.read_type_d(data.getValue());
    }
 
+   public static void staticCopy(diagnostic_msgs.msg.dds.KeyValue src, diagnostic_msgs.msg.dds.KeyValue dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(diagnostic_msgs.msg.dds.KeyValue data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, diagnostic_msgs.msg.dds.KeyValue data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(diagnostic_msgs.msg.dds.KeyValue data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -106,11 +109,6 @@ public class KeyValuePubSubType implements us.ihmc.pubsub.TopicDataType<diagnost
 
       ser.read_type_d("value", data.getValue());
 
-   }
-
-   public static void staticCopy(diagnostic_msgs.msg.dds.KeyValue src, diagnostic_msgs.msg.dds.KeyValue dest)
-   {
-      dest.set(src);
    }
 
    @Override

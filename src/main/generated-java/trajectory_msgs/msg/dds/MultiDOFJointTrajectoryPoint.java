@@ -10,6 +10,11 @@ package trajectory_msgs.msg.dds;
  */
 public class MultiDOFJointTrajectoryPoint
 {
+   private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.transform.QuaternionBasedTransform> transforms_;
+   private us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Twist> velocities_;
+   private us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Twist> accelerations_;
+   private builtin_interfaces.msg.dds.Duration time_from_start_;
+
    public MultiDOFJointTrajectoryPoint()
    {
       transforms_ = new us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.transform.QuaternionBasedTransform>(100,
@@ -101,10 +106,5 @@ public class MultiDOFJointTrajectoryPoint
       builder.append("}");
       return builder.toString();
    }
-
-   private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.transform.QuaternionBasedTransform> transforms_;
-   private us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Twist> velocities_;
-   private us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Twist> accelerations_;
-   private builtin_interfaces.msg.dds.Duration time_from_start_;
 
 }

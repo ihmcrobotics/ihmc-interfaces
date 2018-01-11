@@ -10,6 +10,9 @@ package geometry_msgs.msg.dds;
  */
 public class PoseStamped
 {
+   private std_msgs.msg.dds.Header header_;
+   private us.ihmc.euclid.geometry.Pose3D pose_;
+
    public PoseStamped()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -68,8 +71,5 @@ public class PoseStamped
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private us.ihmc.euclid.geometry.Pose3D pose_;
 
 }

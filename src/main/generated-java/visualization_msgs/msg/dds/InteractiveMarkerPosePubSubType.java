@@ -11,31 +11,11 @@ package visualization_msgs.msg.dds;
 public class InteractiveMarkerPosePubSubType implements us.ihmc.pubsub.TopicDataType<visualization_msgs.msg.dds.InteractiveMarkerPose>
 {
    public static final java.lang.String name = "visualization_msgs::msg::dds_::InteractiveMarkerPose_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public InteractiveMarkerPosePubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(visualization_msgs.msg.dds.InteractiveMarkerPose data, us.ihmc.pubsub.common.SerializedPayload serializedPayload)
-         throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, visualization_msgs.msg.dds.InteractiveMarkerPose data)
-         throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -93,6 +73,29 @@ public class InteractiveMarkerPosePubSubType implements us.ihmc.pubsub.TopicData
       cdr.read_type_d(data.getName());
    }
 
+   public static void staticCopy(visualization_msgs.msg.dds.InteractiveMarkerPose src, visualization_msgs.msg.dds.InteractiveMarkerPose dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(visualization_msgs.msg.dds.InteractiveMarkerPose data, us.ihmc.pubsub.common.SerializedPayload serializedPayload)
+         throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, visualization_msgs.msg.dds.InteractiveMarkerPose data)
+         throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(visualization_msgs.msg.dds.InteractiveMarkerPose data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -113,11 +116,6 @@ public class InteractiveMarkerPosePubSubType implements us.ihmc.pubsub.TopicData
 
       ser.read_type_d("name", data.getName());
 
-   }
-
-   public static void staticCopy(visualization_msgs.msg.dds.InteractiveMarkerPose src, visualization_msgs.msg.dds.InteractiveMarkerPose dest)
-   {
-      dest.set(src);
    }
 
    @Override

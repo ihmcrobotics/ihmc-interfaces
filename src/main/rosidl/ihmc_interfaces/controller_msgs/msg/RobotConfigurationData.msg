@@ -13,7 +13,9 @@ geometry_msgs/Quaternion root_orientation
 geometry_msgs/Vector3 pelvis_linear_acceleration
 std_msgs/Float32MultiArray moment_and_force_data_all_force_sensors
 controller_msgs/IMUPacket[] imu_sensor_data
-byte robot_motion_status
+int32 robot_motion_status
+int32 STANDING = 3
+int32 IN_MOTION = 4
 
 int32 last_received_packet_type_id
 int64 last_received_packet_unique_id

@@ -10,6 +10,9 @@ package geometry_msgs.msg.dds;
  */
 public class PoseWithCovariance
 {
+   private us.ihmc.euclid.geometry.Pose3D pose_;
+   private double[] covariance_;
+
    public PoseWithCovariance()
    {
       pose_ = new us.ihmc.euclid.geometry.Pose3D();
@@ -77,8 +80,5 @@ public class PoseWithCovariance
       builder.append("}");
       return builder.toString();
    }
-
-   private us.ihmc.euclid.geometry.Pose3D pose_;
-   private double[] covariance_;
 
 }

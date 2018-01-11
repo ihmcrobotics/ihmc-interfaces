@@ -10,6 +10,14 @@ package visualization_msgs.msg.dds;
  */
 public class InteractiveMarker
 {
+   private std_msgs.msg.dds.Header header_;
+   private us.ihmc.euclid.geometry.Pose3D pose_;
+   private java.lang.StringBuilder name_;
+   private java.lang.StringBuilder description_;
+   private float scale_;
+   private us.ihmc.idl.IDLSequence.Object<visualization_msgs.msg.dds.MenuEntry> menu_entries_;
+   private us.ihmc.idl.IDLSequence.Object<visualization_msgs.msg.dds.InteractiveMarkerControl> controls_;
+
    public InteractiveMarker()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -48,12 +56,6 @@ public class InteractiveMarker
       return pose_;
    }
 
-   public void setName(String name)
-   {
-      name_.setLength(0);
-      name_.append(name);
-   }
-
    public java.lang.String getNameAsString()
    {
       return getName().toString();
@@ -64,10 +66,10 @@ public class InteractiveMarker
       return name_;
    }
 
-   public void setDescription(String description)
+   public void setName(String name)
    {
-      description_.setLength(0);
-      description_.append(description);
+      name_.setLength(0);
+      name_.append(name);
    }
 
    public java.lang.String getDescriptionAsString()
@@ -80,14 +82,20 @@ public class InteractiveMarker
       return description_;
    }
 
-   public void setScale(float scale)
+   public void setDescription(String description)
    {
-      scale_ = scale;
+      description_.setLength(0);
+      description_.append(description);
    }
 
    public float getScale()
    {
       return scale_;
+   }
+
+   public void setScale(float scale)
+   {
+      scale_ = scale;
    }
 
    public us.ihmc.idl.IDLSequence.Object<visualization_msgs.msg.dds.MenuEntry> getMenu_entries()
@@ -165,13 +173,5 @@ public class InteractiveMarker
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private us.ihmc.euclid.geometry.Pose3D pose_;
-   private java.lang.StringBuilder name_;
-   private java.lang.StringBuilder description_;
-   private float scale_;
-   private us.ihmc.idl.IDLSequence.Object<visualization_msgs.msg.dds.MenuEntry> menu_entries_;
-   private us.ihmc.idl.IDLSequence.Object<visualization_msgs.msg.dds.InteractiveMarkerControl> controls_;
 
 }

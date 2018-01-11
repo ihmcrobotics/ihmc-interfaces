@@ -11,29 +11,11 @@ package nav_msgs.msg.dds;
 public class PathPubSubType implements us.ihmc.pubsub.TopicDataType<nav_msgs.msg.dds.Path>
 {
    public static final java.lang.String name = "nav_msgs::msg::dds_::Path_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public PathPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(nav_msgs.msg.dds.Path data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, nav_msgs.msg.dds.Path data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -93,6 +75,27 @@ public class PathPubSubType implements us.ihmc.pubsub.TopicDataType<nav_msgs.msg
       cdr.read_type_e(data.getPoses());
    }
 
+   public static void staticCopy(nav_msgs.msg.dds.Path src, nav_msgs.msg.dds.Path dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(nav_msgs.msg.dds.Path data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, nav_msgs.msg.dds.Path data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(nav_msgs.msg.dds.Path data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -109,11 +112,6 @@ public class PathPubSubType implements us.ihmc.pubsub.TopicDataType<nav_msgs.msg
 
       ser.read_type_e("poses", data.getPoses());
 
-   }
-
-   public static void staticCopy(nav_msgs.msg.dds.Path src, nav_msgs.msg.dds.Path dest)
-   {
-      dest.set(src);
    }
 
    @Override

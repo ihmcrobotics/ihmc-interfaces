@@ -10,6 +10,12 @@ package sensor_msgs.msg.dds;
  */
 public class RegionOfInterest
 {
+   private long x_offset_;
+   private long y_offset_;
+   private long height_;
+   private long width_;
+   private boolean do_rectify_;
+
    public RegionOfInterest()
    {
 
@@ -25,19 +31,14 @@ public class RegionOfInterest
 
    }
 
-   public void setX_offset(long x_offset)
-   {
-      x_offset_ = x_offset;
-   }
-
    public long getX_offset()
    {
       return x_offset_;
    }
 
-   public void setY_offset(long y_offset)
+   public void setX_offset(long x_offset)
    {
-      y_offset_ = y_offset;
+      x_offset_ = x_offset;
    }
 
    public long getY_offset()
@@ -45,9 +46,9 @@ public class RegionOfInterest
       return y_offset_;
    }
 
-   public void setHeight(long height)
+   public void setY_offset(long y_offset)
    {
-      height_ = height;
+      y_offset_ = y_offset;
    }
 
    public long getHeight()
@@ -55,9 +56,9 @@ public class RegionOfInterest
       return height_;
    }
 
-   public void setWidth(long width)
+   public void setHeight(long height)
    {
-      width_ = width;
+      height_ = height;
    }
 
    public long getWidth()
@@ -65,14 +66,19 @@ public class RegionOfInterest
       return width_;
    }
 
-   public void setDo_rectify(boolean do_rectify)
+   public void setWidth(long width)
    {
-      do_rectify_ = do_rectify;
+      width_ = width;
    }
 
    public boolean getDo_rectify()
    {
       return do_rectify_;
+   }
+
+   public void setDo_rectify(boolean do_rectify)
+   {
+      do_rectify_ = do_rectify;
    }
 
    @Override
@@ -128,11 +134,5 @@ public class RegionOfInterest
       builder.append("}");
       return builder.toString();
    }
-
-   private long x_offset_;
-   private long y_offset_;
-   private long height_;
-   private long width_;
-   private boolean do_rectify_;
 
 }

@@ -10,6 +10,9 @@ package geometry_msgs.msg.dds;
  */
 public class AccelWithCovariance
 {
+   private geometry_msgs.msg.dds.Accel accel_;
+   private double[] covariance_;
+
    public AccelWithCovariance()
    {
       accel_ = new geometry_msgs.msg.dds.Accel();
@@ -77,8 +80,5 @@ public class AccelWithCovariance
       builder.append("}");
       return builder.toString();
    }
-
-   private geometry_msgs.msg.dds.Accel accel_;
-   private double[] covariance_;
 
 }

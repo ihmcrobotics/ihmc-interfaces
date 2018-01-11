@@ -10,6 +10,9 @@ package geometry_msgs.msg.dds;
  */
 public class AccelStamped
 {
+   private std_msgs.msg.dds.Header header_;
+   private geometry_msgs.msg.dds.Accel accel_;
+
    public AccelStamped()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -68,8 +71,5 @@ public class AccelStamped
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private geometry_msgs.msg.dds.Accel accel_;
 
 }

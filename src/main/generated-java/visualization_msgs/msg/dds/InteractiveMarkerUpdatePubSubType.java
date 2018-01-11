@@ -11,31 +11,11 @@ package visualization_msgs.msg.dds;
 public class InteractiveMarkerUpdatePubSubType implements us.ihmc.pubsub.TopicDataType<visualization_msgs.msg.dds.InteractiveMarkerUpdate>
 {
    public static final java.lang.String name = "visualization_msgs::msg::dds_::InteractiveMarkerUpdate_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public InteractiveMarkerUpdatePubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(visualization_msgs.msg.dds.InteractiveMarkerUpdate data, us.ihmc.pubsub.common.SerializedPayload serializedPayload)
-         throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, visualization_msgs.msg.dds.InteractiveMarkerUpdate data)
-         throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -154,6 +134,29 @@ public class InteractiveMarkerUpdatePubSubType implements us.ihmc.pubsub.TopicDa
       cdr.read_type_e(data.getErases());
    }
 
+   public static void staticCopy(visualization_msgs.msg.dds.InteractiveMarkerUpdate src, visualization_msgs.msg.dds.InteractiveMarkerUpdate dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(visualization_msgs.msg.dds.InteractiveMarkerUpdate data, us.ihmc.pubsub.common.SerializedPayload serializedPayload)
+         throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, visualization_msgs.msg.dds.InteractiveMarkerUpdate data)
+         throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(visualization_msgs.msg.dds.InteractiveMarkerUpdate data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -186,11 +189,6 @@ public class InteractiveMarkerUpdatePubSubType implements us.ihmc.pubsub.TopicDa
 
       ser.read_type_e("erases", data.getErases());
 
-   }
-
-   public static void staticCopy(visualization_msgs.msg.dds.InteractiveMarkerUpdate src, visualization_msgs.msg.dds.InteractiveMarkerUpdate dest)
-   {
-      dest.set(src);
    }
 
    @Override

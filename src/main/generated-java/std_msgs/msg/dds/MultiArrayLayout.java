@@ -10,6 +10,9 @@ package std_msgs.msg.dds;
  */
 public class MultiArrayLayout
 {
+   private us.ihmc.idl.IDLSequence.Object<std_msgs.msg.dds.MultiArrayDimension> dim_;
+   private long data_offset_;
+
    public MultiArrayLayout()
    {
       dim_ = new us.ihmc.idl.IDLSequence.Object<std_msgs.msg.dds.MultiArrayDimension>(100, std_msgs.msg.dds.MultiArrayDimension.class,
@@ -29,14 +32,14 @@ public class MultiArrayLayout
       return dim_;
    }
 
-   public void setData_offset(long data_offset)
-   {
-      data_offset_ = data_offset;
-   }
-
    public long getData_offset()
    {
       return data_offset_;
+   }
+
+   public void setData_offset(long data_offset)
+   {
+      data_offset_ = data_offset;
    }
 
    @Override
@@ -74,8 +77,5 @@ public class MultiArrayLayout
       builder.append("}");
       return builder.toString();
    }
-
-   private us.ihmc.idl.IDLSequence.Object<std_msgs.msg.dds.MultiArrayDimension> dim_;
-   private long data_offset_;
 
 }

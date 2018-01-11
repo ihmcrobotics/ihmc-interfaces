@@ -11,29 +11,11 @@ package actionlib_msgs.msg.dds;
 public class GoalIDPubSubType implements us.ihmc.pubsub.TopicDataType<actionlib_msgs.msg.dds.GoalID>
 {
    public static final java.lang.String name = "actionlib_msgs::msg::dds_::GoalID_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public GoalIDPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(actionlib_msgs.msg.dds.GoalID data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, actionlib_msgs.msg.dds.GoalID data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -85,6 +67,27 @@ public class GoalIDPubSubType implements us.ihmc.pubsub.TopicDataType<actionlib_
       cdr.read_type_d(data.getId());
    }
 
+   public static void staticCopy(actionlib_msgs.msg.dds.GoalID src, actionlib_msgs.msg.dds.GoalID dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(actionlib_msgs.msg.dds.GoalID data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, actionlib_msgs.msg.dds.GoalID data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(actionlib_msgs.msg.dds.GoalID data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -101,11 +104,6 @@ public class GoalIDPubSubType implements us.ihmc.pubsub.TopicDataType<actionlib_
 
       ser.read_type_d("id", data.getId());
 
-   }
-
-   public static void staticCopy(actionlib_msgs.msg.dds.GoalID src, actionlib_msgs.msg.dds.GoalID dest)
-   {
-      dest.set(src);
    }
 
    @Override

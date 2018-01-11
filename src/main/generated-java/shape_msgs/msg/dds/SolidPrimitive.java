@@ -10,6 +10,9 @@ package shape_msgs.msg.dds;
  */
 public class SolidPrimitive
 {
+   private byte type_;
+   private us.ihmc.idl.IDLSequence.Double dimensions_;
+
    public SolidPrimitive()
    {
       dimensions_ = new us.ihmc.idl.IDLSequence.Double(3, "type_6");
@@ -22,14 +25,14 @@ public class SolidPrimitive
       dimensions_.set(other.dimensions_);
    }
 
-   public void setType(byte type)
-   {
-      type_ = type;
-   }
-
    public byte getType()
    {
       return type_;
+   }
+
+   public void setType(byte type)
+   {
+      type_ = type;
    }
 
    public us.ihmc.idl.IDLSequence.Double getDimensions()
@@ -72,8 +75,5 @@ public class SolidPrimitive
       builder.append("}");
       return builder.toString();
    }
-
-   private byte type_;
-   private us.ihmc.idl.IDLSequence.Double dimensions_;
 
 }

@@ -10,6 +10,9 @@ package sensor_msgs.msg.dds;
  */
 public class ChannelFloat32
 {
+   private java.lang.StringBuilder name_;
+   private us.ihmc.idl.IDLSequence.Float values_;
+
    public ChannelFloat32()
    {
       name_ = new java.lang.StringBuilder(255);
@@ -24,12 +27,6 @@ public class ChannelFloat32
       values_.set(other.values_);
    }
 
-   public void setName(String name)
-   {
-      name_.setLength(0);
-      name_.append(name);
-   }
-
    public java.lang.String getNameAsString()
    {
       return getName().toString();
@@ -38,6 +35,12 @@ public class ChannelFloat32
    public java.lang.StringBuilder getName()
    {
       return name_;
+   }
+
+   public void setName(String name)
+   {
+      name_.setLength(0);
+      name_.append(name);
    }
 
    public us.ihmc.idl.IDLSequence.Float getValues()
@@ -80,8 +83,5 @@ public class ChannelFloat32
       builder.append("}");
       return builder.toString();
    }
-
-   private java.lang.StringBuilder name_;
-   private us.ihmc.idl.IDLSequence.Float values_;
 
 }

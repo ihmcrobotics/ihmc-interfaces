@@ -11,29 +11,11 @@ package std_msgs.msg.dds;
 public class Float64MultiArrayPubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.msg.dds.Float64MultiArray>
 {
    public static final java.lang.String name = "std_msgs::msg::dds_::Float64MultiArray_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public Float64MultiArrayPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(std_msgs.msg.dds.Float64MultiArray data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, std_msgs.msg.dds.Float64MultiArray data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -87,6 +69,27 @@ public class Float64MultiArrayPubSubType implements us.ihmc.pubsub.TopicDataType
       cdr.read_type_e(data.getData());
    }
 
+   public static void staticCopy(std_msgs.msg.dds.Float64MultiArray src, std_msgs.msg.dds.Float64MultiArray dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(std_msgs.msg.dds.Float64MultiArray data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, std_msgs.msg.dds.Float64MultiArray data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(std_msgs.msg.dds.Float64MultiArray data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -103,11 +106,6 @@ public class Float64MultiArrayPubSubType implements us.ihmc.pubsub.TopicDataType
 
       ser.read_type_e("data", data.getData());
 
-   }
-
-   public static void staticCopy(std_msgs.msg.dds.Float64MultiArray src, std_msgs.msg.dds.Float64MultiArray dest)
-   {
-      dest.set(src);
    }
 
    @Override

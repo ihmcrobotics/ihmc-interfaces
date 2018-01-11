@@ -10,6 +10,10 @@ package geometry_msgs.msg.dds;
  */
 public class TransformStamped
 {
+   private std_msgs.msg.dds.Header header_;
+   private java.lang.StringBuilder child_frame_id_;
+   private us.ihmc.euclid.transform.QuaternionBasedTransform transform_;
+
    public TransformStamped()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -31,12 +35,6 @@ public class TransformStamped
       return header_;
    }
 
-   public void setChild_frame_id(String child_frame_id)
-   {
-      child_frame_id_.setLength(0);
-      child_frame_id_.append(child_frame_id);
-   }
-
    public java.lang.String getChild_frame_idAsString()
    {
       return getChild_frame_id().toString();
@@ -45,6 +43,12 @@ public class TransformStamped
    public java.lang.StringBuilder getChild_frame_id()
    {
       return child_frame_id_;
+   }
+
+   public void setChild_frame_id(String child_frame_id)
+   {
+      child_frame_id_.setLength(0);
+      child_frame_id_.append(child_frame_id);
    }
 
    public us.ihmc.euclid.transform.QuaternionBasedTransform getTransform()
@@ -93,9 +97,5 @@ public class TransformStamped
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private java.lang.StringBuilder child_frame_id_;
-   private us.ihmc.euclid.transform.QuaternionBasedTransform transform_;
 
 }

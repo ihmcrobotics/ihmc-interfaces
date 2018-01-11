@@ -10,6 +10,12 @@ package sensor_msgs.msg.dds;
  */
 public class MultiDOFJointState
 {
+   private std_msgs.msg.dds.Header header_;
+   private us.ihmc.idl.IDLSequence.StringBuilderHolder joint_names_;
+   private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.transform.QuaternionBasedTransform> transforms_;
+   private us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Twist> twist_;
+   private us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Wrench> wrench_;
+
    public MultiDOFJointState()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -113,11 +119,5 @@ public class MultiDOFJointState
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private us.ihmc.idl.IDLSequence.StringBuilderHolder joint_names_;
-   private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.transform.QuaternionBasedTransform> transforms_;
-   private us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Twist> twist_;
-   private us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Wrench> wrench_;
 
 }

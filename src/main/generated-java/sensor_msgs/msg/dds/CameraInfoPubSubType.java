@@ -11,29 +11,11 @@ package sensor_msgs.msg.dds;
 public class CameraInfoPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_msgs.msg.dds.CameraInfo>
 {
    public static final java.lang.String name = "sensor_msgs::msg::dds_::CameraInfo_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public CameraInfoPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(sensor_msgs.msg.dds.CameraInfo data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, sensor_msgs.msg.dds.CameraInfo data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -180,6 +162,27 @@ public class CameraInfoPubSubType implements us.ihmc.pubsub.TopicDataType<sensor
       sensor_msgs.msg.dds.RegionOfInterestPubSubType.read(data.getRoi(), cdr);
    }
 
+   public static void staticCopy(sensor_msgs.msg.dds.CameraInfo src, sensor_msgs.msg.dds.CameraInfo dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(sensor_msgs.msg.dds.CameraInfo data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, sensor_msgs.msg.dds.CameraInfo data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(sensor_msgs.msg.dds.CameraInfo data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -229,11 +232,6 @@ public class CameraInfoPubSubType implements us.ihmc.pubsub.TopicDataType<sensor
 
       ser.read_type_a("roi", new sensor_msgs.msg.dds.RegionOfInterestPubSubType(), data.getRoi());
 
-   }
-
-   public static void staticCopy(sensor_msgs.msg.dds.CameraInfo src, sensor_msgs.msg.dds.CameraInfo dest)
-   {
-      dest.set(src);
    }
 
    @Override

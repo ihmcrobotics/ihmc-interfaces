@@ -10,6 +10,10 @@ package sensor_msgs.msg.dds;
  */
 public class RelativeHumidity
 {
+   private std_msgs.msg.dds.Header header_;
+   private double relative_humidity_;
+   private double variance_;
+
    public RelativeHumidity()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -29,24 +33,24 @@ public class RelativeHumidity
       return header_;
    }
 
-   public void setRelative_humidity(double relative_humidity)
-   {
-      relative_humidity_ = relative_humidity;
-   }
-
    public double getRelative_humidity()
    {
       return relative_humidity_;
    }
 
-   public void setVariance(double variance)
+   public void setRelative_humidity(double relative_humidity)
    {
-      variance_ = variance;
+      relative_humidity_ = relative_humidity;
    }
 
    public double getVariance()
    {
       return variance_;
+   }
+
+   public void setVariance(double variance)
+   {
+      variance_ = variance;
    }
 
    @Override
@@ -90,9 +94,5 @@ public class RelativeHumidity
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private double relative_humidity_;
-   private double variance_;
 
 }

@@ -10,6 +10,9 @@ package controller_msgs.msg.dds;
  */
 public class AtlasRobotConfigurationData
 {
+   private controller_msgs.msg.dds.RobotConfigurationData robot_configuration_data_;
+   private controller_msgs.msg.dds.AtlasAuxiliaryRobotData atlas_auxiliary_robot_data_;
+
    public AtlasRobotConfigurationData()
    {
       robot_configuration_data_ = new controller_msgs.msg.dds.RobotConfigurationData();
@@ -68,8 +71,5 @@ public class AtlasRobotConfigurationData
       builder.append("}");
       return builder.toString();
    }
-
-   private controller_msgs.msg.dds.RobotConfigurationData robot_configuration_data_;
-   private controller_msgs.msg.dds.AtlasAuxiliaryRobotData atlas_auxiliary_robot_data_;
 
 }

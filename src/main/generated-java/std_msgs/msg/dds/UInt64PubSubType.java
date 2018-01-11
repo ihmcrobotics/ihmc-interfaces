@@ -11,29 +11,11 @@ package std_msgs.msg.dds;
 public class UInt64PubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.msg.dds.UInt64>
 {
    public static final java.lang.String name = "std_msgs::msg::dds_::UInt64_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public UInt64PubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(std_msgs.msg.dds.UInt64 data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, std_msgs.msg.dds.UInt64 data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -77,6 +59,27 @@ public class UInt64PubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.m
 
    }
 
+   public static void staticCopy(std_msgs.msg.dds.UInt64 src, std_msgs.msg.dds.UInt64 dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(std_msgs.msg.dds.UInt64 data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, std_msgs.msg.dds.UInt64 data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(std_msgs.msg.dds.UInt64 data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -89,11 +92,6 @@ public class UInt64PubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.m
    {
       data.setData(ser.read_type_12("data"));
 
-   }
-
-   public static void staticCopy(std_msgs.msg.dds.UInt64 src, std_msgs.msg.dds.UInt64 dest)
-   {
-      dest.set(src);
    }
 
    @Override

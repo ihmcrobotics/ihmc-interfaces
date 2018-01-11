@@ -11,31 +11,11 @@ package trajectory_msgs.msg.dds;
 public class MultiDOFJointTrajectoryPointPubSubType implements us.ihmc.pubsub.TopicDataType<trajectory_msgs.msg.dds.MultiDOFJointTrajectoryPoint>
 {
    public static final java.lang.String name = "trajectory_msgs::msg::dds_::MultiDOFJointTrajectoryPoint_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public MultiDOFJointTrajectoryPointPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(trajectory_msgs.msg.dds.MultiDOFJointTrajectoryPoint data, us.ihmc.pubsub.common.SerializedPayload serializedPayload)
-         throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, trajectory_msgs.msg.dds.MultiDOFJointTrajectoryPoint data)
-         throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -135,6 +115,29 @@ public class MultiDOFJointTrajectoryPointPubSubType implements us.ihmc.pubsub.To
       builtin_interfaces.msg.dds.DurationPubSubType.read(data.getTime_from_start(), cdr);
    }
 
+   public static void staticCopy(trajectory_msgs.msg.dds.MultiDOFJointTrajectoryPoint src, trajectory_msgs.msg.dds.MultiDOFJointTrajectoryPoint dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(trajectory_msgs.msg.dds.MultiDOFJointTrajectoryPoint data, us.ihmc.pubsub.common.SerializedPayload serializedPayload)
+         throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, trajectory_msgs.msg.dds.MultiDOFJointTrajectoryPoint data)
+         throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(trajectory_msgs.msg.dds.MultiDOFJointTrajectoryPoint data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -159,11 +162,6 @@ public class MultiDOFJointTrajectoryPointPubSubType implements us.ihmc.pubsub.To
 
       ser.read_type_a("time_from_start", new builtin_interfaces.msg.dds.DurationPubSubType(), data.getTime_from_start());
 
-   }
-
-   public static void staticCopy(trajectory_msgs.msg.dds.MultiDOFJointTrajectoryPoint src, trajectory_msgs.msg.dds.MultiDOFJointTrajectoryPoint dest)
-   {
-      dest.set(src);
    }
 
    @Override

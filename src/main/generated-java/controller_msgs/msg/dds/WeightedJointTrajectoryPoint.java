@@ -10,6 +10,9 @@ package controller_msgs.msg.dds;
  */
 public class WeightedJointTrajectoryPoint
 {
+   private trajectory_msgs.msg.dds.JointTrajectoryPoint point_;
+   private double weight_;
+
    public WeightedJointTrajectoryPoint()
    {
       point_ = new trajectory_msgs.msg.dds.JointTrajectoryPoint();
@@ -28,14 +31,14 @@ public class WeightedJointTrajectoryPoint
       return point_;
    }
 
-   public void setWeight(double weight)
-   {
-      weight_ = weight;
-   }
-
    public double getWeight()
    {
       return weight_;
+   }
+
+   public void setWeight(double weight)
+   {
+      weight_ = weight;
    }
 
    @Override
@@ -73,8 +76,5 @@ public class WeightedJointTrajectoryPoint
       builder.append("}");
       return builder.toString();
    }
-
-   private trajectory_msgs.msg.dds.JointTrajectoryPoint point_;
-   private double weight_;
 
 }

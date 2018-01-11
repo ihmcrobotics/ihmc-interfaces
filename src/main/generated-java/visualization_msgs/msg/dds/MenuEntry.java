@@ -10,6 +10,12 @@ package visualization_msgs.msg.dds;
  */
 public class MenuEntry
 {
+   private long id_;
+   private long parent_id_;
+   private java.lang.StringBuilder title_;
+   private java.lang.StringBuilder command_;
+   private byte command_type_;
+
    public MenuEntry()
    {
       title_ = new java.lang.StringBuilder(255);
@@ -29,19 +35,14 @@ public class MenuEntry
 
    }
 
-   public void setId(long id)
-   {
-      id_ = id;
-   }
-
    public long getId()
    {
       return id_;
    }
 
-   public void setParent_id(long parent_id)
+   public void setId(long id)
    {
-      parent_id_ = parent_id;
+      id_ = id;
    }
 
    public long getParent_id()
@@ -49,10 +50,9 @@ public class MenuEntry
       return parent_id_;
    }
 
-   public void setTitle(String title)
+   public void setParent_id(long parent_id)
    {
-      title_.setLength(0);
-      title_.append(title);
+      parent_id_ = parent_id;
    }
 
    public java.lang.String getTitleAsString()
@@ -65,10 +65,10 @@ public class MenuEntry
       return title_;
    }
 
-   public void setCommand(String command)
+   public void setTitle(String title)
    {
-      command_.setLength(0);
-      command_.append(command);
+      title_.setLength(0);
+      title_.append(title);
    }
 
    public java.lang.String getCommandAsString()
@@ -81,14 +81,20 @@ public class MenuEntry
       return command_;
    }
 
-   public void setCommand_type(byte command_type)
+   public void setCommand(String command)
    {
-      command_type_ = command_type;
+      command_.setLength(0);
+      command_.append(command);
    }
 
    public byte getCommand_type()
    {
       return command_type_;
+   }
+
+   public void setCommand_type(byte command_type)
+   {
+      command_type_ = command_type;
    }
 
    @Override
@@ -144,11 +150,5 @@ public class MenuEntry
       builder.append("}");
       return builder.toString();
    }
-
-   private long id_;
-   private long parent_id_;
-   private java.lang.StringBuilder title_;
-   private java.lang.StringBuilder command_;
-   private byte command_type_;
 
 }

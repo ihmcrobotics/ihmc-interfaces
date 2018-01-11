@@ -10,6 +10,9 @@ package geometry_msgs.msg.dds;
  */
 public class PoseArray
 {
+   private std_msgs.msg.dds.Header header_;
+   private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.geometry.Pose3D> poses_;
+
    public PoseArray()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -69,8 +72,5 @@ public class PoseArray
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.geometry.Pose3D> poses_;
 
 }

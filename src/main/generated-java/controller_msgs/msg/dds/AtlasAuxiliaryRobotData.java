@@ -10,6 +10,28 @@ package controller_msgs.msg.dds;
  */
 public class AtlasAuxiliaryRobotData
 {
+   private us.ihmc.idl.IDLSequence.Float electric_joint_temperatures_;
+   private us.ihmc.idl.IDLSequence.Float electric_joint_currents_;
+   private us.ihmc.idl.IDLSequence.Boolean electric_joint_enabled_array_;
+   private us.ihmc.idl.IDLSequence.Long raw_imu_timestamps_;
+   private us.ihmc.idl.IDLSequence.Long raw_imu_packets_counts_;
+   private std_msgs.msg.dds.Float32MultiArray raw_imu_rates_;
+   private std_msgs.msg.dds.Float32MultiArray raw_imu_deltas_;
+   private boolean battery_charging_;
+   private float battery_voltage_;
+   private float battery_current_;
+   private float remaining_battery_time_;
+   private float remaining_amp_hours_;
+   private float remaining_charge_percentage_;
+   private long battery_cycle_count_;
+   private float pump_inlet_pressure_;
+   private float pump_supply_pressure_;
+   private float air_sump_pressure_;
+   private float pump_supply_temperature_;
+   private float pump_rpm_;
+   private float motor_temperature_;
+   private float motor_driver_temperature_;
+
    public AtlasAuxiliaryRobotData()
    {
       electric_joint_temperatures_ = new us.ihmc.idl.IDLSequence.Float(100, "type_5");
@@ -83,19 +105,14 @@ public class AtlasAuxiliaryRobotData
       return raw_imu_deltas_;
    }
 
-   public void setBattery_charging(boolean battery_charging)
-   {
-      battery_charging_ = battery_charging;
-   }
-
    public boolean getBattery_charging()
    {
       return battery_charging_;
    }
 
-   public void setBattery_voltage(float battery_voltage)
+   public void setBattery_charging(boolean battery_charging)
    {
-      battery_voltage_ = battery_voltage;
+      battery_charging_ = battery_charging;
    }
 
    public float getBattery_voltage()
@@ -103,9 +120,9 @@ public class AtlasAuxiliaryRobotData
       return battery_voltage_;
    }
 
-   public void setBattery_current(float battery_current)
+   public void setBattery_voltage(float battery_voltage)
    {
-      battery_current_ = battery_current;
+      battery_voltage_ = battery_voltage;
    }
 
    public float getBattery_current()
@@ -113,9 +130,9 @@ public class AtlasAuxiliaryRobotData
       return battery_current_;
    }
 
-   public void setRemaining_battery_time(float remaining_battery_time)
+   public void setBattery_current(float battery_current)
    {
-      remaining_battery_time_ = remaining_battery_time;
+      battery_current_ = battery_current;
    }
 
    public float getRemaining_battery_time()
@@ -123,9 +140,9 @@ public class AtlasAuxiliaryRobotData
       return remaining_battery_time_;
    }
 
-   public void setRemaining_amp_hours(float remaining_amp_hours)
+   public void setRemaining_battery_time(float remaining_battery_time)
    {
-      remaining_amp_hours_ = remaining_amp_hours;
+      remaining_battery_time_ = remaining_battery_time;
    }
 
    public float getRemaining_amp_hours()
@@ -133,9 +150,9 @@ public class AtlasAuxiliaryRobotData
       return remaining_amp_hours_;
    }
 
-   public void setRemaining_charge_percentage(float remaining_charge_percentage)
+   public void setRemaining_amp_hours(float remaining_amp_hours)
    {
-      remaining_charge_percentage_ = remaining_charge_percentage;
+      remaining_amp_hours_ = remaining_amp_hours;
    }
 
    public float getRemaining_charge_percentage()
@@ -143,9 +160,9 @@ public class AtlasAuxiliaryRobotData
       return remaining_charge_percentage_;
    }
 
-   public void setBattery_cycle_count(long battery_cycle_count)
+   public void setRemaining_charge_percentage(float remaining_charge_percentage)
    {
-      battery_cycle_count_ = battery_cycle_count;
+      remaining_charge_percentage_ = remaining_charge_percentage;
    }
 
    public long getBattery_cycle_count()
@@ -153,9 +170,9 @@ public class AtlasAuxiliaryRobotData
       return battery_cycle_count_;
    }
 
-   public void setPump_inlet_pressure(float pump_inlet_pressure)
+   public void setBattery_cycle_count(long battery_cycle_count)
    {
-      pump_inlet_pressure_ = pump_inlet_pressure;
+      battery_cycle_count_ = battery_cycle_count;
    }
 
    public float getPump_inlet_pressure()
@@ -163,9 +180,9 @@ public class AtlasAuxiliaryRobotData
       return pump_inlet_pressure_;
    }
 
-   public void setPump_supply_pressure(float pump_supply_pressure)
+   public void setPump_inlet_pressure(float pump_inlet_pressure)
    {
-      pump_supply_pressure_ = pump_supply_pressure;
+      pump_inlet_pressure_ = pump_inlet_pressure;
    }
 
    public float getPump_supply_pressure()
@@ -173,9 +190,9 @@ public class AtlasAuxiliaryRobotData
       return pump_supply_pressure_;
    }
 
-   public void setAir_sump_pressure(float air_sump_pressure)
+   public void setPump_supply_pressure(float pump_supply_pressure)
    {
-      air_sump_pressure_ = air_sump_pressure;
+      pump_supply_pressure_ = pump_supply_pressure;
    }
 
    public float getAir_sump_pressure()
@@ -183,9 +200,9 @@ public class AtlasAuxiliaryRobotData
       return air_sump_pressure_;
    }
 
-   public void setPump_supply_temperature(float pump_supply_temperature)
+   public void setAir_sump_pressure(float air_sump_pressure)
    {
-      pump_supply_temperature_ = pump_supply_temperature;
+      air_sump_pressure_ = air_sump_pressure;
    }
 
    public float getPump_supply_temperature()
@@ -193,9 +210,9 @@ public class AtlasAuxiliaryRobotData
       return pump_supply_temperature_;
    }
 
-   public void setPump_rpm(float pump_rpm)
+   public void setPump_supply_temperature(float pump_supply_temperature)
    {
-      pump_rpm_ = pump_rpm;
+      pump_supply_temperature_ = pump_supply_temperature;
    }
 
    public float getPump_rpm()
@@ -203,9 +220,9 @@ public class AtlasAuxiliaryRobotData
       return pump_rpm_;
    }
 
-   public void setMotor_temperature(float motor_temperature)
+   public void setPump_rpm(float pump_rpm)
    {
-      motor_temperature_ = motor_temperature;
+      pump_rpm_ = pump_rpm;
    }
 
    public float getMotor_temperature()
@@ -213,14 +230,19 @@ public class AtlasAuxiliaryRobotData
       return motor_temperature_;
    }
 
-   public void setMotor_driver_temperature(float motor_driver_temperature)
+   public void setMotor_temperature(float motor_temperature)
    {
-      motor_driver_temperature_ = motor_driver_temperature;
+      motor_temperature_ = motor_temperature;
    }
 
    public float getMotor_driver_temperature()
    {
       return motor_driver_temperature_;
+   }
+
+   public void setMotor_driver_temperature(float motor_driver_temperature)
+   {
+      motor_driver_temperature_ = motor_driver_temperature;
    }
 
    @Override
@@ -372,27 +394,5 @@ public class AtlasAuxiliaryRobotData
       builder.append("}");
       return builder.toString();
    }
-
-   private us.ihmc.idl.IDLSequence.Float electric_joint_temperatures_;
-   private us.ihmc.idl.IDLSequence.Float electric_joint_currents_;
-   private us.ihmc.idl.IDLSequence.Boolean electric_joint_enabled_array_;
-   private us.ihmc.idl.IDLSequence.Long raw_imu_timestamps_;
-   private us.ihmc.idl.IDLSequence.Long raw_imu_packets_counts_;
-   private std_msgs.msg.dds.Float32MultiArray raw_imu_rates_;
-   private std_msgs.msg.dds.Float32MultiArray raw_imu_deltas_;
-   private boolean battery_charging_;
-   private float battery_voltage_;
-   private float battery_current_;
-   private float remaining_battery_time_;
-   private float remaining_amp_hours_;
-   private float remaining_charge_percentage_;
-   private long battery_cycle_count_;
-   private float pump_inlet_pressure_;
-   private float pump_supply_pressure_;
-   private float air_sump_pressure_;
-   private float pump_supply_temperature_;
-   private float pump_rpm_;
-   private float motor_temperature_;
-   private float motor_driver_temperature_;
 
 }

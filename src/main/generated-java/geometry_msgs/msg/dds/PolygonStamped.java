@@ -10,6 +10,9 @@ package geometry_msgs.msg.dds;
  */
 public class PolygonStamped
 {
+   private std_msgs.msg.dds.Header header_;
+   private geometry_msgs.msg.dds.Polygon polygon_;
+
    public PolygonStamped()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -68,8 +71,5 @@ public class PolygonStamped
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private geometry_msgs.msg.dds.Polygon polygon_;
 
 }

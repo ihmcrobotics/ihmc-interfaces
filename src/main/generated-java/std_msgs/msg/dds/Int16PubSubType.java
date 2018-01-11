@@ -11,29 +11,11 @@ package std_msgs.msg.dds;
 public class Int16PubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.msg.dds.Int16>
 {
    public static final java.lang.String name = "std_msgs::msg::dds_::Int16_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public Int16PubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(std_msgs.msg.dds.Int16 data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, std_msgs.msg.dds.Int16 data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -77,6 +59,27 @@ public class Int16PubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.ms
 
    }
 
+   public static void staticCopy(std_msgs.msg.dds.Int16 src, std_msgs.msg.dds.Int16 dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(std_msgs.msg.dds.Int16 data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, std_msgs.msg.dds.Int16 data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(std_msgs.msg.dds.Int16 data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -89,11 +92,6 @@ public class Int16PubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.ms
    {
       data.setData(ser.read_type_1("data"));
 
-   }
-
-   public static void staticCopy(std_msgs.msg.dds.Int16 src, std_msgs.msg.dds.Int16 dest)
-   {
-      dest.set(src);
    }
 
    @Override

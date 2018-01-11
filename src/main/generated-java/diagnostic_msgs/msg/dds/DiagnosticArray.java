@@ -10,6 +10,9 @@ package diagnostic_msgs.msg.dds;
  */
 public class DiagnosticArray
 {
+   private std_msgs.msg.dds.Header header_;
+   private us.ihmc.idl.IDLSequence.Object<diagnostic_msgs.msg.dds.DiagnosticStatus> status_;
+
    public DiagnosticArray()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -69,8 +72,5 @@ public class DiagnosticArray
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private us.ihmc.idl.IDLSequence.Object<diagnostic_msgs.msg.dds.DiagnosticStatus> status_;
 
 }

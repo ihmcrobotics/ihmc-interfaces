@@ -10,6 +10,8 @@ package std_msgs.msg.dds;
  */
 public class Int64
 {
+   private long data_;
+
    public Int64()
    {
 
@@ -21,14 +23,14 @@ public class Int64
 
    }
 
-   public void setData(long data)
-   {
-      data_ = data;
-   }
-
    public long getData()
    {
       return data_;
+   }
+
+   public void setData(long data)
+   {
+      data_ = data;
    }
 
    @Override
@@ -60,7 +62,5 @@ public class Int64
       builder.append("}");
       return builder.toString();
    }
-
-   private long data_;
 
 }

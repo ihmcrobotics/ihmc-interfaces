@@ -10,6 +10,12 @@ package diagnostic_msgs.msg.dds;
  */
 public class DiagnosticStatus
 {
+   private byte level_;
+   private java.lang.StringBuilder name_;
+   private java.lang.StringBuilder message_;
+   private java.lang.StringBuilder hardware_id_;
+   private us.ihmc.idl.IDLSequence.Object<diagnostic_msgs.msg.dds.KeyValue> values_;
+
    public DiagnosticStatus()
    {
       name_ = new java.lang.StringBuilder(255);
@@ -32,20 +38,14 @@ public class DiagnosticStatus
       values_.set(other.values_);
    }
 
-   public void setLevel(byte level)
-   {
-      level_ = level;
-   }
-
    public byte getLevel()
    {
       return level_;
    }
 
-   public void setName(String name)
+   public void setLevel(byte level)
    {
-      name_.setLength(0);
-      name_.append(name);
+      level_ = level;
    }
 
    public java.lang.String getNameAsString()
@@ -58,10 +58,10 @@ public class DiagnosticStatus
       return name_;
    }
 
-   public void setMessage(String message)
+   public void setName(String name)
    {
-      message_.setLength(0);
-      message_.append(message);
+      name_.setLength(0);
+      name_.append(name);
    }
 
    public java.lang.String getMessageAsString()
@@ -74,10 +74,10 @@ public class DiagnosticStatus
       return message_;
    }
 
-   public void setHardware_id(String hardware_id)
+   public void setMessage(String message)
    {
-      hardware_id_.setLength(0);
-      hardware_id_.append(hardware_id);
+      message_.setLength(0);
+      message_.append(message);
    }
 
    public java.lang.String getHardware_idAsString()
@@ -88,6 +88,12 @@ public class DiagnosticStatus
    public java.lang.StringBuilder getHardware_id()
    {
       return hardware_id_;
+   }
+
+   public void setHardware_id(String hardware_id)
+   {
+      hardware_id_.setLength(0);
+      hardware_id_.append(hardware_id);
    }
 
    public us.ihmc.idl.IDLSequence.Object<diagnostic_msgs.msg.dds.KeyValue> getValues()
@@ -148,11 +154,5 @@ public class DiagnosticStatus
       builder.append("}");
       return builder.toString();
    }
-
-   private byte level_;
-   private java.lang.StringBuilder name_;
-   private java.lang.StringBuilder message_;
-   private java.lang.StringBuilder hardware_id_;
-   private us.ihmc.idl.IDLSequence.Object<diagnostic_msgs.msg.dds.KeyValue> values_;
 
 }

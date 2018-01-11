@@ -10,6 +10,12 @@ package controller_msgs.msg.dds;
  */
 public class FootstepList
 {
+   private long unique_id_;
+   private us.ihmc.idl.IDLSequence.Object<controller_msgs.msg.dds.Footstep> footsteps_;
+   private byte executing_timing_;
+   private double default_swing_duration_;
+   private double final_transfer_duration_;
+
    public FootstepList()
    {
       footsteps_ = new us.ihmc.idl.IDLSequence.Object<controller_msgs.msg.dds.Footstep>(100, controller_msgs.msg.dds.Footstep.class,
@@ -27,14 +33,14 @@ public class FootstepList
 
    }
 
-   public void setUnique_id(long unique_id)
-   {
-      unique_id_ = unique_id;
-   }
-
    public long getUnique_id()
    {
       return unique_id_;
+   }
+
+   public void setUnique_id(long unique_id)
+   {
+      unique_id_ = unique_id;
    }
 
    public us.ihmc.idl.IDLSequence.Object<controller_msgs.msg.dds.Footstep> getFootsteps()
@@ -42,19 +48,14 @@ public class FootstepList
       return footsteps_;
    }
 
-   public void setExecuting_timing(byte executing_timing)
-   {
-      executing_timing_ = executing_timing;
-   }
-
    public byte getExecuting_timing()
    {
       return executing_timing_;
    }
 
-   public void setDefault_swing_duration(double default_swing_duration)
+   public void setExecuting_timing(byte executing_timing)
    {
-      default_swing_duration_ = default_swing_duration;
+      executing_timing_ = executing_timing;
    }
 
    public double getDefault_swing_duration()
@@ -62,14 +63,19 @@ public class FootstepList
       return default_swing_duration_;
    }
 
-   public void setFinal_transfer_duration(double final_transfer_duration)
+   public void setDefault_swing_duration(double default_swing_duration)
    {
-      final_transfer_duration_ = final_transfer_duration;
+      default_swing_duration_ = default_swing_duration;
    }
 
    public double getFinal_transfer_duration()
    {
       return final_transfer_duration_;
+   }
+
+   public void setFinal_transfer_duration(double final_transfer_duration)
+   {
+      final_transfer_duration_ = final_transfer_duration;
    }
 
    @Override
@@ -125,11 +131,5 @@ public class FootstepList
       builder.append("}");
       return builder.toString();
    }
-
-   private long unique_id_;
-   private us.ihmc.idl.IDLSequence.Object<controller_msgs.msg.dds.Footstep> footsteps_;
-   private byte executing_timing_;
-   private double default_swing_duration_;
-   private double final_transfer_duration_;
 
 }

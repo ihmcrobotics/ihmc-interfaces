@@ -10,6 +10,9 @@ package std_msgs.msg.dds;
  */
 public class Float32MultiArray
 {
+   private std_msgs.msg.dds.MultiArrayLayout layout_;
+   private us.ihmc.idl.IDLSequence.Float data_;
+
    public Float32MultiArray()
    {
       layout_ = new std_msgs.msg.dds.MultiArrayLayout();
@@ -68,8 +71,5 @@ public class Float32MultiArray
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.MultiArrayLayout layout_;
-   private us.ihmc.idl.IDLSequence.Float data_;
 
 }

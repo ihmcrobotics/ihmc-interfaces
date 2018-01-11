@@ -10,6 +10,15 @@ package stereo_msgs.msg.dds;
  */
 public class DisparityImage
 {
+   private std_msgs.msg.dds.Header header_;
+   private sensor_msgs.msg.dds.Image image_;
+   private float f_;
+   private float t_;
+   private sensor_msgs.msg.dds.RegionOfInterest valid_window_;
+   private float min_disparity_;
+   private float max_disparity_;
+   private float delta_d_;
+
    public DisparityImage()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -41,19 +50,14 @@ public class DisparityImage
       return image_;
    }
 
-   public void setF(float f)
-   {
-      f_ = f;
-   }
-
    public float getF()
    {
       return f_;
    }
 
-   public void setT(float t)
+   public void setF(float f)
    {
-      t_ = t;
+      f_ = f;
    }
 
    public float getT()
@@ -61,14 +65,14 @@ public class DisparityImage
       return t_;
    }
 
+   public void setT(float t)
+   {
+      t_ = t;
+   }
+
    public sensor_msgs.msg.dds.RegionOfInterest getValid_window()
    {
       return valid_window_;
-   }
-
-   public void setMin_disparity(float min_disparity)
-   {
-      min_disparity_ = min_disparity;
    }
 
    public float getMin_disparity()
@@ -76,9 +80,9 @@ public class DisparityImage
       return min_disparity_;
    }
 
-   public void setMax_disparity(float max_disparity)
+   public void setMin_disparity(float min_disparity)
    {
-      max_disparity_ = max_disparity;
+      min_disparity_ = min_disparity;
    }
 
    public float getMax_disparity()
@@ -86,14 +90,19 @@ public class DisparityImage
       return max_disparity_;
    }
 
-   public void setDelta_d(float delta_d)
+   public void setMax_disparity(float max_disparity)
    {
-      delta_d_ = delta_d;
+      max_disparity_ = max_disparity;
    }
 
    public float getDelta_d()
    {
       return delta_d_;
+   }
+
+   public void setDelta_d(float delta_d)
+   {
+      delta_d_ = delta_d;
    }
 
    @Override
@@ -167,14 +176,5 @@ public class DisparityImage
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private sensor_msgs.msg.dds.Image image_;
-   private float f_;
-   private float t_;
-   private sensor_msgs.msg.dds.RegionOfInterest valid_window_;
-   private float min_disparity_;
-   private float max_disparity_;
-   private float delta_d_;
 
 }

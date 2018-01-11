@@ -11,29 +11,11 @@ package diagnostic_msgs.msg.dds;
 public class DiagnosticArrayPubSubType implements us.ihmc.pubsub.TopicDataType<diagnostic_msgs.msg.dds.DiagnosticArray>
 {
    public static final java.lang.String name = "diagnostic_msgs::msg::dds_::DiagnosticArray_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public DiagnosticArrayPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(diagnostic_msgs.msg.dds.DiagnosticArray data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, diagnostic_msgs.msg.dds.DiagnosticArray data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -93,6 +75,27 @@ public class DiagnosticArrayPubSubType implements us.ihmc.pubsub.TopicDataType<d
       cdr.read_type_e(data.getStatus());
    }
 
+   public static void staticCopy(diagnostic_msgs.msg.dds.DiagnosticArray src, diagnostic_msgs.msg.dds.DiagnosticArray dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(diagnostic_msgs.msg.dds.DiagnosticArray data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, diagnostic_msgs.msg.dds.DiagnosticArray data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(diagnostic_msgs.msg.dds.DiagnosticArray data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -109,11 +112,6 @@ public class DiagnosticArrayPubSubType implements us.ihmc.pubsub.TopicDataType<d
 
       ser.read_type_e("status", data.getStatus());
 
-   }
-
-   public static void staticCopy(diagnostic_msgs.msg.dds.DiagnosticArray src, diagnostic_msgs.msg.dds.DiagnosticArray dest)
-   {
-      dest.set(src);
    }
 
    @Override

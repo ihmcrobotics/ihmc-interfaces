@@ -10,6 +10,9 @@ package geometry_msgs.msg.dds;
  */
 public class TwistWithCovariance
 {
+   private geometry_msgs.msg.dds.Twist twist_;
+   private double[] covariance_;
+
    public TwistWithCovariance()
    {
       twist_ = new geometry_msgs.msg.dds.Twist();
@@ -77,8 +80,5 @@ public class TwistWithCovariance
       builder.append("}");
       return builder.toString();
    }
-
-   private geometry_msgs.msg.dds.Twist twist_;
-   private double[] covariance_;
 
 }

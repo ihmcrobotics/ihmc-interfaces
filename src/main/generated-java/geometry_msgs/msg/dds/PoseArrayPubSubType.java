@@ -11,29 +11,11 @@ package geometry_msgs.msg.dds;
 public class PoseArrayPubSubType implements us.ihmc.pubsub.TopicDataType<geometry_msgs.msg.dds.PoseArray>
 {
    public static final java.lang.String name = "geometry_msgs::msg::dds_::PoseArray_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public PoseArrayPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(geometry_msgs.msg.dds.PoseArray data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, geometry_msgs.msg.dds.PoseArray data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -93,6 +75,27 @@ public class PoseArrayPubSubType implements us.ihmc.pubsub.TopicDataType<geometr
       cdr.read_type_e(data.getPoses());
    }
 
+   public static void staticCopy(geometry_msgs.msg.dds.PoseArray src, geometry_msgs.msg.dds.PoseArray dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(geometry_msgs.msg.dds.PoseArray data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, geometry_msgs.msg.dds.PoseArray data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(geometry_msgs.msg.dds.PoseArray data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -109,11 +112,6 @@ public class PoseArrayPubSubType implements us.ihmc.pubsub.TopicDataType<geometr
 
       ser.read_type_e("poses", data.getPoses());
 
-   }
-
-   public static void staticCopy(geometry_msgs.msg.dds.PoseArray src, geometry_msgs.msg.dds.PoseArray dest)
-   {
-      dest.set(src);
    }
 
    @Override

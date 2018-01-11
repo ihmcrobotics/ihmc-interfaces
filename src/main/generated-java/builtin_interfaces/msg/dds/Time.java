@@ -10,6 +10,9 @@ package builtin_interfaces.msg.dds;
  */
 public class Time
 {
+   private int sec_;
+   private long nanosec_;
+
    public Time()
    {
 
@@ -22,24 +25,24 @@ public class Time
 
    }
 
-   public void setSec(int sec)
-   {
-      sec_ = sec;
-   }
-
    public int getSec()
    {
       return sec_;
    }
 
-   public void setNanosec(long nanosec)
+   public void setSec(int sec)
    {
-      nanosec_ = nanosec;
+      sec_ = sec;
    }
 
    public long getNanosec()
    {
       return nanosec_;
+   }
+
+   public void setNanosec(long nanosec)
+   {
+      nanosec_ = nanosec;
    }
 
    @Override
@@ -77,8 +80,5 @@ public class Time
       builder.append("}");
       return builder.toString();
    }
-
-   private int sec_;
-   private long nanosec_;
 
 }

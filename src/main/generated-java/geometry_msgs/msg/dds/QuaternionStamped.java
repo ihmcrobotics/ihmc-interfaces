@@ -10,6 +10,9 @@ package geometry_msgs.msg.dds;
  */
 public class QuaternionStamped
 {
+   private std_msgs.msg.dds.Header header_;
+   private us.ihmc.euclid.tuple4D.Quaternion quaternion_;
+
    public QuaternionStamped()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -68,8 +71,5 @@ public class QuaternionStamped
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private us.ihmc.euclid.tuple4D.Quaternion quaternion_;
 
 }

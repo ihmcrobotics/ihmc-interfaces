@@ -10,6 +10,9 @@ package std_msgs.msg.dds;
  */
 public class ByteMultiArray
 {
+   private std_msgs.msg.dds.MultiArrayLayout layout_;
+   private us.ihmc.idl.IDLSequence.Byte data_;
+
    public ByteMultiArray()
    {
       layout_ = new std_msgs.msg.dds.MultiArrayLayout();
@@ -68,8 +71,5 @@ public class ByteMultiArray
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.MultiArrayLayout layout_;
-   private us.ihmc.idl.IDLSequence.Byte data_;
 
 }

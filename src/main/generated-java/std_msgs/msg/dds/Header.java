@@ -10,6 +10,9 @@ package std_msgs.msg.dds;
  */
 public class Header
 {
+   private builtin_interfaces.msg.dds.Time stamp_;
+   private java.lang.StringBuilder frame_id_;
+
    public Header()
    {
       stamp_ = new builtin_interfaces.msg.dds.Time();
@@ -29,12 +32,6 @@ public class Header
       return stamp_;
    }
 
-   public void setFrame_id(String frame_id)
-   {
-      frame_id_.setLength(0);
-      frame_id_.append(frame_id);
-   }
-
    public java.lang.String getFrame_idAsString()
    {
       return getFrame_id().toString();
@@ -43,6 +40,12 @@ public class Header
    public java.lang.StringBuilder getFrame_id()
    {
       return frame_id_;
+   }
+
+   public void setFrame_id(String frame_id)
+   {
+      frame_id_.setLength(0);
+      frame_id_.append(frame_id);
    }
 
    @Override
@@ -80,8 +83,5 @@ public class Header
       builder.append("}");
       return builder.toString();
    }
-
-   private builtin_interfaces.msg.dds.Time stamp_;
-   private java.lang.StringBuilder frame_id_;
 
 }

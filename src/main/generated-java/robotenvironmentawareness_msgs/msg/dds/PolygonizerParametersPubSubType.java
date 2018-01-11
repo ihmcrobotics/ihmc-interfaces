@@ -11,31 +11,11 @@ package robotenvironmentawareness_msgs.msg.dds;
 public class PolygonizerParametersPubSubType implements us.ihmc.pubsub.TopicDataType<robotenvironmentawareness_msgs.msg.dds.PolygonizerParameters>
 {
    public static final java.lang.String name = "robotenvironmentawareness_msgs::msg::dds_::PolygonizerParameters_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public PolygonizerParametersPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(robotenvironmentawareness_msgs.msg.dds.PolygonizerParameters data, us.ihmc.pubsub.common.SerializedPayload serializedPayload)
-         throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, robotenvironmentawareness_msgs.msg.dds.PolygonizerParameters data)
-         throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -119,6 +99,30 @@ public class PolygonizerParametersPubSubType implements us.ihmc.pubsub.TopicData
 
    }
 
+   public static void staticCopy(robotenvironmentawareness_msgs.msg.dds.PolygonizerParameters src,
+                                 robotenvironmentawareness_msgs.msg.dds.PolygonizerParameters dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(robotenvironmentawareness_msgs.msg.dds.PolygonizerParameters data, us.ihmc.pubsub.common.SerializedPayload serializedPayload)
+         throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, robotenvironmentawareness_msgs.msg.dds.PolygonizerParameters data)
+         throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(robotenvironmentawareness_msgs.msg.dds.PolygonizerParameters data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -151,12 +155,6 @@ public class PolygonizerParametersPubSubType implements us.ihmc.pubsub.TopicData
 
       data.setDepth_threshold(ser.read_type_6("depth_threshold"));
 
-   }
-
-   public static void staticCopy(robotenvironmentawareness_msgs.msg.dds.PolygonizerParameters src,
-                                 robotenvironmentawareness_msgs.msg.dds.PolygonizerParameters dest)
-   {
-      dest.set(src);
    }
 
    @Override

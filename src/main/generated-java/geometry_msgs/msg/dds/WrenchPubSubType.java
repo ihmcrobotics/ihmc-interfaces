@@ -11,29 +11,11 @@ package geometry_msgs.msg.dds;
 public class WrenchPubSubType implements us.ihmc.pubsub.TopicDataType<geometry_msgs.msg.dds.Wrench>
 {
    public static final java.lang.String name = "geometry_msgs::msg::dds_::Wrench_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public WrenchPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(geometry_msgs.msg.dds.Wrench data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, geometry_msgs.msg.dds.Wrench data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -82,6 +64,27 @@ public class WrenchPubSubType implements us.ihmc.pubsub.TopicDataType<geometry_m
       geometry_msgs.msg.dds.Vector3PubSubType.read(data.getTorque(), cdr);
    }
 
+   public static void staticCopy(geometry_msgs.msg.dds.Wrench src, geometry_msgs.msg.dds.Wrench dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(geometry_msgs.msg.dds.Wrench data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, geometry_msgs.msg.dds.Wrench data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(geometry_msgs.msg.dds.Wrench data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -98,11 +101,6 @@ public class WrenchPubSubType implements us.ihmc.pubsub.TopicDataType<geometry_m
 
       ser.read_type_a("torque", new geometry_msgs.msg.dds.Vector3PubSubType(), data.getTorque());
 
-   }
-
-   public static void staticCopy(geometry_msgs.msg.dds.Wrench src, geometry_msgs.msg.dds.Wrench dest)
-   {
-      dest.set(src);
    }
 
    @Override

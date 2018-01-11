@@ -10,6 +10,13 @@ package visualization_msgs.msg.dds;
  */
 public class InteractiveMarkerUpdate
 {
+   private java.lang.StringBuilder server_id_;
+   private long seq_num_;
+   private byte type_;
+   private us.ihmc.idl.IDLSequence.Object<visualization_msgs.msg.dds.InteractiveMarker> markers_;
+   private us.ihmc.idl.IDLSequence.Object<visualization_msgs.msg.dds.InteractiveMarkerPose> poses_;
+   private us.ihmc.idl.IDLSequence.StringBuilderHolder erases_;
+
    public InteractiveMarkerUpdate()
    {
       server_id_ = new java.lang.StringBuilder(255);
@@ -34,12 +41,6 @@ public class InteractiveMarkerUpdate
       erases_.set(other.erases_);
    }
 
-   public void setServer_id(String server_id)
-   {
-      server_id_.setLength(0);
-      server_id_.append(server_id);
-   }
-
    public java.lang.String getServer_idAsString()
    {
       return getServer_id().toString();
@@ -50,9 +51,10 @@ public class InteractiveMarkerUpdate
       return server_id_;
    }
 
-   public void setSeq_num(long seq_num)
+   public void setServer_id(String server_id)
    {
-      seq_num_ = seq_num;
+      server_id_.setLength(0);
+      server_id_.append(server_id);
    }
 
    public long getSeq_num()
@@ -60,14 +62,19 @@ public class InteractiveMarkerUpdate
       return seq_num_;
    }
 
-   public void setType(byte type)
+   public void setSeq_num(long seq_num)
    {
-      type_ = type;
+      seq_num_ = seq_num;
    }
 
    public byte getType()
    {
       return type_;
+   }
+
+   public void setType(byte type)
+   {
+      type_ = type;
    }
 
    public us.ihmc.idl.IDLSequence.Object<visualization_msgs.msg.dds.InteractiveMarker> getMarkers()
@@ -144,12 +151,5 @@ public class InteractiveMarkerUpdate
       builder.append("}");
       return builder.toString();
    }
-
-   private java.lang.StringBuilder server_id_;
-   private long seq_num_;
-   private byte type_;
-   private us.ihmc.idl.IDLSequence.Object<visualization_msgs.msg.dds.InteractiveMarker> markers_;
-   private us.ihmc.idl.IDLSequence.Object<visualization_msgs.msg.dds.InteractiveMarkerPose> poses_;
-   private us.ihmc.idl.IDLSequence.StringBuilderHolder erases_;
 
 }

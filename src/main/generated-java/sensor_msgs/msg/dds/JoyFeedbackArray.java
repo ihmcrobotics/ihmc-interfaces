@@ -10,6 +10,8 @@ package sensor_msgs.msg.dds;
  */
 public class JoyFeedbackArray
 {
+   private us.ihmc.idl.IDLSequence.Object<sensor_msgs.msg.dds.JoyFeedback> array_;
+
    public JoyFeedbackArray()
    {
       array_ = new us.ihmc.idl.IDLSequence.Object<sensor_msgs.msg.dds.JoyFeedback>(100, sensor_msgs.msg.dds.JoyFeedback.class,
@@ -56,7 +58,5 @@ public class JoyFeedbackArray
       builder.append("}");
       return builder.toString();
    }
-
-   private us.ihmc.idl.IDLSequence.Object<sensor_msgs.msg.dds.JoyFeedback> array_;
 
 }

@@ -10,6 +10,9 @@ package actionlib_msgs.msg.dds;
  */
 public class GoalStatusArray
 {
+   private std_msgs.msg.dds.Header header_;
+   private us.ihmc.idl.IDLSequence.Object<actionlib_msgs.msg.dds.GoalStatus> status_list_;
+
    public GoalStatusArray()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -69,8 +72,5 @@ public class GoalStatusArray
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private us.ihmc.idl.IDLSequence.Object<actionlib_msgs.msg.dds.GoalStatus> status_list_;
 
 }

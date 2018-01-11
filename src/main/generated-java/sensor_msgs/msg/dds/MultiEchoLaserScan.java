@@ -10,6 +10,17 @@ package sensor_msgs.msg.dds;
  */
 public class MultiEchoLaserScan
 {
+   private std_msgs.msg.dds.Header header_;
+   private float angle_min_;
+   private float angle_max_;
+   private float angle_increment_;
+   private float time_increment_;
+   private float scan_time_;
+   private float range_min_;
+   private float range_max_;
+   private us.ihmc.idl.IDLSequence.Object<sensor_msgs.msg.dds.LaserEcho> ranges_;
+   private us.ihmc.idl.IDLSequence.Object<sensor_msgs.msg.dds.LaserEcho> intensities_;
+
    public MultiEchoLaserScan()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -40,19 +51,14 @@ public class MultiEchoLaserScan
       return header_;
    }
 
-   public void setAngle_min(float angle_min)
-   {
-      angle_min_ = angle_min;
-   }
-
    public float getAngle_min()
    {
       return angle_min_;
    }
 
-   public void setAngle_max(float angle_max)
+   public void setAngle_min(float angle_min)
    {
-      angle_max_ = angle_max;
+      angle_min_ = angle_min;
    }
 
    public float getAngle_max()
@@ -60,9 +66,9 @@ public class MultiEchoLaserScan
       return angle_max_;
    }
 
-   public void setAngle_increment(float angle_increment)
+   public void setAngle_max(float angle_max)
    {
-      angle_increment_ = angle_increment;
+      angle_max_ = angle_max;
    }
 
    public float getAngle_increment()
@@ -70,9 +76,9 @@ public class MultiEchoLaserScan
       return angle_increment_;
    }
 
-   public void setTime_increment(float time_increment)
+   public void setAngle_increment(float angle_increment)
    {
-      time_increment_ = time_increment;
+      angle_increment_ = angle_increment;
    }
 
    public float getTime_increment()
@@ -80,9 +86,9 @@ public class MultiEchoLaserScan
       return time_increment_;
    }
 
-   public void setScan_time(float scan_time)
+   public void setTime_increment(float time_increment)
    {
-      scan_time_ = scan_time;
+      time_increment_ = time_increment;
    }
 
    public float getScan_time()
@@ -90,9 +96,9 @@ public class MultiEchoLaserScan
       return scan_time_;
    }
 
-   public void setRange_min(float range_min)
+   public void setScan_time(float scan_time)
    {
-      range_min_ = range_min;
+      scan_time_ = scan_time;
    }
 
    public float getRange_min()
@@ -100,14 +106,19 @@ public class MultiEchoLaserScan
       return range_min_;
    }
 
-   public void setRange_max(float range_max)
+   public void setRange_min(float range_min)
    {
-      range_max_ = range_max;
+      range_min_ = range_min;
    }
 
    public float getRange_max()
    {
       return range_max_;
+   }
+
+   public void setRange_max(float range_max)
+   {
+      range_max_ = range_max;
    }
 
    public us.ihmc.idl.IDLSequence.Object<sensor_msgs.msg.dds.LaserEcho> getRanges()
@@ -203,16 +214,5 @@ public class MultiEchoLaserScan
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private float angle_min_;
-   private float angle_max_;
-   private float angle_increment_;
-   private float time_increment_;
-   private float scan_time_;
-   private float range_min_;
-   private float range_max_;
-   private us.ihmc.idl.IDLSequence.Object<sensor_msgs.msg.dds.LaserEcho> ranges_;
-   private us.ihmc.idl.IDLSequence.Object<sensor_msgs.msg.dds.LaserEcho> intensities_;
 
 }

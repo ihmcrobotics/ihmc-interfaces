@@ -10,6 +10,8 @@ package std_msgs.msg.dds;
  */
 public class Byte
 {
+   private byte data_;
+
    public Byte()
    {
 
@@ -21,14 +23,14 @@ public class Byte
 
    }
 
-   public void setData(byte data)
-   {
-      data_ = data;
-   }
-
    public byte getData()
    {
       return data_;
+   }
+
+   public void setData(byte data)
+   {
+      data_ = data;
    }
 
    @Override
@@ -60,7 +62,5 @@ public class Byte
       builder.append("}");
       return builder.toString();
    }
-
-   private byte data_;
 
 }

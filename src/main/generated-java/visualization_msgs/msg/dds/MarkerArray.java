@@ -10,6 +10,8 @@ package visualization_msgs.msg.dds;
  */
 public class MarkerArray
 {
+   private us.ihmc.idl.IDLSequence.Object<visualization_msgs.msg.dds.Marker> markers_;
+
    public MarkerArray()
    {
       markers_ = new us.ihmc.idl.IDLSequence.Object<visualization_msgs.msg.dds.Marker>(100, visualization_msgs.msg.dds.Marker.class,
@@ -56,7 +58,5 @@ public class MarkerArray
       builder.append("}");
       return builder.toString();
    }
-
-   private us.ihmc.idl.IDLSequence.Object<visualization_msgs.msg.dds.Marker> markers_;
 
 }

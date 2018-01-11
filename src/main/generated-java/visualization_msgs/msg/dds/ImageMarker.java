@@ -10,6 +10,20 @@ package visualization_msgs.msg.dds;
  */
 public class ImageMarker
 {
+   private std_msgs.msg.dds.Header header_;
+   private java.lang.StringBuilder ns_;
+   private int id_;
+   private int type_;
+   private int action_;
+   private us.ihmc.euclid.tuple3D.Point3D position_;
+   private float scale_;
+   private std_msgs.msg.dds.ColorRGBA outline_color_;
+   private byte filled_;
+   private std_msgs.msg.dds.ColorRGBA fill_color_;
+   private builtin_interfaces.msg.dds.Duration lifetime_;
+   private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D> points_;
+   private us.ihmc.idl.IDLSequence.Object<std_msgs.msg.dds.ColorRGBA> outline_colors_;
+
    public ImageMarker()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -49,12 +63,6 @@ public class ImageMarker
       return header_;
    }
 
-   public void setNs(String ns)
-   {
-      ns_.setLength(0);
-      ns_.append(ns);
-   }
-
    public java.lang.String getNsAsString()
    {
       return getNs().toString();
@@ -65,9 +73,10 @@ public class ImageMarker
       return ns_;
    }
 
-   public void setId(int id)
+   public void setNs(String ns)
    {
-      id_ = id;
+      ns_.setLength(0);
+      ns_.append(ns);
    }
 
    public int getId()
@@ -75,9 +84,9 @@ public class ImageMarker
       return id_;
    }
 
-   public void setType(int type)
+   public void setId(int id)
    {
-      type_ = type;
+      id_ = id;
    }
 
    public int getType()
@@ -85,9 +94,9 @@ public class ImageMarker
       return type_;
    }
 
-   public void setAction(int action)
+   public void setType(int type)
    {
-      action_ = action;
+      type_ = type;
    }
 
    public int getAction()
@@ -95,14 +104,14 @@ public class ImageMarker
       return action_;
    }
 
+   public void setAction(int action)
+   {
+      action_ = action;
+   }
+
    public us.ihmc.euclid.tuple3D.Point3D getPosition()
    {
       return position_;
-   }
-
-   public void setScale(float scale)
-   {
-      scale_ = scale;
    }
 
    public float getScale()
@@ -110,19 +119,24 @@ public class ImageMarker
       return scale_;
    }
 
+   public void setScale(float scale)
+   {
+      scale_ = scale;
+   }
+
    public std_msgs.msg.dds.ColorRGBA getOutline_color()
    {
       return outline_color_;
    }
 
-   public void setFilled(byte filled)
-   {
-      filled_ = filled;
-   }
-
    public byte getFilled()
    {
       return filled_;
+   }
+
+   public void setFilled(byte filled)
+   {
+      filled_ = filled;
    }
 
    public std_msgs.msg.dds.ColorRGBA getFill_color()
@@ -246,19 +260,5 @@ public class ImageMarker
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private java.lang.StringBuilder ns_;
-   private int id_;
-   private int type_;
-   private int action_;
-   private us.ihmc.euclid.tuple3D.Point3D position_;
-   private float scale_;
-   private std_msgs.msg.dds.ColorRGBA outline_color_;
-   private byte filled_;
-   private std_msgs.msg.dds.ColorRGBA fill_color_;
-   private builtin_interfaces.msg.dds.Duration lifetime_;
-   private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D> points_;
-   private us.ihmc.idl.IDLSequence.Object<std_msgs.msg.dds.ColorRGBA> outline_colors_;
 
 }

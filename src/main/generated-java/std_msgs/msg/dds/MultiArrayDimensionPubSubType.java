@@ -11,29 +11,11 @@ package std_msgs.msg.dds;
 public class MultiArrayDimensionPubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.msg.dds.MultiArrayDimension>
 {
    public static final java.lang.String name = "std_msgs::msg::dds_::MultiArrayDimension_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public MultiArrayDimensionPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(std_msgs.msg.dds.MultiArrayDimension data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, std_msgs.msg.dds.MultiArrayDimension data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -96,6 +78,27 @@ public class MultiArrayDimensionPubSubType implements us.ihmc.pubsub.TopicDataTy
 
    }
 
+   public static void staticCopy(std_msgs.msg.dds.MultiArrayDimension src, std_msgs.msg.dds.MultiArrayDimension dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(std_msgs.msg.dds.MultiArrayDimension data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, std_msgs.msg.dds.MultiArrayDimension data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(std_msgs.msg.dds.MultiArrayDimension data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -116,11 +119,6 @@ public class MultiArrayDimensionPubSubType implements us.ihmc.pubsub.TopicDataTy
 
       data.setStride(ser.read_type_4("stride"));
 
-   }
-
-   public static void staticCopy(std_msgs.msg.dds.MultiArrayDimension src, std_msgs.msg.dds.MultiArrayDimension dest)
-   {
-      dest.set(src);
    }
 
    @Override

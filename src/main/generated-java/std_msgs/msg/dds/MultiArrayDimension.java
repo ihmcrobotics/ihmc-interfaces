@@ -10,6 +10,10 @@ package std_msgs.msg.dds;
  */
 public class MultiArrayDimension
 {
+   private java.lang.StringBuilder label_;
+   private long size_;
+   private long stride_;
+
    public MultiArrayDimension()
    {
       label_ = new java.lang.StringBuilder(255);
@@ -25,12 +29,6 @@ public class MultiArrayDimension
 
    }
 
-   public void setLabel(String label)
-   {
-      label_.setLength(0);
-      label_.append(label);
-   }
-
    public java.lang.String getLabelAsString()
    {
       return getLabel().toString();
@@ -41,9 +39,10 @@ public class MultiArrayDimension
       return label_;
    }
 
-   public void setSize(long size)
+   public void setLabel(String label)
    {
-      size_ = size;
+      label_.setLength(0);
+      label_.append(label);
    }
 
    public long getSize()
@@ -51,14 +50,19 @@ public class MultiArrayDimension
       return size_;
    }
 
-   public void setStride(long stride)
+   public void setSize(long size)
    {
-      stride_ = stride;
+      size_ = size;
    }
 
    public long getStride()
    {
       return stride_;
+   }
+
+   public void setStride(long stride)
+   {
+      stride_ = stride;
    }
 
    @Override
@@ -102,9 +106,5 @@ public class MultiArrayDimension
       builder.append("}");
       return builder.toString();
    }
-
-   private java.lang.StringBuilder label_;
-   private long size_;
-   private long stride_;
 
 }

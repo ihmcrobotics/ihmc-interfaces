@@ -10,6 +10,12 @@ package sensor_msgs.msg.dds;
  */
 public class JointState
 {
+   private std_msgs.msg.dds.Header header_;
+   private us.ihmc.idl.IDLSequence.StringBuilderHolder name_;
+   private us.ihmc.idl.IDLSequence.Double position_;
+   private us.ihmc.idl.IDLSequence.Double velocity_;
+   private us.ihmc.idl.IDLSequence.Double effort_;
+
    public JointState()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -107,11 +113,5 @@ public class JointState
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private us.ihmc.idl.IDLSequence.StringBuilderHolder name_;
-   private us.ihmc.idl.IDLSequence.Double position_;
-   private us.ihmc.idl.IDLSequence.Double velocity_;
-   private us.ihmc.idl.IDLSequence.Double effort_;
 
 }

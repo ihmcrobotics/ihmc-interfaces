@@ -11,51 +11,13 @@ package geometry_msgs.msg.dds;
 public class PosePubSubType implements us.ihmc.pubsub.TopicDataType<us.ihmc.euclid.geometry.Pose3D>
 {
    public static final java.lang.String name = "geometry_msgs::msg::dds_::Pose_";
+   private static AbstractPosePubSubTypeImplementation impl = new us.ihmc.ros2.rosidl.geometry_msgs.msg.dds.Pose3DPubSubTypeImpl();
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
 
    public PosePubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   private static AbstractPosePubSubTypeImplementation impl = new us.ihmc.ros2.rosidl.geometry_msgs.msg.dds.Pose3DPubSubTypeImpl();
-
-   /**
-    * Abstract implementation of PosePubSubType.
-    *
-    * Extend this class to create a custom PubSubType for @Abstract idl datatypes.
-    *
-    */
-   public static abstract class AbstractPosePubSubTypeImplementation
-   {
-
-      /**
-       * Copy src into dest.
-       *
-       * @param src Source object to copy data from
-       * @param dest Destination object to copy data to
-       */
-      protected abstract void copy(us.ihmc.euclid.geometry.Pose3D src, us.ihmc.euclid.geometry.Pose3D dest);
-
-      /**
-       * Getter for Position
-       *
-       * @param data object to read from
-       * @return value of X
-       */
-      protected abstract us.ihmc.euclid.tuple3D.Point3D getPosition(us.ihmc.euclid.geometry.Pose3D data);
-
-      /**
-       * Getter for Orientation
-       *
-       * @param data object to read from
-       * @return value of X
-       */
-      protected abstract us.ihmc.euclid.tuple4D.Quaternion getOrientation(us.ihmc.euclid.geometry.Pose3D data);
-
-      public abstract us.ihmc.euclid.geometry.Pose3D createData();
    }
 
    private static AbstractPosePubSubTypeImplementation getImpl()
@@ -103,6 +65,27 @@ public class PosePubSubType implements us.ihmc.pubsub.TopicDataType<us.ihmc.eucl
       return current_alignment - initial_alignment;
    }
 
+   public static void write(us.ihmc.euclid.geometry.Pose3D data, us.ihmc.idl.CDR cdr)
+   {
+
+      geometry_msgs.msg.dds.PointPubSubType.write(getImpl().getPosition(data), cdr);
+
+      geometry_msgs.msg.dds.QuaternionPubSubType.write(getImpl().getOrientation(data), cdr);
+   }
+
+   public static void read(us.ihmc.euclid.geometry.Pose3D data, us.ihmc.idl.CDR cdr)
+   {
+
+      geometry_msgs.msg.dds.PointPubSubType.read(getImpl().getPosition(data), cdr);
+
+      geometry_msgs.msg.dds.QuaternionPubSubType.read(getImpl().getOrientation(data), cdr);
+   }
+
+   public static void staticCopy(us.ihmc.euclid.geometry.Pose3D src, us.ihmc.euclid.geometry.Pose3D dest)
+   {
+      getImpl().copy(src, dest);
+   }
+
    @Override
    public void serialize(us.ihmc.euclid.geometry.Pose3D data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
    {
@@ -121,22 +104,6 @@ public class PosePubSubType implements us.ihmc.pubsub.TopicDataType<us.ihmc.eucl
       deserializeCDR.finishDeserialize();
    }
 
-   public static void write(us.ihmc.euclid.geometry.Pose3D data, us.ihmc.idl.CDR cdr)
-   {
-
-      geometry_msgs.msg.dds.PointPubSubType.write(getImpl().getPosition(data), cdr);
-
-      geometry_msgs.msg.dds.QuaternionPubSubType.write(getImpl().getOrientation(data), cdr);
-   }
-
-   public static void read(us.ihmc.euclid.geometry.Pose3D data, us.ihmc.idl.CDR cdr)
-   {
-
-      geometry_msgs.msg.dds.PointPubSubType.read(getImpl().getPosition(data), cdr);
-
-      geometry_msgs.msg.dds.QuaternionPubSubType.read(getImpl().getOrientation(data), cdr);
-   }
-
    @Override
    public final void serialize(us.ihmc.euclid.geometry.Pose3D data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -153,11 +120,6 @@ public class PosePubSubType implements us.ihmc.pubsub.TopicDataType<us.ihmc.eucl
 
       ser.read_type_a("orientation", new geometry_msgs.msg.dds.QuaternionPubSubType(), getImpl().getOrientation(data));
 
-   }
-
-   public static void staticCopy(us.ihmc.euclid.geometry.Pose3D src, us.ihmc.euclid.geometry.Pose3D dest)
-   {
-      getImpl().copy(src, dest);
    }
 
    @Override
@@ -197,5 +159,41 @@ public class PosePubSubType implements us.ihmc.pubsub.TopicDataType<us.ihmc.eucl
    public PosePubSubType newInstance()
    {
       return new PosePubSubType();
+   }
+
+   /**
+    * Abstract implementation of PosePubSubType.
+    *
+    * Extend this class to create a custom PubSubType for @Abstract idl datatypes.
+    *
+    */
+   public static abstract class AbstractPosePubSubTypeImplementation
+   {
+
+      /**
+       * Copy src into dest.
+       *
+       * @param src Source object to copy data from
+       * @param dest Destination object to copy data to
+       */
+      protected abstract void copy(us.ihmc.euclid.geometry.Pose3D src, us.ihmc.euclid.geometry.Pose3D dest);
+
+      /**
+       * Getter for Position
+       *
+       * @param data object to read from
+       * @return value of X
+       */
+      protected abstract us.ihmc.euclid.tuple3D.Point3D getPosition(us.ihmc.euclid.geometry.Pose3D data);
+
+      /**
+       * Getter for Orientation
+       *
+       * @param data object to read from
+       * @return value of X
+       */
+      protected abstract us.ihmc.euclid.tuple4D.Quaternion getOrientation(us.ihmc.euclid.geometry.Pose3D data);
+
+      public abstract us.ihmc.euclid.geometry.Pose3D createData();
    }
 }

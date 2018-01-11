@@ -10,6 +10,10 @@ package sensor_msgs.msg.dds;
  */
 public class CompressedImage
 {
+   private std_msgs.msg.dds.Header header_;
+   private java.lang.StringBuilder format_;
+   private us.ihmc.idl.IDLSequence.Byte data_;
+
    public CompressedImage()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -31,12 +35,6 @@ public class CompressedImage
       return header_;
    }
 
-   public void setFormat(String format)
-   {
-      format_.setLength(0);
-      format_.append(format);
-   }
-
    public java.lang.String getFormatAsString()
    {
       return getFormat().toString();
@@ -45,6 +43,12 @@ public class CompressedImage
    public java.lang.StringBuilder getFormat()
    {
       return format_;
+   }
+
+   public void setFormat(String format)
+   {
+      format_.setLength(0);
+      format_.append(format);
    }
 
    public us.ihmc.idl.IDLSequence.Byte getData()
@@ -93,9 +97,5 @@ public class CompressedImage
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private java.lang.StringBuilder format_;
-   private us.ihmc.idl.IDLSequence.Byte data_;
 
 }

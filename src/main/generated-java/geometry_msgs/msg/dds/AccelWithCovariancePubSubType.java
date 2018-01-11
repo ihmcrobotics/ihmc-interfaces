@@ -11,29 +11,11 @@ package geometry_msgs.msg.dds;
 public class AccelWithCovariancePubSubType implements us.ihmc.pubsub.TopicDataType<geometry_msgs.msg.dds.AccelWithCovariance>
 {
    public static final java.lang.String name = "geometry_msgs::msg::dds_::AccelWithCovariance_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public AccelWithCovariancePubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(geometry_msgs.msg.dds.AccelWithCovariance data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, geometry_msgs.msg.dds.AccelWithCovariance data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -91,6 +73,27 @@ public class AccelWithCovariancePubSubType implements us.ihmc.pubsub.TopicDataTy
 
    }
 
+   public static void staticCopy(geometry_msgs.msg.dds.AccelWithCovariance src, geometry_msgs.msg.dds.AccelWithCovariance dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(geometry_msgs.msg.dds.AccelWithCovariance data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, geometry_msgs.msg.dds.AccelWithCovariance data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(geometry_msgs.msg.dds.AccelWithCovariance data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -106,11 +109,6 @@ public class AccelWithCovariancePubSubType implements us.ihmc.pubsub.TopicDataTy
 
       ser.read_type_f("covariance", data.getCovariance());
 
-   }
-
-   public static void staticCopy(geometry_msgs.msg.dds.AccelWithCovariance src, geometry_msgs.msg.dds.AccelWithCovariance dest)
-   {
-      dest.set(src);
    }
 
    @Override

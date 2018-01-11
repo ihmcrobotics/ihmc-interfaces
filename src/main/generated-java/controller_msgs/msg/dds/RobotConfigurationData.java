@@ -10,6 +10,24 @@ package controller_msgs.msg.dds;
  */
 public class RobotConfigurationData
 {
+   private long timestamp_;
+   private long sensor_head_pps_timestamp_;
+   private int joint_name_hash_;
+   private us.ihmc.idl.IDLSequence.Float joint_angles_;
+   private us.ihmc.idl.IDLSequence.Float joint_velocities_;
+   private us.ihmc.idl.IDLSequence.Float joint_torques_;
+   private us.ihmc.euclid.tuple3D.Vector3D root_translation_;
+   private us.ihmc.euclid.tuple3D.Vector3D pelvis_linear_velocity_;
+   private us.ihmc.euclid.tuple3D.Vector3D pelvis_angular_velocity_;
+   private us.ihmc.euclid.tuple4D.Quaternion root_orientation_;
+   private us.ihmc.euclid.tuple3D.Vector3D pelvis_linear_acceleration_;
+   private std_msgs.msg.dds.Float32MultiArray moment_and_force_data_all_force_sensors_;
+   private us.ihmc.idl.IDLSequence.Object<controller_msgs.msg.dds.IMUPacket> imu_sensor_data_;
+   private int robot_motion_status_;
+   private int last_received_packet_type_id_;
+   private long last_received_packet_unique_id_;
+   private long last_received_packet_robot_timestamp_;
+
    public RobotConfigurationData()
    {
       joint_angles_ = new us.ihmc.idl.IDLSequence.Float(100, "type_5");
@@ -48,19 +66,14 @@ public class RobotConfigurationData
 
    }
 
-   public void setTimestamp(long timestamp)
-   {
-      timestamp_ = timestamp;
-   }
-
    public long getTimestamp()
    {
       return timestamp_;
    }
 
-   public void setSensor_head_pps_timestamp(long sensor_head_pps_timestamp)
+   public void setTimestamp(long timestamp)
    {
-      sensor_head_pps_timestamp_ = sensor_head_pps_timestamp;
+      timestamp_ = timestamp;
    }
 
    public long getSensor_head_pps_timestamp()
@@ -68,14 +81,19 @@ public class RobotConfigurationData
       return sensor_head_pps_timestamp_;
    }
 
-   public void setJoint_name_hash(int joint_name_hash)
+   public void setSensor_head_pps_timestamp(long sensor_head_pps_timestamp)
    {
-      joint_name_hash_ = joint_name_hash;
+      sensor_head_pps_timestamp_ = sensor_head_pps_timestamp;
    }
 
    public int getJoint_name_hash()
    {
       return joint_name_hash_;
+   }
+
+   public void setJoint_name_hash(int joint_name_hash)
+   {
+      joint_name_hash_ = joint_name_hash;
    }
 
    public us.ihmc.idl.IDLSequence.Float getJoint_angles()
@@ -128,19 +146,14 @@ public class RobotConfigurationData
       return imu_sensor_data_;
    }
 
-   public void setRobot_motion_status(byte robot_motion_status)
-   {
-      robot_motion_status_ = robot_motion_status;
-   }
-
-   public byte getRobot_motion_status()
+   public int getRobot_motion_status()
    {
       return robot_motion_status_;
    }
 
-   public void setLast_received_packet_type_id(int last_received_packet_type_id)
+   public void setRobot_motion_status(int robot_motion_status)
    {
-      last_received_packet_type_id_ = last_received_packet_type_id;
+      robot_motion_status_ = robot_motion_status;
    }
 
    public int getLast_received_packet_type_id()
@@ -148,9 +161,9 @@ public class RobotConfigurationData
       return last_received_packet_type_id_;
    }
 
-   public void setLast_received_packet_unique_id(long last_received_packet_unique_id)
+   public void setLast_received_packet_type_id(int last_received_packet_type_id)
    {
-      last_received_packet_unique_id_ = last_received_packet_unique_id;
+      last_received_packet_type_id_ = last_received_packet_type_id;
    }
 
    public long getLast_received_packet_unique_id()
@@ -158,14 +171,19 @@ public class RobotConfigurationData
       return last_received_packet_unique_id_;
    }
 
-   public void setLast_received_packet_robot_timestamp(long last_received_packet_robot_timestamp)
+   public void setLast_received_packet_unique_id(long last_received_packet_unique_id)
    {
-      last_received_packet_robot_timestamp_ = last_received_packet_robot_timestamp;
+      last_received_packet_unique_id_ = last_received_packet_unique_id;
    }
 
    public long getLast_received_packet_robot_timestamp()
    {
       return last_received_packet_robot_timestamp_;
+   }
+
+   public void setLast_received_packet_robot_timestamp(long last_received_packet_robot_timestamp)
+   {
+      last_received_packet_robot_timestamp_ = last_received_packet_robot_timestamp;
    }
 
    @Override
@@ -293,23 +311,5 @@ public class RobotConfigurationData
       builder.append("}");
       return builder.toString();
    }
-
-   private long timestamp_;
-   private long sensor_head_pps_timestamp_;
-   private int joint_name_hash_;
-   private us.ihmc.idl.IDLSequence.Float joint_angles_;
-   private us.ihmc.idl.IDLSequence.Float joint_velocities_;
-   private us.ihmc.idl.IDLSequence.Float joint_torques_;
-   private us.ihmc.euclid.tuple3D.Vector3D root_translation_;
-   private us.ihmc.euclid.tuple3D.Vector3D pelvis_linear_velocity_;
-   private us.ihmc.euclid.tuple3D.Vector3D pelvis_angular_velocity_;
-   private us.ihmc.euclid.tuple4D.Quaternion root_orientation_;
-   private us.ihmc.euclid.tuple3D.Vector3D pelvis_linear_acceleration_;
-   private std_msgs.msg.dds.Float32MultiArray moment_and_force_data_all_force_sensors_;
-   private us.ihmc.idl.IDLSequence.Object<controller_msgs.msg.dds.IMUPacket> imu_sensor_data_;
-   private byte robot_motion_status_;
-   private int last_received_packet_type_id_;
-   private long last_received_packet_unique_id_;
-   private long last_received_packet_robot_timestamp_;
 
 }

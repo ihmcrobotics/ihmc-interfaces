@@ -11,29 +11,11 @@ package visualization_msgs.msg.dds;
 public class MarkerPubSubType implements us.ihmc.pubsub.TopicDataType<visualization_msgs.msg.dds.Marker>
 {
    public static final java.lang.String name = "visualization_msgs::msg::dds_::Marker_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public MarkerPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(visualization_msgs.msg.dds.Marker data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, visualization_msgs.msg.dds.Marker data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -210,6 +192,27 @@ public class MarkerPubSubType implements us.ihmc.pubsub.TopicDataType<visualizat
 
    }
 
+   public static void staticCopy(visualization_msgs.msg.dds.Marker src, visualization_msgs.msg.dds.Marker dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(visualization_msgs.msg.dds.Marker data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, visualization_msgs.msg.dds.Marker data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(visualization_msgs.msg.dds.Marker data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -278,11 +281,6 @@ public class MarkerPubSubType implements us.ihmc.pubsub.TopicDataType<visualizat
 
       data.setMesh_use_embedded_materials(ser.read_type_7("mesh_use_embedded_materials"));
 
-   }
-
-   public static void staticCopy(visualization_msgs.msg.dds.Marker src, visualization_msgs.msg.dds.Marker dest)
-   {
-      dest.set(src);
    }
 
    @Override

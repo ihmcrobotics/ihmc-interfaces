@@ -10,6 +10,9 @@ package diagnostic_msgs.msg.dds;
  */
 public class KeyValue
 {
+   private java.lang.StringBuilder key_;
+   private java.lang.StringBuilder value_;
+
    public KeyValue()
    {
       key_ = new java.lang.StringBuilder(255);
@@ -25,12 +28,6 @@ public class KeyValue
       value_.append(other.value_);
    }
 
-   public void setKey(String key)
-   {
-      key_.setLength(0);
-      key_.append(key);
-   }
-
    public java.lang.String getKeyAsString()
    {
       return getKey().toString();
@@ -41,10 +38,10 @@ public class KeyValue
       return key_;
    }
 
-   public void setValue(String value)
+   public void setKey(String key)
    {
-      value_.setLength(0);
-      value_.append(value);
+      key_.setLength(0);
+      key_.append(key);
    }
 
    public java.lang.String getValueAsString()
@@ -55,6 +52,12 @@ public class KeyValue
    public java.lang.StringBuilder getValue()
    {
       return value_;
+   }
+
+   public void setValue(String value)
+   {
+      value_.setLength(0);
+      value_.append(value);
    }
 
    @Override
@@ -92,8 +95,5 @@ public class KeyValue
       builder.append("}");
       return builder.toString();
    }
-
-   private java.lang.StringBuilder key_;
-   private java.lang.StringBuilder value_;
 
 }

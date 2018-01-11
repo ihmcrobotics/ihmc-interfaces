@@ -10,6 +10,11 @@ package nav_msgs.msg.dds;
  */
 public class Odometry
 {
+   private std_msgs.msg.dds.Header header_;
+   private java.lang.StringBuilder child_frame_id_;
+   private geometry_msgs.msg.dds.PoseWithCovariance pose_;
+   private geometry_msgs.msg.dds.TwistWithCovariance twist_;
+
    public Odometry()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -33,12 +38,6 @@ public class Odometry
       return header_;
    }
 
-   public void setChild_frame_id(String child_frame_id)
-   {
-      child_frame_id_.setLength(0);
-      child_frame_id_.append(child_frame_id);
-   }
-
    public java.lang.String getChild_frame_idAsString()
    {
       return getChild_frame_id().toString();
@@ -47,6 +46,12 @@ public class Odometry
    public java.lang.StringBuilder getChild_frame_id()
    {
       return child_frame_id_;
+   }
+
+   public void setChild_frame_id(String child_frame_id)
+   {
+      child_frame_id_.setLength(0);
+      child_frame_id_.append(child_frame_id);
    }
 
    public geometry_msgs.msg.dds.PoseWithCovariance getPose()
@@ -106,10 +111,5 @@ public class Odometry
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private java.lang.StringBuilder child_frame_id_;
-   private geometry_msgs.msg.dds.PoseWithCovariance pose_;
-   private geometry_msgs.msg.dds.TwistWithCovariance twist_;
 
 }

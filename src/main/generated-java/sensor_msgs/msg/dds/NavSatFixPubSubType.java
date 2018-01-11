@@ -11,29 +11,11 @@ package sensor_msgs.msg.dds;
 public class NavSatFixPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_msgs.msg.dds.NavSatFix>
 {
    public static final java.lang.String name = "sensor_msgs::msg::dds_::NavSatFix_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public NavSatFixPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(sensor_msgs.msg.dds.NavSatFix data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, sensor_msgs.msg.dds.NavSatFix data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -127,6 +109,27 @@ public class NavSatFixPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_
 
    }
 
+   public static void staticCopy(sensor_msgs.msg.dds.NavSatFix src, sensor_msgs.msg.dds.NavSatFix dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(sensor_msgs.msg.dds.NavSatFix data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, sensor_msgs.msg.dds.NavSatFix data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(sensor_msgs.msg.dds.NavSatFix data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -162,11 +165,6 @@ public class NavSatFixPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_
 
       data.setPosition_covariance_type(ser.read_type_9("position_covariance_type"));
 
-   }
-
-   public static void staticCopy(sensor_msgs.msg.dds.NavSatFix src, sensor_msgs.msg.dds.NavSatFix dest)
-   {
-      dest.set(src);
    }
 
    @Override

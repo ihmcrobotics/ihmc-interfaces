@@ -11,29 +11,11 @@ package geometry_msgs.msg.dds;
 public class PoseWithCovariancePubSubType implements us.ihmc.pubsub.TopicDataType<geometry_msgs.msg.dds.PoseWithCovariance>
 {
    public static final java.lang.String name = "geometry_msgs::msg::dds_::PoseWithCovariance_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public PoseWithCovariancePubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(geometry_msgs.msg.dds.PoseWithCovariance data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, geometry_msgs.msg.dds.PoseWithCovariance data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -91,6 +73,27 @@ public class PoseWithCovariancePubSubType implements us.ihmc.pubsub.TopicDataTyp
 
    }
 
+   public static void staticCopy(geometry_msgs.msg.dds.PoseWithCovariance src, geometry_msgs.msg.dds.PoseWithCovariance dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(geometry_msgs.msg.dds.PoseWithCovariance data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, geometry_msgs.msg.dds.PoseWithCovariance data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(geometry_msgs.msg.dds.PoseWithCovariance data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -106,11 +109,6 @@ public class PoseWithCovariancePubSubType implements us.ihmc.pubsub.TopicDataTyp
 
       ser.read_type_f("covariance", data.getCovariance());
 
-   }
-
-   public static void staticCopy(geometry_msgs.msg.dds.PoseWithCovariance src, geometry_msgs.msg.dds.PoseWithCovariance dest)
-   {
-      dest.set(src);
    }
 
    @Override

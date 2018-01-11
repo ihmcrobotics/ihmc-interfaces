@@ -11,29 +11,11 @@ package shape_msgs.msg.dds;
 public class SolidPrimitivePubSubType implements us.ihmc.pubsub.TopicDataType<shape_msgs.msg.dds.SolidPrimitive>
 {
    public static final java.lang.String name = "shape_msgs::msg::dds_::SolidPrimitive_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public SolidPrimitivePubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(shape_msgs.msg.dds.SolidPrimitive data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, shape_msgs.msg.dds.SolidPrimitive data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -89,6 +71,27 @@ public class SolidPrimitivePubSubType implements us.ihmc.pubsub.TopicDataType<sh
       cdr.read_type_e(data.getDimensions());
    }
 
+   public static void staticCopy(shape_msgs.msg.dds.SolidPrimitive src, shape_msgs.msg.dds.SolidPrimitive dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(shape_msgs.msg.dds.SolidPrimitive data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, shape_msgs.msg.dds.SolidPrimitive data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(shape_msgs.msg.dds.SolidPrimitive data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -105,11 +108,6 @@ public class SolidPrimitivePubSubType implements us.ihmc.pubsub.TopicDataType<sh
 
       ser.read_type_e("dimensions", data.getDimensions());
 
-   }
-
-   public static void staticCopy(shape_msgs.msg.dds.SolidPrimitive src, shape_msgs.msg.dds.SolidPrimitive dest)
-   {
-      dest.set(src);
    }
 
    @Override

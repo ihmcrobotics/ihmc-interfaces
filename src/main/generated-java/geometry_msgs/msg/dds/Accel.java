@@ -10,6 +10,9 @@ package geometry_msgs.msg.dds;
  */
 public class Accel
 {
+   private us.ihmc.euclid.tuple3D.Vector3D linear_;
+   private us.ihmc.euclid.tuple3D.Vector3D angular_;
+
    public Accel()
    {
       linear_ = new us.ihmc.euclid.tuple3D.Vector3D();
@@ -68,8 +71,5 @@ public class Accel
       builder.append("}");
       return builder.toString();
    }
-
-   private us.ihmc.euclid.tuple3D.Vector3D linear_;
-   private us.ihmc.euclid.tuple3D.Vector3D angular_;
 
 }

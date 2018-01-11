@@ -10,6 +10,10 @@ package visualization_msgs.msg.dds;
  */
 public class InteractiveMarkerInit
 {
+   private java.lang.StringBuilder server_id_;
+   private long seq_num_;
+   private us.ihmc.idl.IDLSequence.Object<visualization_msgs.msg.dds.InteractiveMarker> markers_;
+
    public InteractiveMarkerInit()
    {
       server_id_ = new java.lang.StringBuilder(255);
@@ -26,12 +30,6 @@ public class InteractiveMarkerInit
       markers_.set(other.markers_);
    }
 
-   public void setServer_id(String server_id)
-   {
-      server_id_.setLength(0);
-      server_id_.append(server_id);
-   }
-
    public java.lang.String getServer_idAsString()
    {
       return getServer_id().toString();
@@ -42,14 +40,20 @@ public class InteractiveMarkerInit
       return server_id_;
    }
 
-   public void setSeq_num(long seq_num)
+   public void setServer_id(String server_id)
    {
-      seq_num_ = seq_num;
+      server_id_.setLength(0);
+      server_id_.append(server_id);
    }
 
    public long getSeq_num()
    {
       return seq_num_;
+   }
+
+   public void setSeq_num(long seq_num)
+   {
+      seq_num_ = seq_num;
    }
 
    public us.ihmc.idl.IDLSequence.Object<visualization_msgs.msg.dds.InteractiveMarker> getMarkers()
@@ -98,9 +102,5 @@ public class InteractiveMarkerInit
       builder.append("}");
       return builder.toString();
    }
-
-   private java.lang.StringBuilder server_id_;
-   private long seq_num_;
-   private us.ihmc.idl.IDLSequence.Object<visualization_msgs.msg.dds.InteractiveMarker> markers_;
 
 }

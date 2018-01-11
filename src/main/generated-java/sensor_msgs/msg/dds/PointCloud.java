@@ -10,6 +10,10 @@ package sensor_msgs.msg.dds;
  */
 public class PointCloud
 {
+   private std_msgs.msg.dds.Header header_;
+   private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D32> points_;
+   private us.ihmc.idl.IDLSequence.Object<sensor_msgs.msg.dds.ChannelFloat32> channels_;
+
    public PointCloud()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -84,9 +88,5 @@ public class PointCloud
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D32> points_;
-   private us.ihmc.idl.IDLSequence.Object<sensor_msgs.msg.dds.ChannelFloat32> channels_;
 
 }

@@ -10,6 +10,13 @@ package sensor_msgs.msg.dds;
  */
 public class Range
 {
+   private std_msgs.msg.dds.Header header_;
+   private byte radiation_type_;
+   private float field_of_view_;
+   private float min_range_;
+   private float max_range_;
+   private float range_;
+
    public Range()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -32,19 +39,14 @@ public class Range
       return header_;
    }
 
-   public void setRadiation_type(byte radiation_type)
-   {
-      radiation_type_ = radiation_type;
-   }
-
    public byte getRadiation_type()
    {
       return radiation_type_;
    }
 
-   public void setField_of_view(float field_of_view)
+   public void setRadiation_type(byte radiation_type)
    {
-      field_of_view_ = field_of_view;
+      radiation_type_ = radiation_type;
    }
 
    public float getField_of_view()
@@ -52,9 +54,9 @@ public class Range
       return field_of_view_;
    }
 
-   public void setMin_range(float min_range)
+   public void setField_of_view(float field_of_view)
    {
-      min_range_ = min_range;
+      field_of_view_ = field_of_view;
    }
 
    public float getMin_range()
@@ -62,9 +64,9 @@ public class Range
       return min_range_;
    }
 
-   public void setMax_range(float max_range)
+   public void setMin_range(float min_range)
    {
-      max_range_ = max_range;
+      min_range_ = min_range;
    }
 
    public float getMax_range()
@@ -72,14 +74,19 @@ public class Range
       return max_range_;
    }
 
-   public void setRange(float range)
+   public void setMax_range(float max_range)
    {
-      range_ = range;
+      max_range_ = max_range;
    }
 
    public float getRange()
    {
       return range_;
+   }
+
+   public void setRange(float range)
+   {
+      range_ = range;
    }
 
    @Override
@@ -141,12 +148,5 @@ public class Range
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private byte radiation_type_;
-   private float field_of_view_;
-   private float min_range_;
-   private float max_range_;
-   private float range_;
 
 }

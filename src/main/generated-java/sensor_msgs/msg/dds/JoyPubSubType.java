@@ -11,29 +11,11 @@ package sensor_msgs.msg.dds;
 public class JoyPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_msgs.msg.dds.Joy>
 {
    public static final java.lang.String name = "sensor_msgs::msg::dds_::Joy_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public JoyPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(sensor_msgs.msg.dds.Joy data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, sensor_msgs.msg.dds.Joy data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -100,6 +82,27 @@ public class JoyPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_msgs.m
       cdr.read_type_e(data.getButtons());
    }
 
+   public static void staticCopy(sensor_msgs.msg.dds.Joy src, sensor_msgs.msg.dds.Joy dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(sensor_msgs.msg.dds.Joy data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, sensor_msgs.msg.dds.Joy data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(sensor_msgs.msg.dds.Joy data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -120,11 +123,6 @@ public class JoyPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_msgs.m
 
       ser.read_type_e("buttons", data.getButtons());
 
-   }
-
-   public static void staticCopy(sensor_msgs.msg.dds.Joy src, sensor_msgs.msg.dds.Joy dest)
-   {
-      dest.set(src);
    }
 
    @Override

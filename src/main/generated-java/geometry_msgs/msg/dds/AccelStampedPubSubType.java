@@ -11,29 +11,11 @@ package geometry_msgs.msg.dds;
 public class AccelStampedPubSubType implements us.ihmc.pubsub.TopicDataType<geometry_msgs.msg.dds.AccelStamped>
 {
    public static final java.lang.String name = "geometry_msgs::msg::dds_::AccelStamped_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public AccelStampedPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(geometry_msgs.msg.dds.AccelStamped data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, geometry_msgs.msg.dds.AccelStamped data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -82,6 +64,27 @@ public class AccelStampedPubSubType implements us.ihmc.pubsub.TopicDataType<geom
       geometry_msgs.msg.dds.AccelPubSubType.read(data.getAccel(), cdr);
    }
 
+   public static void staticCopy(geometry_msgs.msg.dds.AccelStamped src, geometry_msgs.msg.dds.AccelStamped dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(geometry_msgs.msg.dds.AccelStamped data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, geometry_msgs.msg.dds.AccelStamped data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(geometry_msgs.msg.dds.AccelStamped data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -98,11 +101,6 @@ public class AccelStampedPubSubType implements us.ihmc.pubsub.TopicDataType<geom
 
       ser.read_type_a("accel", new geometry_msgs.msg.dds.AccelPubSubType(), data.getAccel());
 
-   }
-
-   public static void staticCopy(geometry_msgs.msg.dds.AccelStamped src, geometry_msgs.msg.dds.AccelStamped dest)
-   {
-      dest.set(src);
    }
 
    @Override

@@ -10,6 +10,11 @@ package sensor_msgs.msg.dds;
  */
 public class PointField
 {
+   private java.lang.StringBuilder name_;
+   private long offset_;
+   private byte datatype_;
+   private long count_;
+
    public PointField()
    {
       name_ = new java.lang.StringBuilder(255);
@@ -26,12 +31,6 @@ public class PointField
 
    }
 
-   public void setName(String name)
-   {
-      name_.setLength(0);
-      name_.append(name);
-   }
-
    public java.lang.String getNameAsString()
    {
       return getName().toString();
@@ -42,9 +41,10 @@ public class PointField
       return name_;
    }
 
-   public void setOffset(long offset)
+   public void setName(String name)
    {
-      offset_ = offset;
+      name_.setLength(0);
+      name_.append(name);
    }
 
    public long getOffset()
@@ -52,9 +52,9 @@ public class PointField
       return offset_;
    }
 
-   public void setDatatype(byte datatype)
+   public void setOffset(long offset)
    {
-      datatype_ = datatype;
+      offset_ = offset;
    }
 
    public byte getDatatype()
@@ -62,14 +62,19 @@ public class PointField
       return datatype_;
    }
 
-   public void setCount(long count)
+   public void setDatatype(byte datatype)
    {
-      count_ = count;
+      datatype_ = datatype;
    }
 
    public long getCount()
    {
       return count_;
+   }
+
+   public void setCount(long count)
+   {
+      count_ = count;
    }
 
    @Override
@@ -119,10 +124,5 @@ public class PointField
       builder.append("}");
       return builder.toString();
    }
-
-   private java.lang.StringBuilder name_;
-   private long offset_;
-   private byte datatype_;
-   private long count_;
 
 }

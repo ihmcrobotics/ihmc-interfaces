@@ -10,6 +10,11 @@ package controller_msgs.msg.dds;
  */
 public class IMUPacket
 {
+   private us.ihmc.euclid.tuple3D.Vector3D linear_acceleration_;
+   private us.ihmc.euclid.tuple4D.Quaternion orientation_;
+   private us.ihmc.euclid.tuple3D.Vector3D angular_velocity_;
+   private double time_;
+
    public IMUPacket()
    {
       linear_acceleration_ = new us.ihmc.euclid.tuple3D.Vector3D();
@@ -42,14 +47,14 @@ public class IMUPacket
       return angular_velocity_;
    }
 
-   public void setTime(double time)
-   {
-      time_ = time;
-   }
-
    public double getTime()
    {
       return time_;
+   }
+
+   public void setTime(double time)
+   {
+      time_ = time;
    }
 
    @Override
@@ -99,10 +104,5 @@ public class IMUPacket
       builder.append("}");
       return builder.toString();
    }
-
-   private us.ihmc.euclid.tuple3D.Vector3D linear_acceleration_;
-   private us.ihmc.euclid.tuple4D.Quaternion orientation_;
-   private us.ihmc.euclid.tuple3D.Vector3D angular_velocity_;
-   private double time_;
 
 }

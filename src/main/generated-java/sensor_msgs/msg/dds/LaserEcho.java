@@ -10,6 +10,8 @@ package sensor_msgs.msg.dds;
  */
 public class LaserEcho
 {
+   private us.ihmc.idl.IDLSequence.Float echoes_;
+
    public LaserEcho()
    {
       echoes_ = new us.ihmc.idl.IDLSequence.Float(100, "type_5");
@@ -55,7 +57,5 @@ public class LaserEcho
       builder.append("}");
       return builder.toString();
    }
-
-   private us.ihmc.idl.IDLSequence.Float echoes_;
 
 }

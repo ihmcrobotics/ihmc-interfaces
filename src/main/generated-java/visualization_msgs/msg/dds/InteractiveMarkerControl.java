@@ -10,6 +10,15 @@ package visualization_msgs.msg.dds;
  */
 public class InteractiveMarkerControl
 {
+   private java.lang.StringBuilder name_;
+   private us.ihmc.euclid.tuple4D.Quaternion orientation_;
+   private byte orientation_mode_;
+   private byte interaction_mode_;
+   private boolean always_visible_;
+   private us.ihmc.idl.IDLSequence.Object<visualization_msgs.msg.dds.Marker> markers_;
+   private boolean independent_marker_orientation_;
+   private java.lang.StringBuilder description_;
+
    public InteractiveMarkerControl()
    {
       name_ = new java.lang.StringBuilder(255);
@@ -36,12 +45,6 @@ public class InteractiveMarkerControl
 
    }
 
-   public void setName(String name)
-   {
-      name_.setLength(0);
-      name_.append(name);
-   }
-
    public java.lang.String getNameAsString()
    {
       return getName().toString();
@@ -52,14 +55,15 @@ public class InteractiveMarkerControl
       return name_;
    }
 
+   public void setName(String name)
+   {
+      name_.setLength(0);
+      name_.append(name);
+   }
+
    public us.ihmc.euclid.tuple4D.Quaternion getOrientation()
    {
       return orientation_;
-   }
-
-   public void setOrientation_mode(byte orientation_mode)
-   {
-      orientation_mode_ = orientation_mode;
    }
 
    public byte getOrientation_mode()
@@ -67,9 +71,9 @@ public class InteractiveMarkerControl
       return orientation_mode_;
    }
 
-   public void setInteraction_mode(byte interaction_mode)
+   public void setOrientation_mode(byte orientation_mode)
    {
-      interaction_mode_ = interaction_mode;
+      orientation_mode_ = orientation_mode;
    }
 
    public byte getInteraction_mode()
@@ -77,9 +81,9 @@ public class InteractiveMarkerControl
       return interaction_mode_;
    }
 
-   public void setAlways_visible(boolean always_visible)
+   public void setInteraction_mode(byte interaction_mode)
    {
-      always_visible_ = always_visible;
+      interaction_mode_ = interaction_mode;
    }
 
    public boolean getAlways_visible()
@@ -87,14 +91,14 @@ public class InteractiveMarkerControl
       return always_visible_;
    }
 
+   public void setAlways_visible(boolean always_visible)
+   {
+      always_visible_ = always_visible;
+   }
+
    public us.ihmc.idl.IDLSequence.Object<visualization_msgs.msg.dds.Marker> getMarkers()
    {
       return markers_;
-   }
-
-   public void setIndependent_marker_orientation(boolean independent_marker_orientation)
-   {
-      independent_marker_orientation_ = independent_marker_orientation;
    }
 
    public boolean getIndependent_marker_orientation()
@@ -102,10 +106,9 @@ public class InteractiveMarkerControl
       return independent_marker_orientation_;
    }
 
-   public void setDescription(String description)
+   public void setIndependent_marker_orientation(boolean independent_marker_orientation)
    {
-      description_.setLength(0);
-      description_.append(description);
+      independent_marker_orientation_ = independent_marker_orientation;
    }
 
    public java.lang.String getDescriptionAsString()
@@ -116,6 +119,12 @@ public class InteractiveMarkerControl
    public java.lang.StringBuilder getDescription()
    {
       return description_;
+   }
+
+   public void setDescription(String description)
+   {
+      description_.setLength(0);
+      description_.append(description);
    }
 
    @Override
@@ -189,14 +198,5 @@ public class InteractiveMarkerControl
       builder.append("}");
       return builder.toString();
    }
-
-   private java.lang.StringBuilder name_;
-   private us.ihmc.euclid.tuple4D.Quaternion orientation_;
-   private byte orientation_mode_;
-   private byte interaction_mode_;
-   private boolean always_visible_;
-   private us.ihmc.idl.IDLSequence.Object<visualization_msgs.msg.dds.Marker> markers_;
-   private boolean independent_marker_orientation_;
-   private java.lang.StringBuilder description_;
 
 }

@@ -10,6 +10,9 @@ package robotenvironmentawareness_msgs.msg.dds;
  */
 public class BoxMessage
 {
+   private boolean is_empty_;
+   private us.ihmc.euclid.tuple3D.Vector3D some_vector_;
+
    public BoxMessage()
    {
       some_vector_ = new us.ihmc.euclid.tuple3D.Vector3D();
@@ -22,14 +25,14 @@ public class BoxMessage
       geometry_msgs.msg.dds.Vector3PubSubType.staticCopy(other.some_vector_, some_vector_);
    }
 
-   public void setIs_empty(boolean is_empty)
-   {
-      is_empty_ = is_empty;
-   }
-
    public boolean getIs_empty()
    {
       return is_empty_;
+   }
+
+   public void setIs_empty(boolean is_empty)
+   {
+      is_empty_ = is_empty;
    }
 
    public us.ihmc.euclid.tuple3D.Vector3D getSome_vector()
@@ -72,8 +75,5 @@ public class BoxMessage
       builder.append("}");
       return builder.toString();
    }
-
-   private boolean is_empty_;
-   private us.ihmc.euclid.tuple3D.Vector3D some_vector_;
 
 }

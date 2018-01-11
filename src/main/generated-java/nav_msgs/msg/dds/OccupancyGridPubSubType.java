@@ -11,29 +11,11 @@ package nav_msgs.msg.dds;
 public class OccupancyGridPubSubType implements us.ihmc.pubsub.TopicDataType<nav_msgs.msg.dds.OccupancyGrid>
 {
    public static final java.lang.String name = "nav_msgs::msg::dds_::OccupancyGrid_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public OccupancyGridPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(nav_msgs.msg.dds.OccupancyGrid data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, nav_msgs.msg.dds.OccupancyGrid data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -93,6 +75,27 @@ public class OccupancyGridPubSubType implements us.ihmc.pubsub.TopicDataType<nav
       cdr.read_type_e(data.getData());
    }
 
+   public static void staticCopy(nav_msgs.msg.dds.OccupancyGrid src, nav_msgs.msg.dds.OccupancyGrid dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(nav_msgs.msg.dds.OccupancyGrid data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, nav_msgs.msg.dds.OccupancyGrid data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(nav_msgs.msg.dds.OccupancyGrid data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -113,11 +116,6 @@ public class OccupancyGridPubSubType implements us.ihmc.pubsub.TopicDataType<nav
 
       ser.read_type_e("data", data.getData());
 
-   }
-
-   public static void staticCopy(nav_msgs.msg.dds.OccupancyGrid src, nav_msgs.msg.dds.OccupancyGrid dest)
-   {
-      dest.set(src);
    }
 
    @Override

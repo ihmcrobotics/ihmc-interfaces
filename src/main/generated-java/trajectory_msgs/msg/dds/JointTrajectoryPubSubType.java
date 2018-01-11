@@ -11,29 +11,11 @@ package trajectory_msgs.msg.dds;
 public class JointTrajectoryPubSubType implements us.ihmc.pubsub.TopicDataType<trajectory_msgs.msg.dds.JointTrajectory>
 {
    public static final java.lang.String name = "trajectory_msgs::msg::dds_::JointTrajectory_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public JointTrajectoryPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(trajectory_msgs.msg.dds.JointTrajectory data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, trajectory_msgs.msg.dds.JointTrajectory data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -110,6 +92,27 @@ public class JointTrajectoryPubSubType implements us.ihmc.pubsub.TopicDataType<t
       cdr.read_type_e(data.getPoints());
    }
 
+   public static void staticCopy(trajectory_msgs.msg.dds.JointTrajectory src, trajectory_msgs.msg.dds.JointTrajectory dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(trajectory_msgs.msg.dds.JointTrajectory data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, trajectory_msgs.msg.dds.JointTrajectory data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(trajectory_msgs.msg.dds.JointTrajectory data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -130,11 +133,6 @@ public class JointTrajectoryPubSubType implements us.ihmc.pubsub.TopicDataType<t
 
       ser.read_type_e("points", data.getPoints());
 
-   }
-
-   public static void staticCopy(trajectory_msgs.msg.dds.JointTrajectory src, trajectory_msgs.msg.dds.JointTrajectory dest)
-   {
-      dest.set(src);
    }
 
    @Override

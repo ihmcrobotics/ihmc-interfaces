@@ -10,6 +10,9 @@ package geometry_msgs.msg.dds;
  */
 public class PoseWithCovarianceStamped
 {
+   private std_msgs.msg.dds.Header header_;
+   private geometry_msgs.msg.dds.PoseWithCovariance pose_;
+
    public PoseWithCovarianceStamped()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -68,8 +71,5 @@ public class PoseWithCovarianceStamped
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private geometry_msgs.msg.dds.PoseWithCovariance pose_;
 
 }

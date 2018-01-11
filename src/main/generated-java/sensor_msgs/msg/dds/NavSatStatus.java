@@ -10,6 +10,9 @@ package sensor_msgs.msg.dds;
  */
 public class NavSatStatus
 {
+   private byte status_;
+   private int service_;
+
    public NavSatStatus()
    {
 
@@ -22,24 +25,24 @@ public class NavSatStatus
 
    }
 
-   public void setStatus(byte status)
-   {
-      status_ = status;
-   }
-
    public byte getStatus()
    {
       return status_;
    }
 
-   public void setService(int service)
+   public void setStatus(byte status)
    {
-      service_ = service;
+      status_ = status;
    }
 
    public int getService()
    {
       return service_;
+   }
+
+   public void setService(int service)
+   {
+      service_ = service;
    }
 
    @Override
@@ -77,8 +80,5 @@ public class NavSatStatus
       builder.append("}");
       return builder.toString();
    }
-
-   private byte status_;
-   private int service_;
 
 }

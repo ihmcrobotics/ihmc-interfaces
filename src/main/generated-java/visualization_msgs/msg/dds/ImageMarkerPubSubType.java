@@ -11,29 +11,11 @@ package visualization_msgs.msg.dds;
 public class ImageMarkerPubSubType implements us.ihmc.pubsub.TopicDataType<visualization_msgs.msg.dds.ImageMarker>
 {
    public static final java.lang.String name = "visualization_msgs::msg::dds_::ImageMarker_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public ImageMarkerPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(visualization_msgs.msg.dds.ImageMarker data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, visualization_msgs.msg.dds.ImageMarker data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -187,6 +169,27 @@ public class ImageMarkerPubSubType implements us.ihmc.pubsub.TopicDataType<visua
       cdr.read_type_e(data.getOutline_colors());
    }
 
+   public static void staticCopy(visualization_msgs.msg.dds.ImageMarker src, visualization_msgs.msg.dds.ImageMarker dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(visualization_msgs.msg.dds.ImageMarker data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, visualization_msgs.msg.dds.ImageMarker data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(visualization_msgs.msg.dds.ImageMarker data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -247,11 +250,6 @@ public class ImageMarkerPubSubType implements us.ihmc.pubsub.TopicDataType<visua
 
       ser.read_type_e("outline_colors", data.getOutline_colors());
 
-   }
-
-   public static void staticCopy(visualization_msgs.msg.dds.ImageMarker src, visualization_msgs.msg.dds.ImageMarker dest)
-   {
-      dest.set(src);
    }
 
    @Override

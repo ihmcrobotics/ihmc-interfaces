@@ -10,6 +10,10 @@ package sensor_msgs.msg.dds;
  */
 public class TimeReference
 {
+   private std_msgs.msg.dds.Header header_;
+   private builtin_interfaces.msg.dds.Time time_ref_;
+   private java.lang.StringBuilder source_;
+
    public TimeReference()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -36,12 +40,6 @@ public class TimeReference
       return time_ref_;
    }
 
-   public void setSource(String source)
-   {
-      source_.setLength(0);
-      source_.append(source);
-   }
-
    public java.lang.String getSourceAsString()
    {
       return getSource().toString();
@@ -50,6 +48,12 @@ public class TimeReference
    public java.lang.StringBuilder getSource()
    {
       return source_;
+   }
+
+   public void setSource(String source)
+   {
+      source_.setLength(0);
+      source_.append(source);
    }
 
    @Override
@@ -93,9 +97,5 @@ public class TimeReference
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private builtin_interfaces.msg.dds.Time time_ref_;
-   private java.lang.StringBuilder source_;
 
 }

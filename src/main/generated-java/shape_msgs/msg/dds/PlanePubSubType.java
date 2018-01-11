@@ -11,29 +11,11 @@ package shape_msgs.msg.dds;
 public class PlanePubSubType implements us.ihmc.pubsub.TopicDataType<shape_msgs.msg.dds.Plane>
 {
    public static final java.lang.String name = "shape_msgs::msg::dds_::Plane_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public PlanePubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(shape_msgs.msg.dds.Plane data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, shape_msgs.msg.dds.Plane data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -84,6 +66,27 @@ public class PlanePubSubType implements us.ihmc.pubsub.TopicDataType<shape_msgs.
 
    }
 
+   public static void staticCopy(shape_msgs.msg.dds.Plane src, shape_msgs.msg.dds.Plane dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(shape_msgs.msg.dds.Plane data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, shape_msgs.msg.dds.Plane data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(shape_msgs.msg.dds.Plane data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -95,11 +98,6 @@ public class PlanePubSubType implements us.ihmc.pubsub.TopicDataType<shape_msgs.
    {
       ser.read_type_f("coef", data.getCoef());
 
-   }
-
-   public static void staticCopy(shape_msgs.msg.dds.Plane src, shape_msgs.msg.dds.Plane dest)
-   {
-      dest.set(src);
    }
 
    @Override

@@ -10,6 +10,10 @@ package trajectory_msgs.msg.dds;
  */
 public class JointTrajectory
 {
+   private std_msgs.msg.dds.Header header_;
+   private us.ihmc.idl.IDLSequence.StringBuilderHolder joint_names_;
+   private us.ihmc.idl.IDLSequence.Object<trajectory_msgs.msg.dds.JointTrajectoryPoint> points_;
+
    public JointTrajectory()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -82,9 +86,5 @@ public class JointTrajectory
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private us.ihmc.idl.IDLSequence.StringBuilderHolder joint_names_;
-   private us.ihmc.idl.IDLSequence.Object<trajectory_msgs.msg.dds.JointTrajectoryPoint> points_;
 
 }

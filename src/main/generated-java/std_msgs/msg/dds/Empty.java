@@ -10,6 +10,8 @@ package std_msgs.msg.dds;
  */
 public class Empty
 {
+   private boolean _dummy_;
+
    public Empty()
    {
 
@@ -21,14 +23,14 @@ public class Empty
 
    }
 
-   public void set_dummy(boolean _dummy)
-   {
-      _dummy_ = _dummy;
-   }
-
    public boolean get_dummy()
    {
       return _dummy_;
+   }
+
+   public void set_dummy(boolean _dummy)
+   {
+      _dummy_ = _dummy;
    }
 
    @Override
@@ -60,7 +62,5 @@ public class Empty
       builder.append("}");
       return builder.toString();
    }
-
-   private boolean _dummy_;
 
 }

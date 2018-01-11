@@ -10,6 +10,9 @@ package controller_msgs.msg.dds;
  */
 public class PoseWithConfidenceStamped
 {
+   private geometry_msgs.msg.dds.PoseStamped pose_;
+   private float confidence_;
+
    public PoseWithConfidenceStamped()
    {
       pose_ = new geometry_msgs.msg.dds.PoseStamped();
@@ -28,14 +31,14 @@ public class PoseWithConfidenceStamped
       return pose_;
    }
 
-   public void setConfidence(float confidence)
-   {
-      confidence_ = confidence;
-   }
-
    public float getConfidence()
    {
       return confidence_;
+   }
+
+   public void setConfidence(float confidence)
+   {
+      confidence_ = confidence;
    }
 
    @Override
@@ -73,8 +76,5 @@ public class PoseWithConfidenceStamped
       builder.append("}");
       return builder.toString();
    }
-
-   private geometry_msgs.msg.dds.PoseStamped pose_;
-   private float confidence_;
 
 }

@@ -10,6 +10,10 @@ package sensor_msgs.msg.dds;
  */
 public class FluidPressure
 {
+   private std_msgs.msg.dds.Header header_;
+   private double fluid_pressure_;
+   private double variance_;
+
    public FluidPressure()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -29,24 +33,24 @@ public class FluidPressure
       return header_;
    }
 
-   public void setFluid_pressure(double fluid_pressure)
-   {
-      fluid_pressure_ = fluid_pressure;
-   }
-
    public double getFluid_pressure()
    {
       return fluid_pressure_;
    }
 
-   public void setVariance(double variance)
+   public void setFluid_pressure(double fluid_pressure)
    {
-      variance_ = variance;
+      fluid_pressure_ = fluid_pressure;
    }
 
    public double getVariance()
    {
       return variance_;
+   }
+
+   public void setVariance(double variance)
+   {
+      variance_ = variance;
    }
 
    @Override
@@ -90,9 +94,5 @@ public class FluidPressure
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private double fluid_pressure_;
-   private double variance_;
 
 }

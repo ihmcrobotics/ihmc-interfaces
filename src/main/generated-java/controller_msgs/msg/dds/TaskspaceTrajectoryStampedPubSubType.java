@@ -11,31 +11,11 @@ package controller_msgs.msg.dds;
 public class TaskspaceTrajectoryStampedPubSubType implements us.ihmc.pubsub.TopicDataType<controller_msgs.msg.dds.TaskspaceTrajectoryStamped>
 {
    public static final java.lang.String name = "controller_msgs::msg::dds_::TaskspaceTrajectoryStamped_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public TaskspaceTrajectoryStampedPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(controller_msgs.msg.dds.TaskspaceTrajectoryStamped data, us.ihmc.pubsub.common.SerializedPayload serializedPayload)
-         throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, controller_msgs.msg.dds.TaskspaceTrajectoryStamped data)
-         throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -103,6 +83,29 @@ public class TaskspaceTrajectoryStampedPubSubType implements us.ihmc.pubsub.Topi
       builtin_interfaces.msg.dds.DurationPubSubType.read(data.getTime_from_start(), cdr);
    }
 
+   public static void staticCopy(controller_msgs.msg.dds.TaskspaceTrajectoryStamped src, controller_msgs.msg.dds.TaskspaceTrajectoryStamped dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(controller_msgs.msg.dds.TaskspaceTrajectoryStamped data, us.ihmc.pubsub.common.SerializedPayload serializedPayload)
+         throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, controller_msgs.msg.dds.TaskspaceTrajectoryStamped data)
+         throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(controller_msgs.msg.dds.TaskspaceTrajectoryStamped data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -123,11 +126,6 @@ public class TaskspaceTrajectoryStampedPubSubType implements us.ihmc.pubsub.Topi
 
       ser.read_type_a("time_from_start", new builtin_interfaces.msg.dds.DurationPubSubType(), data.getTime_from_start());
 
-   }
-
-   public static void staticCopy(controller_msgs.msg.dds.TaskspaceTrajectoryStamped src, controller_msgs.msg.dds.TaskspaceTrajectoryStamped dest)
-   {
-      dest.set(src);
    }
 
    @Override

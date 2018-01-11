@@ -10,6 +10,8 @@ package std_msgs.msg.dds;
  */
 public class Char
 {
+   private char data_;
+
    public Char()
    {
 
@@ -21,14 +23,14 @@ public class Char
 
    }
 
-   public void setData(char data)
-   {
-      data_ = data;
-   }
-
    public char getData()
    {
       return data_;
+   }
+
+   public void setData(char data)
+   {
+      data_ = data;
    }
 
    @Override
@@ -60,7 +62,5 @@ public class Char
       builder.append("}");
       return builder.toString();
    }
-
-   private char data_;
 
 }

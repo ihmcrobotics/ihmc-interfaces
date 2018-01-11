@@ -10,6 +10,8 @@ package std_msgs.msg.dds;
  */
 public class Int16
 {
+   private short data_;
+
    public Int16()
    {
 
@@ -21,14 +23,14 @@ public class Int16
 
    }
 
-   public void setData(short data)
-   {
-      data_ = data;
-   }
-
    public short getData()
    {
       return data_;
+   }
+
+   public void setData(short data)
+   {
+      data_ = data;
    }
 
    @Override
@@ -60,7 +62,5 @@ public class Int16
       builder.append("}");
       return builder.toString();
    }
-
-   private short data_;
 
 }

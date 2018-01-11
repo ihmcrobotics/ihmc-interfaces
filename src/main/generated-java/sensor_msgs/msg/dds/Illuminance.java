@@ -10,6 +10,10 @@ package sensor_msgs.msg.dds;
  */
 public class Illuminance
 {
+   private std_msgs.msg.dds.Header header_;
+   private double illuminance_;
+   private double variance_;
+
    public Illuminance()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -29,24 +33,24 @@ public class Illuminance
       return header_;
    }
 
-   public void setIlluminance(double illuminance)
-   {
-      illuminance_ = illuminance;
-   }
-
    public double getIlluminance()
    {
       return illuminance_;
    }
 
-   public void setVariance(double variance)
+   public void setIlluminance(double illuminance)
    {
-      variance_ = variance;
+      illuminance_ = illuminance;
    }
 
    public double getVariance()
    {
       return variance_;
+   }
+
+   public void setVariance(double variance)
+   {
+      variance_ = variance;
    }
 
    @Override
@@ -90,9 +94,5 @@ public class Illuminance
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private double illuminance_;
-   private double variance_;
 
 }

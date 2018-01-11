@@ -11,29 +11,11 @@ package geometry_msgs.msg.dds;
 public class QuaternionStampedPubSubType implements us.ihmc.pubsub.TopicDataType<geometry_msgs.msg.dds.QuaternionStamped>
 {
    public static final java.lang.String name = "geometry_msgs::msg::dds_::QuaternionStamped_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public QuaternionStampedPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(geometry_msgs.msg.dds.QuaternionStamped data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, geometry_msgs.msg.dds.QuaternionStamped data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -82,6 +64,27 @@ public class QuaternionStampedPubSubType implements us.ihmc.pubsub.TopicDataType
       geometry_msgs.msg.dds.QuaternionPubSubType.read(data.getQuaternion(), cdr);
    }
 
+   public static void staticCopy(geometry_msgs.msg.dds.QuaternionStamped src, geometry_msgs.msg.dds.QuaternionStamped dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(geometry_msgs.msg.dds.QuaternionStamped data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, geometry_msgs.msg.dds.QuaternionStamped data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(geometry_msgs.msg.dds.QuaternionStamped data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -98,11 +101,6 @@ public class QuaternionStampedPubSubType implements us.ihmc.pubsub.TopicDataType
 
       ser.read_type_a("quaternion", new geometry_msgs.msg.dds.QuaternionPubSubType(), data.getQuaternion());
 
-   }
-
-   public static void staticCopy(geometry_msgs.msg.dds.QuaternionStamped src, geometry_msgs.msg.dds.QuaternionStamped dest)
-   {
-      dest.set(src);
    }
 
    @Override

@@ -11,31 +11,11 @@ package robotenvironmentawareness_msgs.msg.dds;
 public class BoxMessagePubSubType implements us.ihmc.pubsub.TopicDataType<robotenvironmentawareness_msgs.msg.dds.BoxMessage>
 {
    public static final java.lang.String name = "robotenvironmentawareness_msgs::msg::dds_::BoxMessage_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public BoxMessagePubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(robotenvironmentawareness_msgs.msg.dds.BoxMessage data, us.ihmc.pubsub.common.SerializedPayload serializedPayload)
-         throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, robotenvironmentawareness_msgs.msg.dds.BoxMessage data)
-         throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -86,6 +66,29 @@ public class BoxMessagePubSubType implements us.ihmc.pubsub.TopicDataType<robote
       geometry_msgs.msg.dds.Vector3PubSubType.read(data.getSome_vector(), cdr);
    }
 
+   public static void staticCopy(robotenvironmentawareness_msgs.msg.dds.BoxMessage src, robotenvironmentawareness_msgs.msg.dds.BoxMessage dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(robotenvironmentawareness_msgs.msg.dds.BoxMessage data, us.ihmc.pubsub.common.SerializedPayload serializedPayload)
+         throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, robotenvironmentawareness_msgs.msg.dds.BoxMessage data)
+         throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(robotenvironmentawareness_msgs.msg.dds.BoxMessage data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -102,11 +105,6 @@ public class BoxMessagePubSubType implements us.ihmc.pubsub.TopicDataType<robote
 
       ser.read_type_a("some_vector", new geometry_msgs.msg.dds.Vector3PubSubType(), data.getSome_vector());
 
-   }
-
-   public static void staticCopy(robotenvironmentawareness_msgs.msg.dds.BoxMessage src, robotenvironmentawareness_msgs.msg.dds.BoxMessage dest)
-   {
-      dest.set(src);
    }
 
    @Override

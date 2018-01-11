@@ -11,31 +11,11 @@ package controller_msgs.msg.dds;
 public class RobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDataType<controller_msgs.msg.dds.RobotConfigurationData>
 {
    public static final java.lang.String name = "controller_msgs::msg::dds_::RobotConfigurationData_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public RobotConfigurationDataPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(controller_msgs.msg.dds.RobotConfigurationData data, us.ihmc.pubsub.common.SerializedPayload serializedPayload)
-         throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, controller_msgs.msg.dds.RobotConfigurationData data)
-         throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -74,7 +54,7 @@ public class RobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDat
          current_alignment += controller_msgs.msg.dds.IMUPacketPubSubType.getMaxCdrSerializedSize(current_alignment);
       }
 
-      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
@@ -122,7 +102,7 @@ public class RobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDat
          current_alignment += controller_msgs.msg.dds.IMUPacketPubSubType.getCdrSerializedSize(data.getImu_sensor_data().get(a), current_alignment);
       }
 
-      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
@@ -174,7 +154,7 @@ public class RobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDat
       else
          throw new RuntimeException("imu_sensor_data field exceeds the maximum length");
 
-      cdr.write_type_9(data.getRobot_motion_status());
+      cdr.write_type_2(data.getRobot_motion_status());
 
       cdr.write_type_2(data.getLast_received_packet_type_id());
 
@@ -212,7 +192,7 @@ public class RobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDat
 
       cdr.read_type_e(data.getImu_sensor_data());
 
-      data.setRobot_motion_status(cdr.read_type_9());
+      data.setRobot_motion_status(cdr.read_type_2());
 
       data.setLast_received_packet_type_id(cdr.read_type_2());
 
@@ -220,6 +200,29 @@ public class RobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDat
 
       data.setLast_received_packet_robot_timestamp(cdr.read_type_11());
 
+   }
+
+   public static void staticCopy(controller_msgs.msg.dds.RobotConfigurationData src, controller_msgs.msg.dds.RobotConfigurationData dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(controller_msgs.msg.dds.RobotConfigurationData data, us.ihmc.pubsub.common.SerializedPayload serializedPayload)
+         throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, controller_msgs.msg.dds.RobotConfigurationData data)
+         throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
    }
 
    @Override
@@ -252,7 +255,7 @@ public class RobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDat
 
       ser.write_type_e("imu_sensor_data", data.getImu_sensor_data());
 
-      ser.write_type_9("robot_motion_status", data.getRobot_motion_status());
+      ser.write_type_2("robot_motion_status", data.getRobot_motion_status());
 
       ser.write_type_2("last_received_packet_type_id", data.getLast_received_packet_type_id());
 
@@ -292,7 +295,7 @@ public class RobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDat
 
       ser.read_type_e("imu_sensor_data", data.getImu_sensor_data());
 
-      data.setRobot_motion_status(ser.read_type_9("robot_motion_status"));
+      data.setRobot_motion_status(ser.read_type_2("robot_motion_status"));
 
       data.setLast_received_packet_type_id(ser.read_type_2("last_received_packet_type_id"));
 
@@ -300,11 +303,6 @@ public class RobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDat
 
       data.setLast_received_packet_robot_timestamp(ser.read_type_11("last_received_packet_robot_timestamp"));
 
-   }
-
-   public static void staticCopy(controller_msgs.msg.dds.RobotConfigurationData src, controller_msgs.msg.dds.RobotConfigurationData dest)
-   {
-      dest.set(src);
    }
 
    @Override

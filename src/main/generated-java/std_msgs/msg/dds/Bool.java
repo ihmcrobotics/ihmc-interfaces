@@ -10,6 +10,8 @@ package std_msgs.msg.dds;
  */
 public class Bool
 {
+   private boolean data_;
+
    public Bool()
    {
 
@@ -21,14 +23,14 @@ public class Bool
 
    }
 
-   public void setData(boolean data)
-   {
-      data_ = data;
-   }
-
    public boolean getData()
    {
       return data_;
+   }
+
+   public void setData(boolean data)
+   {
+      data_ = data;
    }
 
    @Override
@@ -60,7 +62,5 @@ public class Bool
       builder.append("}");
       return builder.toString();
    }
-
-   private boolean data_;
 
 }

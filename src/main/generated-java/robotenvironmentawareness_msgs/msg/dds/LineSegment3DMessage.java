@@ -10,6 +10,9 @@ package robotenvironmentawareness_msgs.msg.dds;
  */
 public class LineSegment3DMessage
 {
+   private us.ihmc.euclid.tuple3D.Point3D32 start_;
+   private us.ihmc.euclid.tuple3D.Point3D32 end_;
+
    public LineSegment3DMessage()
    {
       start_ = new us.ihmc.euclid.tuple3D.Point3D32();
@@ -68,8 +71,5 @@ public class LineSegment3DMessage
       builder.append("}");
       return builder.toString();
    }
-
-   private us.ihmc.euclid.tuple3D.Point3D32 start_;
-   private us.ihmc.euclid.tuple3D.Point3D32 end_;
 
 }

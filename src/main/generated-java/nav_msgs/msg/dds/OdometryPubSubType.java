@@ -11,29 +11,11 @@ package nav_msgs.msg.dds;
 public class OdometryPubSubType implements us.ihmc.pubsub.TopicDataType<nav_msgs.msg.dds.Odometry>
 {
    public static final java.lang.String name = "nav_msgs::msg::dds_::Odometry_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public OdometryPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(nav_msgs.msg.dds.Odometry data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, nav_msgs.msg.dds.Odometry data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -99,6 +81,27 @@ public class OdometryPubSubType implements us.ihmc.pubsub.TopicDataType<nav_msgs
       geometry_msgs.msg.dds.TwistWithCovariancePubSubType.read(data.getTwist(), cdr);
    }
 
+   public static void staticCopy(nav_msgs.msg.dds.Odometry src, nav_msgs.msg.dds.Odometry dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(nav_msgs.msg.dds.Odometry data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, nav_msgs.msg.dds.Odometry data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(nav_msgs.msg.dds.Odometry data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -123,11 +126,6 @@ public class OdometryPubSubType implements us.ihmc.pubsub.TopicDataType<nav_msgs
 
       ser.read_type_a("twist", new geometry_msgs.msg.dds.TwistWithCovariancePubSubType(), data.getTwist());
 
-   }
-
-   public static void staticCopy(nav_msgs.msg.dds.Odometry src, nav_msgs.msg.dds.Odometry dest)
-   {
-      dest.set(src);
    }
 
    @Override

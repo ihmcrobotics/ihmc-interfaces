@@ -11,29 +11,11 @@ package nav_msgs.msg.dds;
 public class MapMetaDataPubSubType implements us.ihmc.pubsub.TopicDataType<nav_msgs.msg.dds.MapMetaData>
 {
    public static final java.lang.String name = "nav_msgs::msg::dds_::MapMetaData_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public MapMetaDataPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(nav_msgs.msg.dds.MapMetaData data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, nav_msgs.msg.dds.MapMetaData data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -106,6 +88,27 @@ public class MapMetaDataPubSubType implements us.ihmc.pubsub.TopicDataType<nav_m
       geometry_msgs.msg.dds.PosePubSubType.read(data.getOrigin(), cdr);
    }
 
+   public static void staticCopy(nav_msgs.msg.dds.MapMetaData src, nav_msgs.msg.dds.MapMetaData dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(nav_msgs.msg.dds.MapMetaData data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, nav_msgs.msg.dds.MapMetaData data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(nav_msgs.msg.dds.MapMetaData data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -134,11 +137,6 @@ public class MapMetaDataPubSubType implements us.ihmc.pubsub.TopicDataType<nav_m
 
       ser.read_type_a("origin", new geometry_msgs.msg.dds.PosePubSubType(), data.getOrigin());
 
-   }
-
-   public static void staticCopy(nav_msgs.msg.dds.MapMetaData src, nav_msgs.msg.dds.MapMetaData dest)
-   {
-      dest.set(src);
    }
 
    @Override

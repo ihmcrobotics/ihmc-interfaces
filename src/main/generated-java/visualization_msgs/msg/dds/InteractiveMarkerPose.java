@@ -10,6 +10,10 @@ package visualization_msgs.msg.dds;
  */
 public class InteractiveMarkerPose
 {
+   private std_msgs.msg.dds.Header header_;
+   private us.ihmc.euclid.geometry.Pose3D pose_;
+   private java.lang.StringBuilder name_;
+
    public InteractiveMarkerPose()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -36,12 +40,6 @@ public class InteractiveMarkerPose
       return pose_;
    }
 
-   public void setName(String name)
-   {
-      name_.setLength(0);
-      name_.append(name);
-   }
-
    public java.lang.String getNameAsString()
    {
       return getName().toString();
@@ -50,6 +48,12 @@ public class InteractiveMarkerPose
    public java.lang.StringBuilder getName()
    {
       return name_;
+   }
+
+   public void setName(String name)
+   {
+      name_.setLength(0);
+      name_.append(name);
    }
 
    @Override
@@ -93,9 +97,5 @@ public class InteractiveMarkerPose
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private us.ihmc.euclid.geometry.Pose3D pose_;
-   private java.lang.StringBuilder name_;
 
 }

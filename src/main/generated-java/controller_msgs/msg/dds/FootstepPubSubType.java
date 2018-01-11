@@ -11,29 +11,11 @@ package controller_msgs.msg.dds;
 public class FootstepPubSubType implements us.ihmc.pubsub.TopicDataType<controller_msgs.msg.dds.Footstep>
 {
    public static final java.lang.String name = "controller_msgs::msg::dds_::Footstep_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public FootstepPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(controller_msgs.msg.dds.Footstep data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, controller_msgs.msg.dds.Footstep data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -195,6 +177,27 @@ public class FootstepPubSubType implements us.ihmc.pubsub.TopicDataType<controll
 
    }
 
+   public static void staticCopy(controller_msgs.msg.dds.Footstep src, controller_msgs.msg.dds.Footstep dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(controller_msgs.msg.dds.Footstep data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, controller_msgs.msg.dds.Footstep data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(controller_msgs.msg.dds.Footstep data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -251,11 +254,6 @@ public class FootstepPubSubType implements us.ihmc.pubsub.TopicDataType<controll
 
       data.setTransfer_duration(ser.read_type_6("transfer_duration"));
 
-   }
-
-   public static void staticCopy(controller_msgs.msg.dds.Footstep src, controller_msgs.msg.dds.Footstep dest)
-   {
-      dest.set(src);
    }
 
    @Override

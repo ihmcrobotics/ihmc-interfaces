@@ -11,29 +11,11 @@ package shape_msgs.msg.dds;
 public class MeshPubSubType implements us.ihmc.pubsub.TopicDataType<shape_msgs.msg.dds.Mesh>
 {
    public static final java.lang.String name = "shape_msgs::msg::dds_::Mesh_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public MeshPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(shape_msgs.msg.dds.Mesh data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, shape_msgs.msg.dds.Mesh data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -106,6 +88,27 @@ public class MeshPubSubType implements us.ihmc.pubsub.TopicDataType<shape_msgs.m
       cdr.read_type_e(data.getVertices());
    }
 
+   public static void staticCopy(shape_msgs.msg.dds.Mesh src, shape_msgs.msg.dds.Mesh dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(shape_msgs.msg.dds.Mesh data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, shape_msgs.msg.dds.Mesh data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(shape_msgs.msg.dds.Mesh data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -122,11 +125,6 @@ public class MeshPubSubType implements us.ihmc.pubsub.TopicDataType<shape_msgs.m
 
       ser.read_type_e("vertices", data.getVertices());
 
-   }
-
-   public static void staticCopy(shape_msgs.msg.dds.Mesh src, shape_msgs.msg.dds.Mesh dest)
-   {
-      dest.set(src);
    }
 
    @Override

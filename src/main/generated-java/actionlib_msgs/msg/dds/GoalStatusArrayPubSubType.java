@@ -11,29 +11,11 @@ package actionlib_msgs.msg.dds;
 public class GoalStatusArrayPubSubType implements us.ihmc.pubsub.TopicDataType<actionlib_msgs.msg.dds.GoalStatusArray>
 {
    public static final java.lang.String name = "actionlib_msgs::msg::dds_::GoalStatusArray_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public GoalStatusArrayPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(actionlib_msgs.msg.dds.GoalStatusArray data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, actionlib_msgs.msg.dds.GoalStatusArray data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -93,6 +75,27 @@ public class GoalStatusArrayPubSubType implements us.ihmc.pubsub.TopicDataType<a
       cdr.read_type_e(data.getStatus_list());
    }
 
+   public static void staticCopy(actionlib_msgs.msg.dds.GoalStatusArray src, actionlib_msgs.msg.dds.GoalStatusArray dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(actionlib_msgs.msg.dds.GoalStatusArray data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, actionlib_msgs.msg.dds.GoalStatusArray data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(actionlib_msgs.msg.dds.GoalStatusArray data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -109,11 +112,6 @@ public class GoalStatusArrayPubSubType implements us.ihmc.pubsub.TopicDataType<a
 
       ser.read_type_e("status_list", data.getStatus_list());
 
-   }
-
-   public static void staticCopy(actionlib_msgs.msg.dds.GoalStatusArray src, actionlib_msgs.msg.dds.GoalStatusArray dest)
-   {
-      dest.set(src);
    }
 
    @Override

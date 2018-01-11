@@ -10,6 +10,10 @@ package sensor_msgs.msg.dds;
  */
 public class Joy
 {
+   private std_msgs.msg.dds.Header header_;
+   private us.ihmc.idl.IDLSequence.Float axes_;
+   private us.ihmc.idl.IDLSequence.Integer buttons_;
+
    public Joy()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -81,9 +85,5 @@ public class Joy
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private us.ihmc.idl.IDLSequence.Float axes_;
-   private us.ihmc.idl.IDLSequence.Integer buttons_;
 
 }

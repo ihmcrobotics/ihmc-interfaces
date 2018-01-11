@@ -11,29 +11,11 @@ package geometry_msgs.msg.dds;
 public class PolygonStampedPubSubType implements us.ihmc.pubsub.TopicDataType<geometry_msgs.msg.dds.PolygonStamped>
 {
    public static final java.lang.String name = "geometry_msgs::msg::dds_::PolygonStamped_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public PolygonStampedPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(geometry_msgs.msg.dds.PolygonStamped data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, geometry_msgs.msg.dds.PolygonStamped data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -82,6 +64,27 @@ public class PolygonStampedPubSubType implements us.ihmc.pubsub.TopicDataType<ge
       geometry_msgs.msg.dds.PolygonPubSubType.read(data.getPolygon(), cdr);
    }
 
+   public static void staticCopy(geometry_msgs.msg.dds.PolygonStamped src, geometry_msgs.msg.dds.PolygonStamped dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(geometry_msgs.msg.dds.PolygonStamped data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, geometry_msgs.msg.dds.PolygonStamped data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(geometry_msgs.msg.dds.PolygonStamped data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -98,11 +101,6 @@ public class PolygonStampedPubSubType implements us.ihmc.pubsub.TopicDataType<ge
 
       ser.read_type_a("polygon", new geometry_msgs.msg.dds.PolygonPubSubType(), data.getPolygon());
 
-   }
-
-   public static void staticCopy(geometry_msgs.msg.dds.PolygonStamped src, geometry_msgs.msg.dds.PolygonStamped dest)
-   {
-      dest.set(src);
    }
 
    @Override

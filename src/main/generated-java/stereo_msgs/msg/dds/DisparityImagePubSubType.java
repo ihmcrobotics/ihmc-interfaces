@@ -11,29 +11,11 @@ package stereo_msgs.msg.dds;
 public class DisparityImagePubSubType implements us.ihmc.pubsub.TopicDataType<stereo_msgs.msg.dds.DisparityImage>
 {
    public static final java.lang.String name = "stereo_msgs::msg::dds_::DisparityImage_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public DisparityImagePubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(stereo_msgs.msg.dds.DisparityImage data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, stereo_msgs.msg.dds.DisparityImage data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -127,6 +109,27 @@ public class DisparityImagePubSubType implements us.ihmc.pubsub.TopicDataType<st
 
    }
 
+   public static void staticCopy(stereo_msgs.msg.dds.DisparityImage src, stereo_msgs.msg.dds.DisparityImage dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(stereo_msgs.msg.dds.DisparityImage data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, stereo_msgs.msg.dds.DisparityImage data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(stereo_msgs.msg.dds.DisparityImage data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -167,11 +170,6 @@ public class DisparityImagePubSubType implements us.ihmc.pubsub.TopicDataType<st
 
       data.setDelta_d(ser.read_type_5("delta_d"));
 
-   }
-
-   public static void staticCopy(stereo_msgs.msg.dds.DisparityImage src, stereo_msgs.msg.dds.DisparityImage dest)
-   {
-      dest.set(src);
    }
 
    @Override

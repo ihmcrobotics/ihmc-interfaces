@@ -11,29 +11,11 @@ package std_msgs.msg.dds;
 public class BoolPubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.msg.dds.Bool>
 {
    public static final java.lang.String name = "std_msgs::msg::dds_::Bool_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public BoolPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(std_msgs.msg.dds.Bool data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, std_msgs.msg.dds.Bool data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -77,6 +59,27 @@ public class BoolPubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.msg
 
    }
 
+   public static void staticCopy(std_msgs.msg.dds.Bool src, std_msgs.msg.dds.Bool dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(std_msgs.msg.dds.Bool data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, std_msgs.msg.dds.Bool data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(std_msgs.msg.dds.Bool data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -89,11 +92,6 @@ public class BoolPubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.msg
    {
       data.setData(ser.read_type_7("data"));
 
-   }
-
-   public static void staticCopy(std_msgs.msg.dds.Bool src, std_msgs.msg.dds.Bool dest)
-   {
-      dest.set(src);
    }
 
    @Override

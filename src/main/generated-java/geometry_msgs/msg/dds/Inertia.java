@@ -10,6 +10,15 @@ package geometry_msgs.msg.dds;
  */
 public class Inertia
 {
+   private double m_;
+   private us.ihmc.euclid.tuple3D.Vector3D com_;
+   private double ixx_;
+   private double ixy_;
+   private double ixz_;
+   private double iyy_;
+   private double iyz_;
+   private double izz_;
+
    public Inertia()
    {
       com_ = new us.ihmc.euclid.tuple3D.Vector3D();
@@ -29,14 +38,14 @@ public class Inertia
 
    }
 
-   public void setM(double m)
-   {
-      m_ = m;
-   }
-
    public double getM()
    {
       return m_;
+   }
+
+   public void setM(double m)
+   {
+      m_ = m;
    }
 
    public us.ihmc.euclid.tuple3D.Vector3D getCom()
@@ -44,19 +53,14 @@ public class Inertia
       return com_;
    }
 
-   public void setIxx(double ixx)
-   {
-      ixx_ = ixx;
-   }
-
    public double getIxx()
    {
       return ixx_;
    }
 
-   public void setIxy(double ixy)
+   public void setIxx(double ixx)
    {
-      ixy_ = ixy;
+      ixx_ = ixx;
    }
 
    public double getIxy()
@@ -64,9 +68,9 @@ public class Inertia
       return ixy_;
    }
 
-   public void setIxz(double ixz)
+   public void setIxy(double ixy)
    {
-      ixz_ = ixz;
+      ixy_ = ixy;
    }
 
    public double getIxz()
@@ -74,9 +78,9 @@ public class Inertia
       return ixz_;
    }
 
-   public void setIyy(double iyy)
+   public void setIxz(double ixz)
    {
-      iyy_ = iyy;
+      ixz_ = ixz;
    }
 
    public double getIyy()
@@ -84,9 +88,9 @@ public class Inertia
       return iyy_;
    }
 
-   public void setIyz(double iyz)
+   public void setIyy(double iyy)
    {
-      iyz_ = iyz;
+      iyy_ = iyy;
    }
 
    public double getIyz()
@@ -94,14 +98,19 @@ public class Inertia
       return iyz_;
    }
 
-   public void setIzz(double izz)
+   public void setIyz(double iyz)
    {
-      izz_ = izz;
+      iyz_ = iyz;
    }
 
    public double getIzz()
    {
       return izz_;
+   }
+
+   public void setIzz(double izz)
+   {
+      izz_ = izz;
    }
 
    @Override
@@ -175,14 +184,5 @@ public class Inertia
       builder.append("}");
       return builder.toString();
    }
-
-   private double m_;
-   private us.ihmc.euclid.tuple3D.Vector3D com_;
-   private double ixx_;
-   private double ixy_;
-   private double ixz_;
-   private double iyy_;
-   private double iyz_;
-   private double izz_;
 
 }

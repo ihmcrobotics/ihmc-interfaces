@@ -10,6 +10,14 @@ package sensor_msgs.msg.dds;
  */
 public class NavSatFix
 {
+   private std_msgs.msg.dds.Header header_;
+   private sensor_msgs.msg.dds.NavSatStatus status_;
+   private double latitude_;
+   private double longitude_;
+   private double altitude_;
+   private double[] position_covariance_;
+   private byte position_covariance_type_;
+
    public NavSatFix()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -45,19 +53,14 @@ public class NavSatFix
       return status_;
    }
 
-   public void setLatitude(double latitude)
-   {
-      latitude_ = latitude;
-   }
-
    public double getLatitude()
    {
       return latitude_;
    }
 
-   public void setLongitude(double longitude)
+   public void setLatitude(double latitude)
    {
-      longitude_ = longitude;
+      latitude_ = latitude;
    }
 
    public double getLongitude()
@@ -65,9 +68,9 @@ public class NavSatFix
       return longitude_;
    }
 
-   public void setAltitude(double altitude)
+   public void setLongitude(double longitude)
    {
-      altitude_ = altitude;
+      longitude_ = longitude;
    }
 
    public double getAltitude()
@@ -75,19 +78,24 @@ public class NavSatFix
       return altitude_;
    }
 
+   public void setAltitude(double altitude)
+   {
+      altitude_ = altitude;
+   }
+
    public double[] getPosition_covariance()
    {
       return position_covariance_;
    }
 
-   public void setPosition_covariance_type(byte position_covariance_type)
-   {
-      position_covariance_type_ = position_covariance_type;
-   }
-
    public byte getPosition_covariance_type()
    {
       return position_covariance_type_;
+   }
+
+   public void setPosition_covariance_type(byte position_covariance_type)
+   {
+      position_covariance_type_ = position_covariance_type;
    }
 
    @Override
@@ -158,13 +166,5 @@ public class NavSatFix
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private sensor_msgs.msg.dds.NavSatStatus status_;
-   private double latitude_;
-   private double longitude_;
-   private double altitude_;
-   private double[] position_covariance_;
-   private byte position_covariance_type_;
 
 }

@@ -10,6 +10,8 @@ package shape_msgs.msg.dds;
  */
 public class MeshTriangle
 {
+   private long[] vertex_indices_;
+
    public MeshTriangle()
    {
       vertex_indices_ = new long[3];
@@ -64,7 +66,5 @@ public class MeshTriangle
       builder.append("}");
       return builder.toString();
    }
-
-   private long[] vertex_indices_;
 
 }

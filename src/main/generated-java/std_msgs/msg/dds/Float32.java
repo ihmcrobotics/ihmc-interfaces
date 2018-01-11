@@ -10,6 +10,8 @@ package std_msgs.msg.dds;
  */
 public class Float32
 {
+   private float data_;
+
    public Float32()
    {
 
@@ -21,14 +23,14 @@ public class Float32
 
    }
 
-   public void setData(float data)
-   {
-      data_ = data;
-   }
-
    public float getData()
    {
       return data_;
+   }
+
+   public void setData(float data)
+   {
+      data_ = data;
    }
 
    @Override
@@ -60,7 +62,5 @@ public class Float32
       builder.append("}");
       return builder.toString();
    }
-
-   private float data_;
 
 }

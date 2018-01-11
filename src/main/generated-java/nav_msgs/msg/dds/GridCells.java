@@ -10,6 +10,11 @@ package nav_msgs.msg.dds;
  */
 public class GridCells
 {
+   private std_msgs.msg.dds.Header header_;
+   private float cell_width_;
+   private float cell_height_;
+   private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D> cells_;
+
    public GridCells()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -31,24 +36,24 @@ public class GridCells
       return header_;
    }
 
-   public void setCell_width(float cell_width)
-   {
-      cell_width_ = cell_width;
-   }
-
    public float getCell_width()
    {
       return cell_width_;
    }
 
-   public void setCell_height(float cell_height)
+   public void setCell_width(float cell_width)
    {
-      cell_height_ = cell_height;
+      cell_width_ = cell_width;
    }
 
    public float getCell_height()
    {
       return cell_height_;
+   }
+
+   public void setCell_height(float cell_height)
+   {
+      cell_height_ = cell_height;
    }
 
    public us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D> getCells()
@@ -103,10 +108,5 @@ public class GridCells
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private float cell_width_;
-   private float cell_height_;
-   private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D> cells_;
 
 }

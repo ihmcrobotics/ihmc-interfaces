@@ -11,29 +11,11 @@ package std_msgs.msg.dds;
 public class StringPubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.msg.dds.String>
 {
    public static final java.lang.String name = "std_msgs::msg::dds_::String_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public StringPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(std_msgs.msg.dds.String data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, std_msgs.msg.dds.String data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -79,6 +61,27 @@ public class StringPubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.m
       cdr.read_type_d(data.getData());
    }
 
+   public static void staticCopy(std_msgs.msg.dds.String src, std_msgs.msg.dds.String dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(std_msgs.msg.dds.String data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, std_msgs.msg.dds.String data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(std_msgs.msg.dds.String data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -91,11 +94,6 @@ public class StringPubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.m
    {
       ser.read_type_d("data", data.getData());
 
-   }
-
-   public static void staticCopy(std_msgs.msg.dds.String src, std_msgs.msg.dds.String dest)
-   {
-      dest.set(src);
    }
 
    @Override

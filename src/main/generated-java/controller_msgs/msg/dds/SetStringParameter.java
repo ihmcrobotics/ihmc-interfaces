@@ -10,6 +10,9 @@ package controller_msgs.msg.dds;
  */
 public class SetStringParameter
 {
+   private java.lang.StringBuilder parameter_name_;
+   private java.lang.StringBuilder parameter_value_;
+
    public SetStringParameter()
    {
       parameter_name_ = new java.lang.StringBuilder(255);
@@ -25,12 +28,6 @@ public class SetStringParameter
       parameter_value_.append(other.parameter_value_);
    }
 
-   public void setParameter_name(String parameter_name)
-   {
-      parameter_name_.setLength(0);
-      parameter_name_.append(parameter_name);
-   }
-
    public java.lang.String getParameter_nameAsString()
    {
       return getParameter_name().toString();
@@ -41,10 +38,10 @@ public class SetStringParameter
       return parameter_name_;
    }
 
-   public void setParameter_value(String parameter_value)
+   public void setParameter_name(String parameter_name)
    {
-      parameter_value_.setLength(0);
-      parameter_value_.append(parameter_value);
+      parameter_name_.setLength(0);
+      parameter_name_.append(parameter_name);
    }
 
    public java.lang.String getParameter_valueAsString()
@@ -55,6 +52,12 @@ public class SetStringParameter
    public java.lang.StringBuilder getParameter_value()
    {
       return parameter_value_;
+   }
+
+   public void setParameter_value(String parameter_value)
+   {
+      parameter_value_.setLength(0);
+      parameter_value_.append(parameter_value);
    }
 
    @Override
@@ -92,8 +95,5 @@ public class SetStringParameter
       builder.append("}");
       return builder.toString();
    }
-
-   private java.lang.StringBuilder parameter_name_;
-   private java.lang.StringBuilder parameter_value_;
 
 }

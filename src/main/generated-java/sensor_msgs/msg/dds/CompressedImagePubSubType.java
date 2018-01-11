@@ -11,29 +11,11 @@ package sensor_msgs.msg.dds;
 public class CompressedImagePubSubType implements us.ihmc.pubsub.TopicDataType<sensor_msgs.msg.dds.CompressedImage>
 {
    public static final java.lang.String name = "sensor_msgs::msg::dds_::CompressedImage_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public CompressedImagePubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(sensor_msgs.msg.dds.CompressedImage data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, sensor_msgs.msg.dds.CompressedImage data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -98,6 +80,27 @@ public class CompressedImagePubSubType implements us.ihmc.pubsub.TopicDataType<s
       cdr.read_type_e(data.getData());
    }
 
+   public static void staticCopy(sensor_msgs.msg.dds.CompressedImage src, sensor_msgs.msg.dds.CompressedImage dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(sensor_msgs.msg.dds.CompressedImage data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, sensor_msgs.msg.dds.CompressedImage data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(sensor_msgs.msg.dds.CompressedImage data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -118,11 +121,6 @@ public class CompressedImagePubSubType implements us.ihmc.pubsub.TopicDataType<s
 
       ser.read_type_e("data", data.getData());
 
-   }
-
-   public static void staticCopy(sensor_msgs.msg.dds.CompressedImage src, sensor_msgs.msg.dds.CompressedImage dest)
-   {
-      dest.set(src);
    }
 
    @Override

@@ -11,29 +11,11 @@ package visualization_msgs.msg.dds;
 public class MenuEntryPubSubType implements us.ihmc.pubsub.TopicDataType<visualization_msgs.msg.dds.MenuEntry>
 {
    public static final java.lang.String name = "visualization_msgs::msg::dds_::MenuEntry_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public MenuEntryPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(visualization_msgs.msg.dds.MenuEntry data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, visualization_msgs.msg.dds.MenuEntry data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -115,6 +97,27 @@ public class MenuEntryPubSubType implements us.ihmc.pubsub.TopicDataType<visuali
 
    }
 
+   public static void staticCopy(visualization_msgs.msg.dds.MenuEntry src, visualization_msgs.msg.dds.MenuEntry dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(visualization_msgs.msg.dds.MenuEntry data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, visualization_msgs.msg.dds.MenuEntry data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(visualization_msgs.msg.dds.MenuEntry data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -143,11 +146,6 @@ public class MenuEntryPubSubType implements us.ihmc.pubsub.TopicDataType<visuali
 
       data.setCommand_type(ser.read_type_9("command_type"));
 
-   }
-
-   public static void staticCopy(visualization_msgs.msg.dds.MenuEntry src, visualization_msgs.msg.dds.MenuEntry dest)
-   {
-      dest.set(src);
    }
 
    @Override

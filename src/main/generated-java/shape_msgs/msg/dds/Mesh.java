@@ -10,6 +10,9 @@ package shape_msgs.msg.dds;
  */
 public class Mesh
 {
+   private us.ihmc.idl.IDLSequence.Object<shape_msgs.msg.dds.MeshTriangle> triangles_;
+   private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D> vertices_;
+
    public Mesh()
    {
       triangles_ = new us.ihmc.idl.IDLSequence.Object<shape_msgs.msg.dds.MeshTriangle>(100, shape_msgs.msg.dds.MeshTriangle.class,
@@ -71,8 +74,5 @@ public class Mesh
       builder.append("}");
       return builder.toString();
    }
-
-   private us.ihmc.idl.IDLSequence.Object<shape_msgs.msg.dds.MeshTriangle> triangles_;
-   private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D> vertices_;
 
 }

@@ -10,6 +10,8 @@ package std_msgs.msg.dds;
  */
 public class UInt8
 {
+   private byte data_;
+
    public UInt8()
    {
 
@@ -21,14 +23,14 @@ public class UInt8
 
    }
 
-   public void setData(byte data)
-   {
-      data_ = data;
-   }
-
    public byte getData()
    {
       return data_;
+   }
+
+   public void setData(byte data)
+   {
+      data_ = data;
    }
 
    @Override
@@ -60,7 +62,5 @@ public class UInt8
       builder.append("}");
       return builder.toString();
    }
-
-   private byte data_;
 
 }

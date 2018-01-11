@@ -10,6 +10,8 @@ package std_msgs.msg.dds;
  */
 public class String
 {
+   private java.lang.StringBuilder data_;
+
    public String()
    {
       data_ = new java.lang.StringBuilder(255);
@@ -22,12 +24,6 @@ public class String
       data_.append(other.data_);
    }
 
-   public void setData(String data)
-   {
-      data_.setLength(0);
-      data_.append(data);
-   }
-
    public java.lang.String getDataAsString()
    {
       return getData().toString();
@@ -36,6 +32,12 @@ public class String
    public java.lang.StringBuilder getData()
    {
       return data_;
+   }
+
+   public void setData(String data)
+   {
+      data_.setLength(0);
+      data_.append(data);
    }
 
    @Override
@@ -67,7 +69,5 @@ public class String
       builder.append("}");
       return builder.toString();
    }
-
-   private java.lang.StringBuilder data_;
 
 }

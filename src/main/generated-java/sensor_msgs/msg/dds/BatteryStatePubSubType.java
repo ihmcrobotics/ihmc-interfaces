@@ -11,29 +11,11 @@ package sensor_msgs.msg.dds;
 public class BatteryStatePubSubType implements us.ihmc.pubsub.TopicDataType<sensor_msgs.msg.dds.BatteryState>
 {
    public static final java.lang.String name = "sensor_msgs::msg::dds_::BatteryState_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public BatteryStatePubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(sensor_msgs.msg.dds.BatteryState data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, sensor_msgs.msg.dds.BatteryState data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -189,6 +171,27 @@ public class BatteryStatePubSubType implements us.ihmc.pubsub.TopicDataType<sens
       cdr.read_type_d(data.getSerial_number());
    }
 
+   public static void staticCopy(sensor_msgs.msg.dds.BatteryState src, sensor_msgs.msg.dds.BatteryState dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(sensor_msgs.msg.dds.BatteryState data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, sensor_msgs.msg.dds.BatteryState data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(sensor_msgs.msg.dds.BatteryState data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -253,11 +256,6 @@ public class BatteryStatePubSubType implements us.ihmc.pubsub.TopicDataType<sens
 
       ser.read_type_d("serial_number", data.getSerial_number());
 
-   }
-
-   public static void staticCopy(sensor_msgs.msg.dds.BatteryState src, sensor_msgs.msg.dds.BatteryState dest)
-   {
-      dest.set(src);
    }
 
    @Override

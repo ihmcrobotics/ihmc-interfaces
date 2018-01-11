@@ -10,6 +10,18 @@ package sensor_msgs.msg.dds;
  */
 public class CameraInfo
 {
+   private std_msgs.msg.dds.Header header_;
+   private long height_;
+   private long width_;
+   private java.lang.StringBuilder distortion_model_;
+   private us.ihmc.idl.IDLSequence.Double d_;
+   private double[] k_;
+   private double[] r_;
+   private double[] p_;
+   private long binning_x_;
+   private long binning_y_;
+   private sensor_msgs.msg.dds.RegionOfInterest roi_;
+
    public CameraInfo()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -58,19 +70,14 @@ public class CameraInfo
       return header_;
    }
 
-   public void setHeight(long height)
-   {
-      height_ = height;
-   }
-
    public long getHeight()
    {
       return height_;
    }
 
-   public void setWidth(long width)
+   public void setHeight(long height)
    {
-      width_ = width;
+      height_ = height;
    }
 
    public long getWidth()
@@ -78,10 +85,9 @@ public class CameraInfo
       return width_;
    }
 
-   public void setDistortion_model(String distortion_model)
+   public void setWidth(long width)
    {
-      distortion_model_.setLength(0);
-      distortion_model_.append(distortion_model);
+      width_ = width;
    }
 
    public java.lang.String getDistortion_modelAsString()
@@ -92,6 +98,12 @@ public class CameraInfo
    public java.lang.StringBuilder getDistortion_model()
    {
       return distortion_model_;
+   }
+
+   public void setDistortion_model(String distortion_model)
+   {
+      distortion_model_.setLength(0);
+      distortion_model_.append(distortion_model);
    }
 
    public us.ihmc.idl.IDLSequence.Double getD()
@@ -114,24 +126,24 @@ public class CameraInfo
       return p_;
    }
 
-   public void setBinning_x(long binning_x)
-   {
-      binning_x_ = binning_x;
-   }
-
    public long getBinning_x()
    {
       return binning_x_;
    }
 
-   public void setBinning_y(long binning_y)
+   public void setBinning_x(long binning_x)
    {
-      binning_y_ = binning_y;
+      binning_x_ = binning_x;
    }
 
    public long getBinning_y()
    {
       return binning_y_;
+   }
+
+   public void setBinning_y(long binning_y)
+   {
+      binning_y_ = binning_y;
    }
 
    public sensor_msgs.msg.dds.RegionOfInterest getRoi()
@@ -237,17 +249,5 @@ public class CameraInfo
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private long height_;
-   private long width_;
-   private java.lang.StringBuilder distortion_model_;
-   private us.ihmc.idl.IDLSequence.Double d_;
-   private double[] k_;
-   private double[] r_;
-   private double[] p_;
-   private long binning_x_;
-   private long binning_y_;
-   private sensor_msgs.msg.dds.RegionOfInterest roi_;
 
 }

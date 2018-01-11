@@ -10,6 +10,19 @@ package controller_msgs.msg.dds;
  */
 public class Footstep
 {
+   private long unique_id_;
+   private byte robot_side_;
+   private us.ihmc.euclid.tuple3D.Point3D location_;
+   private us.ihmc.euclid.tuple4D.Quaternion orientation_;
+   private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D> predicted_contact_points_2d_;
+   private byte trajectory_type_;
+   private double swing_height_;
+   private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D> position_waypoints_;
+   private us.ihmc.idl.IDLSequence.Object<controller_msgs.msg.dds.TaskspaceTrajectoryStamped> swing_trajectory_;
+   private double swing_trajectory_blend_duration_;
+   private double swing_duration_;
+   private double transfer_duration_;
+
    public Footstep()
    {
       location_ = new us.ihmc.euclid.tuple3D.Point3D();
@@ -43,24 +56,24 @@ public class Footstep
 
    }
 
-   public void setUnique_id(long unique_id)
-   {
-      unique_id_ = unique_id;
-   }
-
    public long getUnique_id()
    {
       return unique_id_;
    }
 
-   public void setRobot_side(byte robot_side)
+   public void setUnique_id(long unique_id)
    {
-      robot_side_ = robot_side;
+      unique_id_ = unique_id;
    }
 
    public byte getRobot_side()
    {
       return robot_side_;
+   }
+
+   public void setRobot_side(byte robot_side)
+   {
+      robot_side_ = robot_side;
    }
 
    public us.ihmc.euclid.tuple3D.Point3D getLocation()
@@ -78,24 +91,24 @@ public class Footstep
       return predicted_contact_points_2d_;
    }
 
-   public void setTrajectory_type(byte trajectory_type)
-   {
-      trajectory_type_ = trajectory_type;
-   }
-
    public byte getTrajectory_type()
    {
       return trajectory_type_;
    }
 
-   public void setSwing_height(double swing_height)
+   public void setTrajectory_type(byte trajectory_type)
    {
-      swing_height_ = swing_height;
+      trajectory_type_ = trajectory_type;
    }
 
    public double getSwing_height()
    {
       return swing_height_;
+   }
+
+   public void setSwing_height(double swing_height)
+   {
+      swing_height_ = swing_height;
    }
 
    public us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D> getPosition_waypoints()
@@ -108,19 +121,14 @@ public class Footstep
       return swing_trajectory_;
    }
 
-   public void setSwing_trajectory_blend_duration(double swing_trajectory_blend_duration)
-   {
-      swing_trajectory_blend_duration_ = swing_trajectory_blend_duration;
-   }
-
    public double getSwing_trajectory_blend_duration()
    {
       return swing_trajectory_blend_duration_;
    }
 
-   public void setSwing_duration(double swing_duration)
+   public void setSwing_trajectory_blend_duration(double swing_trajectory_blend_duration)
    {
-      swing_duration_ = swing_duration;
+      swing_trajectory_blend_duration_ = swing_trajectory_blend_duration;
    }
 
    public double getSwing_duration()
@@ -128,14 +136,19 @@ public class Footstep
       return swing_duration_;
    }
 
-   public void setTransfer_duration(double transfer_duration)
+   public void setSwing_duration(double swing_duration)
    {
-      transfer_duration_ = transfer_duration;
+      swing_duration_ = swing_duration;
    }
 
    public double getTransfer_duration()
    {
       return transfer_duration_;
+   }
+
+   public void setTransfer_duration(double transfer_duration)
+   {
+      transfer_duration_ = transfer_duration;
    }
 
    @Override
@@ -233,18 +246,5 @@ public class Footstep
       builder.append("}");
       return builder.toString();
    }
-
-   private long unique_id_;
-   private byte robot_side_;
-   private us.ihmc.euclid.tuple3D.Point3D location_;
-   private us.ihmc.euclid.tuple4D.Quaternion orientation_;
-   private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D> predicted_contact_points_2d_;
-   private byte trajectory_type_;
-   private double swing_height_;
-   private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D> position_waypoints_;
-   private us.ihmc.idl.IDLSequence.Object<controller_msgs.msg.dds.TaskspaceTrajectoryStamped> swing_trajectory_;
-   private double swing_trajectory_blend_duration_;
-   private double swing_duration_;
-   private double transfer_duration_;
 
 }

@@ -10,6 +10,9 @@ package actionlib_msgs.msg.dds;
  */
 public class GoalID
 {
+   private builtin_interfaces.msg.dds.Time stamp_;
+   private java.lang.StringBuilder id_;
+
    public GoalID()
    {
       stamp_ = new builtin_interfaces.msg.dds.Time();
@@ -29,12 +32,6 @@ public class GoalID
       return stamp_;
    }
 
-   public void setId(String id)
-   {
-      id_.setLength(0);
-      id_.append(id);
-   }
-
    public java.lang.String getIdAsString()
    {
       return getId().toString();
@@ -43,6 +40,12 @@ public class GoalID
    public java.lang.StringBuilder getId()
    {
       return id_;
+   }
+
+   public void setId(String id)
+   {
+      id_.setLength(0);
+      id_.append(id);
    }
 
    @Override
@@ -80,8 +83,5 @@ public class GoalID
       builder.append("}");
       return builder.toString();
    }
-
-   private builtin_interfaces.msg.dds.Time stamp_;
-   private java.lang.StringBuilder id_;
 
 }

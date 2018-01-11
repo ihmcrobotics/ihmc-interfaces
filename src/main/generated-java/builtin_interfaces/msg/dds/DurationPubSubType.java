@@ -11,29 +11,11 @@ package builtin_interfaces.msg.dds;
 public class DurationPubSubType implements us.ihmc.pubsub.TopicDataType<builtin_interfaces.msg.dds.Duration>
 {
    public static final java.lang.String name = "builtin_interfaces::msg::dds_::Duration_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public DurationPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(builtin_interfaces.msg.dds.Duration data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, builtin_interfaces.msg.dds.Duration data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -85,6 +67,27 @@ public class DurationPubSubType implements us.ihmc.pubsub.TopicDataType<builtin_
 
    }
 
+   public static void staticCopy(builtin_interfaces.msg.dds.Duration src, builtin_interfaces.msg.dds.Duration dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(builtin_interfaces.msg.dds.Duration data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, builtin_interfaces.msg.dds.Duration data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(builtin_interfaces.msg.dds.Duration data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -101,11 +104,6 @@ public class DurationPubSubType implements us.ihmc.pubsub.TopicDataType<builtin_
 
       data.setNanosec(ser.read_type_4("nanosec"));
 
-   }
-
-   public static void staticCopy(builtin_interfaces.msg.dds.Duration src, builtin_interfaces.msg.dds.Duration dest)
-   {
-      dest.set(src);
    }
 
    @Override

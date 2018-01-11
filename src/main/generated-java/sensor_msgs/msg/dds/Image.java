@@ -10,6 +10,14 @@ package sensor_msgs.msg.dds;
  */
 public class Image
 {
+   private std_msgs.msg.dds.Header header_;
+   private long height_;
+   private long width_;
+   private java.lang.StringBuilder encoding_;
+   private byte is_bigendian_;
+   private long step_;
+   private us.ihmc.idl.IDLSequence.Byte data_;
+
    public Image()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -35,19 +43,14 @@ public class Image
       return header_;
    }
 
-   public void setHeight(long height)
-   {
-      height_ = height;
-   }
-
    public long getHeight()
    {
       return height_;
    }
 
-   public void setWidth(long width)
+   public void setHeight(long height)
    {
-      width_ = width;
+      height_ = height;
    }
 
    public long getWidth()
@@ -55,10 +58,9 @@ public class Image
       return width_;
    }
 
-   public void setEncoding(String encoding)
+   public void setWidth(long width)
    {
-      encoding_.setLength(0);
-      encoding_.append(encoding);
+      width_ = width;
    }
 
    public java.lang.String getEncodingAsString()
@@ -71,9 +73,10 @@ public class Image
       return encoding_;
    }
 
-   public void setIs_bigendian(byte is_bigendian)
+   public void setEncoding(String encoding)
    {
-      is_bigendian_ = is_bigendian;
+      encoding_.setLength(0);
+      encoding_.append(encoding);
    }
 
    public byte getIs_bigendian()
@@ -81,14 +84,19 @@ public class Image
       return is_bigendian_;
    }
 
-   public void setStep(long step)
+   public void setIs_bigendian(byte is_bigendian)
    {
-      step_ = step;
+      is_bigendian_ = is_bigendian;
    }
 
    public long getStep()
    {
       return step_;
+   }
+
+   public void setStep(long step)
+   {
+      step_ = step;
    }
 
    public us.ihmc.idl.IDLSequence.Byte getData()
@@ -161,13 +169,5 @@ public class Image
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private long height_;
-   private long width_;
-   private java.lang.StringBuilder encoding_;
-   private byte is_bigendian_;
-   private long step_;
-   private us.ihmc.idl.IDLSequence.Byte data_;
 
 }

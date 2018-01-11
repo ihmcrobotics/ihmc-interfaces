@@ -10,6 +10,10 @@ package controller_msgs.msg.dds;
  */
 public class WeightedJointTrajectory
 {
+   private std_msgs.msg.dds.Header header_;
+   private us.ihmc.idl.IDLSequence.StringBuilderHolder joint_names_;
+   private us.ihmc.idl.IDLSequence.Object<controller_msgs.msg.dds.WeightedJointTrajectoryPoint> points_;
+
    public WeightedJointTrajectory()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -83,9 +87,5 @@ public class WeightedJointTrajectory
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private us.ihmc.idl.IDLSequence.StringBuilderHolder joint_names_;
-   private us.ihmc.idl.IDLSequence.Object<controller_msgs.msg.dds.WeightedJointTrajectoryPoint> points_;
 
 }

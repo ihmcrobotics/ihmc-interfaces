@@ -10,6 +10,9 @@ package geometry_msgs.msg.dds;
  */
 public class TwistWithCovarianceStamped
 {
+   private std_msgs.msg.dds.Header header_;
+   private geometry_msgs.msg.dds.TwistWithCovariance twist_;
+
    public TwistWithCovarianceStamped()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -68,8 +71,5 @@ public class TwistWithCovarianceStamped
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private geometry_msgs.msg.dds.TwistWithCovariance twist_;
 
 }

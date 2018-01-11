@@ -10,6 +10,16 @@ package visualization_msgs.msg.dds;
  */
 public class InteractiveMarkerFeedback
 {
+   private std_msgs.msg.dds.Header header_;
+   private java.lang.StringBuilder client_id_;
+   private java.lang.StringBuilder marker_name_;
+   private java.lang.StringBuilder control_name_;
+   private byte event_type_;
+   private us.ihmc.euclid.geometry.Pose3D pose_;
+   private long menu_entry_id_;
+   private us.ihmc.euclid.tuple3D.Point3D mouse_point_;
+   private boolean mouse_point_valid_;
+
    public InteractiveMarkerFeedback()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -43,12 +53,6 @@ public class InteractiveMarkerFeedback
       return header_;
    }
 
-   public void setClient_id(String client_id)
-   {
-      client_id_.setLength(0);
-      client_id_.append(client_id);
-   }
-
    public java.lang.String getClient_idAsString()
    {
       return getClient_id().toString();
@@ -59,10 +63,10 @@ public class InteractiveMarkerFeedback
       return client_id_;
    }
 
-   public void setMarker_name(String marker_name)
+   public void setClient_id(String client_id)
    {
-      marker_name_.setLength(0);
-      marker_name_.append(marker_name);
+      client_id_.setLength(0);
+      client_id_.append(client_id);
    }
 
    public java.lang.String getMarker_nameAsString()
@@ -75,10 +79,10 @@ public class InteractiveMarkerFeedback
       return marker_name_;
    }
 
-   public void setControl_name(String control_name)
+   public void setMarker_name(String marker_name)
    {
-      control_name_.setLength(0);
-      control_name_.append(control_name);
+      marker_name_.setLength(0);
+      marker_name_.append(marker_name);
    }
 
    public java.lang.String getControl_nameAsString()
@@ -91,9 +95,10 @@ public class InteractiveMarkerFeedback
       return control_name_;
    }
 
-   public void setEvent_type(byte event_type)
+   public void setControl_name(String control_name)
    {
-      event_type_ = event_type;
+      control_name_.setLength(0);
+      control_name_.append(control_name);
    }
 
    public byte getEvent_type()
@@ -101,14 +106,14 @@ public class InteractiveMarkerFeedback
       return event_type_;
    }
 
+   public void setEvent_type(byte event_type)
+   {
+      event_type_ = event_type;
+   }
+
    public us.ihmc.euclid.geometry.Pose3D getPose()
    {
       return pose_;
-   }
-
-   public void setMenu_entry_id(long menu_entry_id)
-   {
-      menu_entry_id_ = menu_entry_id;
    }
 
    public long getMenu_entry_id()
@@ -116,19 +121,24 @@ public class InteractiveMarkerFeedback
       return menu_entry_id_;
    }
 
+   public void setMenu_entry_id(long menu_entry_id)
+   {
+      menu_entry_id_ = menu_entry_id;
+   }
+
    public us.ihmc.euclid.tuple3D.Point3D getMouse_point()
    {
       return mouse_point_;
    }
 
-   public void setMouse_point_valid(boolean mouse_point_valid)
-   {
-      mouse_point_valid_ = mouse_point_valid;
-   }
-
    public boolean getMouse_point_valid()
    {
       return mouse_point_valid_;
+   }
+
+   public void setMouse_point_valid(boolean mouse_point_valid)
+   {
+      mouse_point_valid_ = mouse_point_valid;
    }
 
    @Override
@@ -208,15 +218,5 @@ public class InteractiveMarkerFeedback
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private java.lang.StringBuilder client_id_;
-   private java.lang.StringBuilder marker_name_;
-   private java.lang.StringBuilder control_name_;
-   private byte event_type_;
-   private us.ihmc.euclid.geometry.Pose3D pose_;
-   private long menu_entry_id_;
-   private us.ihmc.euclid.tuple3D.Point3D mouse_point_;
-   private boolean mouse_point_valid_;
 
 }

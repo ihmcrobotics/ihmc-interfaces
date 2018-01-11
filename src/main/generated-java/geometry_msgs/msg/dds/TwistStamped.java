@@ -10,6 +10,9 @@ package geometry_msgs.msg.dds;
  */
 public class TwistStamped
 {
+   private std_msgs.msg.dds.Header header_;
+   private geometry_msgs.msg.dds.Twist twist_;
+
    public TwistStamped()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -68,8 +71,5 @@ public class TwistStamped
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private geometry_msgs.msg.dds.Twist twist_;
 
 }

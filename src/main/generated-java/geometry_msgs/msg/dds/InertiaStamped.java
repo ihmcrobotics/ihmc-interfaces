@@ -10,6 +10,9 @@ package geometry_msgs.msg.dds;
  */
 public class InertiaStamped
 {
+   private std_msgs.msg.dds.Header header_;
+   private geometry_msgs.msg.dds.Inertia inertia_;
+
    public InertiaStamped()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -68,8 +71,5 @@ public class InertiaStamped
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private geometry_msgs.msg.dds.Inertia inertia_;
 
 }

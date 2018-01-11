@@ -10,6 +10,10 @@ package sensor_msgs.msg.dds;
  */
 public class JoyFeedback
 {
+   private byte type_;
+   private byte id_;
+   private float intensity_;
+
    public JoyFeedback()
    {
 
@@ -23,19 +27,14 @@ public class JoyFeedback
 
    }
 
-   public void setType(byte type)
-   {
-      type_ = type;
-   }
-
    public byte getType()
    {
       return type_;
    }
 
-   public void setId(byte id)
+   public void setType(byte type)
    {
-      id_ = id;
+      type_ = type;
    }
 
    public byte getId()
@@ -43,14 +42,19 @@ public class JoyFeedback
       return id_;
    }
 
-   public void setIntensity(float intensity)
+   public void setId(byte id)
    {
-      intensity_ = intensity;
+      id_ = id;
    }
 
    public float getIntensity()
    {
       return intensity_;
+   }
+
+   public void setIntensity(float intensity)
+   {
+      intensity_ = intensity;
    }
 
    @Override
@@ -94,9 +98,5 @@ public class JoyFeedback
       builder.append("}");
       return builder.toString();
    }
-
-   private byte type_;
-   private byte id_;
-   private float intensity_;
 
 }

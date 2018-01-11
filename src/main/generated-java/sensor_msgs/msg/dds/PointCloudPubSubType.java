@@ -11,29 +11,11 @@ package sensor_msgs.msg.dds;
 public class PointCloudPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_msgs.msg.dds.PointCloud>
 {
    public static final java.lang.String name = "sensor_msgs::msg::dds_::PointCloud_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public PointCloudPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(sensor_msgs.msg.dds.PointCloud data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, sensor_msgs.msg.dds.PointCloud data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -112,6 +94,27 @@ public class PointCloudPubSubType implements us.ihmc.pubsub.TopicDataType<sensor
       cdr.read_type_e(data.getChannels());
    }
 
+   public static void staticCopy(sensor_msgs.msg.dds.PointCloud src, sensor_msgs.msg.dds.PointCloud dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(sensor_msgs.msg.dds.PointCloud data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, sensor_msgs.msg.dds.PointCloud data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(sensor_msgs.msg.dds.PointCloud data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -132,11 +135,6 @@ public class PointCloudPubSubType implements us.ihmc.pubsub.TopicDataType<sensor
 
       ser.read_type_e("channels", data.getChannels());
 
-   }
-
-   public static void staticCopy(sensor_msgs.msg.dds.PointCloud src, sensor_msgs.msg.dds.PointCloud dest)
-   {
-      dest.set(src);
    }
 
    @Override

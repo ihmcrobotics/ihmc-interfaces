@@ -10,6 +10,8 @@ package shape_msgs.msg.dds;
  */
 public class Plane
 {
+   private double[] coef_;
+
    public Plane()
    {
       coef_ = new double[4];
@@ -64,7 +66,5 @@ public class Plane
       builder.append("}");
       return builder.toString();
    }
-
-   private double[] coef_;
 
 }

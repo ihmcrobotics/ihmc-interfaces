@@ -11,30 +11,11 @@ package controller_msgs.msg.dds;
 public class SetBooleanParameterPubSubType implements us.ihmc.pubsub.TopicDataType<controller_msgs.msg.dds.SetBooleanParameter>
 {
    public static final java.lang.String name = "controller_msgs::msg::dds_::SetBooleanParameter_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public SetBooleanParameterPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(controller_msgs.msg.dds.SetBooleanParameter data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, controller_msgs.msg.dds.SetBooleanParameter data)
-         throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -89,6 +70,28 @@ public class SetBooleanParameterPubSubType implements us.ihmc.pubsub.TopicDataTy
 
    }
 
+   public static void staticCopy(controller_msgs.msg.dds.SetBooleanParameter src, controller_msgs.msg.dds.SetBooleanParameter dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(controller_msgs.msg.dds.SetBooleanParameter data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, controller_msgs.msg.dds.SetBooleanParameter data)
+         throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(controller_msgs.msg.dds.SetBooleanParameter data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -105,11 +108,6 @@ public class SetBooleanParameterPubSubType implements us.ihmc.pubsub.TopicDataTy
 
       data.setParameter_value(ser.read_type_7("parameter_value"));
 
-   }
-
-   public static void staticCopy(controller_msgs.msg.dds.SetBooleanParameter src, controller_msgs.msg.dds.SetBooleanParameter dest)
-   {
-      dest.set(src);
    }
 
    @Override

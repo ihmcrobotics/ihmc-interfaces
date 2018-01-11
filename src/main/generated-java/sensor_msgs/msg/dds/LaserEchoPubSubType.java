@@ -11,29 +11,11 @@ package sensor_msgs.msg.dds;
 public class LaserEchoPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_msgs.msg.dds.LaserEcho>
 {
    public static final java.lang.String name = "sensor_msgs::msg::dds_::LaserEcho_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public LaserEchoPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(sensor_msgs.msg.dds.LaserEcho data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, sensor_msgs.msg.dds.LaserEcho data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -81,6 +63,27 @@ public class LaserEchoPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_
       cdr.read_type_e(data.getEchoes());
    }
 
+   public static void staticCopy(sensor_msgs.msg.dds.LaserEcho src, sensor_msgs.msg.dds.LaserEcho dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(sensor_msgs.msg.dds.LaserEcho data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, sensor_msgs.msg.dds.LaserEcho data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(sensor_msgs.msg.dds.LaserEcho data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -93,11 +96,6 @@ public class LaserEchoPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_
    {
       ser.read_type_e("echoes", data.getEchoes());
 
-   }
-
-   public static void staticCopy(sensor_msgs.msg.dds.LaserEcho src, sensor_msgs.msg.dds.LaserEcho dest)
-   {
-      dest.set(src);
    }
 
    @Override

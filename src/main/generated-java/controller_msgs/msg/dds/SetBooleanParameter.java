@@ -10,6 +10,9 @@ package controller_msgs.msg.dds;
  */
 public class SetBooleanParameter
 {
+   private java.lang.StringBuilder parameter_name_;
+   private boolean parameter_value_;
+
    public SetBooleanParameter()
    {
       parameter_name_ = new java.lang.StringBuilder(255);
@@ -24,12 +27,6 @@ public class SetBooleanParameter
 
    }
 
-   public void setParameter_name(String parameter_name)
-   {
-      parameter_name_.setLength(0);
-      parameter_name_.append(parameter_name);
-   }
-
    public java.lang.String getParameter_nameAsString()
    {
       return getParameter_name().toString();
@@ -40,14 +37,20 @@ public class SetBooleanParameter
       return parameter_name_;
    }
 
-   public void setParameter_value(boolean parameter_value)
+   public void setParameter_name(String parameter_name)
    {
-      parameter_value_ = parameter_value;
+      parameter_name_.setLength(0);
+      parameter_name_.append(parameter_name);
    }
 
    public boolean getParameter_value()
    {
       return parameter_value_;
+   }
+
+   public void setParameter_value(boolean parameter_value)
+   {
+      parameter_value_ = parameter_value;
    }
 
    @Override
@@ -85,8 +88,5 @@ public class SetBooleanParameter
       builder.append("}");
       return builder.toString();
    }
-
-   private java.lang.StringBuilder parameter_name_;
-   private boolean parameter_value_;
 
 }

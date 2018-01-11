@@ -10,6 +10,10 @@ package actionlib_msgs.msg.dds;
  */
 public class GoalStatus
 {
+   private actionlib_msgs.msg.dds.GoalID goal_id_;
+   private byte status_;
+   private java.lang.StringBuilder text_;
+
    public GoalStatus()
    {
       goal_id_ = new actionlib_msgs.msg.dds.GoalID();
@@ -31,20 +35,14 @@ public class GoalStatus
       return goal_id_;
    }
 
-   public void setStatus(byte status)
-   {
-      status_ = status;
-   }
-
    public byte getStatus()
    {
       return status_;
    }
 
-   public void setText(String text)
+   public void setStatus(byte status)
    {
-      text_.setLength(0);
-      text_.append(text);
+      status_ = status;
    }
 
    public java.lang.String getTextAsString()
@@ -55,6 +53,12 @@ public class GoalStatus
    public java.lang.StringBuilder getText()
    {
       return text_;
+   }
+
+   public void setText(String text)
+   {
+      text_.setLength(0);
+      text_.append(text);
    }
 
    @Override
@@ -98,9 +102,5 @@ public class GoalStatus
       builder.append("}");
       return builder.toString();
    }
-
-   private actionlib_msgs.msg.dds.GoalID goal_id_;
-   private byte status_;
-   private java.lang.StringBuilder text_;
 
 }

@@ -10,6 +10,12 @@ package trajectory_msgs.msg.dds;
  */
 public class JointTrajectoryPoint
 {
+   private us.ihmc.idl.IDLSequence.Double positions_;
+   private us.ihmc.idl.IDLSequence.Double velocities_;
+   private us.ihmc.idl.IDLSequence.Double accelerations_;
+   private us.ihmc.idl.IDLSequence.Double effort_;
+   private builtin_interfaces.msg.dds.Duration time_from_start_;
+
    public JointTrajectoryPoint()
    {
       positions_ = new us.ihmc.idl.IDLSequence.Double(100, "type_6");
@@ -107,11 +113,5 @@ public class JointTrajectoryPoint
       builder.append("}");
       return builder.toString();
    }
-
-   private us.ihmc.idl.IDLSequence.Double positions_;
-   private us.ihmc.idl.IDLSequence.Double velocities_;
-   private us.ihmc.idl.IDLSequence.Double accelerations_;
-   private us.ihmc.idl.IDLSequence.Double effort_;
-   private builtin_interfaces.msg.dds.Duration time_from_start_;
 
 }

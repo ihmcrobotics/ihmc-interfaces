@@ -10,6 +10,9 @@ package controller_msgs.msg.dds;
  */
 public class SetDoubleArrayParameter
 {
+   private java.lang.StringBuilder parameter_name_;
+   private us.ihmc.idl.IDLSequence.Double parameter_value_;
+
    public SetDoubleArrayParameter()
    {
       parameter_name_ = new java.lang.StringBuilder(255);
@@ -24,12 +27,6 @@ public class SetDoubleArrayParameter
       parameter_value_.set(other.parameter_value_);
    }
 
-   public void setParameter_name(String parameter_name)
-   {
-      parameter_name_.setLength(0);
-      parameter_name_.append(parameter_name);
-   }
-
    public java.lang.String getParameter_nameAsString()
    {
       return getParameter_name().toString();
@@ -38,6 +35,12 @@ public class SetDoubleArrayParameter
    public java.lang.StringBuilder getParameter_name()
    {
       return parameter_name_;
+   }
+
+   public void setParameter_name(String parameter_name)
+   {
+      parameter_name_.setLength(0);
+      parameter_name_.append(parameter_name);
    }
 
    public us.ihmc.idl.IDLSequence.Double getParameter_value()
@@ -80,8 +83,5 @@ public class SetDoubleArrayParameter
       builder.append("}");
       return builder.toString();
    }
-
-   private java.lang.StringBuilder parameter_name_;
-   private us.ihmc.idl.IDLSequence.Double parameter_value_;
 
 }

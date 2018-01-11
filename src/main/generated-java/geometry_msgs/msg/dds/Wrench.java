@@ -10,6 +10,9 @@ package geometry_msgs.msg.dds;
  */
 public class Wrench
 {
+   private us.ihmc.euclid.tuple3D.Vector3D force_;
+   private us.ihmc.euclid.tuple3D.Vector3D torque_;
+
    public Wrench()
    {
       force_ = new us.ihmc.euclid.tuple3D.Vector3D();
@@ -68,8 +71,5 @@ public class Wrench
       builder.append("}");
       return builder.toString();
    }
-
-   private us.ihmc.euclid.tuple3D.Vector3D force_;
-   private us.ihmc.euclid.tuple3D.Vector3D torque_;
 
 }

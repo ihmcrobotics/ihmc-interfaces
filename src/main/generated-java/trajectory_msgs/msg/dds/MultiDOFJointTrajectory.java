@@ -10,6 +10,10 @@ package trajectory_msgs.msg.dds;
  */
 public class MultiDOFJointTrajectory
 {
+   private std_msgs.msg.dds.Header header_;
+   private us.ihmc.idl.IDLSequence.StringBuilderHolder joint_names_;
+   private us.ihmc.idl.IDLSequence.Object<trajectory_msgs.msg.dds.MultiDOFJointTrajectoryPoint> points_;
+
    public MultiDOFJointTrajectory()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -83,9 +87,5 @@ public class MultiDOFJointTrajectory
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private us.ihmc.idl.IDLSequence.StringBuilderHolder joint_names_;
-   private us.ihmc.idl.IDLSequence.Object<trajectory_msgs.msg.dds.MultiDOFJointTrajectoryPoint> points_;
 
 }

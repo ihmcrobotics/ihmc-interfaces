@@ -10,6 +10,14 @@ package sensor_msgs.msg.dds;
  */
 public class Imu
 {
+   private std_msgs.msg.dds.Header header_;
+   private us.ihmc.euclid.tuple4D.Quaternion orientation_;
+   private double[] orientation_covariance_;
+   private us.ihmc.euclid.tuple3D.Vector3D angular_velocity_;
+   private double[] angular_velocity_covariance_;
+   private us.ihmc.euclid.tuple3D.Vector3D linear_acceleration_;
+   private double[] linear_acceleration_covariance_;
+
    public Imu()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -158,13 +166,5 @@ public class Imu
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private us.ihmc.euclid.tuple4D.Quaternion orientation_;
-   private double[] orientation_covariance_;
-   private us.ihmc.euclid.tuple3D.Vector3D angular_velocity_;
-   private double[] angular_velocity_covariance_;
-   private us.ihmc.euclid.tuple3D.Vector3D linear_acceleration_;
-   private double[] linear_acceleration_covariance_;
 
 }

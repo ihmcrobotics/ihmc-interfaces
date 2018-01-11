@@ -10,6 +10,12 @@ package nav_msgs.msg.dds;
  */
 public class MapMetaData
 {
+   private builtin_interfaces.msg.dds.Time map_load_time_;
+   private float resolution_;
+   private long width_;
+   private long height_;
+   private us.ihmc.euclid.geometry.Pose3D origin_;
+
    public MapMetaData()
    {
       map_load_time_ = new builtin_interfaces.msg.dds.Time();
@@ -31,19 +37,14 @@ public class MapMetaData
       return map_load_time_;
    }
 
-   public void setResolution(float resolution)
-   {
-      resolution_ = resolution;
-   }
-
    public float getResolution()
    {
       return resolution_;
    }
 
-   public void setWidth(long width)
+   public void setResolution(float resolution)
    {
-      width_ = width;
+      resolution_ = resolution;
    }
 
    public long getWidth()
@@ -51,14 +52,19 @@ public class MapMetaData
       return width_;
    }
 
-   public void setHeight(long height)
+   public void setWidth(long width)
    {
-      height_ = height;
+      width_ = width;
    }
 
    public long getHeight()
    {
       return height_;
+   }
+
+   public void setHeight(long height)
+   {
+      height_ = height;
    }
 
    public us.ihmc.euclid.geometry.Pose3D getOrigin()
@@ -119,11 +125,5 @@ public class MapMetaData
       builder.append("}");
       return builder.toString();
    }
-
-   private builtin_interfaces.msg.dds.Time map_load_time_;
-   private float resolution_;
-   private long width_;
-   private long height_;
-   private us.ihmc.euclid.geometry.Pose3D origin_;
 
 }

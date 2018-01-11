@@ -10,6 +10,21 @@ package sensor_msgs.msg.dds;
  */
 public class BatteryState
 {
+   private std_msgs.msg.dds.Header header_;
+   private float voltage_;
+   private float current_;
+   private float charge_;
+   private float capacity_;
+   private float design_capacity_;
+   private float percentage_;
+   private byte power_supply_status_;
+   private byte power_supply_health_;
+   private byte power_supply_technology_;
+   private boolean present_;
+   private us.ihmc.idl.IDLSequence.Float cell_voltage_;
+   private java.lang.StringBuilder location_;
+   private java.lang.StringBuilder serial_number_;
+
    public BatteryState()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -45,19 +60,14 @@ public class BatteryState
       return header_;
    }
 
-   public void setVoltage(float voltage)
-   {
-      voltage_ = voltage;
-   }
-
    public float getVoltage()
    {
       return voltage_;
    }
 
-   public void setCurrent(float current)
+   public void setVoltage(float voltage)
    {
-      current_ = current;
+      voltage_ = voltage;
    }
 
    public float getCurrent()
@@ -65,9 +75,9 @@ public class BatteryState
       return current_;
    }
 
-   public void setCharge(float charge)
+   public void setCurrent(float current)
    {
-      charge_ = charge;
+      current_ = current;
    }
 
    public float getCharge()
@@ -75,9 +85,9 @@ public class BatteryState
       return charge_;
    }
 
-   public void setCapacity(float capacity)
+   public void setCharge(float charge)
    {
-      capacity_ = capacity;
+      charge_ = charge;
    }
 
    public float getCapacity()
@@ -85,9 +95,9 @@ public class BatteryState
       return capacity_;
    }
 
-   public void setDesign_capacity(float design_capacity)
+   public void setCapacity(float capacity)
    {
-      design_capacity_ = design_capacity;
+      capacity_ = capacity;
    }
 
    public float getDesign_capacity()
@@ -95,9 +105,9 @@ public class BatteryState
       return design_capacity_;
    }
 
-   public void setPercentage(float percentage)
+   public void setDesign_capacity(float design_capacity)
    {
-      percentage_ = percentage;
+      design_capacity_ = design_capacity;
    }
 
    public float getPercentage()
@@ -105,9 +115,9 @@ public class BatteryState
       return percentage_;
    }
 
-   public void setPower_supply_status(byte power_supply_status)
+   public void setPercentage(float percentage)
    {
-      power_supply_status_ = power_supply_status;
+      percentage_ = percentage;
    }
 
    public byte getPower_supply_status()
@@ -115,9 +125,9 @@ public class BatteryState
       return power_supply_status_;
    }
 
-   public void setPower_supply_health(byte power_supply_health)
+   public void setPower_supply_status(byte power_supply_status)
    {
-      power_supply_health_ = power_supply_health;
+      power_supply_status_ = power_supply_status;
    }
 
    public byte getPower_supply_health()
@@ -125,9 +135,9 @@ public class BatteryState
       return power_supply_health_;
    }
 
-   public void setPower_supply_technology(byte power_supply_technology)
+   public void setPower_supply_health(byte power_supply_health)
    {
-      power_supply_technology_ = power_supply_technology;
+      power_supply_health_ = power_supply_health;
    }
 
    public byte getPower_supply_technology()
@@ -135,9 +145,9 @@ public class BatteryState
       return power_supply_technology_;
    }
 
-   public void setPresent(boolean present)
+   public void setPower_supply_technology(byte power_supply_technology)
    {
-      present_ = present;
+      power_supply_technology_ = power_supply_technology;
    }
 
    public boolean getPresent()
@@ -145,15 +155,14 @@ public class BatteryState
       return present_;
    }
 
+   public void setPresent(boolean present)
+   {
+      present_ = present;
+   }
+
    public us.ihmc.idl.IDLSequence.Float getCell_voltage()
    {
       return cell_voltage_;
-   }
-
-   public void setLocation(String location)
-   {
-      location_.setLength(0);
-      location_.append(location);
    }
 
    public java.lang.String getLocationAsString()
@@ -166,10 +175,10 @@ public class BatteryState
       return location_;
    }
 
-   public void setSerial_number(String serial_number)
+   public void setLocation(String location)
    {
-      serial_number_.setLength(0);
-      serial_number_.append(serial_number);
+      location_.setLength(0);
+      location_.append(location);
    }
 
    public java.lang.String getSerial_numberAsString()
@@ -180,6 +189,12 @@ public class BatteryState
    public java.lang.StringBuilder getSerial_number()
    {
       return serial_number_;
+   }
+
+   public void setSerial_number(String serial_number)
+   {
+      serial_number_.setLength(0);
+      serial_number_.append(serial_number);
    }
 
    @Override
@@ -289,20 +304,5 @@ public class BatteryState
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private float voltage_;
-   private float current_;
-   private float charge_;
-   private float capacity_;
-   private float design_capacity_;
-   private float percentage_;
-   private byte power_supply_status_;
-   private byte power_supply_health_;
-   private byte power_supply_technology_;
-   private boolean present_;
-   private us.ihmc.idl.IDLSequence.Float cell_voltage_;
-   private java.lang.StringBuilder location_;
-   private java.lang.StringBuilder serial_number_;
 
 }

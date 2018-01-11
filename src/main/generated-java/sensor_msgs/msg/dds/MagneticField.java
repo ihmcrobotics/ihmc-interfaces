@@ -10,6 +10,10 @@ package sensor_msgs.msg.dds;
  */
 public class MagneticField
 {
+   private std_msgs.msg.dds.Header header_;
+   private us.ihmc.euclid.tuple3D.Vector3D magnetic_field_;
+   private double[] magnetic_field_covariance_;
+
    public MagneticField()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -90,9 +94,5 @@ public class MagneticField
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private us.ihmc.euclid.tuple3D.Vector3D magnetic_field_;
-   private double[] magnetic_field_covariance_;
 
 }

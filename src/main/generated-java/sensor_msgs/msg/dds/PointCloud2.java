@@ -10,6 +10,16 @@ package sensor_msgs.msg.dds;
  */
 public class PointCloud2
 {
+   private std_msgs.msg.dds.Header header_;
+   private long height_;
+   private long width_;
+   private us.ihmc.idl.IDLSequence.Object<sensor_msgs.msg.dds.PointField> fields_;
+   private boolean is_bigendian_;
+   private long point_step_;
+   private long row_step_;
+   private us.ihmc.idl.IDLSequence.Byte data_;
+   private boolean is_dense_;
+
    public PointCloud2()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -39,19 +49,14 @@ public class PointCloud2
       return header_;
    }
 
-   public void setHeight(long height)
-   {
-      height_ = height;
-   }
-
    public long getHeight()
    {
       return height_;
    }
 
-   public void setWidth(long width)
+   public void setHeight(long height)
    {
-      width_ = width;
+      height_ = height;
    }
 
    public long getWidth()
@@ -59,14 +64,14 @@ public class PointCloud2
       return width_;
    }
 
+   public void setWidth(long width)
+   {
+      width_ = width;
+   }
+
    public us.ihmc.idl.IDLSequence.Object<sensor_msgs.msg.dds.PointField> getFields()
    {
       return fields_;
-   }
-
-   public void setIs_bigendian(boolean is_bigendian)
-   {
-      is_bigendian_ = is_bigendian;
    }
 
    public boolean getIs_bigendian()
@@ -74,9 +79,9 @@ public class PointCloud2
       return is_bigendian_;
    }
 
-   public void setPoint_step(long point_step)
+   public void setIs_bigendian(boolean is_bigendian)
    {
-      point_step_ = point_step;
+      is_bigendian_ = is_bigendian;
    }
 
    public long getPoint_step()
@@ -84,9 +89,9 @@ public class PointCloud2
       return point_step_;
    }
 
-   public void setRow_step(long row_step)
+   public void setPoint_step(long point_step)
    {
-      row_step_ = row_step;
+      point_step_ = point_step;
    }
 
    public long getRow_step()
@@ -94,19 +99,24 @@ public class PointCloud2
       return row_step_;
    }
 
+   public void setRow_step(long row_step)
+   {
+      row_step_ = row_step;
+   }
+
    public us.ihmc.idl.IDLSequence.Byte getData()
    {
       return data_;
    }
 
-   public void setIs_dense(boolean is_dense)
-   {
-      is_dense_ = is_dense;
-   }
-
    public boolean getIs_dense()
    {
       return is_dense_;
+   }
+
+   public void setIs_dense(boolean is_dense)
+   {
+      is_dense_ = is_dense;
    }
 
    @Override
@@ -186,15 +196,5 @@ public class PointCloud2
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private long height_;
-   private long width_;
-   private us.ihmc.idl.IDLSequence.Object<sensor_msgs.msg.dds.PointField> fields_;
-   private boolean is_bigendian_;
-   private long point_step_;
-   private long row_step_;
-   private us.ihmc.idl.IDLSequence.Byte data_;
-   private boolean is_dense_;
 
 }

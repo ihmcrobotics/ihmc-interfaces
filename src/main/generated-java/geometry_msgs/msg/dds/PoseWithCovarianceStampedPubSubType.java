@@ -11,31 +11,11 @@ package geometry_msgs.msg.dds;
 public class PoseWithCovarianceStampedPubSubType implements us.ihmc.pubsub.TopicDataType<geometry_msgs.msg.dds.PoseWithCovarianceStamped>
 {
    public static final java.lang.String name = "geometry_msgs::msg::dds_::PoseWithCovarianceStamped_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public PoseWithCovarianceStampedPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(geometry_msgs.msg.dds.PoseWithCovarianceStamped data, us.ihmc.pubsub.common.SerializedPayload serializedPayload)
-         throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, geometry_msgs.msg.dds.PoseWithCovarianceStamped data)
-         throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -84,6 +64,29 @@ public class PoseWithCovarianceStampedPubSubType implements us.ihmc.pubsub.Topic
       geometry_msgs.msg.dds.PoseWithCovariancePubSubType.read(data.getPose(), cdr);
    }
 
+   public static void staticCopy(geometry_msgs.msg.dds.PoseWithCovarianceStamped src, geometry_msgs.msg.dds.PoseWithCovarianceStamped dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(geometry_msgs.msg.dds.PoseWithCovarianceStamped data, us.ihmc.pubsub.common.SerializedPayload serializedPayload)
+         throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, geometry_msgs.msg.dds.PoseWithCovarianceStamped data)
+         throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(geometry_msgs.msg.dds.PoseWithCovarianceStamped data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -100,11 +103,6 @@ public class PoseWithCovarianceStampedPubSubType implements us.ihmc.pubsub.Topic
 
       ser.read_type_a("pose", new geometry_msgs.msg.dds.PoseWithCovariancePubSubType(), data.getPose());
 
-   }
-
-   public static void staticCopy(geometry_msgs.msg.dds.PoseWithCovarianceStamped src, geometry_msgs.msg.dds.PoseWithCovarianceStamped dest)
-   {
-      dest.set(src);
    }
 
    @Override

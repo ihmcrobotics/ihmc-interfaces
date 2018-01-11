@@ -10,6 +10,8 @@ package std_msgs.msg.dds;
  */
 public class UInt64
 {
+   private long data_;
+
    public UInt64()
    {
 
@@ -21,14 +23,14 @@ public class UInt64
 
    }
 
-   public void setData(long data)
-   {
-      data_ = data;
-   }
-
    public long getData()
    {
       return data_;
+   }
+
+   public void setData(long data)
+   {
+      data_ = data;
    }
 
    @Override
@@ -60,7 +62,5 @@ public class UInt64
       builder.append("}");
       return builder.toString();
    }
-
-   private long data_;
 
 }

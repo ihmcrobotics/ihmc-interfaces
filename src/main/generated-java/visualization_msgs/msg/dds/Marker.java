@@ -10,6 +10,22 @@ package visualization_msgs.msg.dds;
  */
 public class Marker
 {
+   private std_msgs.msg.dds.Header header_;
+   private java.lang.StringBuilder ns_;
+   private int id_;
+   private int type_;
+   private int action_;
+   private us.ihmc.euclid.geometry.Pose3D pose_;
+   private us.ihmc.euclid.tuple3D.Vector3D scale_;
+   private std_msgs.msg.dds.ColorRGBA color_;
+   private builtin_interfaces.msg.dds.Duration lifetime_;
+   private boolean frame_locked_;
+   private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D> points_;
+   private us.ihmc.idl.IDLSequence.Object<std_msgs.msg.dds.ColorRGBA> colors_;
+   private java.lang.StringBuilder text_;
+   private java.lang.StringBuilder mesh_resource_;
+   private boolean mesh_use_embedded_materials_;
+
    public Marker()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -57,12 +73,6 @@ public class Marker
       return header_;
    }
 
-   public void setNs(String ns)
-   {
-      ns_.setLength(0);
-      ns_.append(ns);
-   }
-
    public java.lang.String getNsAsString()
    {
       return getNs().toString();
@@ -73,9 +83,10 @@ public class Marker
       return ns_;
    }
 
-   public void setId(int id)
+   public void setNs(String ns)
    {
-      id_ = id;
+      ns_.setLength(0);
+      ns_.append(ns);
    }
 
    public int getId()
@@ -83,9 +94,9 @@ public class Marker
       return id_;
    }
 
-   public void setType(int type)
+   public void setId(int id)
    {
-      type_ = type;
+      id_ = id;
    }
 
    public int getType()
@@ -93,14 +104,19 @@ public class Marker
       return type_;
    }
 
-   public void setAction(int action)
+   public void setType(int type)
    {
-      action_ = action;
+      type_ = type;
    }
 
    public int getAction()
    {
       return action_;
+   }
+
+   public void setAction(int action)
+   {
+      action_ = action;
    }
 
    public us.ihmc.euclid.geometry.Pose3D getPose()
@@ -123,14 +139,14 @@ public class Marker
       return lifetime_;
    }
 
-   public void setFrame_locked(boolean frame_locked)
-   {
-      frame_locked_ = frame_locked;
-   }
-
    public boolean getFrame_locked()
    {
       return frame_locked_;
+   }
+
+   public void setFrame_locked(boolean frame_locked)
+   {
+      frame_locked_ = frame_locked;
    }
 
    public us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D> getPoints()
@@ -143,12 +159,6 @@ public class Marker
       return colors_;
    }
 
-   public void setText(String text)
-   {
-      text_.setLength(0);
-      text_.append(text);
-   }
-
    public java.lang.String getTextAsString()
    {
       return getText().toString();
@@ -159,10 +169,10 @@ public class Marker
       return text_;
    }
 
-   public void setMesh_resource(String mesh_resource)
+   public void setText(String text)
    {
-      mesh_resource_.setLength(0);
-      mesh_resource_.append(mesh_resource);
+      text_.setLength(0);
+      text_.append(text);
    }
 
    public java.lang.String getMesh_resourceAsString()
@@ -175,14 +185,20 @@ public class Marker
       return mesh_resource_;
    }
 
-   public void setMesh_use_embedded_materials(boolean mesh_use_embedded_materials)
+   public void setMesh_resource(String mesh_resource)
    {
-      mesh_use_embedded_materials_ = mesh_use_embedded_materials;
+      mesh_resource_.setLength(0);
+      mesh_resource_.append(mesh_resource);
    }
 
    public boolean getMesh_use_embedded_materials()
    {
       return mesh_use_embedded_materials_;
+   }
+
+   public void setMesh_use_embedded_materials(boolean mesh_use_embedded_materials)
+   {
+      mesh_use_embedded_materials_ = mesh_use_embedded_materials;
    }
 
    @Override
@@ -298,21 +314,5 @@ public class Marker
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private java.lang.StringBuilder ns_;
-   private int id_;
-   private int type_;
-   private int action_;
-   private us.ihmc.euclid.geometry.Pose3D pose_;
-   private us.ihmc.euclid.tuple3D.Vector3D scale_;
-   private std_msgs.msg.dds.ColorRGBA color_;
-   private builtin_interfaces.msg.dds.Duration lifetime_;
-   private boolean frame_locked_;
-   private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D> points_;
-   private us.ihmc.idl.IDLSequence.Object<std_msgs.msg.dds.ColorRGBA> colors_;
-   private java.lang.StringBuilder text_;
-   private java.lang.StringBuilder mesh_resource_;
-   private boolean mesh_use_embedded_materials_;
 
 }

@@ -10,6 +10,10 @@ package nav_msgs.msg.dds;
  */
 public class OccupancyGrid
 {
+   private std_msgs.msg.dds.Header header_;
+   private nav_msgs.msg.dds.MapMetaData info_;
+   private us.ihmc.idl.IDLSequence.Byte data_;
+
    public OccupancyGrid()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -81,9 +85,5 @@ public class OccupancyGrid
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private nav_msgs.msg.dds.MapMetaData info_;
-   private us.ihmc.idl.IDLSequence.Byte data_;
 
 }

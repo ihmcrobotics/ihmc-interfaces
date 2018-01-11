@@ -10,6 +10,8 @@ package geometry_msgs.msg.dds;
  */
 public class Polygon
 {
+   private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D32> points_;
+
    public Polygon()
    {
       points_ = new us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D32>(100, us.ihmc.euclid.tuple3D.Point3D32.class,
@@ -56,7 +58,5 @@ public class Polygon
       builder.append("}");
       return builder.toString();
    }
-
-   private us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D32> points_;
 
 }

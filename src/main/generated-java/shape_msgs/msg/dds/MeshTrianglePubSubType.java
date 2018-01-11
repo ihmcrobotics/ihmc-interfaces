@@ -11,29 +11,11 @@ package shape_msgs.msg.dds;
 public class MeshTrianglePubSubType implements us.ihmc.pubsub.TopicDataType<shape_msgs.msg.dds.MeshTriangle>
 {
    public static final java.lang.String name = "shape_msgs::msg::dds_::MeshTriangle_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public MeshTrianglePubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(shape_msgs.msg.dds.MeshTriangle data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, shape_msgs.msg.dds.MeshTriangle data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -84,6 +66,27 @@ public class MeshTrianglePubSubType implements us.ihmc.pubsub.TopicDataType<shap
 
    }
 
+   public static void staticCopy(shape_msgs.msg.dds.MeshTriangle src, shape_msgs.msg.dds.MeshTriangle dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(shape_msgs.msg.dds.MeshTriangle data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, shape_msgs.msg.dds.MeshTriangle data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(shape_msgs.msg.dds.MeshTriangle data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -95,11 +98,6 @@ public class MeshTrianglePubSubType implements us.ihmc.pubsub.TopicDataType<shap
    {
       ser.read_type_f("vertex_indices", data.getVertex_indices());
 
-   }
-
-   public static void staticCopy(shape_msgs.msg.dds.MeshTriangle src, shape_msgs.msg.dds.MeshTriangle dest)
-   {
-      dest.set(src);
    }
 
    @Override

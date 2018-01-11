@@ -10,6 +10,11 @@ package std_msgs.msg.dds;
  */
 public class ColorRGBA
 {
+   private float r_;
+   private float g_;
+   private float b_;
+   private float a_;
+
    public ColorRGBA()
    {
 
@@ -24,19 +29,14 @@ public class ColorRGBA
 
    }
 
-   public void setR(float r)
-   {
-      r_ = r;
-   }
-
    public float getR()
    {
       return r_;
    }
 
-   public void setG(float g)
+   public void setR(float r)
    {
-      g_ = g;
+      r_ = r;
    }
 
    public float getG()
@@ -44,9 +44,9 @@ public class ColorRGBA
       return g_;
    }
 
-   public void setB(float b)
+   public void setG(float g)
    {
-      b_ = b;
+      g_ = g;
    }
 
    public float getB()
@@ -54,14 +54,19 @@ public class ColorRGBA
       return b_;
    }
 
-   public void setA(float a)
+   public void setB(float b)
    {
-      a_ = a;
+      b_ = b;
    }
 
    public float getA()
    {
       return a_;
+   }
+
+   public void setA(float a)
+   {
+      a_ = a;
    }
 
    @Override
@@ -111,10 +116,5 @@ public class ColorRGBA
       builder.append("}");
       return builder.toString();
    }
-
-   private float r_;
-   private float g_;
-   private float b_;
-   private float a_;
 
 }

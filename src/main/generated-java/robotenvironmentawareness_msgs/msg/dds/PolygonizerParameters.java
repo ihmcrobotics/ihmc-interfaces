@@ -10,6 +10,13 @@ package robotenvironmentawareness_msgs.msg.dds;
  */
 public class PolygonizerParameters
 {
+   private double concave_hull_threshold_;
+   private long min_number_of_nodes_;
+   private double shallow_angle_threshold_;
+   private double peak_angle_threshold_;
+   private double length_threshold_;
+   private double depth_threshold_;
+
    public PolygonizerParameters()
    {
 
@@ -26,19 +33,14 @@ public class PolygonizerParameters
 
    }
 
-   public void setConcave_hull_threshold(double concave_hull_threshold)
-   {
-      concave_hull_threshold_ = concave_hull_threshold;
-   }
-
    public double getConcave_hull_threshold()
    {
       return concave_hull_threshold_;
    }
 
-   public void setMin_number_of_nodes(long min_number_of_nodes)
+   public void setConcave_hull_threshold(double concave_hull_threshold)
    {
-      min_number_of_nodes_ = min_number_of_nodes;
+      concave_hull_threshold_ = concave_hull_threshold;
    }
 
    public long getMin_number_of_nodes()
@@ -46,9 +48,9 @@ public class PolygonizerParameters
       return min_number_of_nodes_;
    }
 
-   public void setShallow_angle_threshold(double shallow_angle_threshold)
+   public void setMin_number_of_nodes(long min_number_of_nodes)
    {
-      shallow_angle_threshold_ = shallow_angle_threshold;
+      min_number_of_nodes_ = min_number_of_nodes;
    }
 
    public double getShallow_angle_threshold()
@@ -56,9 +58,9 @@ public class PolygonizerParameters
       return shallow_angle_threshold_;
    }
 
-   public void setPeak_angle_threshold(double peak_angle_threshold)
+   public void setShallow_angle_threshold(double shallow_angle_threshold)
    {
-      peak_angle_threshold_ = peak_angle_threshold;
+      shallow_angle_threshold_ = shallow_angle_threshold;
    }
 
    public double getPeak_angle_threshold()
@@ -66,9 +68,9 @@ public class PolygonizerParameters
       return peak_angle_threshold_;
    }
 
-   public void setLength_threshold(double length_threshold)
+   public void setPeak_angle_threshold(double peak_angle_threshold)
    {
-      length_threshold_ = length_threshold;
+      peak_angle_threshold_ = peak_angle_threshold;
    }
 
    public double getLength_threshold()
@@ -76,14 +78,19 @@ public class PolygonizerParameters
       return length_threshold_;
    }
 
-   public void setDepth_threshold(double depth_threshold)
+   public void setLength_threshold(double length_threshold)
    {
-      depth_threshold_ = depth_threshold;
+      length_threshold_ = length_threshold;
    }
 
    public double getDepth_threshold()
    {
       return depth_threshold_;
+   }
+
+   public void setDepth_threshold(double depth_threshold)
+   {
+      depth_threshold_ = depth_threshold;
    }
 
    @Override
@@ -145,12 +152,5 @@ public class PolygonizerParameters
       builder.append("}");
       return builder.toString();
    }
-
-   private double concave_hull_threshold_;
-   private long min_number_of_nodes_;
-   private double shallow_angle_threshold_;
-   private double peak_angle_threshold_;
-   private double length_threshold_;
-   private double depth_threshold_;
 
 }

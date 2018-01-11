@@ -11,29 +11,11 @@ package nav_msgs.msg.dds;
 public class GridCellsPubSubType implements us.ihmc.pubsub.TopicDataType<nav_msgs.msg.dds.GridCells>
 {
    public static final java.lang.String name = "nav_msgs::msg::dds_::GridCells_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public GridCellsPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(nav_msgs.msg.dds.GridCells data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, nav_msgs.msg.dds.GridCells data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -109,6 +91,27 @@ public class GridCellsPubSubType implements us.ihmc.pubsub.TopicDataType<nav_msg
       cdr.read_type_e(data.getCells());
    }
 
+   public static void staticCopy(nav_msgs.msg.dds.GridCells src, nav_msgs.msg.dds.GridCells dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(nav_msgs.msg.dds.GridCells data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, nav_msgs.msg.dds.GridCells data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(nav_msgs.msg.dds.GridCells data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -133,11 +136,6 @@ public class GridCellsPubSubType implements us.ihmc.pubsub.TopicDataType<nav_msg
 
       ser.read_type_e("cells", data.getCells());
 
-   }
-
-   public static void staticCopy(nav_msgs.msg.dds.GridCells src, nav_msgs.msg.dds.GridCells dest)
-   {
-      dest.set(src);
    }
 
    @Override

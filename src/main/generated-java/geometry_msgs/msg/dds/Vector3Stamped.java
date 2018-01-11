@@ -10,6 +10,9 @@ package geometry_msgs.msg.dds;
  */
 public class Vector3Stamped
 {
+   private std_msgs.msg.dds.Header header_;
+   private us.ihmc.euclid.tuple3D.Vector3D vector_;
+
    public Vector3Stamped()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -68,8 +71,5 @@ public class Vector3Stamped
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private us.ihmc.euclid.tuple3D.Vector3D vector_;
 
 }

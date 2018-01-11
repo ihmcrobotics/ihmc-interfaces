@@ -10,6 +10,9 @@ package nav_msgs.msg.dds;
  */
 public class Path
 {
+   private std_msgs.msg.dds.Header header_;
+   private us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.PoseStamped> poses_;
+
    public Path()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -69,8 +72,5 @@ public class Path
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.PoseStamped> poses_;
 
 }

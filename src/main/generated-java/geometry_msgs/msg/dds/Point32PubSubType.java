@@ -11,16 +11,170 @@ package geometry_msgs.msg.dds;
 public class Point32PubSubType implements us.ihmc.pubsub.TopicDataType<us.ihmc.euclid.tuple3D.Point3D32>
 {
    public static final java.lang.String name = "geometry_msgs::msg::dds_::Point32_";
+   private static AbstractPoint32PubSubTypeImplementation impl = new us.ihmc.ros2.rosidl.geometry_msgs.msg.dds.Point3D32PubSubTypeImpl();
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
 
    public Point32PubSubType()
    {
 
    }
 
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+   private static AbstractPoint32PubSubTypeImplementation getImpl()
+   {
+      if (impl == null)
+      {
+         throw new RuntimeException(
+               "Abstract pub/sub type implementation not set. Call setImplementation(AbstractPoint32PubSubTypeImplementation implementation) before using this type.");
+      }
+      return impl;
+   }
 
-   private static AbstractPoint32PubSubTypeImplementation impl = new us.ihmc.ros2.rosidl.geometry_msgs.msg.dds.Point3D32PubSubTypeImpl();
+   public static void setImplementation(AbstractPoint32PubSubTypeImplementation implementation)
+   {
+      Point32PubSubType.impl = implementation;
+   }
+
+   public static int getMaxCdrSerializedSize()
+   {
+      return getMaxCdrSerializedSize(0);
+   }
+
+   public static int getMaxCdrSerializedSize(int current_alignment)
+   {
+      int initial_alignment = current_alignment;
+
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+
+      return current_alignment - initial_alignment;
+   }
+
+   public final static int getCdrSerializedSize(us.ihmc.euclid.tuple3D.Point3D32 data)
+   {
+      return getCdrSerializedSize(data, 0);
+   }
+
+   public final static int getCdrSerializedSize(us.ihmc.euclid.tuple3D.Point3D32 data, int current_alignment)
+   {
+      int initial_alignment = current_alignment;
+
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+
+      return current_alignment - initial_alignment;
+   }
+
+   public static void write(us.ihmc.euclid.tuple3D.Point3D32 data, us.ihmc.idl.CDR cdr)
+   {
+
+      cdr.write_type_5(getImpl().getX(data));
+
+      cdr.write_type_5(getImpl().getY(data));
+
+      cdr.write_type_5(getImpl().getZ(data));
+   }
+
+   public static void read(us.ihmc.euclid.tuple3D.Point3D32 data, us.ihmc.idl.CDR cdr)
+   {
+
+      getImpl().setX(data, cdr.read_type_5());
+
+      getImpl().setY(data, cdr.read_type_5());
+
+      getImpl().setZ(data, cdr.read_type_5());
+
+   }
+
+   public static void staticCopy(us.ihmc.euclid.tuple3D.Point3D32 src, us.ihmc.euclid.tuple3D.Point3D32 dest)
+   {
+      getImpl().copy(src, dest);
+   }
+
+   @Override
+   public void serialize(us.ihmc.euclid.tuple3D.Point3D32 data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, us.ihmc.euclid.tuple3D.Point3D32 data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
+   @Override
+   public final void serialize(us.ihmc.euclid.tuple3D.Point3D32 data, us.ihmc.idl.InterchangeSerializer ser)
+   {
+      ser.write_type_5("x", getImpl().getX(data));
+
+      ser.write_type_5("y", getImpl().getY(data));
+
+      ser.write_type_5("z", getImpl().getZ(data));
+
+   }
+
+   @Override
+   public final void deserialize(us.ihmc.idl.InterchangeSerializer ser, us.ihmc.euclid.tuple3D.Point3D32 data)
+   {
+      getImpl().setX(data, ser.read_type_5("x"));
+
+      getImpl().setY(data, ser.read_type_5("y"));
+
+      getImpl().setZ(data, ser.read_type_5("z"));
+
+   }
+
+   @Override
+   public us.ihmc.euclid.tuple3D.Point3D32 createData()
+   {
+      return getImpl().createData();
+   }
+
+   @Override
+   public int getTypeSize()
+   {
+      return us.ihmc.idl.CDR.getTypeSize(getMaxCdrSerializedSize());
+   }
+
+   @Override
+   public java.lang.String getName()
+   {
+      return name;
+   }
+
+   public void serialize(us.ihmc.euclid.tuple3D.Point3D32 data, us.ihmc.idl.CDR cdr)
+   {
+      write(data, cdr);
+   }
+
+   public void deserialize(us.ihmc.euclid.tuple3D.Point3D32 data, us.ihmc.idl.CDR cdr)
+   {
+      read(data, cdr);
+   }
+
+   public void copy(us.ihmc.euclid.tuple3D.Point3D32 src, us.ihmc.euclid.tuple3D.Point3D32 dest)
+   {
+      staticCopy(src, dest);
+   }
+
+   @Override
+   public Point32PubSubType newInstance()
+   {
+      return new Point32PubSubType();
+   }
 
    /**
     * Abstract implementation of Point32PubSubType.
@@ -88,161 +242,5 @@ public class Point32PubSubType implements us.ihmc.pubsub.TopicDataType<us.ihmc.e
       protected abstract void setZ(us.ihmc.euclid.tuple3D.Point3D32 data, float z);
 
       public abstract us.ihmc.euclid.tuple3D.Point3D32 createData();
-   }
-
-   private static AbstractPoint32PubSubTypeImplementation getImpl()
-   {
-      if (impl == null)
-      {
-         throw new RuntimeException(
-               "Abstract pub/sub type implementation not set. Call setImplementation(AbstractPoint32PubSubTypeImplementation implementation) before using this type.");
-      }
-      return impl;
-   }
-
-   public static void setImplementation(AbstractPoint32PubSubTypeImplementation implementation)
-   {
-      Point32PubSubType.impl = implementation;
-   }
-
-   public static int getMaxCdrSerializedSize()
-   {
-      return getMaxCdrSerializedSize(0);
-   }
-
-   public static int getMaxCdrSerializedSize(int current_alignment)
-   {
-      int initial_alignment = current_alignment;
-
-      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
-
-      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
-
-      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
-
-      return current_alignment - initial_alignment;
-   }
-
-   public final static int getCdrSerializedSize(us.ihmc.euclid.tuple3D.Point3D32 data)
-   {
-      return getCdrSerializedSize(data, 0);
-   }
-
-   public final static int getCdrSerializedSize(us.ihmc.euclid.tuple3D.Point3D32 data, int current_alignment)
-   {
-      int initial_alignment = current_alignment;
-
-      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
-
-      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
-
-      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
-
-      return current_alignment - initial_alignment;
-   }
-
-   @Override
-   public void serialize(us.ihmc.euclid.tuple3D.Point3D32 data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, us.ihmc.euclid.tuple3D.Point3D32 data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
-   }
-
-   public static void write(us.ihmc.euclid.tuple3D.Point3D32 data, us.ihmc.idl.CDR cdr)
-   {
-
-      cdr.write_type_5(getImpl().getX(data));
-
-      cdr.write_type_5(getImpl().getY(data));
-
-      cdr.write_type_5(getImpl().getZ(data));
-   }
-
-   public static void read(us.ihmc.euclid.tuple3D.Point3D32 data, us.ihmc.idl.CDR cdr)
-   {
-
-      getImpl().setX(data, cdr.read_type_5());
-
-      getImpl().setY(data, cdr.read_type_5());
-
-      getImpl().setZ(data, cdr.read_type_5());
-
-   }
-
-   @Override
-   public final void serialize(us.ihmc.euclid.tuple3D.Point3D32 data, us.ihmc.idl.InterchangeSerializer ser)
-   {
-      ser.write_type_5("x", getImpl().getX(data));
-
-      ser.write_type_5("y", getImpl().getY(data));
-
-      ser.write_type_5("z", getImpl().getZ(data));
-
-   }
-
-   @Override
-   public final void deserialize(us.ihmc.idl.InterchangeSerializer ser, us.ihmc.euclid.tuple3D.Point3D32 data)
-   {
-      getImpl().setX(data, ser.read_type_5("x"));
-
-      getImpl().setY(data, ser.read_type_5("y"));
-
-      getImpl().setZ(data, ser.read_type_5("z"));
-
-   }
-
-   public static void staticCopy(us.ihmc.euclid.tuple3D.Point3D32 src, us.ihmc.euclid.tuple3D.Point3D32 dest)
-   {
-      getImpl().copy(src, dest);
-   }
-
-   @Override
-   public us.ihmc.euclid.tuple3D.Point3D32 createData()
-   {
-      return getImpl().createData();
-   }
-
-   @Override
-   public int getTypeSize()
-   {
-      return us.ihmc.idl.CDR.getTypeSize(getMaxCdrSerializedSize());
-   }
-
-   @Override
-   public java.lang.String getName()
-   {
-      return name;
-   }
-
-   public void serialize(us.ihmc.euclid.tuple3D.Point3D32 data, us.ihmc.idl.CDR cdr)
-   {
-      write(data, cdr);
-   }
-
-   public void deserialize(us.ihmc.euclid.tuple3D.Point3D32 data, us.ihmc.idl.CDR cdr)
-   {
-      read(data, cdr);
-   }
-
-   public void copy(us.ihmc.euclid.tuple3D.Point3D32 src, us.ihmc.euclid.tuple3D.Point3D32 dest)
-   {
-      staticCopy(src, dest);
-   }
-
-   @Override
-   public Point32PubSubType newInstance()
-   {
-      return new Point32PubSubType();
    }
 }

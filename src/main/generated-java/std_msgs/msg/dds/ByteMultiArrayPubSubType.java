@@ -11,29 +11,11 @@ package std_msgs.msg.dds;
 public class ByteMultiArrayPubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.msg.dds.ByteMultiArray>
 {
    public static final java.lang.String name = "std_msgs::msg::dds_::ByteMultiArray_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public ByteMultiArrayPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(std_msgs.msg.dds.ByteMultiArray data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, std_msgs.msg.dds.ByteMultiArray data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -87,6 +69,27 @@ public class ByteMultiArrayPubSubType implements us.ihmc.pubsub.TopicDataType<st
       cdr.read_type_e(data.getData());
    }
 
+   public static void staticCopy(std_msgs.msg.dds.ByteMultiArray src, std_msgs.msg.dds.ByteMultiArray dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(std_msgs.msg.dds.ByteMultiArray data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, std_msgs.msg.dds.ByteMultiArray data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(std_msgs.msg.dds.ByteMultiArray data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -103,11 +106,6 @@ public class ByteMultiArrayPubSubType implements us.ihmc.pubsub.TopicDataType<st
 
       ser.read_type_e("data", data.getData());
 
-   }
-
-   public static void staticCopy(std_msgs.msg.dds.ByteMultiArray src, std_msgs.msg.dds.ByteMultiArray dest)
-   {
-      dest.set(src);
    }
 
    @Override

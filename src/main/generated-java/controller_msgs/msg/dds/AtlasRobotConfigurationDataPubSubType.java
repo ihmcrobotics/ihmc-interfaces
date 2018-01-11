@@ -11,31 +11,11 @@ package controller_msgs.msg.dds;
 public class AtlasRobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDataType<controller_msgs.msg.dds.AtlasRobotConfigurationData>
 {
    public static final java.lang.String name = "controller_msgs::msg::dds_::AtlasRobotConfigurationData_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public AtlasRobotConfigurationDataPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(controller_msgs.msg.dds.AtlasRobotConfigurationData data, us.ihmc.pubsub.common.SerializedPayload serializedPayload)
-         throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, controller_msgs.msg.dds.AtlasRobotConfigurationData data)
-         throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -85,6 +65,29 @@ public class AtlasRobotConfigurationDataPubSubType implements us.ihmc.pubsub.Top
       controller_msgs.msg.dds.AtlasAuxiliaryRobotDataPubSubType.read(data.getAtlas_auxiliary_robot_data(), cdr);
    }
 
+   public static void staticCopy(controller_msgs.msg.dds.AtlasRobotConfigurationData src, controller_msgs.msg.dds.AtlasRobotConfigurationData dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(controller_msgs.msg.dds.AtlasRobotConfigurationData data, us.ihmc.pubsub.common.SerializedPayload serializedPayload)
+         throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, controller_msgs.msg.dds.AtlasRobotConfigurationData data)
+         throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(controller_msgs.msg.dds.AtlasRobotConfigurationData data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -101,11 +104,6 @@ public class AtlasRobotConfigurationDataPubSubType implements us.ihmc.pubsub.Top
 
       ser.read_type_a("atlas_auxiliary_robot_data", new controller_msgs.msg.dds.AtlasAuxiliaryRobotDataPubSubType(), data.getAtlas_auxiliary_robot_data());
 
-   }
-
-   public static void staticCopy(controller_msgs.msg.dds.AtlasRobotConfigurationData src, controller_msgs.msg.dds.AtlasRobotConfigurationData dest)
-   {
-      dest.set(src);
    }
 
    @Override

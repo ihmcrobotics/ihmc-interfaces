@@ -10,6 +10,10 @@ package sensor_msgs.msg.dds;
  */
 public class Temperature
 {
+   private std_msgs.msg.dds.Header header_;
+   private double temperature_;
+   private double variance_;
+
    public Temperature()
    {
       header_ = new std_msgs.msg.dds.Header();
@@ -29,24 +33,24 @@ public class Temperature
       return header_;
    }
 
-   public void setTemperature(double temperature)
-   {
-      temperature_ = temperature;
-   }
-
    public double getTemperature()
    {
       return temperature_;
    }
 
-   public void setVariance(double variance)
+   public void setTemperature(double temperature)
    {
-      variance_ = variance;
+      temperature_ = temperature;
    }
 
    public double getVariance()
    {
       return variance_;
+   }
+
+   public void setVariance(double variance)
+   {
+      variance_ = variance;
    }
 
    @Override
@@ -90,9 +94,5 @@ public class Temperature
       builder.append("}");
       return builder.toString();
    }
-
-   private std_msgs.msg.dds.Header header_;
-   private double temperature_;
-   private double variance_;
 
 }

@@ -11,29 +11,11 @@ package sensor_msgs.msg.dds;
 public class ImuPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_msgs.msg.dds.Imu>
 {
    public static final java.lang.String name = "sensor_msgs::msg::dds_::Imu_";
-
+   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
+   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
    public ImuPubSubType()
    {
 
-   }
-
-   private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
-   private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
-
-   @Override
-   public void serialize(sensor_msgs.msg.dds.Imu data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
-   {
-      serializeCDR.serialize(serializedPayload);
-      write(data, serializeCDR);
-      serializeCDR.finishSerialize();
-   }
-
-   @Override
-   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, sensor_msgs.msg.dds.Imu data) throws java.io.IOException
-   {
-      deserializeCDR.deserialize(serializedPayload);
-      read(data, deserializeCDR);
-      deserializeCDR.finishDeserialize();
    }
 
    public static int getMaxCdrSerializedSize()
@@ -137,6 +119,27 @@ public class ImuPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_msgs.m
 
    }
 
+   public static void staticCopy(sensor_msgs.msg.dds.Imu src, sensor_msgs.msg.dds.Imu dest)
+   {
+      dest.set(src);
+   }
+
+   @Override
+   public void serialize(sensor_msgs.msg.dds.Imu data, us.ihmc.pubsub.common.SerializedPayload serializedPayload) throws java.io.IOException
+   {
+      serializeCDR.serialize(serializedPayload);
+      write(data, serializeCDR);
+      serializeCDR.finishSerialize();
+   }
+
+   @Override
+   public void deserialize(us.ihmc.pubsub.common.SerializedPayload serializedPayload, sensor_msgs.msg.dds.Imu data) throws java.io.IOException
+   {
+      deserializeCDR.deserialize(serializedPayload);
+      read(data, deserializeCDR);
+      deserializeCDR.finishDeserialize();
+   }
+
    @Override
    public final void serialize(sensor_msgs.msg.dds.Imu data, us.ihmc.idl.InterchangeSerializer ser)
    {
@@ -170,11 +173,6 @@ public class ImuPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_msgs.m
 
       ser.read_type_f("linear_acceleration_covariance", data.getLinear_acceleration_covariance());
 
-   }
-
-   public static void staticCopy(sensor_msgs.msg.dds.Imu src, sensor_msgs.msg.dds.Imu dest)
-   {
-      dest.set(src);
    }
 
    @Override
