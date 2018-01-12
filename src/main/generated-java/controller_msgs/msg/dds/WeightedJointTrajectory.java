@@ -21,7 +21,6 @@ public class WeightedJointTrajectory
       points_ = new us.ihmc.idl.IDLSequence.Object<controller_msgs.msg.dds.WeightedJointTrajectoryPoint>(100,
                                                                                                          controller_msgs.msg.dds.WeightedJointTrajectoryPoint.class,
                                                                                                          new controller_msgs.msg.dds.WeightedJointTrajectoryPointPubSubType());
-
    }
 
    public void set(WeightedJointTrajectory other)
@@ -87,5 +86,4 @@ public class WeightedJointTrajectory
       builder.append("}");
       return builder.toString();
    }
-
 }

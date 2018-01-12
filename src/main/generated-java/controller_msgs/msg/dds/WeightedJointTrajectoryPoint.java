@@ -16,14 +16,12 @@ public class WeightedJointTrajectoryPoint
    public WeightedJointTrajectoryPoint()
    {
       point_ = new trajectory_msgs.msg.dds.JointTrajectoryPoint();
-
    }
 
    public void set(WeightedJointTrajectoryPoint other)
    {
       trajectory_msgs.msg.dds.JointTrajectoryPointPubSubType.staticCopy(other.point_, point_);
       weight_ = other.weight_;
-
    }
 
    public trajectory_msgs.msg.dds.JointTrajectoryPoint getPoint()
@@ -76,5 +74,4 @@ public class WeightedJointTrajectoryPoint
       builder.append("}");
       return builder.toString();
    }
-
 }

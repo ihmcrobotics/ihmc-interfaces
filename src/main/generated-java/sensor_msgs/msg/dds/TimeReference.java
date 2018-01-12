@@ -19,7 +19,6 @@ public class TimeReference
       header_ = new std_msgs.msg.dds.Header();
       time_ref_ = new builtin_interfaces.msg.dds.Time();
       source_ = new java.lang.StringBuilder(255);
-
    }
 
    public void set(TimeReference other)
@@ -97,5 +96,4 @@ public class TimeReference
       builder.append("}");
       return builder.toString();
    }
-
 }

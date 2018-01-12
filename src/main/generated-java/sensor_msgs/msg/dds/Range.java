@@ -20,7 +20,6 @@ public class Range
    public Range()
    {
       header_ = new std_msgs.msg.dds.Header();
-
    }
 
    public void set(Range other)
@@ -31,7 +30,6 @@ public class Range
       min_range_ = other.min_range_;
       max_range_ = other.max_range_;
       range_ = other.range_;
-
    }
 
    public std_msgs.msg.dds.Header getHeader()
@@ -148,5 +146,4 @@ public class Range
       builder.append("}");
       return builder.toString();
    }
-
 }

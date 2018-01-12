@@ -13,6 +13,7 @@ public class PoseWithCovariancePubSubType implements us.ihmc.pubsub.TopicDataTyp
    public static final java.lang.String name = "geometry_msgs::msg::dds_::PoseWithCovariance_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public PoseWithCovariancePubSubType()
    {
 
@@ -57,7 +58,6 @@ public class PoseWithCovariancePubSubType implements us.ihmc.pubsub.TopicDataTyp
       {
          cdr.write_type_6(data.getCovariance()[a]);
       }
-
    }
 
    public static void read(geometry_msgs.msg.dds.PoseWithCovariance data, us.ihmc.idl.CDR cdr)
@@ -68,9 +68,7 @@ public class PoseWithCovariancePubSubType implements us.ihmc.pubsub.TopicDataTyp
       for (int a = 0; a < data.getCovariance().length; ++a)
       {
          data.getCovariance()[a] = cdr.read_type_6();
-
       }
-
    }
 
    public static void staticCopy(geometry_msgs.msg.dds.PoseWithCovariance src, geometry_msgs.msg.dds.PoseWithCovariance dest)
@@ -108,7 +106,6 @@ public class PoseWithCovariancePubSubType implements us.ihmc.pubsub.TopicDataTyp
       ser.read_type_a("pose", new geometry_msgs.msg.dds.PosePubSubType(), data.getPose());
 
       ser.read_type_f("covariance", data.getCovariance());
-
    }
 
    @Override

@@ -26,7 +26,6 @@ public class LaserScan
       header_ = new std_msgs.msg.dds.Header();
       ranges_ = new us.ihmc.idl.IDLSequence.Float(100, "type_5");
       intensities_ = new us.ihmc.idl.IDLSequence.Float(100, "type_5");
-
    }
 
    public void set(LaserScan other)
@@ -211,5 +210,4 @@ public class LaserScan
       builder.append("}");
       return builder.toString();
    }
-
 }

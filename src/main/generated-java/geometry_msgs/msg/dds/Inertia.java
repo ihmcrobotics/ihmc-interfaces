@@ -22,7 +22,6 @@ public class Inertia
    public Inertia()
    {
       com_ = new us.ihmc.euclid.tuple3D.Vector3D();
-
    }
 
    public void set(Inertia other)
@@ -35,7 +34,6 @@ public class Inertia
       iyy_ = other.iyy_;
       iyz_ = other.iyz_;
       izz_ = other.izz_;
-
    }
 
    public double getM()
@@ -184,5 +182,4 @@ public class Inertia
       builder.append("}");
       return builder.toString();
    }
-
 }

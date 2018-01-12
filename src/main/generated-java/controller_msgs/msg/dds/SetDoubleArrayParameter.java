@@ -17,7 +17,6 @@ public class SetDoubleArrayParameter
    {
       parameter_name_ = new java.lang.StringBuilder(255);
       parameter_value_ = new us.ihmc.idl.IDLSequence.Double(100, "type_6");
-
    }
 
    public void set(SetDoubleArrayParameter other)
@@ -83,5 +82,4 @@ public class SetDoubleArrayParameter
       builder.append("}");
       return builder.toString();
    }
-
 }

@@ -13,6 +13,7 @@ public class MultiArrayDimensionPubSubType implements us.ihmc.pubsub.TopicDataTy
    public static final java.lang.String name = "std_msgs::msg::dds_::MultiArrayDimension_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public MultiArrayDimensionPubSubType()
    {
 
@@ -75,7 +76,6 @@ public class MultiArrayDimensionPubSubType implements us.ihmc.pubsub.TopicDataTy
       data.setSize(cdr.read_type_4());
 
       data.setStride(cdr.read_type_4());
-
    }
 
    public static void staticCopy(std_msgs.msg.dds.MultiArrayDimension src, std_msgs.msg.dds.MultiArrayDimension dest)
@@ -107,7 +107,6 @@ public class MultiArrayDimensionPubSubType implements us.ihmc.pubsub.TopicDataTy
       ser.write_type_4("size", data.getSize());
 
       ser.write_type_4("stride", data.getStride());
-
    }
 
    @Override
@@ -118,7 +117,6 @@ public class MultiArrayDimensionPubSubType implements us.ihmc.pubsub.TopicDataTy
       data.setSize(ser.read_type_4("size"));
 
       data.setStride(ser.read_type_4("stride"));
-
    }
 
    @Override

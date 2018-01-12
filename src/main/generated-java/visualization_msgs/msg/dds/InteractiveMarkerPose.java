@@ -19,7 +19,6 @@ public class InteractiveMarkerPose
       header_ = new std_msgs.msg.dds.Header();
       pose_ = new us.ihmc.euclid.geometry.Pose3D();
       name_ = new java.lang.StringBuilder(255);
-
    }
 
    public void set(InteractiveMarkerPose other)
@@ -97,5 +96,4 @@ public class InteractiveMarkerPose
       builder.append("}");
       return builder.toString();
    }
-
 }

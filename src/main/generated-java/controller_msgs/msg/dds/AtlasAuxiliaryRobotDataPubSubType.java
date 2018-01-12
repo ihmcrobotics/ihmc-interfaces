@@ -13,6 +13,7 @@ public class AtlasAuxiliaryRobotDataPubSubType implements us.ihmc.pubsub.TopicDa
    public static final java.lang.String name = "controller_msgs::msg::dds_::AtlasAuxiliaryRobotData_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public AtlasAuxiliaryRobotDataPubSubType()
    {
 
@@ -237,7 +238,6 @@ public class AtlasAuxiliaryRobotDataPubSubType implements us.ihmc.pubsub.TopicDa
       data.setMotor_temperature(cdr.read_type_5());
 
       data.setMotor_driver_temperature(cdr.read_type_5());
-
    }
 
    public static void staticCopy(controller_msgs.msg.dds.AtlasAuxiliaryRobotData src, controller_msgs.msg.dds.AtlasAuxiliaryRobotData dest)
@@ -307,7 +307,6 @@ public class AtlasAuxiliaryRobotDataPubSubType implements us.ihmc.pubsub.TopicDa
       ser.write_type_5("motor_temperature", data.getMotor_temperature());
 
       ser.write_type_5("motor_driver_temperature", data.getMotor_driver_temperature());
-
    }
 
    @Override
@@ -354,7 +353,6 @@ public class AtlasAuxiliaryRobotDataPubSubType implements us.ihmc.pubsub.TopicDa
       data.setMotor_temperature(ser.read_type_5("motor_temperature"));
 
       data.setMotor_driver_temperature(ser.read_type_5("motor_driver_temperature"));
-
    }
 
    @Override

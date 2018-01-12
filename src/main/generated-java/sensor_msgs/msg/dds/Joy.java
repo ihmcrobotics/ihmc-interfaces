@@ -19,7 +19,6 @@ public class Joy
       header_ = new std_msgs.msg.dds.Header();
       axes_ = new us.ihmc.idl.IDLSequence.Float(100, "type_5");
       buttons_ = new us.ihmc.idl.IDLSequence.Integer(100, "type_2");
-
    }
 
    public void set(Joy other)
@@ -85,5 +84,4 @@ public class Joy
       builder.append("}");
       return builder.toString();
    }
-
 }

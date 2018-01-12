@@ -13,6 +13,7 @@ public class Float32PubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.
    public static final java.lang.String name = "std_msgs::msg::dds_::Float32_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public Float32PubSubType()
    {
 
@@ -56,7 +57,6 @@ public class Float32PubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.
    {
 
       data.setData(cdr.read_type_5());
-
    }
 
    public static void staticCopy(std_msgs.msg.dds.Float32 src, std_msgs.msg.dds.Float32 dest)
@@ -84,14 +84,12 @@ public class Float32PubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.
    public final void serialize(std_msgs.msg.dds.Float32 data, us.ihmc.idl.InterchangeSerializer ser)
    {
       ser.write_type_5("data", data.getData());
-
    }
 
    @Override
    public final void deserialize(us.ihmc.idl.InterchangeSerializer ser, std_msgs.msg.dds.Float32 data)
    {
       data.setData(ser.read_type_5("data"));
-
    }
 
    @Override

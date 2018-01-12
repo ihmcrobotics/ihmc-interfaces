@@ -30,7 +30,6 @@ public class PolygonizerParameters
       peak_angle_threshold_ = other.peak_angle_threshold_;
       length_threshold_ = other.length_threshold_;
       depth_threshold_ = other.depth_threshold_;
-
    }
 
    public double getConcave_hull_threshold()
@@ -152,5 +151,4 @@ public class PolygonizerParameters
       builder.append("}");
       return builder.toString();
    }
-
 }

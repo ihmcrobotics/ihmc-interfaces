@@ -13,6 +13,7 @@ public class PoseWithConfidenceStampedPubSubType implements us.ihmc.pubsub.Topic
    public static final java.lang.String name = "controller_msgs::msg::dds_::PoseWithConfidenceStamped_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public PoseWithConfidenceStampedPubSubType()
    {
 
@@ -62,7 +63,6 @@ public class PoseWithConfidenceStampedPubSubType implements us.ihmc.pubsub.Topic
       geometry_msgs.msg.dds.PoseStampedPubSubType.read(data.getPose(), cdr);
 
       data.setConfidence(cdr.read_type_5());
-
    }
 
    public static void staticCopy(controller_msgs.msg.dds.PoseWithConfidenceStamped src, controller_msgs.msg.dds.PoseWithConfidenceStamped dest)
@@ -94,7 +94,6 @@ public class PoseWithConfidenceStampedPubSubType implements us.ihmc.pubsub.Topic
       ser.write_type_a("pose", new geometry_msgs.msg.dds.PoseStampedPubSubType(), data.getPose());
 
       ser.write_type_5("confidence", data.getConfidence());
-
    }
 
    @Override
@@ -103,7 +102,6 @@ public class PoseWithConfidenceStampedPubSubType implements us.ihmc.pubsub.Topic
       ser.read_type_a("pose", new geometry_msgs.msg.dds.PoseStampedPubSubType(), data.getPose());
 
       data.setConfidence(ser.read_type_5("confidence"));
-
    }
 
    @Override

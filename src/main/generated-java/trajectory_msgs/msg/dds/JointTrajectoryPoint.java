@@ -23,7 +23,6 @@ public class JointTrajectoryPoint
       accelerations_ = new us.ihmc.idl.IDLSequence.Double(100, "type_6");
       effort_ = new us.ihmc.idl.IDLSequence.Double(100, "type_6");
       time_from_start_ = new builtin_interfaces.msg.dds.Duration();
-
    }
 
    public void set(JointTrajectoryPoint other)
@@ -113,5 +112,4 @@ public class JointTrajectoryPoint
       builder.append("}");
       return builder.toString();
    }
-
 }

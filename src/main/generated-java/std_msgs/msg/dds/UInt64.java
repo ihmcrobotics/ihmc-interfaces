@@ -20,7 +20,6 @@ public class UInt64
    public void set(UInt64 other)
    {
       data_ = other.data_;
-
    }
 
    public long getData()
@@ -62,5 +61,4 @@ public class UInt64
       builder.append("}");
       return builder.toString();
    }
-
 }

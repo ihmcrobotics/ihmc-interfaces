@@ -13,6 +13,7 @@ public class TaskspaceTrajectoryStampedPubSubType implements us.ihmc.pubsub.Topi
    public static final java.lang.String name = "controller_msgs::msg::dds_::TaskspaceTrajectoryStamped_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public TaskspaceTrajectoryStampedPubSubType()
    {
 
@@ -114,7 +115,6 @@ public class TaskspaceTrajectoryStampedPubSubType implements us.ihmc.pubsub.Topi
       ser.write_type_e("trajectory_points_stamped", data.getTrajectory_points_stamped());
 
       ser.write_type_a("time_from_start", new builtin_interfaces.msg.dds.DurationPubSubType(), data.getTime_from_start());
-
    }
 
    @Override
@@ -125,7 +125,6 @@ public class TaskspaceTrajectoryStampedPubSubType implements us.ihmc.pubsub.Topi
       ser.read_type_e("trajectory_points_stamped", data.getTrajectory_points_stamped());
 
       ser.read_type_a("time_from_start", new builtin_interfaces.msg.dds.DurationPubSubType(), data.getTime_from_start());
-
    }
 
    @Override

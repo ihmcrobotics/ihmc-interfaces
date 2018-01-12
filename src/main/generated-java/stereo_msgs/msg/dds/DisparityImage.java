@@ -24,7 +24,6 @@ public class DisparityImage
       header_ = new std_msgs.msg.dds.Header();
       image_ = new sensor_msgs.msg.dds.Image();
       valid_window_ = new sensor_msgs.msg.dds.RegionOfInterest();
-
    }
 
    public void set(DisparityImage other)
@@ -37,7 +36,6 @@ public class DisparityImage
       min_disparity_ = other.min_disparity_;
       max_disparity_ = other.max_disparity_;
       delta_d_ = other.delta_d_;
-
    }
 
    public std_msgs.msg.dds.Header getHeader()
@@ -176,5 +174,4 @@ public class DisparityImage
       builder.append("}");
       return builder.toString();
    }
-
 }

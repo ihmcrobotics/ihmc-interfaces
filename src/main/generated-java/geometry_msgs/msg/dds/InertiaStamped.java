@@ -17,7 +17,6 @@ public class InertiaStamped
    {
       header_ = new std_msgs.msg.dds.Header();
       inertia_ = new geometry_msgs.msg.dds.Inertia();
-
    }
 
    public void set(InertiaStamped other)
@@ -71,5 +70,4 @@ public class InertiaStamped
       builder.append("}");
       return builder.toString();
    }
-
 }

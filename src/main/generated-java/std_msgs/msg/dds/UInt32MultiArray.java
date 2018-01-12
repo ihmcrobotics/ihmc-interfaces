@@ -17,7 +17,6 @@ public class UInt32MultiArray
    {
       layout_ = new std_msgs.msg.dds.MultiArrayLayout();
       data_ = new us.ihmc.idl.IDLSequence.Long(100, "type_4");
-
    }
 
    public void set(UInt32MultiArray other)
@@ -71,5 +70,4 @@ public class UInt32MultiArray
       builder.append("}");
       return builder.toString();
    }
-
 }

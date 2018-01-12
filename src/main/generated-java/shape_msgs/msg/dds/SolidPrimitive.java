@@ -16,7 +16,6 @@ public class SolidPrimitive
    public SolidPrimitive()
    {
       dimensions_ = new us.ihmc.idl.IDLSequence.Double(3, "type_6");
-
    }
 
    public void set(SolidPrimitive other)
@@ -75,5 +74,4 @@ public class SolidPrimitive
       builder.append("}");
       return builder.toString();
    }
-
 }

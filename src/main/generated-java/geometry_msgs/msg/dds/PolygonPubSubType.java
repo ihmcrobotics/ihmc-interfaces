@@ -13,6 +13,7 @@ public class PolygonPubSubType implements us.ihmc.pubsub.TopicDataType<geometry_
    public static final java.lang.String name = "geometry_msgs::msg::dds_::Polygon_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public PolygonPubSubType()
    {
 
@@ -94,14 +95,12 @@ public class PolygonPubSubType implements us.ihmc.pubsub.TopicDataType<geometry_
    public final void serialize(geometry_msgs.msg.dds.Polygon data, us.ihmc.idl.InterchangeSerializer ser)
    {
       ser.write_type_e("points", data.getPoints());
-
    }
 
    @Override
    public final void deserialize(us.ihmc.idl.InterchangeSerializer ser, geometry_msgs.msg.dds.Polygon data)
    {
       ser.read_type_e("points", data.getPoints());
-
    }
 
    @Override

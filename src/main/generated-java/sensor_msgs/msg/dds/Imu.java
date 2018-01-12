@@ -27,7 +27,6 @@ public class Imu
       angular_velocity_covariance_ = new double[9];
       linear_acceleration_ = new us.ihmc.euclid.tuple3D.Vector3D();
       linear_acceleration_covariance_ = new double[9];
-
    }
 
    public void set(Imu other)
@@ -37,23 +36,19 @@ public class Imu
       for (int b = 0; b < orientation_covariance_.length; ++b)
       {
          orientation_covariance_[b] = other.orientation_covariance_[b];
-
       }
 
       geometry_msgs.msg.dds.Vector3PubSubType.staticCopy(other.angular_velocity_, angular_velocity_);
       for (int d = 0; d < angular_velocity_covariance_.length; ++d)
       {
          angular_velocity_covariance_[d] = other.angular_velocity_covariance_[d];
-
       }
 
       geometry_msgs.msg.dds.Vector3PubSubType.staticCopy(other.linear_acceleration_, linear_acceleration_);
       for (int f = 0; f < linear_acceleration_covariance_.length; ++f)
       {
          linear_acceleration_covariance_[f] = other.linear_acceleration_covariance_[f];
-
       }
-
    }
 
    public std_msgs.msg.dds.Header getHeader()
@@ -110,21 +105,18 @@ public class Imu
       for (int h = 0; h < orientation_covariance_.length; ++h)
       {
          returnedValue &= this.orientation_covariance_[h] == otherMyClass.orientation_covariance_[h];
-
       }
       returnedValue &= this.angular_velocity_.equals(otherMyClass.angular_velocity_);
 
       for (int j = 0; j < angular_velocity_covariance_.length; ++j)
       {
          returnedValue &= this.angular_velocity_covariance_[j] == otherMyClass.angular_velocity_covariance_[j];
-
       }
       returnedValue &= this.linear_acceleration_.equals(otherMyClass.linear_acceleration_);
 
       for (int l = 0; l < linear_acceleration_covariance_.length; ++l)
       {
          returnedValue &= this.linear_acceleration_covariance_[l] == otherMyClass.linear_acceleration_covariance_[l];
-
       }
 
       return returnedValue;
@@ -166,5 +158,4 @@ public class Imu
       builder.append("}");
       return builder.toString();
    }
-
 }

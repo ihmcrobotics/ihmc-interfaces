@@ -17,7 +17,6 @@ public class Accel
    {
       linear_ = new us.ihmc.euclid.tuple3D.Vector3D();
       angular_ = new us.ihmc.euclid.tuple3D.Vector3D();
-
    }
 
    public void set(Accel other)
@@ -71,5 +70,4 @@ public class Accel
       builder.append("}");
       return builder.toString();
    }
-
 }

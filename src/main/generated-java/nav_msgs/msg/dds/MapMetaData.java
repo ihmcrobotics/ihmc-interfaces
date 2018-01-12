@@ -20,7 +20,6 @@ public class MapMetaData
    {
       map_load_time_ = new builtin_interfaces.msg.dds.Time();
       origin_ = new us.ihmc.euclid.geometry.Pose3D();
-
    }
 
    public void set(MapMetaData other)
@@ -125,5 +124,4 @@ public class MapMetaData
       builder.append("}");
       return builder.toString();
    }
-
 }

@@ -13,6 +13,7 @@ public class PointFieldPubSubType implements us.ihmc.pubsub.TopicDataType<sensor
    public static final java.lang.String name = "sensor_msgs::msg::dds_::PointField_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public PointFieldPubSubType()
    {
 
@@ -83,7 +84,6 @@ public class PointFieldPubSubType implements us.ihmc.pubsub.TopicDataType<sensor
       data.setDatatype(cdr.read_type_9());
 
       data.setCount(cdr.read_type_4());
-
    }
 
    public static void staticCopy(sensor_msgs.msg.dds.PointField src, sensor_msgs.msg.dds.PointField dest)
@@ -117,7 +117,6 @@ public class PointFieldPubSubType implements us.ihmc.pubsub.TopicDataType<sensor
       ser.write_type_9("datatype", data.getDatatype());
 
       ser.write_type_4("count", data.getCount());
-
    }
 
    @Override
@@ -130,7 +129,6 @@ public class PointFieldPubSubType implements us.ihmc.pubsub.TopicDataType<sensor
       data.setDatatype(ser.read_type_9("datatype"));
 
       data.setCount(ser.read_type_4("count"));
-
    }
 
    @Override

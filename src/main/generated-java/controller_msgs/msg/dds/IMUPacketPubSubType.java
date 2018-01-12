@@ -13,6 +13,7 @@ public class IMUPacketPubSubType implements us.ihmc.pubsub.TopicDataType<control
    public static final java.lang.String name = "controller_msgs::msg::dds_::IMUPacket_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public IMUPacketPubSubType()
    {
 
@@ -74,7 +75,6 @@ public class IMUPacketPubSubType implements us.ihmc.pubsub.TopicDataType<control
       geometry_msgs.msg.dds.Vector3PubSubType.read(data.getAngular_velocity(), cdr);
 
       data.setTime(cdr.read_type_6());
-
    }
 
    public static void staticCopy(controller_msgs.msg.dds.IMUPacket src, controller_msgs.msg.dds.IMUPacket dest)
@@ -108,7 +108,6 @@ public class IMUPacketPubSubType implements us.ihmc.pubsub.TopicDataType<control
       ser.write_type_a("angular_velocity", new geometry_msgs.msg.dds.Vector3PubSubType(), data.getAngular_velocity());
 
       ser.write_type_6("time", data.getTime());
-
    }
 
    @Override
@@ -121,7 +120,6 @@ public class IMUPacketPubSubType implements us.ihmc.pubsub.TopicDataType<control
       ser.read_type_a("angular_velocity", new geometry_msgs.msg.dds.Vector3PubSubType(), data.getAngular_velocity());
 
       data.setTime(ser.read_type_6("time"));
-
    }
 
    @Override

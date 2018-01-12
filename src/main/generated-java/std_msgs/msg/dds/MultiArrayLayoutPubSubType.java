@@ -13,6 +13,7 @@ public class MultiArrayLayoutPubSubType implements us.ihmc.pubsub.TopicDataType<
    public static final java.lang.String name = "std_msgs::msg::dds_::MultiArrayLayout_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public MultiArrayLayoutPubSubType()
    {
 
@@ -75,7 +76,6 @@ public class MultiArrayLayoutPubSubType implements us.ihmc.pubsub.TopicDataType<
       cdr.read_type_e(data.getDim());
 
       data.setData_offset(cdr.read_type_4());
-
    }
 
    public static void staticCopy(std_msgs.msg.dds.MultiArrayLayout src, std_msgs.msg.dds.MultiArrayLayout dest)
@@ -105,7 +105,6 @@ public class MultiArrayLayoutPubSubType implements us.ihmc.pubsub.TopicDataType<
       ser.write_type_e("dim", data.getDim());
 
       ser.write_type_4("data_offset", data.getData_offset());
-
    }
 
    @Override
@@ -114,7 +113,6 @@ public class MultiArrayLayoutPubSubType implements us.ihmc.pubsub.TopicDataType<
       ser.read_type_e("dim", data.getDim());
 
       data.setData_offset(ser.read_type_4("data_offset"));
-
    }
 
    @Override

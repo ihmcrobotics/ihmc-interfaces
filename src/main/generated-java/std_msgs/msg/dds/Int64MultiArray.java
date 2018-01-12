@@ -17,7 +17,6 @@ public class Int64MultiArray
    {
       layout_ = new std_msgs.msg.dds.MultiArrayLayout();
       data_ = new us.ihmc.idl.IDLSequence.Long(100, "type_11");
-
    }
 
    public void set(Int64MultiArray other)
@@ -71,5 +70,4 @@ public class Int64MultiArray
       builder.append("}");
       return builder.toString();
    }
-
 }

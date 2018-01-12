@@ -16,14 +16,12 @@ public class PoseWithConfidenceStamped
    public PoseWithConfidenceStamped()
    {
       pose_ = new geometry_msgs.msg.dds.PoseStamped();
-
    }
 
    public void set(PoseWithConfidenceStamped other)
    {
       geometry_msgs.msg.dds.PoseStampedPubSubType.staticCopy(other.pose_, pose_);
       confidence_ = other.confidence_;
-
    }
 
    public geometry_msgs.msg.dds.PoseStamped getPose()
@@ -76,5 +74,4 @@ public class PoseWithConfidenceStamped
       builder.append("}");
       return builder.toString();
    }
-
 }

@@ -20,7 +20,6 @@ public class FootstepList
    {
       footsteps_ = new us.ihmc.idl.IDLSequence.Object<controller_msgs.msg.dds.Footstep>(100, controller_msgs.msg.dds.Footstep.class,
                                                                                         new controller_msgs.msg.dds.FootstepPubSubType());
-
    }
 
    public void set(FootstepList other)
@@ -30,7 +29,6 @@ public class FootstepList
       executing_timing_ = other.executing_timing_;
       default_swing_duration_ = other.default_swing_duration_;
       final_transfer_duration_ = other.final_transfer_duration_;
-
    }
 
    public long getUnique_id()
@@ -131,5 +129,4 @@ public class FootstepList
       builder.append("}");
       return builder.toString();
    }
-
 }

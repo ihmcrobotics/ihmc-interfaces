@@ -17,7 +17,6 @@ public class PointStamped
    {
       header_ = new std_msgs.msg.dds.Header();
       point_ = new us.ihmc.euclid.tuple3D.Point3D();
-
    }
 
    public void set(PointStamped other)
@@ -71,5 +70,4 @@ public class PointStamped
       builder.append("}");
       return builder.toString();
    }
-
 }

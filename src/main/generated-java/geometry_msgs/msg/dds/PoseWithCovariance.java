@@ -17,7 +17,6 @@ public class PoseWithCovariance
    {
       pose_ = new us.ihmc.euclid.geometry.Pose3D();
       covariance_ = new double[36];
-
    }
 
    public void set(PoseWithCovariance other)
@@ -26,9 +25,7 @@ public class PoseWithCovariance
       for (int b = 0; b < covariance_.length; ++b)
       {
          covariance_[b] = other.covariance_[b];
-
       }
-
    }
 
    public us.ihmc.euclid.geometry.Pose3D getPose()
@@ -58,7 +55,6 @@ public class PoseWithCovariance
       for (int d = 0; d < covariance_.length; ++d)
       {
          returnedValue &= this.covariance_[d] == otherMyClass.covariance_[d];
-
       }
 
       return returnedValue;
@@ -80,5 +76,4 @@ public class PoseWithCovariance
       builder.append("}");
       return builder.toString();
    }
-
 }

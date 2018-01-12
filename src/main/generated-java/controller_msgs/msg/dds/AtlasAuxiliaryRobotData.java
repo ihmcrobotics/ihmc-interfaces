@@ -41,7 +41,6 @@ public class AtlasAuxiliaryRobotData
       raw_imu_packets_counts_ = new us.ihmc.idl.IDLSequence.Long(100, "type_11");
       raw_imu_rates_ = new std_msgs.msg.dds.Float32MultiArray();
       raw_imu_deltas_ = new std_msgs.msg.dds.Float32MultiArray();
-
    }
 
    public void set(AtlasAuxiliaryRobotData other)
@@ -67,7 +66,6 @@ public class AtlasAuxiliaryRobotData
       pump_rpm_ = other.pump_rpm_;
       motor_temperature_ = other.motor_temperature_;
       motor_driver_temperature_ = other.motor_driver_temperature_;
-
    }
 
    public us.ihmc.idl.IDLSequence.Float getElectric_joint_temperatures()
@@ -394,5 +392,4 @@ public class AtlasAuxiliaryRobotData
       builder.append("}");
       return builder.toString();
    }
-
 }

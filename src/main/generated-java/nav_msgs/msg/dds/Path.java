@@ -18,7 +18,6 @@ public class Path
       header_ = new std_msgs.msg.dds.Header();
       poses_ = new us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.PoseStamped>(100, geometry_msgs.msg.dds.PoseStamped.class,
                                                                                      new geometry_msgs.msg.dds.PoseStampedPubSubType());
-
    }
 
    public void set(Path other)
@@ -72,5 +71,4 @@ public class Path
       builder.append("}");
       return builder.toString();
    }
-
 }

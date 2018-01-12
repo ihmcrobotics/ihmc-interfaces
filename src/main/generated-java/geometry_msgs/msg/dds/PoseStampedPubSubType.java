@@ -13,6 +13,7 @@ public class PoseStampedPubSubType implements us.ihmc.pubsub.TopicDataType<geome
    public static final java.lang.String name = "geometry_msgs::msg::dds_::PoseStamped_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public PoseStampedPubSubType()
    {
 
@@ -91,7 +92,6 @@ public class PoseStampedPubSubType implements us.ihmc.pubsub.TopicDataType<geome
       ser.write_type_a("header", new std_msgs.msg.dds.HeaderPubSubType(), data.getHeader());
 
       ser.write_type_a("pose", new geometry_msgs.msg.dds.PosePubSubType(), data.getPose());
-
    }
 
    @Override
@@ -100,7 +100,6 @@ public class PoseStampedPubSubType implements us.ihmc.pubsub.TopicDataType<geome
       ser.read_type_a("header", new std_msgs.msg.dds.HeaderPubSubType(), data.getHeader());
 
       ser.read_type_a("pose", new geometry_msgs.msg.dds.PosePubSubType(), data.getPose());
-
    }
 
    @Override

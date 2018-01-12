@@ -22,7 +22,6 @@ public class Time
    {
       sec_ = other.sec_;
       nanosec_ = other.nanosec_;
-
    }
 
    public int getSec()
@@ -80,5 +79,4 @@ public class Time
       builder.append("}");
       return builder.toString();
    }
-
 }

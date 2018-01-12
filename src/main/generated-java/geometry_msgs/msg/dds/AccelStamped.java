@@ -17,7 +17,6 @@ public class AccelStamped
    {
       header_ = new std_msgs.msg.dds.Header();
       accel_ = new geometry_msgs.msg.dds.Accel();
-
    }
 
    public void set(AccelStamped other)
@@ -71,5 +70,4 @@ public class AccelStamped
       builder.append("}");
       return builder.toString();
    }
-
 }

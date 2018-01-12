@@ -20,7 +20,6 @@ public class Int8
    public void set(Int8 other)
    {
       data_ = other.data_;
-
    }
 
    public byte getData()
@@ -62,5 +61,4 @@ public class Int8
       builder.append("}");
       return builder.toString();
    }
-
 }

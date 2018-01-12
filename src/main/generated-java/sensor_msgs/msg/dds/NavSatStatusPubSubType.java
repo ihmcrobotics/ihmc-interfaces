@@ -13,6 +13,7 @@ public class NavSatStatusPubSubType implements us.ihmc.pubsub.TopicDataType<sens
    public static final java.lang.String name = "sensor_msgs::msg::dds_::NavSatStatus_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public NavSatStatusPubSubType()
    {
 
@@ -64,7 +65,6 @@ public class NavSatStatusPubSubType implements us.ihmc.pubsub.TopicDataType<sens
       data.setStatus(cdr.read_type_9());
 
       data.setService(cdr.read_type_3());
-
    }
 
    public static void staticCopy(sensor_msgs.msg.dds.NavSatStatus src, sensor_msgs.msg.dds.NavSatStatus dest)
@@ -94,7 +94,6 @@ public class NavSatStatusPubSubType implements us.ihmc.pubsub.TopicDataType<sens
       ser.write_type_9("status", data.getStatus());
 
       ser.write_type_3("service", data.getService());
-
    }
 
    @Override
@@ -103,7 +102,6 @@ public class NavSatStatusPubSubType implements us.ihmc.pubsub.TopicDataType<sens
       data.setStatus(ser.read_type_9("status"));
 
       data.setService(ser.read_type_3("service"));
-
    }
 
    @Override

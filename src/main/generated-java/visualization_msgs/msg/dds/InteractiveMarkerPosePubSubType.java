@@ -13,6 +13,7 @@ public class InteractiveMarkerPosePubSubType implements us.ihmc.pubsub.TopicData
    public static final java.lang.String name = "visualization_msgs::msg::dds_::InteractiveMarkerPose_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public InteractiveMarkerPosePubSubType()
    {
 
@@ -104,7 +105,6 @@ public class InteractiveMarkerPosePubSubType implements us.ihmc.pubsub.TopicData
       ser.write_type_a("pose", new geometry_msgs.msg.dds.PosePubSubType(), data.getPose());
 
       ser.write_type_d("name", data.getName());
-
    }
 
    @Override
@@ -115,7 +115,6 @@ public class InteractiveMarkerPosePubSubType implements us.ihmc.pubsub.TopicData
       ser.read_type_a("pose", new geometry_msgs.msg.dds.PosePubSubType(), data.getPose());
 
       ser.read_type_d("name", data.getName());
-
    }
 
    @Override

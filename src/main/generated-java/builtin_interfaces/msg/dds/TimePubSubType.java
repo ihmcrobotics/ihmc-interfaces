@@ -13,6 +13,7 @@ public class TimePubSubType implements us.ihmc.pubsub.TopicDataType<builtin_inte
    public static final java.lang.String name = "builtin_interfaces::msg::dds_::Time_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public TimePubSubType()
    {
 
@@ -64,7 +65,6 @@ public class TimePubSubType implements us.ihmc.pubsub.TopicDataType<builtin_inte
       data.setSec(cdr.read_type_2());
 
       data.setNanosec(cdr.read_type_4());
-
    }
 
    public static void staticCopy(builtin_interfaces.msg.dds.Time src, builtin_interfaces.msg.dds.Time dest)
@@ -94,7 +94,6 @@ public class TimePubSubType implements us.ihmc.pubsub.TopicDataType<builtin_inte
       ser.write_type_2("sec", data.getSec());
 
       ser.write_type_4("nanosec", data.getNanosec());
-
    }
 
    @Override
@@ -103,7 +102,6 @@ public class TimePubSubType implements us.ihmc.pubsub.TopicDataType<builtin_inte
       data.setSec(ser.read_type_2("sec"));
 
       data.setNanosec(ser.read_type_4("nanosec"));
-
    }
 
    @Override

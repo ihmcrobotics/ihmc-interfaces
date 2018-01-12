@@ -17,7 +17,6 @@ public class PoseStamped
    {
       header_ = new std_msgs.msg.dds.Header();
       pose_ = new us.ihmc.euclid.geometry.Pose3D();
-
    }
 
    public void set(PoseStamped other)
@@ -71,5 +70,4 @@ public class PoseStamped
       builder.append("}");
       return builder.toString();
    }
-
 }

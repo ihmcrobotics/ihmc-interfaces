@@ -17,7 +17,6 @@ public class FluidPressure
    public FluidPressure()
    {
       header_ = new std_msgs.msg.dds.Header();
-
    }
 
    public void set(FluidPressure other)
@@ -25,7 +24,6 @@ public class FluidPressure
       std_msgs.msg.dds.HeaderPubSubType.staticCopy(other.header_, header_);
       fluid_pressure_ = other.fluid_pressure_;
       variance_ = other.variance_;
-
    }
 
    public std_msgs.msg.dds.Header getHeader()
@@ -94,5 +92,4 @@ public class FluidPressure
       builder.append("}");
       return builder.toString();
    }
-
 }

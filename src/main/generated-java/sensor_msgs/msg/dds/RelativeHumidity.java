@@ -17,7 +17,6 @@ public class RelativeHumidity
    public RelativeHumidity()
    {
       header_ = new std_msgs.msg.dds.Header();
-
    }
 
    public void set(RelativeHumidity other)
@@ -25,7 +24,6 @@ public class RelativeHumidity
       std_msgs.msg.dds.HeaderPubSubType.staticCopy(other.header_, header_);
       relative_humidity_ = other.relative_humidity_;
       variance_ = other.variance_;
-
    }
 
    public std_msgs.msg.dds.Header getHeader()
@@ -94,5 +92,4 @@ public class RelativeHumidity
       builder.append("}");
       return builder.toString();
    }
-
 }

@@ -13,6 +13,7 @@ public class RelativeHumidityPubSubType implements us.ihmc.pubsub.TopicDataType<
    public static final java.lang.String name = "sensor_msgs::msg::dds_::RelativeHumidity_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public RelativeHumidityPubSubType()
    {
 
@@ -70,7 +71,6 @@ public class RelativeHumidityPubSubType implements us.ihmc.pubsub.TopicDataType<
       data.setRelative_humidity(cdr.read_type_6());
 
       data.setVariance(cdr.read_type_6());
-
    }
 
    public static void staticCopy(sensor_msgs.msg.dds.RelativeHumidity src, sensor_msgs.msg.dds.RelativeHumidity dest)
@@ -102,7 +102,6 @@ public class RelativeHumidityPubSubType implements us.ihmc.pubsub.TopicDataType<
       ser.write_type_6("relative_humidity", data.getRelative_humidity());
 
       ser.write_type_6("variance", data.getVariance());
-
    }
 
    @Override
@@ -113,7 +112,6 @@ public class RelativeHumidityPubSubType implements us.ihmc.pubsub.TopicDataType<
       data.setRelative_humidity(ser.read_type_6("relative_humidity"));
 
       data.setVariance(ser.read_type_6("variance"));
-
    }
 
    @Override

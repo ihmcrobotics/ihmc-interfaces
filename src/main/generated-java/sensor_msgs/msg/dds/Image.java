@@ -23,7 +23,6 @@ public class Image
       header_ = new std_msgs.msg.dds.Header();
       encoding_ = new java.lang.StringBuilder(255);
       data_ = new us.ihmc.idl.IDLSequence.Byte(100, "type_9");
-
    }
 
    public void set(Image other)
@@ -169,5 +168,4 @@ public class Image
       builder.append("}");
       return builder.toString();
    }
-
 }

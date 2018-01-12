@@ -22,7 +22,6 @@ public class NavSatStatus
    {
       status_ = other.status_;
       service_ = other.service_;
-
    }
 
    public byte getStatus()
@@ -80,5 +79,4 @@ public class NavSatStatus
       builder.append("}");
       return builder.toString();
    }
-
 }

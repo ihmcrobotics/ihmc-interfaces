@@ -13,6 +13,7 @@ public class BoolPubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.msg
    public static final java.lang.String name = "std_msgs::msg::dds_::Bool_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public BoolPubSubType()
    {
 
@@ -56,7 +57,6 @@ public class BoolPubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.msg
    {
 
       data.setData(cdr.read_type_7());
-
    }
 
    public static void staticCopy(std_msgs.msg.dds.Bool src, std_msgs.msg.dds.Bool dest)
@@ -84,14 +84,12 @@ public class BoolPubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.msg
    public final void serialize(std_msgs.msg.dds.Bool data, us.ihmc.idl.InterchangeSerializer ser)
    {
       ser.write_type_7("data", data.getData());
-
    }
 
    @Override
    public final void deserialize(us.ihmc.idl.InterchangeSerializer ser, std_msgs.msg.dds.Bool data)
    {
       data.setData(ser.read_type_7("data"));
-
    }
 
    @Override

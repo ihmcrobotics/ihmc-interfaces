@@ -16,7 +16,6 @@ public class SetBooleanParameter
    public SetBooleanParameter()
    {
       parameter_name_ = new java.lang.StringBuilder(255);
-
    }
 
    public void set(SetBooleanParameter other)
@@ -24,7 +23,6 @@ public class SetBooleanParameter
       parameter_name_.setLength(0);
       parameter_name_.append(other.parameter_name_);
       parameter_value_ = other.parameter_value_;
-
    }
 
    public java.lang.String getParameter_nameAsString()
@@ -88,5 +86,4 @@ public class SetBooleanParameter
       builder.append("}");
       return builder.toString();
    }
-
 }

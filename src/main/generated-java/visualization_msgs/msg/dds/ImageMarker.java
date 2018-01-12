@@ -37,7 +37,6 @@ public class ImageMarker
 
       outline_colors_ = new us.ihmc.idl.IDLSequence.Object<std_msgs.msg.dds.ColorRGBA>(100, std_msgs.msg.dds.ColorRGBA.class,
                                                                                        new std_msgs.msg.dds.ColorRGBAPubSubType());
-
    }
 
    public void set(ImageMarker other)
@@ -260,5 +259,4 @@ public class ImageMarker
       builder.append("}");
       return builder.toString();
    }
-
 }

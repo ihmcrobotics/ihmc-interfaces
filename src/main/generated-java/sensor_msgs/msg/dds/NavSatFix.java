@@ -23,7 +23,6 @@ public class NavSatFix
       header_ = new std_msgs.msg.dds.Header();
       status_ = new sensor_msgs.msg.dds.NavSatStatus();
       position_covariance_ = new double[9];
-
    }
 
    public void set(NavSatFix other)
@@ -36,11 +35,9 @@ public class NavSatFix
       for (int b = 0; b < position_covariance_.length; ++b)
       {
          position_covariance_[b] = other.position_covariance_[b];
-
       }
 
       position_covariance_type_ = other.position_covariance_type_;
-
    }
 
    public std_msgs.msg.dds.Header getHeader()
@@ -123,7 +120,6 @@ public class NavSatFix
       for (int d = 0; d < position_covariance_.length; ++d)
       {
          returnedValue &= this.position_covariance_[d] == otherMyClass.position_covariance_[d];
-
       }
       returnedValue &= this.position_covariance_type_ == otherMyClass.position_covariance_type_;
 
@@ -166,5 +162,4 @@ public class NavSatFix
       builder.append("}");
       return builder.toString();
    }
-
 }

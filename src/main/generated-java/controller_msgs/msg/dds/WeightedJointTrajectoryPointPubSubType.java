@@ -13,6 +13,7 @@ public class WeightedJointTrajectoryPointPubSubType implements us.ihmc.pubsub.To
    public static final java.lang.String name = "controller_msgs::msg::dds_::WeightedJointTrajectoryPoint_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public WeightedJointTrajectoryPointPubSubType()
    {
 
@@ -62,7 +63,6 @@ public class WeightedJointTrajectoryPointPubSubType implements us.ihmc.pubsub.To
       trajectory_msgs.msg.dds.JointTrajectoryPointPubSubType.read(data.getPoint(), cdr);
 
       data.setWeight(cdr.read_type_6());
-
    }
 
    public static void staticCopy(controller_msgs.msg.dds.WeightedJointTrajectoryPoint src, controller_msgs.msg.dds.WeightedJointTrajectoryPoint dest)
@@ -94,7 +94,6 @@ public class WeightedJointTrajectoryPointPubSubType implements us.ihmc.pubsub.To
       ser.write_type_a("point", new trajectory_msgs.msg.dds.JointTrajectoryPointPubSubType(), data.getPoint());
 
       ser.write_type_6("weight", data.getWeight());
-
    }
 
    @Override
@@ -103,7 +102,6 @@ public class WeightedJointTrajectoryPointPubSubType implements us.ihmc.pubsub.To
       ser.read_type_a("point", new trajectory_msgs.msg.dds.JointTrajectoryPointPubSubType(), data.getPoint());
 
       data.setWeight(ser.read_type_6("weight"));
-
    }
 
    @Override

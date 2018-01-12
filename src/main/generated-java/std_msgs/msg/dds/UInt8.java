@@ -20,7 +20,6 @@ public class UInt8
    public void set(UInt8 other)
    {
       data_ = other.data_;
-
    }
 
    public byte getData()
@@ -62,5 +61,4 @@ public class UInt8
       builder.append("}");
       return builder.toString();
    }
-
 }

@@ -13,6 +13,7 @@ public class TemperaturePubSubType implements us.ihmc.pubsub.TopicDataType<senso
    public static final java.lang.String name = "sensor_msgs::msg::dds_::Temperature_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public TemperaturePubSubType()
    {
 
@@ -70,7 +71,6 @@ public class TemperaturePubSubType implements us.ihmc.pubsub.TopicDataType<senso
       data.setTemperature(cdr.read_type_6());
 
       data.setVariance(cdr.read_type_6());
-
    }
 
    public static void staticCopy(sensor_msgs.msg.dds.Temperature src, sensor_msgs.msg.dds.Temperature dest)
@@ -102,7 +102,6 @@ public class TemperaturePubSubType implements us.ihmc.pubsub.TopicDataType<senso
       ser.write_type_6("temperature", data.getTemperature());
 
       ser.write_type_6("variance", data.getVariance());
-
    }
 
    @Override
@@ -113,7 +112,6 @@ public class TemperaturePubSubType implements us.ihmc.pubsub.TopicDataType<senso
       data.setTemperature(ser.read_type_6("temperature"));
 
       data.setVariance(ser.read_type_6("variance"));
-
    }
 
    @Override

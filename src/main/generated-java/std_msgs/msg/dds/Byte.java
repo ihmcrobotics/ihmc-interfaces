@@ -20,7 +20,6 @@ public class Byte
    public void set(Byte other)
    {
       data_ = other.data_;
-
    }
 
    public byte getData()
@@ -62,5 +61,4 @@ public class Byte
       builder.append("}");
       return builder.toString();
    }
-
 }

@@ -17,7 +17,6 @@ public class Header
    {
       stamp_ = new builtin_interfaces.msg.dds.Time();
       frame_id_ = new java.lang.StringBuilder(255);
-
    }
 
    public void set(Header other)
@@ -83,5 +82,4 @@ public class Header
       builder.append("}");
       return builder.toString();
    }
-
 }

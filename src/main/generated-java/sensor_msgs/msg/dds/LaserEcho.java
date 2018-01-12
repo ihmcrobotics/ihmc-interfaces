@@ -15,7 +15,6 @@ public class LaserEcho
    public LaserEcho()
    {
       echoes_ = new us.ihmc.idl.IDLSequence.Float(100, "type_5");
-
    }
 
    public void set(LaserEcho other)
@@ -57,5 +56,4 @@ public class LaserEcho
       builder.append("}");
       return builder.toString();
    }
-
 }

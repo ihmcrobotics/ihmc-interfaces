@@ -28,7 +28,6 @@ public class InteractiveMarkerFeedback
       control_name_ = new java.lang.StringBuilder(255);
       pose_ = new us.ihmc.euclid.geometry.Pose3D();
       mouse_point_ = new us.ihmc.euclid.tuple3D.Point3D();
-
    }
 
    public void set(InteractiveMarkerFeedback other)
@@ -45,7 +44,6 @@ public class InteractiveMarkerFeedback
       menu_entry_id_ = other.menu_entry_id_;
       geometry_msgs.msg.dds.PointPubSubType.staticCopy(other.mouse_point_, mouse_point_);
       mouse_point_valid_ = other.mouse_point_valid_;
-
    }
 
    public std_msgs.msg.dds.Header getHeader()
@@ -218,5 +216,4 @@ public class InteractiveMarkerFeedback
       builder.append("}");
       return builder.toString();
    }
-
 }

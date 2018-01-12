@@ -28,7 +28,6 @@ public class MultiDOFJointTrajectoryPoint
                                                                                        new geometry_msgs.msg.dds.TwistPubSubType());
 
       time_from_start_ = new builtin_interfaces.msg.dds.Duration();
-
    }
 
    public void set(MultiDOFJointTrajectoryPoint other)
@@ -106,5 +105,4 @@ public class MultiDOFJointTrajectoryPoint
       builder.append("}");
       return builder.toString();
    }
-
 }

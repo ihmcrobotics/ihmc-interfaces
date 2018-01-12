@@ -13,6 +13,7 @@ public class UInt32MultiArrayPubSubType implements us.ihmc.pubsub.TopicDataType<
    public static final java.lang.String name = "std_msgs::msg::dds_::UInt32MultiArray_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public UInt32MultiArrayPubSubType()
    {
 
@@ -96,7 +97,6 @@ public class UInt32MultiArrayPubSubType implements us.ihmc.pubsub.TopicDataType<
       ser.write_type_a("layout", new std_msgs.msg.dds.MultiArrayLayoutPubSubType(), data.getLayout());
 
       ser.write_type_e("data", data.getData());
-
    }
 
    @Override
@@ -105,7 +105,6 @@ public class UInt32MultiArrayPubSubType implements us.ihmc.pubsub.TopicDataType<
       ser.read_type_a("layout", new std_msgs.msg.dds.MultiArrayLayoutPubSubType(), data.getLayout());
 
       ser.read_type_e("data", data.getData());
-
    }
 
    @Override

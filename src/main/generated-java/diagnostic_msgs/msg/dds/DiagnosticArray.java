@@ -18,7 +18,6 @@ public class DiagnosticArray
       header_ = new std_msgs.msg.dds.Header();
       status_ = new us.ihmc.idl.IDLSequence.Object<diagnostic_msgs.msg.dds.DiagnosticStatus>(100, diagnostic_msgs.msg.dds.DiagnosticStatus.class,
                                                                                              new diagnostic_msgs.msg.dds.DiagnosticStatusPubSubType());
-
    }
 
    public void set(DiagnosticArray other)
@@ -72,5 +71,4 @@ public class DiagnosticArray
       builder.append("}");
       return builder.toString();
    }
-
 }

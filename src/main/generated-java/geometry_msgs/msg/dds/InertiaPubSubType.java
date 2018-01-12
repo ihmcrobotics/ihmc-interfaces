@@ -13,6 +13,7 @@ public class InertiaPubSubType implements us.ihmc.pubsub.TopicDataType<geometry_
    public static final java.lang.String name = "geometry_msgs::msg::dds_::Inertia_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public InertiaPubSubType()
    {
 
@@ -110,7 +111,6 @@ public class InertiaPubSubType implements us.ihmc.pubsub.TopicDataType<geometry_
       data.setIyz(cdr.read_type_6());
 
       data.setIzz(cdr.read_type_6());
-
    }
 
    public static void staticCopy(geometry_msgs.msg.dds.Inertia src, geometry_msgs.msg.dds.Inertia dest)
@@ -152,7 +152,6 @@ public class InertiaPubSubType implements us.ihmc.pubsub.TopicDataType<geometry_
       ser.write_type_6("iyz", data.getIyz());
 
       ser.write_type_6("izz", data.getIzz());
-
    }
 
    @Override
@@ -173,7 +172,6 @@ public class InertiaPubSubType implements us.ihmc.pubsub.TopicDataType<geometry_
       data.setIyz(ser.read_type_6("iyz"));
 
       data.setIzz(ser.read_type_6("izz"));
-
    }
 
    @Override

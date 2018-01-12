@@ -20,7 +20,6 @@ public class Int64
    public void set(Int64 other)
    {
       data_ = other.data_;
-
    }
 
    public long getData()
@@ -62,5 +61,4 @@ public class Int64
       builder.append("}");
       return builder.toString();
    }
-
 }

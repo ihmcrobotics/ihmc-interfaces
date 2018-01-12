@@ -21,7 +21,6 @@ public class TaskspaceTrajectoryStamped
                                                                                                          new geometry_msgs.msg.dds.PoseStampedPubSubType());
 
       time_from_start_ = new builtin_interfaces.msg.dds.Duration();
-
    }
 
    public void set(TaskspaceTrajectoryStamped other)
@@ -87,5 +86,4 @@ public class TaskspaceTrajectoryStamped
       builder.append("}");
       return builder.toString();
    }
-
 }

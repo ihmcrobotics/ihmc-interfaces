@@ -17,7 +17,6 @@ public class Int8MultiArray
    {
       layout_ = new std_msgs.msg.dds.MultiArrayLayout();
       data_ = new us.ihmc.idl.IDLSequence.Byte(100, "type_9");
-
    }
 
    public void set(Int8MultiArray other)
@@ -71,5 +70,4 @@ public class Int8MultiArray
       builder.append("}");
       return builder.toString();
    }
-
 }

@@ -13,6 +13,7 @@ public class InteractiveMarkerInitPubSubType implements us.ihmc.pubsub.TopicData
    public static final java.lang.String name = "visualization_msgs::msg::dds_::InteractiveMarkerInit_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public InteractiveMarkerInitPubSubType()
    {
 
@@ -119,7 +120,6 @@ public class InteractiveMarkerInitPubSubType implements us.ihmc.pubsub.TopicData
       ser.write_type_12("seq_num", data.getSeq_num());
 
       ser.write_type_e("markers", data.getMarkers());
-
    }
 
    @Override
@@ -130,7 +130,6 @@ public class InteractiveMarkerInitPubSubType implements us.ihmc.pubsub.TopicData
       data.setSeq_num(ser.read_type_12("seq_num"));
 
       ser.read_type_e("markers", data.getMarkers());
-
    }
 
    @Override

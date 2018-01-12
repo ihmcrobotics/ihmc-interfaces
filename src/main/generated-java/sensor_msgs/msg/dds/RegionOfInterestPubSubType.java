@@ -13,6 +13,7 @@ public class RegionOfInterestPubSubType implements us.ihmc.pubsub.TopicDataType<
    public static final java.lang.String name = "sensor_msgs::msg::dds_::RegionOfInterest_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public RegionOfInterestPubSubType()
    {
 
@@ -88,7 +89,6 @@ public class RegionOfInterestPubSubType implements us.ihmc.pubsub.TopicDataType<
       data.setWidth(cdr.read_type_4());
 
       data.setDo_rectify(cdr.read_type_7());
-
    }
 
    public static void staticCopy(sensor_msgs.msg.dds.RegionOfInterest src, sensor_msgs.msg.dds.RegionOfInterest dest)
@@ -124,7 +124,6 @@ public class RegionOfInterestPubSubType implements us.ihmc.pubsub.TopicDataType<
       ser.write_type_4("width", data.getWidth());
 
       ser.write_type_7("do_rectify", data.getDo_rectify());
-
    }
 
    @Override
@@ -139,7 +138,6 @@ public class RegionOfInterestPubSubType implements us.ihmc.pubsub.TopicDataType<
       data.setWidth(ser.read_type_4("width"));
 
       data.setDo_rectify(ser.read_type_7("do_rectify"));
-
    }
 
    @Override

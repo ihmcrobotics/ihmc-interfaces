@@ -17,7 +17,6 @@ public class Wrench
    {
       force_ = new us.ihmc.euclid.tuple3D.Vector3D();
       torque_ = new us.ihmc.euclid.tuple3D.Vector3D();
-
    }
 
    public void set(Wrench other)
@@ -71,5 +70,4 @@ public class Wrench
       builder.append("}");
       return builder.toString();
    }
-
 }

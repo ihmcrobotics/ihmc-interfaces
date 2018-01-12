@@ -20,7 +20,6 @@ public class JointTrajectory
       joint_names_ = new us.ihmc.idl.IDLSequence.StringBuilderHolder(100, "type_d");
       points_ = new us.ihmc.idl.IDLSequence.Object<trajectory_msgs.msg.dds.JointTrajectoryPoint>(100, trajectory_msgs.msg.dds.JointTrajectoryPoint.class,
                                                                                                  new trajectory_msgs.msg.dds.JointTrajectoryPointPubSubType());
-
    }
 
    public void set(JointTrajectory other)
@@ -86,5 +85,4 @@ public class JointTrajectory
       builder.append("}");
       return builder.toString();
    }
-
 }

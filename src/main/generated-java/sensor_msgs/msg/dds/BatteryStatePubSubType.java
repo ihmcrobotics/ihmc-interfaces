@@ -13,6 +13,7 @@ public class BatteryStatePubSubType implements us.ihmc.pubsub.TopicDataType<sens
    public static final java.lang.String name = "sensor_msgs::msg::dds_::BatteryState_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public BatteryStatePubSubType()
    {
 
@@ -222,7 +223,6 @@ public class BatteryStatePubSubType implements us.ihmc.pubsub.TopicDataType<sens
       ser.write_type_d("location", data.getLocation());
 
       ser.write_type_d("serial_number", data.getSerial_number());
-
    }
 
    @Override
@@ -255,7 +255,6 @@ public class BatteryStatePubSubType implements us.ihmc.pubsub.TopicDataType<sens
       ser.read_type_d("location", data.getLocation());
 
       ser.read_type_d("serial_number", data.getSerial_number());
-
    }
 
    @Override

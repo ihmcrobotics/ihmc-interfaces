@@ -13,6 +13,7 @@ public class ImagePubSubType implements us.ihmc.pubsub.TopicDataType<sensor_msgs
    public static final java.lang.String name = "sensor_msgs::msg::dds_::Image_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public ImagePubSubType()
    {
 
@@ -149,7 +150,6 @@ public class ImagePubSubType implements us.ihmc.pubsub.TopicDataType<sensor_msgs
       ser.write_type_4("step", data.getStep());
 
       ser.write_type_e("data", data.getData());
-
    }
 
    @Override
@@ -168,7 +168,6 @@ public class ImagePubSubType implements us.ihmc.pubsub.TopicDataType<sensor_msgs
       data.setStep(ser.read_type_4("step"));
 
       ser.read_type_e("data", data.getData());
-
    }
 
    @Override

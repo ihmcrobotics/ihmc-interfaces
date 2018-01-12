@@ -93,7 +93,6 @@ public class PosePubSubType implements us.ihmc.pubsub.TopicDataType<us.ihmc.eucl
       serializeCDR.serialize(serializedPayload);
       write(data, serializeCDR);
       serializeCDR.finishSerialize();
-
    }
 
    @Override
@@ -110,7 +109,6 @@ public class PosePubSubType implements us.ihmc.pubsub.TopicDataType<us.ihmc.eucl
       ser.write_type_a("position", new geometry_msgs.msg.dds.PointPubSubType(), getImpl().getPosition(data));
 
       ser.write_type_a("orientation", new geometry_msgs.msg.dds.QuaternionPubSubType(), getImpl().getOrientation(data));
-
    }
 
    @Override
@@ -119,7 +117,6 @@ public class PosePubSubType implements us.ihmc.pubsub.TopicDataType<us.ihmc.eucl
       ser.read_type_a("position", new geometry_msgs.msg.dds.PointPubSubType(), getImpl().getPosition(data));
 
       ser.read_type_a("orientation", new geometry_msgs.msg.dds.QuaternionPubSubType(), getImpl().getOrientation(data));
-
    }
 
    @Override

@@ -23,7 +23,6 @@ public class JointState
       position_ = new us.ihmc.idl.IDLSequence.Double(100, "type_6");
       velocity_ = new us.ihmc.idl.IDLSequence.Double(100, "type_6");
       effort_ = new us.ihmc.idl.IDLSequence.Double(100, "type_6");
-
    }
 
    public void set(JointState other)
@@ -113,5 +112,4 @@ public class JointState
       builder.append("}");
       return builder.toString();
    }
-
 }

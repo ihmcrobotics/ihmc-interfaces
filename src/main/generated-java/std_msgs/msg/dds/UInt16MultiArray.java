@@ -17,7 +17,6 @@ public class UInt16MultiArray
    {
       layout_ = new std_msgs.msg.dds.MultiArrayLayout();
       data_ = new us.ihmc.idl.IDLSequence.Integer(100, "type_3");
-
    }
 
    public void set(UInt16MultiArray other)
@@ -71,5 +70,4 @@ public class UInt16MultiArray
       builder.append("}");
       return builder.toString();
    }
-
 }

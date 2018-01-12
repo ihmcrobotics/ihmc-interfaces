@@ -20,7 +20,6 @@ public class UInt16
    public void set(UInt16 other)
    {
       data_ = other.data_;
-
    }
 
    public int getData()
@@ -62,5 +61,4 @@ public class UInt16
       builder.append("}");
       return builder.toString();
    }
-
 }

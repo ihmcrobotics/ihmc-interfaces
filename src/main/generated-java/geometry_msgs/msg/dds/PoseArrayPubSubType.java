@@ -13,6 +13,7 @@ public class PoseArrayPubSubType implements us.ihmc.pubsub.TopicDataType<geometr
    public static final java.lang.String name = "geometry_msgs::msg::dds_::PoseArray_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public PoseArrayPubSubType()
    {
 
@@ -102,7 +103,6 @@ public class PoseArrayPubSubType implements us.ihmc.pubsub.TopicDataType<geometr
       ser.write_type_a("header", new std_msgs.msg.dds.HeaderPubSubType(), data.getHeader());
 
       ser.write_type_e("poses", data.getPoses());
-
    }
 
    @Override
@@ -111,7 +111,6 @@ public class PoseArrayPubSubType implements us.ihmc.pubsub.TopicDataType<geometr
       ser.read_type_a("header", new std_msgs.msg.dds.HeaderPubSubType(), data.getHeader());
 
       ser.read_type_e("poses", data.getPoses());
-
    }
 
    @Override

@@ -18,7 +18,6 @@ public class PoseArray
       header_ = new std_msgs.msg.dds.Header();
       poses_ = new us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.geometry.Pose3D>(100, us.ihmc.euclid.geometry.Pose3D.class,
                                                                                   new geometry_msgs.msg.dds.PosePubSubType());
-
    }
 
    public void set(PoseArray other)
@@ -72,5 +71,4 @@ public class PoseArray
       builder.append("}");
       return builder.toString();
    }
-
 }

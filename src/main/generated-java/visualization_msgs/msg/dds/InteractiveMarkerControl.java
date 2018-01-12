@@ -27,7 +27,6 @@ public class InteractiveMarkerControl
                                                                                        new visualization_msgs.msg.dds.MarkerPubSubType());
 
       description_ = new java.lang.StringBuilder(255);
-
    }
 
    public void set(InteractiveMarkerControl other)
@@ -42,7 +41,6 @@ public class InteractiveMarkerControl
       independent_marker_orientation_ = other.independent_marker_orientation_;
       description_.setLength(0);
       description_.append(other.description_);
-
    }
 
    public java.lang.String getNameAsString()
@@ -198,5 +196,4 @@ public class InteractiveMarkerControl
       builder.append("}");
       return builder.toString();
    }
-
 }

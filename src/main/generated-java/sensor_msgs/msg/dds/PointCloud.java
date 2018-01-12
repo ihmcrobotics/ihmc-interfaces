@@ -22,7 +22,6 @@ public class PointCloud
 
       channels_ = new us.ihmc.idl.IDLSequence.Object<sensor_msgs.msg.dds.ChannelFloat32>(100, sensor_msgs.msg.dds.ChannelFloat32.class,
                                                                                          new sensor_msgs.msg.dds.ChannelFloat32PubSubType());
-
    }
 
    public void set(PointCloud other)
@@ -88,5 +87,4 @@ public class PointCloud
       builder.append("}");
       return builder.toString();
    }
-
 }

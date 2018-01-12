@@ -13,6 +13,7 @@ public class LineSegment3DMessagePubSubType implements us.ihmc.pubsub.TopicDataT
    public static final java.lang.String name = "robotenvironmentawareness_msgs::msg::dds_::LineSegment3DMessage_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public LineSegment3DMessagePubSubType()
    {
 
@@ -94,7 +95,6 @@ public class LineSegment3DMessagePubSubType implements us.ihmc.pubsub.TopicDataT
       ser.write_type_a("start", new geometry_msgs.msg.dds.Point32PubSubType(), data.getStart());
 
       ser.write_type_a("end", new geometry_msgs.msg.dds.Point32PubSubType(), data.getEnd());
-
    }
 
    @Override
@@ -103,7 +103,6 @@ public class LineSegment3DMessagePubSubType implements us.ihmc.pubsub.TopicDataT
       ser.read_type_a("start", new geometry_msgs.msg.dds.Point32PubSubType(), data.getStart());
 
       ser.read_type_a("end", new geometry_msgs.msg.dds.Point32PubSubType(), data.getEnd());
-
    }
 
    @Override

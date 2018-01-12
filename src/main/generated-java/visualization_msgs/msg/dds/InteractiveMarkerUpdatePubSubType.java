@@ -13,6 +13,7 @@ public class InteractiveMarkerUpdatePubSubType implements us.ihmc.pubsub.TopicDa
    public static final java.lang.String name = "visualization_msgs::msg::dds_::InteractiveMarkerUpdate_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public InteractiveMarkerUpdatePubSubType()
    {
 
@@ -171,7 +172,6 @@ public class InteractiveMarkerUpdatePubSubType implements us.ihmc.pubsub.TopicDa
       ser.write_type_e("poses", data.getPoses());
 
       ser.write_type_e("erases", data.getErases());
-
    }
 
    @Override
@@ -188,7 +188,6 @@ public class InteractiveMarkerUpdatePubSubType implements us.ihmc.pubsub.TopicDa
       ser.read_type_e("poses", data.getPoses());
 
       ser.read_type_e("erases", data.getErases());
-
    }
 
    @Override

@@ -17,7 +17,6 @@ public class SetStringParameter
    {
       parameter_name_ = new java.lang.StringBuilder(255);
       parameter_value_ = new java.lang.StringBuilder(255);
-
    }
 
    public void set(SetStringParameter other)
@@ -95,5 +94,4 @@ public class SetStringParameter
       builder.append("}");
       return builder.toString();
    }
-
 }

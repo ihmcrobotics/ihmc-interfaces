@@ -17,7 +17,6 @@ public class WrenchStamped
    {
       header_ = new std_msgs.msg.dds.Header();
       wrench_ = new geometry_msgs.msg.dds.Wrench();
-
    }
 
    public void set(WrenchStamped other)
@@ -71,5 +70,4 @@ public class WrenchStamped
       builder.append("}");
       return builder.toString();
    }
-
 }

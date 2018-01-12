@@ -13,6 +13,7 @@ public class PolygonizerParametersPubSubType implements us.ihmc.pubsub.TopicData
    public static final java.lang.String name = "robotenvironmentawareness_msgs::msg::dds_::PolygonizerParameters_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public PolygonizerParametersPubSubType()
    {
 
@@ -96,7 +97,6 @@ public class PolygonizerParametersPubSubType implements us.ihmc.pubsub.TopicData
       data.setLength_threshold(cdr.read_type_6());
 
       data.setDepth_threshold(cdr.read_type_6());
-
    }
 
    public static void staticCopy(robotenvironmentawareness_msgs.msg.dds.PolygonizerParameters src,
@@ -137,7 +137,6 @@ public class PolygonizerParametersPubSubType implements us.ihmc.pubsub.TopicData
       ser.write_type_6("length_threshold", data.getLength_threshold());
 
       ser.write_type_6("depth_threshold", data.getDepth_threshold());
-
    }
 
    @Override
@@ -154,7 +153,6 @@ public class PolygonizerParametersPubSubType implements us.ihmc.pubsub.TopicData
       data.setLength_threshold(ser.read_type_6("length_threshold"));
 
       data.setDepth_threshold(ser.read_type_6("depth_threshold"));
-
    }
 
    @Override

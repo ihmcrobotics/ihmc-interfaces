@@ -13,6 +13,7 @@ public class FootstepListPubSubType implements us.ihmc.pubsub.TopicDataType<cont
    public static final java.lang.String name = "controller_msgs::msg::dds_::FootstepList_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public FootstepListPubSubType()
    {
 
@@ -99,7 +100,6 @@ public class FootstepListPubSubType implements us.ihmc.pubsub.TopicDataType<cont
       data.setDefault_swing_duration(cdr.read_type_6());
 
       data.setFinal_transfer_duration(cdr.read_type_6());
-
    }
 
    public static void staticCopy(controller_msgs.msg.dds.FootstepList src, controller_msgs.msg.dds.FootstepList dest)
@@ -135,7 +135,6 @@ public class FootstepListPubSubType implements us.ihmc.pubsub.TopicDataType<cont
       ser.write_type_6("default_swing_duration", data.getDefault_swing_duration());
 
       ser.write_type_6("final_transfer_duration", data.getFinal_transfer_duration());
-
    }
 
    @Override
@@ -150,7 +149,6 @@ public class FootstepListPubSubType implements us.ihmc.pubsub.TopicDataType<cont
       data.setDefault_swing_duration(ser.read_type_6("default_swing_duration"));
 
       data.setFinal_transfer_duration(ser.read_type_6("final_transfer_duration"));
-
    }
 
    @Override

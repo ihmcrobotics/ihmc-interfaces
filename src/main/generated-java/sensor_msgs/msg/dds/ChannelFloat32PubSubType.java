@@ -13,6 +13,7 @@ public class ChannelFloat32PubSubType implements us.ihmc.pubsub.TopicDataType<se
    public static final java.lang.String name = "sensor_msgs::msg::dds_::ChannelFloat32_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public ChannelFloat32PubSubType()
    {
 
@@ -101,7 +102,6 @@ public class ChannelFloat32PubSubType implements us.ihmc.pubsub.TopicDataType<se
       ser.write_type_d("name", data.getName());
 
       ser.write_type_e("values", data.getValues());
-
    }
 
    @Override
@@ -110,7 +110,6 @@ public class ChannelFloat32PubSubType implements us.ihmc.pubsub.TopicDataType<se
       ser.read_type_d("name", data.getName());
 
       ser.read_type_e("values", data.getValues());
-
    }
 
    @Override

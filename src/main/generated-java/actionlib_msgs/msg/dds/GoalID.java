@@ -17,7 +17,6 @@ public class GoalID
    {
       stamp_ = new builtin_interfaces.msg.dds.Time();
       id_ = new java.lang.StringBuilder(255);
-
    }
 
    public void set(GoalID other)
@@ -83,5 +82,4 @@ public class GoalID
       builder.append("}");
       return builder.toString();
    }
-
 }

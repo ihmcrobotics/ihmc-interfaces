@@ -13,6 +13,7 @@ public class JointTrajectoryPubSubType implements us.ihmc.pubsub.TopicDataType<t
    public static final java.lang.String name = "trajectory_msgs::msg::dds_::JointTrajectory_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public JointTrajectoryPubSubType()
    {
 
@@ -121,7 +122,6 @@ public class JointTrajectoryPubSubType implements us.ihmc.pubsub.TopicDataType<t
       ser.write_type_e("joint_names", data.getJoint_names());
 
       ser.write_type_e("points", data.getPoints());
-
    }
 
    @Override
@@ -132,7 +132,6 @@ public class JointTrajectoryPubSubType implements us.ihmc.pubsub.TopicDataType<t
       ser.read_type_e("joint_names", data.getJoint_names());
 
       ser.read_type_e("points", data.getPoints());
-
    }
 
    @Override

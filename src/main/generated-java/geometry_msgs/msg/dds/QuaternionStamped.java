@@ -17,7 +17,6 @@ public class QuaternionStamped
    {
       header_ = new std_msgs.msg.dds.Header();
       quaternion_ = new us.ihmc.euclid.tuple4D.Quaternion();
-
    }
 
    public void set(QuaternionStamped other)
@@ -71,5 +70,4 @@ public class QuaternionStamped
       builder.append("}");
       return builder.toString();
    }
-
 }

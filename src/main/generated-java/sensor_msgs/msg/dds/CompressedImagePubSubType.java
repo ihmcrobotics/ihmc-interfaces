@@ -13,6 +13,7 @@ public class CompressedImagePubSubType implements us.ihmc.pubsub.TopicDataType<s
    public static final java.lang.String name = "sensor_msgs::msg::dds_::CompressedImage_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public CompressedImagePubSubType()
    {
 
@@ -109,7 +110,6 @@ public class CompressedImagePubSubType implements us.ihmc.pubsub.TopicDataType<s
       ser.write_type_d("format", data.getFormat());
 
       ser.write_type_e("data", data.getData());
-
    }
 
    @Override
@@ -120,7 +120,6 @@ public class CompressedImagePubSubType implements us.ihmc.pubsub.TopicDataType<s
       ser.read_type_d("format", data.getFormat());
 
       ser.read_type_e("data", data.getData());
-
    }
 
    @Override

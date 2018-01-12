@@ -26,7 +26,6 @@ public class ColorRGBA
       g_ = other.g_;
       b_ = other.b_;
       a_ = other.a_;
-
    }
 
    public float getR()
@@ -116,5 +115,4 @@ public class ColorRGBA
       builder.append("}");
       return builder.toString();
    }
-
 }

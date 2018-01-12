@@ -15,7 +15,6 @@ public class APIElementId
    public APIElementId()
    {
       id_ = new us.ihmc.idl.IDLSequence.Long(100, "type_4");
-
    }
 
    public void set(APIElementId other)
@@ -57,5 +56,4 @@ public class APIElementId
       builder.append("}");
       return builder.toString();
    }
-
 }

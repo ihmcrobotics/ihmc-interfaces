@@ -13,6 +13,7 @@ public class MultiEchoLaserScanPubSubType implements us.ihmc.pubsub.TopicDataTyp
    public static final java.lang.String name = "sensor_msgs::msg::dds_::MultiEchoLaserScan_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public MultiEchoLaserScanPubSubType()
    {
 
@@ -193,7 +194,6 @@ public class MultiEchoLaserScanPubSubType implements us.ihmc.pubsub.TopicDataTyp
       ser.write_type_e("ranges", data.getRanges());
 
       ser.write_type_e("intensities", data.getIntensities());
-
    }
 
    @Override
@@ -218,7 +218,6 @@ public class MultiEchoLaserScanPubSubType implements us.ihmc.pubsub.TopicDataTyp
       ser.read_type_e("ranges", data.getRanges());
 
       ser.read_type_e("intensities", data.getIntensities());
-
    }
 
    @Override

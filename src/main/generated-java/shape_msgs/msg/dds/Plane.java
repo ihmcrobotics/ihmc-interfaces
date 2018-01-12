@@ -15,7 +15,6 @@ public class Plane
    public Plane()
    {
       coef_ = new double[4];
-
    }
 
    public void set(Plane other)
@@ -23,9 +22,7 @@ public class Plane
       for (int b = 0; b < coef_.length; ++b)
       {
          coef_[b] = other.coef_[b];
-
       }
-
    }
 
    public double[] getCoef()
@@ -48,7 +45,6 @@ public class Plane
       for (int d = 0; d < coef_.length; ++d)
       {
          returnedValue &= this.coef_[d] == otherMyClass.coef_[d];
-
       }
 
       return returnedValue;
@@ -66,5 +62,4 @@ public class Plane
       builder.append("}");
       return builder.toString();
    }
-
 }

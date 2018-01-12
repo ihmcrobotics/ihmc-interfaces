@@ -17,7 +17,6 @@ public class PoseWithCovarianceStamped
    {
       header_ = new std_msgs.msg.dds.Header();
       pose_ = new geometry_msgs.msg.dds.PoseWithCovariance();
-
    }
 
    public void set(PoseWithCovarianceStamped other)
@@ -71,5 +70,4 @@ public class PoseWithCovarianceStamped
       builder.append("}");
       return builder.toString();
    }
-
 }

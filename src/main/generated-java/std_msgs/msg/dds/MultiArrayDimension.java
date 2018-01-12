@@ -17,7 +17,6 @@ public class MultiArrayDimension
    public MultiArrayDimension()
    {
       label_ = new java.lang.StringBuilder(255);
-
    }
 
    public void set(MultiArrayDimension other)
@@ -26,7 +25,6 @@ public class MultiArrayDimension
       label_.append(other.label_);
       size_ = other.size_;
       stride_ = other.stride_;
-
    }
 
    public java.lang.String getLabelAsString()
@@ -106,5 +104,4 @@ public class MultiArrayDimension
       builder.append("}");
       return builder.toString();
    }
-
 }

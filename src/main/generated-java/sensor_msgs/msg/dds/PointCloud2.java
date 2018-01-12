@@ -27,7 +27,6 @@ public class PointCloud2
                                                                                    new sensor_msgs.msg.dds.PointFieldPubSubType());
 
       data_ = new us.ihmc.idl.IDLSequence.Byte(100, "type_9");
-
    }
 
    public void set(PointCloud2 other)
@@ -41,7 +40,6 @@ public class PointCloud2
       row_step_ = other.row_step_;
       data_.set(other.data_);
       is_dense_ = other.is_dense_;
-
    }
 
    public std_msgs.msg.dds.Header getHeader()
@@ -196,5 +194,4 @@ public class PointCloud2
       builder.append("}");
       return builder.toString();
    }
-
 }

@@ -13,6 +13,7 @@ public class GoalIDPubSubType implements us.ihmc.pubsub.TopicDataType<actionlib_
    public static final java.lang.String name = "actionlib_msgs::msg::dds_::GoalID_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public GoalIDPubSubType()
    {
 
@@ -94,7 +95,6 @@ public class GoalIDPubSubType implements us.ihmc.pubsub.TopicDataType<actionlib_
       ser.write_type_a("stamp", new builtin_interfaces.msg.dds.TimePubSubType(), data.getStamp());
 
       ser.write_type_d("id", data.getId());
-
    }
 
    @Override
@@ -103,7 +103,6 @@ public class GoalIDPubSubType implements us.ihmc.pubsub.TopicDataType<actionlib_
       ser.read_type_a("stamp", new builtin_interfaces.msg.dds.TimePubSubType(), data.getStamp());
 
       ser.read_type_d("id", data.getId());
-
    }
 
    @Override

@@ -13,6 +13,7 @@ public class WrenchStampedPubSubType implements us.ihmc.pubsub.TopicDataType<geo
    public static final java.lang.String name = "geometry_msgs::msg::dds_::WrenchStamped_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public WrenchStampedPubSubType()
    {
 
@@ -91,7 +92,6 @@ public class WrenchStampedPubSubType implements us.ihmc.pubsub.TopicDataType<geo
       ser.write_type_a("header", new std_msgs.msg.dds.HeaderPubSubType(), data.getHeader());
 
       ser.write_type_a("wrench", new geometry_msgs.msg.dds.WrenchPubSubType(), data.getWrench());
-
    }
 
    @Override
@@ -100,7 +100,6 @@ public class WrenchStampedPubSubType implements us.ihmc.pubsub.TopicDataType<geo
       ser.read_type_a("header", new std_msgs.msg.dds.HeaderPubSubType(), data.getHeader());
 
       ser.read_type_a("wrench", new geometry_msgs.msg.dds.WrenchPubSubType(), data.getWrench());
-
    }
 
    @Override

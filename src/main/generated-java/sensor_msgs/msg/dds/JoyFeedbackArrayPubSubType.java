@@ -13,6 +13,7 @@ public class JoyFeedbackArrayPubSubType implements us.ihmc.pubsub.TopicDataType<
    public static final java.lang.String name = "sensor_msgs::msg::dds_::JoyFeedbackArray_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public JoyFeedbackArrayPubSubType()
    {
 
@@ -94,14 +95,12 @@ public class JoyFeedbackArrayPubSubType implements us.ihmc.pubsub.TopicDataType<
    public final void serialize(sensor_msgs.msg.dds.JoyFeedbackArray data, us.ihmc.idl.InterchangeSerializer ser)
    {
       ser.write_type_e("array", data.getArray());
-
    }
 
    @Override
    public final void deserialize(us.ihmc.idl.InterchangeSerializer ser, sensor_msgs.msg.dds.JoyFeedbackArray data)
    {
       ser.read_type_e("array", data.getArray());
-
    }
 
    @Override

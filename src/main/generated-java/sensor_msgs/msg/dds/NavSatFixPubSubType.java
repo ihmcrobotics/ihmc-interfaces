@@ -13,6 +13,7 @@ public class NavSatFixPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_
    public static final java.lang.String name = "sensor_msgs::msg::dds_::NavSatFix_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public NavSatFixPubSubType()
    {
 
@@ -102,11 +103,9 @@ public class NavSatFixPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_
       for (int a = 0; a < data.getPosition_covariance().length; ++a)
       {
          data.getPosition_covariance()[a] = cdr.read_type_6();
-
       }
 
       data.setPosition_covariance_type(cdr.read_type_9());
-
    }
 
    public static void staticCopy(sensor_msgs.msg.dds.NavSatFix src, sensor_msgs.msg.dds.NavSatFix dest)
@@ -145,7 +144,6 @@ public class NavSatFixPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_
 
       ser.write_type_f("position_covariance", data.getPosition_covariance());
       ser.write_type_9("position_covariance_type", data.getPosition_covariance_type());
-
    }
 
    @Override
@@ -164,7 +162,6 @@ public class NavSatFixPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_
       ser.read_type_f("position_covariance", data.getPosition_covariance());
 
       data.setPosition_covariance_type(ser.read_type_9("position_covariance_type"));
-
    }
 
    @Override

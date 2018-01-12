@@ -17,7 +17,6 @@ public class TwistWithCovarianceStamped
    {
       header_ = new std_msgs.msg.dds.Header();
       twist_ = new geometry_msgs.msg.dds.TwistWithCovariance();
-
    }
 
    public void set(TwistWithCovarianceStamped other)
@@ -71,5 +70,4 @@ public class TwistWithCovarianceStamped
       builder.append("}");
       return builder.toString();
    }
-
 }

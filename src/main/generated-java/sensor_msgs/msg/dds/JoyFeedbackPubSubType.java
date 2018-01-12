@@ -13,6 +13,7 @@ public class JoyFeedbackPubSubType implements us.ihmc.pubsub.TopicDataType<senso
    public static final java.lang.String name = "sensor_msgs::msg::dds_::JoyFeedback_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public JoyFeedbackPubSubType()
    {
 
@@ -72,7 +73,6 @@ public class JoyFeedbackPubSubType implements us.ihmc.pubsub.TopicDataType<senso
       data.setId(cdr.read_type_9());
 
       data.setIntensity(cdr.read_type_5());
-
    }
 
    public static void staticCopy(sensor_msgs.msg.dds.JoyFeedback src, sensor_msgs.msg.dds.JoyFeedback dest)
@@ -104,7 +104,6 @@ public class JoyFeedbackPubSubType implements us.ihmc.pubsub.TopicDataType<senso
       ser.write_type_9("id", data.getId());
 
       ser.write_type_5("intensity", data.getIntensity());
-
    }
 
    @Override
@@ -115,7 +114,6 @@ public class JoyFeedbackPubSubType implements us.ihmc.pubsub.TopicDataType<senso
       data.setId(ser.read_type_9("id"));
 
       data.setIntensity(ser.read_type_5("intensity"));
-
    }
 
    @Override

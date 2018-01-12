@@ -17,7 +17,6 @@ public class ChannelFloat32
    {
       name_ = new java.lang.StringBuilder(255);
       values_ = new us.ihmc.idl.IDLSequence.Float(100, "type_5");
-
    }
 
    public void set(ChannelFloat32 other)
@@ -83,5 +82,4 @@ public class ChannelFloat32
       builder.append("}");
       return builder.toString();
    }
-
 }

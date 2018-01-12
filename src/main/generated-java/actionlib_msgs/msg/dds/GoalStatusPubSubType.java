@@ -13,6 +13,7 @@ public class GoalStatusPubSubType implements us.ihmc.pubsub.TopicDataType<action
    public static final java.lang.String name = "actionlib_msgs::msg::dds_::GoalStatus_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public GoalStatusPubSubType()
    {
 
@@ -104,7 +105,6 @@ public class GoalStatusPubSubType implements us.ihmc.pubsub.TopicDataType<action
       ser.write_type_9("status", data.getStatus());
 
       ser.write_type_d("text", data.getText());
-
    }
 
    @Override
@@ -115,7 +115,6 @@ public class GoalStatusPubSubType implements us.ihmc.pubsub.TopicDataType<action
       data.setStatus(ser.read_type_9("status"));
 
       ser.read_type_d("text", data.getText());
-
    }
 
    @Override

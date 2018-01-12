@@ -19,7 +19,6 @@ public class InteractiveMarkerInit
       server_id_ = new java.lang.StringBuilder(255);
       markers_ = new us.ihmc.idl.IDLSequence.Object<visualization_msgs.msg.dds.InteractiveMarker>(100, visualization_msgs.msg.dds.InteractiveMarker.class,
                                                                                                   new visualization_msgs.msg.dds.InteractiveMarkerPubSubType());
-
    }
 
    public void set(InteractiveMarkerInit other)
@@ -102,5 +101,4 @@ public class InteractiveMarkerInit
       builder.append("}");
       return builder.toString();
    }
-
 }

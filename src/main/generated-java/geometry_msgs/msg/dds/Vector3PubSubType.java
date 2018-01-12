@@ -89,7 +89,6 @@ public class Vector3PubSubType implements us.ihmc.pubsub.TopicDataType<us.ihmc.e
       getImpl().setY(data, cdr.read_type_6());
 
       getImpl().setZ(data, cdr.read_type_6());
-
    }
 
    public static void staticCopy(us.ihmc.euclid.tuple3D.Vector3D src, us.ihmc.euclid.tuple3D.Vector3D dest)
@@ -104,7 +103,6 @@ public class Vector3PubSubType implements us.ihmc.pubsub.TopicDataType<us.ihmc.e
       serializeCDR.serialize(serializedPayload);
       write(data, serializeCDR);
       serializeCDR.finishSerialize();
-
    }
 
    @Override
@@ -123,7 +121,6 @@ public class Vector3PubSubType implements us.ihmc.pubsub.TopicDataType<us.ihmc.e
       ser.write_type_6("y", getImpl().getY(data));
 
       ser.write_type_6("z", getImpl().getZ(data));
-
    }
 
    @Override
@@ -134,7 +131,6 @@ public class Vector3PubSubType implements us.ihmc.pubsub.TopicDataType<us.ihmc.e
       getImpl().setY(data, ser.read_type_6("y"));
 
       getImpl().setZ(data, ser.read_type_6("z"));
-
    }
 
    @Override

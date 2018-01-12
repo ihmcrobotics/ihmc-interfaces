@@ -13,6 +13,7 @@ public class CharPubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.msg
    public static final java.lang.String name = "std_msgs::msg::dds_::Char_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public CharPubSubType()
    {
 
@@ -56,7 +57,6 @@ public class CharPubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.msg
    {
 
       data.setData(cdr.read_type_8());
-
    }
 
    public static void staticCopy(std_msgs.msg.dds.Char src, std_msgs.msg.dds.Char dest)
@@ -84,14 +84,12 @@ public class CharPubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.msg
    public final void serialize(std_msgs.msg.dds.Char data, us.ihmc.idl.InterchangeSerializer ser)
    {
       ser.write_type_8("data", data.getData());
-
    }
 
    @Override
    public final void deserialize(us.ihmc.idl.InterchangeSerializer ser, std_msgs.msg.dds.Char data)
    {
       data.setData(ser.read_type_8("data"));
-
    }
 
    @Override

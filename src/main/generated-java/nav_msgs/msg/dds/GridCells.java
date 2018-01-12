@@ -20,7 +20,6 @@ public class GridCells
       header_ = new std_msgs.msg.dds.Header();
       cells_ = new us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D>(100, us.ihmc.euclid.tuple3D.Point3D.class,
                                                                                   new geometry_msgs.msg.dds.PointPubSubType());
-
    }
 
    public void set(GridCells other)
@@ -108,5 +107,4 @@ public class GridCells
       builder.append("}");
       return builder.toString();
    }
-
 }

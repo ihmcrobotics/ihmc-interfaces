@@ -17,7 +17,6 @@ public class AtlasRobotConfigurationData
    {
       robot_configuration_data_ = new controller_msgs.msg.dds.RobotConfigurationData();
       atlas_auxiliary_robot_data_ = new controller_msgs.msg.dds.AtlasAuxiliaryRobotData();
-
    }
 
    public void set(AtlasRobotConfigurationData other)
@@ -71,5 +70,4 @@ public class AtlasRobotConfigurationData
       builder.append("}");
       return builder.toString();
    }
-
 }

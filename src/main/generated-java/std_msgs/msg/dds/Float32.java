@@ -20,7 +20,6 @@ public class Float32
    public void set(Float32 other)
    {
       data_ = other.data_;
-
    }
 
    public float getData()
@@ -62,5 +61,4 @@ public class Float32
       builder.append("}");
       return builder.toString();
    }
-
 }

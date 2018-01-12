@@ -13,6 +13,7 @@ public class PointStampedPubSubType implements us.ihmc.pubsub.TopicDataType<geom
    public static final java.lang.String name = "geometry_msgs::msg::dds_::PointStamped_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public PointStampedPubSubType()
    {
 
@@ -91,7 +92,6 @@ public class PointStampedPubSubType implements us.ihmc.pubsub.TopicDataType<geom
       ser.write_type_a("header", new std_msgs.msg.dds.HeaderPubSubType(), data.getHeader());
 
       ser.write_type_a("point", new geometry_msgs.msg.dds.PointPubSubType(), data.getPoint());
-
    }
 
    @Override
@@ -100,7 +100,6 @@ public class PointStampedPubSubType implements us.ihmc.pubsub.TopicDataType<geom
       ser.read_type_a("header", new std_msgs.msg.dds.HeaderPubSubType(), data.getHeader());
 
       ser.read_type_a("point", new geometry_msgs.msg.dds.PointPubSubType(), data.getPoint());
-
    }
 
    @Override

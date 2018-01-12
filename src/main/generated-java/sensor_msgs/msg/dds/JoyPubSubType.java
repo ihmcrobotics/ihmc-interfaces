@@ -13,6 +13,7 @@ public class JoyPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_msgs.m
    public static final java.lang.String name = "sensor_msgs::msg::dds_::Joy_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public JoyPubSubType()
    {
 
@@ -111,7 +112,6 @@ public class JoyPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_msgs.m
       ser.write_type_e("axes", data.getAxes());
 
       ser.write_type_e("buttons", data.getButtons());
-
    }
 
    @Override
@@ -122,7 +122,6 @@ public class JoyPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_msgs.m
       ser.read_type_e("axes", data.getAxes());
 
       ser.read_type_e("buttons", data.getButtons());
-
    }
 
    @Override

@@ -13,6 +13,7 @@ public class ImuPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_msgs.m
    public static final java.lang.String name = "sensor_msgs::msg::dds_::Imu_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public ImuPubSubType()
    {
 
@@ -85,7 +86,6 @@ public class ImuPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_msgs.m
       {
          cdr.write_type_6(data.getLinear_acceleration_covariance()[a]);
       }
-
    }
 
    public static void read(sensor_msgs.msg.dds.Imu data, us.ihmc.idl.CDR cdr)
@@ -98,7 +98,6 @@ public class ImuPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_msgs.m
       for (int a = 0; a < data.getOrientation_covariance().length; ++a)
       {
          data.getOrientation_covariance()[a] = cdr.read_type_6();
-
       }
 
       geometry_msgs.msg.dds.Vector3PubSubType.read(data.getAngular_velocity(), cdr);
@@ -106,7 +105,6 @@ public class ImuPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_msgs.m
       for (int a = 0; a < data.getAngular_velocity_covariance().length; ++a)
       {
          data.getAngular_velocity_covariance()[a] = cdr.read_type_6();
-
       }
 
       geometry_msgs.msg.dds.Vector3PubSubType.read(data.getLinear_acceleration(), cdr);
@@ -114,9 +112,7 @@ public class ImuPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_msgs.m
       for (int a = 0; a < data.getLinear_acceleration_covariance().length; ++a)
       {
          data.getLinear_acceleration_covariance()[a] = cdr.read_type_6();
-
       }
-
    }
 
    public static void staticCopy(sensor_msgs.msg.dds.Imu src, sensor_msgs.msg.dds.Imu dest)
@@ -172,7 +168,6 @@ public class ImuPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_msgs.m
       ser.read_type_a("linear_acceleration", new geometry_msgs.msg.dds.Vector3PubSubType(), data.getLinear_acceleration());
 
       ser.read_type_f("linear_acceleration_covariance", data.getLinear_acceleration_covariance());
-
    }
 
    @Override

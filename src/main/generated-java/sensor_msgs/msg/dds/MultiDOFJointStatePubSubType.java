@@ -13,6 +13,7 @@ public class MultiDOFJointStatePubSubType implements us.ihmc.pubsub.TopicDataTyp
    public static final java.lang.String name = "sensor_msgs::msg::dds_::MultiDOFJointState_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public MultiDOFJointStatePubSubType()
    {
 
@@ -163,7 +164,6 @@ public class MultiDOFJointStatePubSubType implements us.ihmc.pubsub.TopicDataTyp
       ser.write_type_e("twist", data.getTwist());
 
       ser.write_type_e("wrench", data.getWrench());
-
    }
 
    @Override
@@ -178,7 +178,6 @@ public class MultiDOFJointStatePubSubType implements us.ihmc.pubsub.TopicDataTyp
       ser.read_type_e("twist", data.getTwist());
 
       ser.read_type_e("wrench", data.getWrench());
-
    }
 
    @Override

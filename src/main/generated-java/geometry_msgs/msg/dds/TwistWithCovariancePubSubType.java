@@ -13,6 +13,7 @@ public class TwistWithCovariancePubSubType implements us.ihmc.pubsub.TopicDataTy
    public static final java.lang.String name = "geometry_msgs::msg::dds_::TwistWithCovariance_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public TwistWithCovariancePubSubType()
    {
 
@@ -57,7 +58,6 @@ public class TwistWithCovariancePubSubType implements us.ihmc.pubsub.TopicDataTy
       {
          cdr.write_type_6(data.getCovariance()[a]);
       }
-
    }
 
    public static void read(geometry_msgs.msg.dds.TwistWithCovariance data, us.ihmc.idl.CDR cdr)
@@ -68,9 +68,7 @@ public class TwistWithCovariancePubSubType implements us.ihmc.pubsub.TopicDataTy
       for (int a = 0; a < data.getCovariance().length; ++a)
       {
          data.getCovariance()[a] = cdr.read_type_6();
-
       }
-
    }
 
    public static void staticCopy(geometry_msgs.msg.dds.TwistWithCovariance src, geometry_msgs.msg.dds.TwistWithCovariance dest)
@@ -108,7 +106,6 @@ public class TwistWithCovariancePubSubType implements us.ihmc.pubsub.TopicDataTy
       ser.read_type_a("twist", new geometry_msgs.msg.dds.TwistPubSubType(), data.getTwist());
 
       ser.read_type_f("covariance", data.getCovariance());
-
    }
 
    @Override

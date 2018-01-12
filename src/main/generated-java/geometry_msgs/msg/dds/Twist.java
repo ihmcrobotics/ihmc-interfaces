@@ -17,7 +17,6 @@ public class Twist
    {
       linear_ = new us.ihmc.euclid.tuple3D.Vector3D();
       angular_ = new us.ihmc.euclid.tuple3D.Vector3D();
-
    }
 
    public void set(Twist other)
@@ -71,5 +70,4 @@ public class Twist
       builder.append("}");
       return builder.toString();
    }
-
 }

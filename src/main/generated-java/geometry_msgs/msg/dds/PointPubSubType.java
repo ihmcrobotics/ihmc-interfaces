@@ -89,7 +89,6 @@ public class PointPubSubType implements us.ihmc.pubsub.TopicDataType<us.ihmc.euc
       getImpl().setY(data, cdr.read_type_6());
 
       getImpl().setZ(data, cdr.read_type_6());
-
    }
 
    public static void staticCopy(us.ihmc.euclid.tuple3D.Point3D src, us.ihmc.euclid.tuple3D.Point3D dest)
@@ -104,7 +103,6 @@ public class PointPubSubType implements us.ihmc.pubsub.TopicDataType<us.ihmc.euc
       serializeCDR.serialize(serializedPayload);
       write(data, serializeCDR);
       serializeCDR.finishSerialize();
-
    }
 
    @Override
@@ -123,7 +121,6 @@ public class PointPubSubType implements us.ihmc.pubsub.TopicDataType<us.ihmc.euc
       ser.write_type_6("y", getImpl().getY(data));
 
       ser.write_type_6("z", getImpl().getZ(data));
-
    }
 
    @Override
@@ -134,7 +131,6 @@ public class PointPubSubType implements us.ihmc.pubsub.TopicDataType<us.ihmc.euc
       getImpl().setY(data, ser.read_type_6("y"));
 
       getImpl().setZ(data, ser.read_type_6("z"));
-
    }
 
    @Override

@@ -18,7 +18,6 @@ public class GoalStatusArray
       header_ = new std_msgs.msg.dds.Header();
       status_list_ = new us.ihmc.idl.IDLSequence.Object<actionlib_msgs.msg.dds.GoalStatus>(100, actionlib_msgs.msg.dds.GoalStatus.class,
                                                                                            new actionlib_msgs.msg.dds.GoalStatusPubSubType());
-
    }
 
    public void set(GoalStatusArray other)
@@ -72,5 +71,4 @@ public class GoalStatusArray
       builder.append("}");
       return builder.toString();
    }
-
 }

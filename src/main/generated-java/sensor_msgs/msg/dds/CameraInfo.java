@@ -31,7 +31,6 @@ public class CameraInfo
       r_ = new double[9];
       p_ = new double[12];
       roi_ = new sensor_msgs.msg.dds.RegionOfInterest();
-
    }
 
    public void set(CameraInfo other)
@@ -45,19 +44,16 @@ public class CameraInfo
       for (int b = 0; b < k_.length; ++b)
       {
          k_[b] = other.k_[b];
-
       }
 
       for (int d = 0; d < r_.length; ++d)
       {
          r_[d] = other.r_[d];
-
       }
 
       for (int f = 0; f < p_.length; ++f)
       {
          p_[f] = other.p_[f];
-
       }
 
       binning_x_ = other.binning_x_;
@@ -176,17 +172,14 @@ public class CameraInfo
       for (int h = 0; h < k_.length; ++h)
       {
          returnedValue &= this.k_[h] == otherMyClass.k_[h];
-
       }
       for (int j = 0; j < r_.length; ++j)
       {
          returnedValue &= this.r_[j] == otherMyClass.r_[j];
-
       }
       for (int l = 0; l < p_.length; ++l)
       {
          returnedValue &= this.p_[l] == otherMyClass.p_[l];
-
       }
       returnedValue &= this.binning_x_ == otherMyClass.binning_x_;
 
@@ -249,5 +242,4 @@ public class CameraInfo
       builder.append("}");
       return builder.toString();
    }
-
 }

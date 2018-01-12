@@ -27,7 +27,6 @@ public class InteractiveMarkerUpdate
                                                                                                     new visualization_msgs.msg.dds.InteractiveMarkerPosePubSubType());
 
       erases_ = new us.ihmc.idl.IDLSequence.StringBuilderHolder(100, "type_d");
-
    }
 
    public void set(InteractiveMarkerUpdate other)
@@ -151,5 +150,4 @@ public class InteractiveMarkerUpdate
       builder.append("}");
       return builder.toString();
    }
-
 }

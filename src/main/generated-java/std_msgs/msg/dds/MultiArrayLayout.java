@@ -17,14 +17,12 @@ public class MultiArrayLayout
    {
       dim_ = new us.ihmc.idl.IDLSequence.Object<std_msgs.msg.dds.MultiArrayDimension>(100, std_msgs.msg.dds.MultiArrayDimension.class,
                                                                                       new std_msgs.msg.dds.MultiArrayDimensionPubSubType());
-
    }
 
    public void set(MultiArrayLayout other)
    {
       dim_.set(other.dim_);
       data_offset_ = other.data_offset_;
-
    }
 
    public us.ihmc.idl.IDLSequence.Object<std_msgs.msg.dds.MultiArrayDimension> getDim()
@@ -77,5 +75,4 @@ public class MultiArrayLayout
       builder.append("}");
       return builder.toString();
    }
-
 }

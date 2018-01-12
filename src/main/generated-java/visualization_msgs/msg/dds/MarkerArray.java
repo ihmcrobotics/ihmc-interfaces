@@ -16,7 +16,6 @@ public class MarkerArray
    {
       markers_ = new us.ihmc.idl.IDLSequence.Object<visualization_msgs.msg.dds.Marker>(100, visualization_msgs.msg.dds.Marker.class,
                                                                                        new visualization_msgs.msg.dds.MarkerPubSubType());
-
    }
 
    public void set(MarkerArray other)
@@ -58,5 +57,4 @@ public class MarkerArray
       builder.append("}");
       return builder.toString();
    }
-
 }

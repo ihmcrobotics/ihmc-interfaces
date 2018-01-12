@@ -17,7 +17,6 @@ public class AccelWithCovariance
    {
       accel_ = new geometry_msgs.msg.dds.Accel();
       covariance_ = new double[36];
-
    }
 
    public void set(AccelWithCovariance other)
@@ -26,9 +25,7 @@ public class AccelWithCovariance
       for (int b = 0; b < covariance_.length; ++b)
       {
          covariance_[b] = other.covariance_[b];
-
       }
-
    }
 
    public geometry_msgs.msg.dds.Accel getAccel()
@@ -58,7 +55,6 @@ public class AccelWithCovariance
       for (int d = 0; d < covariance_.length; ++d)
       {
          returnedValue &= this.covariance_[d] == otherMyClass.covariance_[d];
-
       }
 
       return returnedValue;
@@ -80,5 +76,4 @@ public class AccelWithCovariance
       builder.append("}");
       return builder.toString();
    }
-
 }

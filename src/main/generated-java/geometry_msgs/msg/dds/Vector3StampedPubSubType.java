@@ -13,6 +13,7 @@ public class Vector3StampedPubSubType implements us.ihmc.pubsub.TopicDataType<ge
    public static final java.lang.String name = "geometry_msgs::msg::dds_::Vector3Stamped_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public Vector3StampedPubSubType()
    {
 
@@ -91,7 +92,6 @@ public class Vector3StampedPubSubType implements us.ihmc.pubsub.TopicDataType<ge
       ser.write_type_a("header", new std_msgs.msg.dds.HeaderPubSubType(), data.getHeader());
 
       ser.write_type_a("vector", new geometry_msgs.msg.dds.Vector3PubSubType(), data.getVector());
-
    }
 
    @Override
@@ -100,7 +100,6 @@ public class Vector3StampedPubSubType implements us.ihmc.pubsub.TopicDataType<ge
       ser.read_type_a("header", new std_msgs.msg.dds.HeaderPubSubType(), data.getHeader());
 
       ser.read_type_a("vector", new geometry_msgs.msg.dds.Vector3PubSubType(), data.getVector());
-
    }
 
    @Override

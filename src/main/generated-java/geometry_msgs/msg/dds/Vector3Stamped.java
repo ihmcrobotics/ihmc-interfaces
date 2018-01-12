@@ -17,7 +17,6 @@ public class Vector3Stamped
    {
       header_ = new std_msgs.msg.dds.Header();
       vector_ = new us.ihmc.euclid.tuple3D.Vector3D();
-
    }
 
    public void set(Vector3Stamped other)
@@ -71,5 +70,4 @@ public class Vector3Stamped
       builder.append("}");
       return builder.toString();
    }
-
 }

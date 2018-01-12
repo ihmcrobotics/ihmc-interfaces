@@ -21,7 +21,6 @@ public class Odometry
       child_frame_id_ = new java.lang.StringBuilder(255);
       pose_ = new geometry_msgs.msg.dds.PoseWithCovariance();
       twist_ = new geometry_msgs.msg.dds.TwistWithCovariance();
-
    }
 
    public void set(Odometry other)
@@ -111,5 +110,4 @@ public class Odometry
       builder.append("}");
       return builder.toString();
    }
-
 }

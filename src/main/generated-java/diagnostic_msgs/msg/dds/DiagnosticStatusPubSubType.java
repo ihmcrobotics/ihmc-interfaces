@@ -13,6 +13,7 @@ public class DiagnosticStatusPubSubType implements us.ihmc.pubsub.TopicDataType<
    public static final java.lang.String name = "diagnostic_msgs::msg::dds_::DiagnosticStatus_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public DiagnosticStatusPubSubType()
    {
 
@@ -143,7 +144,6 @@ public class DiagnosticStatusPubSubType implements us.ihmc.pubsub.TopicDataType<
       ser.write_type_d("hardware_id", data.getHardware_id());
 
       ser.write_type_e("values", data.getValues());
-
    }
 
    @Override
@@ -158,7 +158,6 @@ public class DiagnosticStatusPubSubType implements us.ihmc.pubsub.TopicDataType<
       ser.read_type_d("hardware_id", data.getHardware_id());
 
       ser.read_type_e("values", data.getValues());
-
    }
 
    @Override

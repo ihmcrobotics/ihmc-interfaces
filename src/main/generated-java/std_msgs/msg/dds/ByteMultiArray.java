@@ -17,7 +17,6 @@ public class ByteMultiArray
    {
       layout_ = new std_msgs.msg.dds.MultiArrayLayout();
       data_ = new us.ihmc.idl.IDLSequence.Byte(100, "type_9");
-
    }
 
    public void set(ByteMultiArray other)
@@ -71,5 +70,4 @@ public class ByteMultiArray
       builder.append("}");
       return builder.toString();
    }
-
 }

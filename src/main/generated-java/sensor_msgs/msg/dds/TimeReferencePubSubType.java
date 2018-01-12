@@ -13,6 +13,7 @@ public class TimeReferencePubSubType implements us.ihmc.pubsub.TopicDataType<sen
    public static final java.lang.String name = "sensor_msgs::msg::dds_::TimeReference_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public TimeReferencePubSubType()
    {
 
@@ -102,7 +103,6 @@ public class TimeReferencePubSubType implements us.ihmc.pubsub.TopicDataType<sen
       ser.write_type_a("time_ref", new builtin_interfaces.msg.dds.TimePubSubType(), data.getTime_ref());
 
       ser.write_type_d("source", data.getSource());
-
    }
 
    @Override
@@ -113,7 +113,6 @@ public class TimeReferencePubSubType implements us.ihmc.pubsub.TopicDataType<sen
       ser.read_type_a("time_ref", new builtin_interfaces.msg.dds.TimePubSubType(), data.getTime_ref());
 
       ser.read_type_d("source", data.getSource());
-
    }
 
    @Override

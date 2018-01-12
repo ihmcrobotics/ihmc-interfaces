@@ -13,6 +13,7 @@ public class APIElementIdPubSubType implements us.ihmc.pubsub.TopicDataType<robo
    public static final java.lang.String name = "robotenvironmentawareness_msgs::msg::dds_::APIElementId_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public APIElementIdPubSubType()
    {
 
@@ -90,14 +91,12 @@ public class APIElementIdPubSubType implements us.ihmc.pubsub.TopicDataType<robo
    public final void serialize(robotenvironmentawareness_msgs.msg.dds.APIElementId data, us.ihmc.idl.InterchangeSerializer ser)
    {
       ser.write_type_e("id", data.getId());
-
    }
 
    @Override
    public final void deserialize(us.ihmc.idl.InterchangeSerializer ser, robotenvironmentawareness_msgs.msg.dds.APIElementId data)
    {
       ser.read_type_e("id", data.getId());
-
    }
 
    @Override

@@ -19,7 +19,6 @@ public class TransformStamped
       header_ = new std_msgs.msg.dds.Header();
       child_frame_id_ = new java.lang.StringBuilder(255);
       transform_ = new us.ihmc.euclid.transform.QuaternionBasedTransform();
-
    }
 
    public void set(TransformStamped other)
@@ -97,5 +96,4 @@ public class TransformStamped
       builder.append("}");
       return builder.toString();
    }
-
 }

@@ -89,7 +89,6 @@ public class Pose2DPubSubType implements us.ihmc.pubsub.TopicDataType<us.ihmc.eu
       getImpl().setY(data, cdr.read_type_6());
 
       getImpl().setTheta(data, cdr.read_type_6());
-
    }
 
    public static void staticCopy(us.ihmc.euclid.geometry.Pose2D src, us.ihmc.euclid.geometry.Pose2D dest)
@@ -104,7 +103,6 @@ public class Pose2DPubSubType implements us.ihmc.pubsub.TopicDataType<us.ihmc.eu
       serializeCDR.serialize(serializedPayload);
       write(data, serializeCDR);
       serializeCDR.finishSerialize();
-
    }
 
    @Override
@@ -123,7 +121,6 @@ public class Pose2DPubSubType implements us.ihmc.pubsub.TopicDataType<us.ihmc.eu
       ser.write_type_6("y", getImpl().getY(data));
 
       ser.write_type_6("theta", getImpl().getTheta(data));
-
    }
 
    @Override
@@ -134,7 +131,6 @@ public class Pose2DPubSubType implements us.ihmc.pubsub.TopicDataType<us.ihmc.eu
       getImpl().setY(data, ser.read_type_6("y"));
 
       getImpl().setTheta(data, ser.read_type_6("theta"));
-
    }
 
    @Override

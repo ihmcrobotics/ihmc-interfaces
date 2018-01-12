@@ -13,6 +13,7 @@ public class LaserScanPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_
    public static final java.lang.String name = "sensor_msgs::msg::dds_::LaserScan_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public LaserScanPubSubType()
    {
 
@@ -181,7 +182,6 @@ public class LaserScanPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_
       ser.write_type_e("ranges", data.getRanges());
 
       ser.write_type_e("intensities", data.getIntensities());
-
    }
 
    @Override
@@ -206,7 +206,6 @@ public class LaserScanPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_
       ser.read_type_e("ranges", data.getRanges());
 
       ser.read_type_e("intensities", data.getIntensities());
-
    }
 
    @Override

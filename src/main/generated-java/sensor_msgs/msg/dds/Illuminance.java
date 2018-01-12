@@ -17,7 +17,6 @@ public class Illuminance
    public Illuminance()
    {
       header_ = new std_msgs.msg.dds.Header();
-
    }
 
    public void set(Illuminance other)
@@ -25,7 +24,6 @@ public class Illuminance
       std_msgs.msg.dds.HeaderPubSubType.staticCopy(other.header_, header_);
       illuminance_ = other.illuminance_;
       variance_ = other.variance_;
-
    }
 
    public std_msgs.msg.dds.Header getHeader()
@@ -94,5 +92,4 @@ public class Illuminance
       builder.append("}");
       return builder.toString();
    }
-
 }

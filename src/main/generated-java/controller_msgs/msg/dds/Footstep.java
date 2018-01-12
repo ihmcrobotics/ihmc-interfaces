@@ -36,7 +36,6 @@ public class Footstep
       swing_trajectory_ = new us.ihmc.idl.IDLSequence.Object<controller_msgs.msg.dds.TaskspaceTrajectoryStamped>(100,
                                                                                                                  controller_msgs.msg.dds.TaskspaceTrajectoryStamped.class,
                                                                                                                  new controller_msgs.msg.dds.TaskspaceTrajectoryStampedPubSubType());
-
    }
 
    public void set(Footstep other)
@@ -53,7 +52,6 @@ public class Footstep
       swing_trajectory_blend_duration_ = other.swing_trajectory_blend_duration_;
       swing_duration_ = other.swing_duration_;
       transfer_duration_ = other.transfer_duration_;
-
    }
 
    public long getUnique_id()
@@ -246,5 +244,4 @@ public class Footstep
       builder.append("}");
       return builder.toString();
    }
-
 }

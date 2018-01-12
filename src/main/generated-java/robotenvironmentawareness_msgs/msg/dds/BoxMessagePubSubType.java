@@ -13,6 +13,7 @@ public class BoxMessagePubSubType implements us.ihmc.pubsub.TopicDataType<robote
    public static final java.lang.String name = "robotenvironmentawareness_msgs::msg::dds_::BoxMessage_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public BoxMessagePubSubType()
    {
 
@@ -95,7 +96,6 @@ public class BoxMessagePubSubType implements us.ihmc.pubsub.TopicDataType<robote
       ser.write_type_7("is_empty", data.getIs_empty());
 
       ser.write_type_a("some_vector", new geometry_msgs.msg.dds.Vector3PubSubType(), data.getSome_vector());
-
    }
 
    @Override
@@ -104,7 +104,6 @@ public class BoxMessagePubSubType implements us.ihmc.pubsub.TopicDataType<robote
       data.setIs_empty(ser.read_type_7("is_empty"));
 
       ser.read_type_a("some_vector", new geometry_msgs.msg.dds.Vector3PubSubType(), data.getSome_vector());
-
    }
 
    @Override

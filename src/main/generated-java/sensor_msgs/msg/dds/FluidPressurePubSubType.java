@@ -13,6 +13,7 @@ public class FluidPressurePubSubType implements us.ihmc.pubsub.TopicDataType<sen
    public static final java.lang.String name = "sensor_msgs::msg::dds_::FluidPressure_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public FluidPressurePubSubType()
    {
 
@@ -70,7 +71,6 @@ public class FluidPressurePubSubType implements us.ihmc.pubsub.TopicDataType<sen
       data.setFluid_pressure(cdr.read_type_6());
 
       data.setVariance(cdr.read_type_6());
-
    }
 
    public static void staticCopy(sensor_msgs.msg.dds.FluidPressure src, sensor_msgs.msg.dds.FluidPressure dest)
@@ -102,7 +102,6 @@ public class FluidPressurePubSubType implements us.ihmc.pubsub.TopicDataType<sen
       ser.write_type_6("fluid_pressure", data.getFluid_pressure());
 
       ser.write_type_6("variance", data.getVariance());
-
    }
 
    @Override
@@ -113,7 +112,6 @@ public class FluidPressurePubSubType implements us.ihmc.pubsub.TopicDataType<sen
       data.setFluid_pressure(ser.read_type_6("fluid_pressure"));
 
       data.setVariance(ser.read_type_6("variance"));
-
    }
 
    @Override

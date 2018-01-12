@@ -13,6 +13,7 @@ public class ByteMultiArrayPubSubType implements us.ihmc.pubsub.TopicDataType<st
    public static final java.lang.String name = "std_msgs::msg::dds_::ByteMultiArray_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public ByteMultiArrayPubSubType()
    {
 
@@ -96,7 +97,6 @@ public class ByteMultiArrayPubSubType implements us.ihmc.pubsub.TopicDataType<st
       ser.write_type_a("layout", new std_msgs.msg.dds.MultiArrayLayoutPubSubType(), data.getLayout());
 
       ser.write_type_e("data", data.getData());
-
    }
 
    @Override
@@ -105,7 +105,6 @@ public class ByteMultiArrayPubSubType implements us.ihmc.pubsub.TopicDataType<st
       ser.read_type_a("layout", new std_msgs.msg.dds.MultiArrayLayoutPubSubType(), data.getLayout());
 
       ser.read_type_e("data", data.getData());
-
    }
 
    @Override

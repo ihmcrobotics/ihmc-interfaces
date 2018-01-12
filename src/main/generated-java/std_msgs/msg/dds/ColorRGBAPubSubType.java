@@ -13,6 +13,7 @@ public class ColorRGBAPubSubType implements us.ihmc.pubsub.TopicDataType<std_msg
    public static final java.lang.String name = "std_msgs::msg::dds_::ColorRGBA_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public ColorRGBAPubSubType()
    {
 
@@ -80,7 +81,6 @@ public class ColorRGBAPubSubType implements us.ihmc.pubsub.TopicDataType<std_msg
       data.setB(cdr.read_type_5());
 
       data.setA(cdr.read_type_5());
-
    }
 
    public static void staticCopy(std_msgs.msg.dds.ColorRGBA src, std_msgs.msg.dds.ColorRGBA dest)
@@ -114,7 +114,6 @@ public class ColorRGBAPubSubType implements us.ihmc.pubsub.TopicDataType<std_msg
       ser.write_type_5("b", data.getB());
 
       ser.write_type_5("a", data.getA());
-
    }
 
    @Override
@@ -127,7 +126,6 @@ public class ColorRGBAPubSubType implements us.ihmc.pubsub.TopicDataType<std_msg
       data.setB(ser.read_type_5("b"));
 
       data.setA(ser.read_type_5("a"));
-
    }
 
    @Override

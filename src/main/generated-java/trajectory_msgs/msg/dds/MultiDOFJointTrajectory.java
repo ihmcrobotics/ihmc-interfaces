@@ -21,7 +21,6 @@ public class MultiDOFJointTrajectory
       points_ = new us.ihmc.idl.IDLSequence.Object<trajectory_msgs.msg.dds.MultiDOFJointTrajectoryPoint>(100,
                                                                                                          trajectory_msgs.msg.dds.MultiDOFJointTrajectoryPoint.class,
                                                                                                          new trajectory_msgs.msg.dds.MultiDOFJointTrajectoryPointPubSubType());
-
    }
 
    public void set(MultiDOFJointTrajectory other)
@@ -87,5 +86,4 @@ public class MultiDOFJointTrajectory
       builder.append("}");
       return builder.toString();
    }
-
 }

@@ -13,6 +13,7 @@ public class SolidPrimitivePubSubType implements us.ihmc.pubsub.TopicDataType<sh
    public static final java.lang.String name = "shape_msgs::msg::dds_::SolidPrimitive_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public SolidPrimitivePubSubType()
    {
 
@@ -98,7 +99,6 @@ public class SolidPrimitivePubSubType implements us.ihmc.pubsub.TopicDataType<sh
       ser.write_type_9("type", data.getType());
 
       ser.write_type_e("dimensions", data.getDimensions());
-
    }
 
    @Override
@@ -107,7 +107,6 @@ public class SolidPrimitivePubSubType implements us.ihmc.pubsub.TopicDataType<sh
       data.setType(ser.read_type_9("type"));
 
       ser.read_type_e("dimensions", data.getDimensions());
-
    }
 
    @Override

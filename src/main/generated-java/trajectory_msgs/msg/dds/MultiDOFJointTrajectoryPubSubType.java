@@ -13,6 +13,7 @@ public class MultiDOFJointTrajectoryPubSubType implements us.ihmc.pubsub.TopicDa
    public static final java.lang.String name = "trajectory_msgs::msg::dds_::MultiDOFJointTrajectory_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public MultiDOFJointTrajectoryPubSubType()
    {
 
@@ -123,7 +124,6 @@ public class MultiDOFJointTrajectoryPubSubType implements us.ihmc.pubsub.TopicDa
       ser.write_type_e("joint_names", data.getJoint_names());
 
       ser.write_type_e("points", data.getPoints());
-
    }
 
    @Override
@@ -134,7 +134,6 @@ public class MultiDOFJointTrajectoryPubSubType implements us.ihmc.pubsub.TopicDa
       ser.read_type_e("joint_names", data.getJoint_names());
 
       ser.read_type_e("points", data.getPoints());
-
    }
 
    @Override

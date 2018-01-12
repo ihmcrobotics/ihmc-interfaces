@@ -13,6 +13,7 @@ public class TransformStampedPubSubType implements us.ihmc.pubsub.TopicDataType<
    public static final java.lang.String name = "geometry_msgs::msg::dds_::TransformStamped_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public TransformStampedPubSubType()
    {
 
@@ -104,7 +105,6 @@ public class TransformStampedPubSubType implements us.ihmc.pubsub.TopicDataType<
       ser.write_type_d("child_frame_id", data.getChild_frame_id());
 
       ser.write_type_a("transform", new geometry_msgs.msg.dds.TransformPubSubType(), data.getTransform());
-
    }
 
    @Override
@@ -115,7 +115,6 @@ public class TransformStampedPubSubType implements us.ihmc.pubsub.TopicDataType<
       ser.read_type_d("child_frame_id", data.getChild_frame_id());
 
       ser.read_type_a("transform", new geometry_msgs.msg.dds.TransformPubSubType(), data.getTransform());
-
    }
 
    @Override

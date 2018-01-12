@@ -13,6 +13,7 @@ public class LaserEchoPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_
    public static final java.lang.String name = "sensor_msgs::msg::dds_::LaserEcho_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public LaserEchoPubSubType()
    {
 
@@ -88,14 +89,12 @@ public class LaserEchoPubSubType implements us.ihmc.pubsub.TopicDataType<sensor_
    public final void serialize(sensor_msgs.msg.dds.LaserEcho data, us.ihmc.idl.InterchangeSerializer ser)
    {
       ser.write_type_e("echoes", data.getEchoes());
-
    }
 
    @Override
    public final void deserialize(us.ihmc.idl.InterchangeSerializer ser, sensor_msgs.msg.dds.LaserEcho data)
    {
       ser.read_type_e("echoes", data.getEchoes());
-
    }
 
    @Override

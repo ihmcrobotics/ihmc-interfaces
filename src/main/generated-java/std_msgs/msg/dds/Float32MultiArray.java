@@ -17,7 +17,6 @@ public class Float32MultiArray
    {
       layout_ = new std_msgs.msg.dds.MultiArrayLayout();
       data_ = new us.ihmc.idl.IDLSequence.Float(100, "type_5");
-
    }
 
    public void set(Float32MultiArray other)
@@ -71,5 +70,4 @@ public class Float32MultiArray
       builder.append("}");
       return builder.toString();
    }
-
 }

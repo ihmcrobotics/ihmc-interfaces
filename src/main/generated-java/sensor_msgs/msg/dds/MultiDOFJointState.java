@@ -29,7 +29,6 @@ public class MultiDOFJointState
 
       wrench_ = new us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Wrench>(100, geometry_msgs.msg.dds.Wrench.class,
                                                                                  new geometry_msgs.msg.dds.WrenchPubSubType());
-
    }
 
    public void set(MultiDOFJointState other)
@@ -119,5 +118,4 @@ public class MultiDOFJointState
       builder.append("}");
       return builder.toString();
    }
-
 }

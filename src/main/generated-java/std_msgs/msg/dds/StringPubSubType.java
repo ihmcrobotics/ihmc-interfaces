@@ -13,6 +13,7 @@ public class StringPubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.m
    public static final java.lang.String name = "std_msgs::msg::dds_::String_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public StringPubSubType()
    {
 
@@ -86,14 +87,12 @@ public class StringPubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.m
    public final void serialize(std_msgs.msg.dds.String data, us.ihmc.idl.InterchangeSerializer ser)
    {
       ser.write_type_d("data", data.getData());
-
    }
 
    @Override
    public final void deserialize(us.ihmc.idl.InterchangeSerializer ser, std_msgs.msg.dds.String data)
    {
       ser.read_type_d("data", data.getData());
-
    }
 
    @Override

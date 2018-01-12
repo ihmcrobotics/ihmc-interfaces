@@ -13,6 +13,7 @@ public class MultiDOFJointTrajectoryPointPubSubType implements us.ihmc.pubsub.To
    public static final java.lang.String name = "trajectory_msgs::msg::dds_::MultiDOFJointTrajectoryPoint_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public MultiDOFJointTrajectoryPointPubSubType()
    {
 
@@ -148,7 +149,6 @@ public class MultiDOFJointTrajectoryPointPubSubType implements us.ihmc.pubsub.To
       ser.write_type_e("accelerations", data.getAccelerations());
 
       ser.write_type_a("time_from_start", new builtin_interfaces.msg.dds.DurationPubSubType(), data.getTime_from_start());
-
    }
 
    @Override
@@ -161,7 +161,6 @@ public class MultiDOFJointTrajectoryPointPubSubType implements us.ihmc.pubsub.To
       ser.read_type_e("accelerations", data.getAccelerations());
 
       ser.read_type_a("time_from_start", new builtin_interfaces.msg.dds.DurationPubSubType(), data.getTime_from_start());
-
    }
 
    @Override

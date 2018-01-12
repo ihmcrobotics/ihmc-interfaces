@@ -29,7 +29,6 @@ public class MultiEchoLaserScan
 
       intensities_ = new us.ihmc.idl.IDLSequence.Object<sensor_msgs.msg.dds.LaserEcho>(100, sensor_msgs.msg.dds.LaserEcho.class,
                                                                                        new sensor_msgs.msg.dds.LaserEchoPubSubType());
-
    }
 
    public void set(MultiEchoLaserScan other)
@@ -214,5 +213,4 @@ public class MultiEchoLaserScan
       builder.append("}");
       return builder.toString();
    }
-
 }

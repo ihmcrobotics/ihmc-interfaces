@@ -20,7 +20,6 @@ public class UInt32
    public void set(UInt32 other)
    {
       data_ = other.data_;
-
    }
 
    public long getData()
@@ -62,5 +61,4 @@ public class UInt32
       builder.append("}");
       return builder.toString();
    }
-
 }

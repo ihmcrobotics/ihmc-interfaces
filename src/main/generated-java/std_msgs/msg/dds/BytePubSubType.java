@@ -13,6 +13,7 @@ public class BytePubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.msg
    public static final java.lang.String name = "std_msgs::msg::dds_::Byte_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public BytePubSubType()
    {
 
@@ -56,7 +57,6 @@ public class BytePubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.msg
    {
 
       data.setData(cdr.read_type_9());
-
    }
 
    public static void staticCopy(std_msgs.msg.dds.Byte src, std_msgs.msg.dds.Byte dest)
@@ -84,14 +84,12 @@ public class BytePubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.msg
    public final void serialize(std_msgs.msg.dds.Byte data, us.ihmc.idl.InterchangeSerializer ser)
    {
       ser.write_type_9("data", data.getData());
-
    }
 
    @Override
    public final void deserialize(us.ihmc.idl.InterchangeSerializer ser, std_msgs.msg.dds.Byte data)
    {
       data.setData(ser.read_type_9("data"));
-
    }
 
    @Override

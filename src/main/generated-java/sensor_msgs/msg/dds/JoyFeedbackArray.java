@@ -16,7 +16,6 @@ public class JoyFeedbackArray
    {
       array_ = new us.ihmc.idl.IDLSequence.Object<sensor_msgs.msg.dds.JoyFeedback>(100, sensor_msgs.msg.dds.JoyFeedback.class,
                                                                                    new sensor_msgs.msg.dds.JoyFeedbackPubSubType());
-
    }
 
    public void set(JoyFeedbackArray other)
@@ -58,5 +57,4 @@ public class JoyFeedbackArray
       builder.append("}");
       return builder.toString();
    }
-
 }

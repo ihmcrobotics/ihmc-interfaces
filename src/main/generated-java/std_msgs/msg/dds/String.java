@@ -15,7 +15,6 @@ public class String
    public String()
    {
       data_ = new java.lang.StringBuilder(255);
-
    }
 
    public void set(String other)
@@ -69,5 +68,4 @@ public class String
       builder.append("}");
       return builder.toString();
    }
-
 }

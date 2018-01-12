@@ -17,7 +17,6 @@ public class Temperature
    public Temperature()
    {
       header_ = new std_msgs.msg.dds.Header();
-
    }
 
    public void set(Temperature other)
@@ -25,7 +24,6 @@ public class Temperature
       std_msgs.msg.dds.HeaderPubSubType.staticCopy(other.header_, header_);
       temperature_ = other.temperature_;
       variance_ = other.variance_;
-
    }
 
    public std_msgs.msg.dds.Header getHeader()
@@ -94,5 +92,4 @@ public class Temperature
       builder.append("}");
       return builder.toString();
    }
-
 }

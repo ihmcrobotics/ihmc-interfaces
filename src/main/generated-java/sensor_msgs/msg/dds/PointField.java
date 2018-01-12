@@ -18,7 +18,6 @@ public class PointField
    public PointField()
    {
       name_ = new java.lang.StringBuilder(255);
-
    }
 
    public void set(PointField other)
@@ -28,7 +27,6 @@ public class PointField
       offset_ = other.offset_;
       datatype_ = other.datatype_;
       count_ = other.count_;
-
    }
 
    public java.lang.String getNameAsString()
@@ -124,5 +122,4 @@ public class PointField
       builder.append("}");
       return builder.toString();
    }
-
 }

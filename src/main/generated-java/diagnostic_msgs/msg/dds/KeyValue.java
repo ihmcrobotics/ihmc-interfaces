@@ -17,7 +17,6 @@ public class KeyValue
    {
       key_ = new java.lang.StringBuilder(255);
       value_ = new java.lang.StringBuilder(255);
-
    }
 
    public void set(KeyValue other)
@@ -95,5 +94,4 @@ public class KeyValue
       builder.append("}");
       return builder.toString();
    }
-
 }

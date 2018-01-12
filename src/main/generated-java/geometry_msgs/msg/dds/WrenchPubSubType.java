@@ -13,6 +13,7 @@ public class WrenchPubSubType implements us.ihmc.pubsub.TopicDataType<geometry_m
    public static final java.lang.String name = "geometry_msgs::msg::dds_::Wrench_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public WrenchPubSubType()
    {
 
@@ -91,7 +92,6 @@ public class WrenchPubSubType implements us.ihmc.pubsub.TopicDataType<geometry_m
       ser.write_type_a("force", new geometry_msgs.msg.dds.Vector3PubSubType(), data.getForce());
 
       ser.write_type_a("torque", new geometry_msgs.msg.dds.Vector3PubSubType(), data.getTorque());
-
    }
 
    @Override
@@ -100,7 +100,6 @@ public class WrenchPubSubType implements us.ihmc.pubsub.TopicDataType<geometry_m
       ser.read_type_a("force", new geometry_msgs.msg.dds.Vector3PubSubType(), data.getForce());
 
       ser.read_type_a("torque", new geometry_msgs.msg.dds.Vector3PubSubType(), data.getTorque());
-
    }
 
    @Override

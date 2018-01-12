@@ -24,7 +24,6 @@ public class JoyFeedback
       type_ = other.type_;
       id_ = other.id_;
       intensity_ = other.intensity_;
-
    }
 
    public byte getType()
@@ -98,5 +97,4 @@ public class JoyFeedback
       builder.append("}");
       return builder.toString();
    }
-
 }

@@ -20,7 +20,6 @@ public class Int32
    public void set(Int32 other)
    {
       data_ = other.data_;
-
    }
 
    public int getData()
@@ -62,5 +61,4 @@ public class Int32
       builder.append("}");
       return builder.toString();
    }
-
 }

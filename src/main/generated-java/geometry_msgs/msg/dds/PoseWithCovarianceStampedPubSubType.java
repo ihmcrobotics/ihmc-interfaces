@@ -13,6 +13,7 @@ public class PoseWithCovarianceStampedPubSubType implements us.ihmc.pubsub.Topic
    public static final java.lang.String name = "geometry_msgs::msg::dds_::PoseWithCovarianceStamped_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public PoseWithCovarianceStampedPubSubType()
    {
 
@@ -93,7 +94,6 @@ public class PoseWithCovarianceStampedPubSubType implements us.ihmc.pubsub.Topic
       ser.write_type_a("header", new std_msgs.msg.dds.HeaderPubSubType(), data.getHeader());
 
       ser.write_type_a("pose", new geometry_msgs.msg.dds.PoseWithCovariancePubSubType(), data.getPose());
-
    }
 
    @Override
@@ -102,7 +102,6 @@ public class PoseWithCovarianceStampedPubSubType implements us.ihmc.pubsub.Topic
       ser.read_type_a("header", new std_msgs.msg.dds.HeaderPubSubType(), data.getHeader());
 
       ser.read_type_a("pose", new geometry_msgs.msg.dds.PoseWithCovariancePubSubType(), data.getPose());
-
    }
 
    @Override

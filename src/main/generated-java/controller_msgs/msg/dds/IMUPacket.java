@@ -20,7 +20,6 @@ public class IMUPacket
       linear_acceleration_ = new us.ihmc.euclid.tuple3D.Vector3D();
       orientation_ = new us.ihmc.euclid.tuple4D.Quaternion();
       angular_velocity_ = new us.ihmc.euclid.tuple3D.Vector3D();
-
    }
 
    public void set(IMUPacket other)
@@ -29,7 +28,6 @@ public class IMUPacket
       geometry_msgs.msg.dds.QuaternionPubSubType.staticCopy(other.orientation_, orientation_);
       geometry_msgs.msg.dds.Vector3PubSubType.staticCopy(other.angular_velocity_, angular_velocity_);
       time_ = other.time_;
-
    }
 
    public us.ihmc.euclid.tuple3D.Vector3D getLinear_acceleration()
@@ -104,5 +102,4 @@ public class IMUPacket
       builder.append("}");
       return builder.toString();
    }
-
 }

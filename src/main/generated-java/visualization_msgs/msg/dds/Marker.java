@@ -42,7 +42,6 @@ public class Marker
 
       text_ = new java.lang.StringBuilder(255);
       mesh_resource_ = new java.lang.StringBuilder(255);
-
    }
 
    public void set(Marker other)
@@ -65,7 +64,6 @@ public class Marker
       mesh_resource_.setLength(0);
       mesh_resource_.append(other.mesh_resource_);
       mesh_use_embedded_materials_ = other.mesh_use_embedded_materials_;
-
    }
 
    public std_msgs.msg.dds.Header getHeader()
@@ -314,5 +312,4 @@ public class Marker
       builder.append("}");
       return builder.toString();
    }
-
 }

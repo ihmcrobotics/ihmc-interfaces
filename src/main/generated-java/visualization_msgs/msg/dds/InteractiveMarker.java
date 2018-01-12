@@ -30,7 +30,6 @@ public class InteractiveMarker
       controls_ = new us.ihmc.idl.IDLSequence.Object<visualization_msgs.msg.dds.InteractiveMarkerControl>(100,
                                                                                                           visualization_msgs.msg.dds.InteractiveMarkerControl.class,
                                                                                                           new visualization_msgs.msg.dds.InteractiveMarkerControlPubSubType());
-
    }
 
    public void set(InteractiveMarker other)
@@ -173,5 +172,4 @@ public class InteractiveMarker
       builder.append("}");
       return builder.toString();
    }
-
 }

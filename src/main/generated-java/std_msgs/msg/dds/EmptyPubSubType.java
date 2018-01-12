@@ -13,6 +13,7 @@ public class EmptyPubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.ms
    public static final java.lang.String name = "std_msgs::msg::dds_::Empty_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public EmptyPubSubType()
    {
 
@@ -56,7 +57,6 @@ public class EmptyPubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.ms
    {
 
       data.set_dummy(cdr.read_type_7());
-
    }
 
    public static void staticCopy(std_msgs.msg.dds.Empty src, std_msgs.msg.dds.Empty dest)
@@ -84,14 +84,12 @@ public class EmptyPubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.ms
    public final void serialize(std_msgs.msg.dds.Empty data, us.ihmc.idl.InterchangeSerializer ser)
    {
       ser.write_type_7("_dummy", data.get_dummy());
-
    }
 
    @Override
    public final void deserialize(us.ihmc.idl.InterchangeSerializer ser, std_msgs.msg.dds.Empty data)
    {
       data.set_dummy(ser.read_type_7("_dummy"));
-
    }
 
    @Override

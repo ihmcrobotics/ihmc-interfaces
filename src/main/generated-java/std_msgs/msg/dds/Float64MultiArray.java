@@ -17,7 +17,6 @@ public class Float64MultiArray
    {
       layout_ = new std_msgs.msg.dds.MultiArrayLayout();
       data_ = new us.ihmc.idl.IDLSequence.Double(100, "type_6");
-
    }
 
    public void set(Float64MultiArray other)
@@ -71,5 +70,4 @@ public class Float64MultiArray
       builder.append("}");
       return builder.toString();
    }
-
 }

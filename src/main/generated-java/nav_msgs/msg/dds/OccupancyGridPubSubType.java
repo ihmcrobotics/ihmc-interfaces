@@ -13,6 +13,7 @@ public class OccupancyGridPubSubType implements us.ihmc.pubsub.TopicDataType<nav
    public static final java.lang.String name = "nav_msgs::msg::dds_::OccupancyGrid_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public OccupancyGridPubSubType()
    {
 
@@ -104,7 +105,6 @@ public class OccupancyGridPubSubType implements us.ihmc.pubsub.TopicDataType<nav
       ser.write_type_a("info", new nav_msgs.msg.dds.MapMetaDataPubSubType(), data.getInfo());
 
       ser.write_type_e("data", data.getData());
-
    }
 
    @Override
@@ -115,7 +115,6 @@ public class OccupancyGridPubSubType implements us.ihmc.pubsub.TopicDataType<nav
       ser.read_type_a("info", new nav_msgs.msg.dds.MapMetaDataPubSubType(), data.getInfo());
 
       ser.read_type_e("data", data.getData());
-
    }
 
    @Override

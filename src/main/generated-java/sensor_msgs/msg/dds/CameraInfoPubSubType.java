@@ -13,6 +13,7 @@ public class CameraInfoPubSubType implements us.ihmc.pubsub.TopicDataType<sensor
    public static final java.lang.String name = "sensor_msgs::msg::dds_::CameraInfo_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public CameraInfoPubSubType()
    {
 
@@ -140,19 +141,16 @@ public class CameraInfoPubSubType implements us.ihmc.pubsub.TopicDataType<sensor
       for (int a = 0; a < data.getK().length; ++a)
       {
          data.getK()[a] = cdr.read_type_6();
-
       }
 
       for (int a = 0; a < data.getR().length; ++a)
       {
          data.getR()[a] = cdr.read_type_6();
-
       }
 
       for (int a = 0; a < data.getP().length; ++a)
       {
          data.getP()[a] = cdr.read_type_6();
-
       }
 
       data.setBinning_x(cdr.read_type_4());
@@ -204,7 +202,6 @@ public class CameraInfoPubSubType implements us.ihmc.pubsub.TopicDataType<sensor
       ser.write_type_4("binning_y", data.getBinning_y());
 
       ser.write_type_a("roi", new sensor_msgs.msg.dds.RegionOfInterestPubSubType(), data.getRoi());
-
    }
 
    @Override
@@ -231,7 +228,6 @@ public class CameraInfoPubSubType implements us.ihmc.pubsub.TopicDataType<sensor
       data.setBinning_y(ser.read_type_4("binning_y"));
 
       ser.read_type_a("roi", new sensor_msgs.msg.dds.RegionOfInterestPubSubType(), data.getRoi());
-
    }
 
    @Override

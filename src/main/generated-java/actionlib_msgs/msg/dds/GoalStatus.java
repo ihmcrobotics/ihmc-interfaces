@@ -18,7 +18,6 @@ public class GoalStatus
    {
       goal_id_ = new actionlib_msgs.msg.dds.GoalID();
       text_ = new java.lang.StringBuilder(255);
-
    }
 
    public void set(GoalStatus other)
@@ -27,7 +26,6 @@ public class GoalStatus
       status_ = other.status_;
       text_.setLength(0);
       text_.append(other.text_);
-
    }
 
    public actionlib_msgs.msg.dds.GoalID getGoal_id()
@@ -102,5 +100,4 @@ public class GoalStatus
       builder.append("}");
       return builder.toString();
    }
-
 }

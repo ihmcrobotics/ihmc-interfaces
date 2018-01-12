@@ -13,6 +13,7 @@ public class QuaternionStampedPubSubType implements us.ihmc.pubsub.TopicDataType
    public static final java.lang.String name = "geometry_msgs::msg::dds_::QuaternionStamped_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public QuaternionStampedPubSubType()
    {
 
@@ -91,7 +92,6 @@ public class QuaternionStampedPubSubType implements us.ihmc.pubsub.TopicDataType
       ser.write_type_a("header", new std_msgs.msg.dds.HeaderPubSubType(), data.getHeader());
 
       ser.write_type_a("quaternion", new geometry_msgs.msg.dds.QuaternionPubSubType(), data.getQuaternion());
-
    }
 
    @Override
@@ -100,7 +100,6 @@ public class QuaternionStampedPubSubType implements us.ihmc.pubsub.TopicDataType
       ser.read_type_a("header", new std_msgs.msg.dds.HeaderPubSubType(), data.getHeader());
 
       ser.read_type_a("quaternion", new geometry_msgs.msg.dds.QuaternionPubSubType(), data.getQuaternion());
-
    }
 
    @Override

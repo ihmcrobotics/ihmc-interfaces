@@ -17,7 +17,6 @@ public class TwistStamped
    {
       header_ = new std_msgs.msg.dds.Header();
       twist_ = new geometry_msgs.msg.dds.Twist();
-
    }
 
    public void set(TwistStamped other)
@@ -71,5 +70,4 @@ public class TwistStamped
       builder.append("}");
       return builder.toString();
    }
-
 }

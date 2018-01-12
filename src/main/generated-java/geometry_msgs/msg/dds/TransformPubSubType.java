@@ -94,7 +94,6 @@ public class TransformPubSubType implements us.ihmc.pubsub.TopicDataType<us.ihmc
       serializeCDR.serialize(serializedPayload);
       write(data, serializeCDR);
       serializeCDR.finishSerialize();
-
    }
 
    @Override
@@ -112,7 +111,6 @@ public class TransformPubSubType implements us.ihmc.pubsub.TopicDataType<us.ihmc
       ser.write_type_a("translation", new geometry_msgs.msg.dds.Vector3PubSubType(), getImpl().getTranslation(data));
 
       ser.write_type_a("rotation", new geometry_msgs.msg.dds.QuaternionPubSubType(), getImpl().getRotation(data));
-
    }
 
    @Override
@@ -121,7 +119,6 @@ public class TransformPubSubType implements us.ihmc.pubsub.TopicDataType<us.ihmc
       ser.read_type_a("translation", new geometry_msgs.msg.dds.Vector3PubSubType(), getImpl().getTranslation(data));
 
       ser.read_type_a("rotation", new geometry_msgs.msg.dds.QuaternionPubSubType(), getImpl().getRotation(data));
-
    }
 
    @Override

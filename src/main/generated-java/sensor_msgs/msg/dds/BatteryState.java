@@ -31,7 +31,6 @@ public class BatteryState
       cell_voltage_ = new us.ihmc.idl.IDLSequence.Float(100, "type_5");
       location_ = new java.lang.StringBuilder(255);
       serial_number_ = new java.lang.StringBuilder(255);
-
    }
 
    public void set(BatteryState other)
@@ -52,7 +51,6 @@ public class BatteryState
       location_.append(other.location_);
       serial_number_.setLength(0);
       serial_number_.append(other.serial_number_);
-
    }
 
    public std_msgs.msg.dds.Header getHeader()
@@ -304,5 +302,4 @@ public class BatteryState
       builder.append("}");
       return builder.toString();
    }
-
 }

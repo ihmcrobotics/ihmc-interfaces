@@ -13,6 +13,7 @@ public class MarkerArrayPubSubType implements us.ihmc.pubsub.TopicDataType<visua
    public static final java.lang.String name = "visualization_msgs::msg::dds_::MarkerArray_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public MarkerArrayPubSubType()
    {
 
@@ -94,14 +95,12 @@ public class MarkerArrayPubSubType implements us.ihmc.pubsub.TopicDataType<visua
    public final void serialize(visualization_msgs.msg.dds.MarkerArray data, us.ihmc.idl.InterchangeSerializer ser)
    {
       ser.write_type_e("markers", data.getMarkers());
-
    }
 
    @Override
    public final void deserialize(us.ihmc.idl.InterchangeSerializer ser, visualization_msgs.msg.dds.MarkerArray data)
    {
       ser.read_type_e("markers", data.getMarkers());
-
    }
 
    @Override

@@ -13,6 +13,7 @@ public class AtlasRobotConfigurationDataPubSubType implements us.ihmc.pubsub.Top
    public static final java.lang.String name = "controller_msgs::msg::dds_::AtlasRobotConfigurationData_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public AtlasRobotConfigurationDataPubSubType()
    {
 
@@ -94,7 +95,6 @@ public class AtlasRobotConfigurationDataPubSubType implements us.ihmc.pubsub.Top
       ser.write_type_a("robot_configuration_data", new controller_msgs.msg.dds.RobotConfigurationDataPubSubType(), data.getRobot_configuration_data());
 
       ser.write_type_a("atlas_auxiliary_robot_data", new controller_msgs.msg.dds.AtlasAuxiliaryRobotDataPubSubType(), data.getAtlas_auxiliary_robot_data());
-
    }
 
    @Override
@@ -103,7 +103,6 @@ public class AtlasRobotConfigurationDataPubSubType implements us.ihmc.pubsub.Top
       ser.read_type_a("robot_configuration_data", new controller_msgs.msg.dds.RobotConfigurationDataPubSubType(), data.getRobot_configuration_data());
 
       ser.read_type_a("atlas_auxiliary_robot_data", new controller_msgs.msg.dds.AtlasAuxiliaryRobotDataPubSubType(), data.getAtlas_auxiliary_robot_data());
-
    }
 
    @Override

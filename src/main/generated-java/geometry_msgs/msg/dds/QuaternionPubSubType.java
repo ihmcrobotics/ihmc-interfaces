@@ -97,7 +97,6 @@ public class QuaternionPubSubType implements us.ihmc.pubsub.TopicDataType<us.ihm
       getImpl().setZ(data, cdr.read_type_6());
 
       getImpl().setW(data, cdr.read_type_6());
-
    }
 
    public static void staticCopy(us.ihmc.euclid.tuple4D.Quaternion src, us.ihmc.euclid.tuple4D.Quaternion dest)
@@ -112,7 +111,6 @@ public class QuaternionPubSubType implements us.ihmc.pubsub.TopicDataType<us.ihm
       serializeCDR.serialize(serializedPayload);
       write(data, serializeCDR);
       serializeCDR.finishSerialize();
-
    }
 
    @Override
@@ -133,7 +131,6 @@ public class QuaternionPubSubType implements us.ihmc.pubsub.TopicDataType<us.ihm
       ser.write_type_6("z", getImpl().getZ(data));
 
       ser.write_type_6("w", getImpl().getW(data));
-
    }
 
    @Override
@@ -146,7 +143,6 @@ public class QuaternionPubSubType implements us.ihmc.pubsub.TopicDataType<us.ihm
       getImpl().setZ(data, ser.read_type_6("z"));
 
       getImpl().setW(data, ser.read_type_6("w"));
-
    }
 
    @Override

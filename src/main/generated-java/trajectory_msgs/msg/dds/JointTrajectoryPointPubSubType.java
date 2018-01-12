@@ -13,6 +13,7 @@ public class JointTrajectoryPointPubSubType implements us.ihmc.pubsub.TopicDataT
    public static final java.lang.String name = "trajectory_msgs::msg::dds_::JointTrajectoryPoint_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public JointTrajectoryPointPubSubType()
    {
 
@@ -145,7 +146,6 @@ public class JointTrajectoryPointPubSubType implements us.ihmc.pubsub.TopicDataT
       ser.write_type_e("effort", data.getEffort());
 
       ser.write_type_a("time_from_start", new builtin_interfaces.msg.dds.DurationPubSubType(), data.getTime_from_start());
-
    }
 
    @Override
@@ -160,7 +160,6 @@ public class JointTrajectoryPointPubSubType implements us.ihmc.pubsub.TopicDataT
       ser.read_type_e("effort", data.getEffort());
 
       ser.read_type_a("time_from_start", new builtin_interfaces.msg.dds.DurationPubSubType(), data.getTime_from_start());
-
    }
 
    @Override

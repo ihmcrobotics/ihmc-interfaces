@@ -13,6 +13,7 @@ public class MenuEntryPubSubType implements us.ihmc.pubsub.TopicDataType<visuali
    public static final java.lang.String name = "visualization_msgs::msg::dds_::MenuEntry_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public MenuEntryPubSubType()
    {
 
@@ -94,7 +95,6 @@ public class MenuEntryPubSubType implements us.ihmc.pubsub.TopicDataType<visuali
       cdr.read_type_d(data.getCommand());
 
       data.setCommand_type(cdr.read_type_9());
-
    }
 
    public static void staticCopy(visualization_msgs.msg.dds.MenuEntry src, visualization_msgs.msg.dds.MenuEntry dest)
@@ -130,7 +130,6 @@ public class MenuEntryPubSubType implements us.ihmc.pubsub.TopicDataType<visuali
       ser.write_type_d("command", data.getCommand());
 
       ser.write_type_9("command_type", data.getCommand_type());
-
    }
 
    @Override
@@ -145,7 +144,6 @@ public class MenuEntryPubSubType implements us.ihmc.pubsub.TopicDataType<visuali
       ser.read_type_d("command", data.getCommand());
 
       data.setCommand_type(ser.read_type_9("command_type"));
-
    }
 
    @Override

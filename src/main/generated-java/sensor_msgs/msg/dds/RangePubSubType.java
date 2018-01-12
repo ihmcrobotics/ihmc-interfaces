@@ -13,6 +13,7 @@ public class RangePubSubType implements us.ihmc.pubsub.TopicDataType<sensor_msgs
    public static final java.lang.String name = "sensor_msgs::msg::dds_::Range_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public RangePubSubType()
    {
 
@@ -94,7 +95,6 @@ public class RangePubSubType implements us.ihmc.pubsub.TopicDataType<sensor_msgs
       data.setMax_range(cdr.read_type_5());
 
       data.setRange(cdr.read_type_5());
-
    }
 
    public static void staticCopy(sensor_msgs.msg.dds.Range src, sensor_msgs.msg.dds.Range dest)
@@ -132,7 +132,6 @@ public class RangePubSubType implements us.ihmc.pubsub.TopicDataType<sensor_msgs
       ser.write_type_5("max_range", data.getMax_range());
 
       ser.write_type_5("range", data.getRange());
-
    }
 
    @Override
@@ -149,7 +148,6 @@ public class RangePubSubType implements us.ihmc.pubsub.TopicDataType<sensor_msgs
       data.setMax_range(ser.read_type_5("max_range"));
 
       data.setRange(ser.read_type_5("range"));
-
    }
 
    @Override

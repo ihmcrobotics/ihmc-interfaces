@@ -13,6 +13,7 @@ public class AccelWithCovariancePubSubType implements us.ihmc.pubsub.TopicDataTy
    public static final java.lang.String name = "geometry_msgs::msg::dds_::AccelWithCovariance_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public AccelWithCovariancePubSubType()
    {
 
@@ -57,7 +58,6 @@ public class AccelWithCovariancePubSubType implements us.ihmc.pubsub.TopicDataTy
       {
          cdr.write_type_6(data.getCovariance()[a]);
       }
-
    }
 
    public static void read(geometry_msgs.msg.dds.AccelWithCovariance data, us.ihmc.idl.CDR cdr)
@@ -68,9 +68,7 @@ public class AccelWithCovariancePubSubType implements us.ihmc.pubsub.TopicDataTy
       for (int a = 0; a < data.getCovariance().length; ++a)
       {
          data.getCovariance()[a] = cdr.read_type_6();
-
       }
-
    }
 
    public static void staticCopy(geometry_msgs.msg.dds.AccelWithCovariance src, geometry_msgs.msg.dds.AccelWithCovariance dest)
@@ -108,7 +106,6 @@ public class AccelWithCovariancePubSubType implements us.ihmc.pubsub.TopicDataTy
       ser.read_type_a("accel", new geometry_msgs.msg.dds.AccelPubSubType(), data.getAccel());
 
       ser.read_type_f("covariance", data.getCovariance());
-
    }
 
    @Override

@@ -19,7 +19,6 @@ public class MagneticField
       header_ = new std_msgs.msg.dds.Header();
       magnetic_field_ = new us.ihmc.euclid.tuple3D.Vector3D();
       magnetic_field_covariance_ = new double[9];
-
    }
 
    public void set(MagneticField other)
@@ -29,9 +28,7 @@ public class MagneticField
       for (int b = 0; b < magnetic_field_covariance_.length; ++b)
       {
          magnetic_field_covariance_[b] = other.magnetic_field_covariance_[b];
-
       }
-
    }
 
    public std_msgs.msg.dds.Header getHeader()
@@ -68,7 +65,6 @@ public class MagneticField
       for (int d = 0; d < magnetic_field_covariance_.length; ++d)
       {
          returnedValue &= this.magnetic_field_covariance_[d] == otherMyClass.magnetic_field_covariance_[d];
-
       }
 
       return returnedValue;
@@ -94,5 +90,4 @@ public class MagneticField
       builder.append("}");
       return builder.toString();
    }
-
 }

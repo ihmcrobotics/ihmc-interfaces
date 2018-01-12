@@ -13,6 +13,7 @@ public class PlanePubSubType implements us.ihmc.pubsub.TopicDataType<shape_msgs.
    public static final java.lang.String name = "shape_msgs::msg::dds_::Plane_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public PlanePubSubType()
    {
 
@@ -52,7 +53,6 @@ public class PlanePubSubType implements us.ihmc.pubsub.TopicDataType<shape_msgs.
       {
          cdr.write_type_6(data.getCoef()[a]);
       }
-
    }
 
    public static void read(shape_msgs.msg.dds.Plane data, us.ihmc.idl.CDR cdr)
@@ -61,9 +61,7 @@ public class PlanePubSubType implements us.ihmc.pubsub.TopicDataType<shape_msgs.
       for (int a = 0; a < data.getCoef().length; ++a)
       {
          data.getCoef()[a] = cdr.read_type_6();
-
       }
-
    }
 
    public static void staticCopy(shape_msgs.msg.dds.Plane src, shape_msgs.msg.dds.Plane dest)
@@ -97,7 +95,6 @@ public class PlanePubSubType implements us.ihmc.pubsub.TopicDataType<shape_msgs.
    public final void deserialize(us.ihmc.idl.InterchangeSerializer ser, shape_msgs.msg.dds.Plane data)
    {
       ser.read_type_f("coef", data.getCoef());
-
    }
 
    @Override

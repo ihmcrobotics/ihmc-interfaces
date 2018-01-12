@@ -17,7 +17,6 @@ public class PolygonStamped
    {
       header_ = new std_msgs.msg.dds.Header();
       polygon_ = new geometry_msgs.msg.dds.Polygon();
-
    }
 
    public void set(PolygonStamped other)
@@ -71,5 +70,4 @@ public class PolygonStamped
       builder.append("}");
       return builder.toString();
    }
-
 }

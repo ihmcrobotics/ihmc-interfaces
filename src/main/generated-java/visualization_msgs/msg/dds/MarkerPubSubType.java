@@ -13,6 +13,7 @@ public class MarkerPubSubType implements us.ihmc.pubsub.TopicDataType<visualizat
    public static final java.lang.String name = "visualization_msgs::msg::dds_::Marker_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public MarkerPubSubType()
    {
 
@@ -189,7 +190,6 @@ public class MarkerPubSubType implements us.ihmc.pubsub.TopicDataType<visualizat
       cdr.read_type_d(data.getMesh_resource());
 
       data.setMesh_use_embedded_materials(cdr.read_type_7());
-
    }
 
    public static void staticCopy(visualization_msgs.msg.dds.Marker src, visualization_msgs.msg.dds.Marker dest)
@@ -245,7 +245,6 @@ public class MarkerPubSubType implements us.ihmc.pubsub.TopicDataType<visualizat
       ser.write_type_d("mesh_resource", data.getMesh_resource());
 
       ser.write_type_7("mesh_use_embedded_materials", data.getMesh_use_embedded_materials());
-
    }
 
    @Override
@@ -280,7 +279,6 @@ public class MarkerPubSubType implements us.ihmc.pubsub.TopicDataType<visualizat
       ser.read_type_d("mesh_resource", data.getMesh_resource());
 
       data.setMesh_use_embedded_materials(ser.read_type_7("mesh_use_embedded_materials"));
-
    }
 
    @Override

@@ -1,2 +1,0 @@
-RobotConfigurationData robot_configuration_data
-AtlasAuxiliaryRobotData atlas_auxiliary_robot_data

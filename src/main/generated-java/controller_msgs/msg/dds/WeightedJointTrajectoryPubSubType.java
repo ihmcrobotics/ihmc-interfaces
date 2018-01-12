@@ -13,6 +13,7 @@ public class WeightedJointTrajectoryPubSubType implements us.ihmc.pubsub.TopicDa
    public static final java.lang.String name = "controller_msgs::msg::dds_::WeightedJointTrajectory_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public WeightedJointTrajectoryPubSubType()
    {
 
@@ -123,7 +124,6 @@ public class WeightedJointTrajectoryPubSubType implements us.ihmc.pubsub.TopicDa
       ser.write_type_e("joint_names", data.getJoint_names());
 
       ser.write_type_e("points", data.getPoints());
-
    }
 
    @Override
@@ -134,7 +134,6 @@ public class WeightedJointTrajectoryPubSubType implements us.ihmc.pubsub.TopicDa
       ser.read_type_e("joint_names", data.getJoint_names());
 
       ser.read_type_e("points", data.getPoints());
-
    }
 
    @Override

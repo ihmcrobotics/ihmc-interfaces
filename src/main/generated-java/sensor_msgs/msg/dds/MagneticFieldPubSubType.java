@@ -13,6 +13,7 @@ public class MagneticFieldPubSubType implements us.ihmc.pubsub.TopicDataType<sen
    public static final java.lang.String name = "sensor_msgs::msg::dds_::MagneticField_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public MagneticFieldPubSubType()
    {
 
@@ -61,7 +62,6 @@ public class MagneticFieldPubSubType implements us.ihmc.pubsub.TopicDataType<sen
       {
          cdr.write_type_6(data.getMagnetic_field_covariance()[a]);
       }
-
    }
 
    public static void read(sensor_msgs.msg.dds.MagneticField data, us.ihmc.idl.CDR cdr)
@@ -74,9 +74,7 @@ public class MagneticFieldPubSubType implements us.ihmc.pubsub.TopicDataType<sen
       for (int a = 0; a < data.getMagnetic_field_covariance().length; ++a)
       {
          data.getMagnetic_field_covariance()[a] = cdr.read_type_6();
-
       }
-
    }
 
    public static void staticCopy(sensor_msgs.msg.dds.MagneticField src, sensor_msgs.msg.dds.MagneticField dest)
@@ -118,7 +116,6 @@ public class MagneticFieldPubSubType implements us.ihmc.pubsub.TopicDataType<sen
       ser.read_type_a("magnetic_field", new geometry_msgs.msg.dds.Vector3PubSubType(), data.getMagnetic_field());
 
       ser.read_type_f("magnetic_field_covariance", data.getMagnetic_field_covariance());
-
    }
 
    @Override

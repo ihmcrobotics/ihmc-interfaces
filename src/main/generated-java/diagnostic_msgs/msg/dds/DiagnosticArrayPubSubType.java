@@ -13,6 +13,7 @@ public class DiagnosticArrayPubSubType implements us.ihmc.pubsub.TopicDataType<d
    public static final java.lang.String name = "diagnostic_msgs::msg::dds_::DiagnosticArray_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public DiagnosticArrayPubSubType()
    {
 
@@ -102,7 +103,6 @@ public class DiagnosticArrayPubSubType implements us.ihmc.pubsub.TopicDataType<d
       ser.write_type_a("header", new std_msgs.msg.dds.HeaderPubSubType(), data.getHeader());
 
       ser.write_type_e("status", data.getStatus());
-
    }
 
    @Override
@@ -111,7 +111,6 @@ public class DiagnosticArrayPubSubType implements us.ihmc.pubsub.TopicDataType<d
       ser.read_type_a("header", new std_msgs.msg.dds.HeaderPubSubType(), data.getHeader());
 
       ser.read_type_e("status", data.getStatus());
-
    }
 
    @Override

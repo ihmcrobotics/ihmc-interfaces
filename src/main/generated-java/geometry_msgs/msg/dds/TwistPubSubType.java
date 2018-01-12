@@ -13,6 +13,7 @@ public class TwistPubSubType implements us.ihmc.pubsub.TopicDataType<geometry_ms
    public static final java.lang.String name = "geometry_msgs::msg::dds_::Twist_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public TwistPubSubType()
    {
 
@@ -91,7 +92,6 @@ public class TwistPubSubType implements us.ihmc.pubsub.TopicDataType<geometry_ms
       ser.write_type_a("linear", new geometry_msgs.msg.dds.Vector3PubSubType(), data.getLinear());
 
       ser.write_type_a("angular", new geometry_msgs.msg.dds.Vector3PubSubType(), data.getAngular());
-
    }
 
    @Override
@@ -100,7 +100,6 @@ public class TwistPubSubType implements us.ihmc.pubsub.TopicDataType<geometry_ms
       ser.read_type_a("linear", new geometry_msgs.msg.dds.Vector3PubSubType(), data.getLinear());
 
       ser.read_type_a("angular", new geometry_msgs.msg.dds.Vector3PubSubType(), data.getAngular());
-
    }
 
    @Override

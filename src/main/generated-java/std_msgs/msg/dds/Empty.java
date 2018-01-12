@@ -20,7 +20,6 @@ public class Empty
    public void set(Empty other)
    {
       _dummy_ = other._dummy_;
-
    }
 
    public boolean get_dummy()
@@ -62,5 +61,4 @@ public class Empty
       builder.append("}");
       return builder.toString();
    }
-
 }

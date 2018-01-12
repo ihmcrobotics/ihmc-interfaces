@@ -20,7 +20,6 @@ public class Mesh
 
       vertices_ = new us.ihmc.idl.IDLSequence.Object<us.ihmc.euclid.tuple3D.Point3D>(100, us.ihmc.euclid.tuple3D.Point3D.class,
                                                                                      new geometry_msgs.msg.dds.PointPubSubType());
-
    }
 
    public void set(Mesh other)
@@ -74,5 +73,4 @@ public class Mesh
       builder.append("}");
       return builder.toString();
    }
-
 }

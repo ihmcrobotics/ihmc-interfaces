@@ -19,7 +19,6 @@ public class OccupancyGrid
       header_ = new std_msgs.msg.dds.Header();
       info_ = new nav_msgs.msg.dds.MapMetaData();
       data_ = new us.ihmc.idl.IDLSequence.Byte(100, "type_9");
-
    }
 
    public void set(OccupancyGrid other)
@@ -85,5 +84,4 @@ public class OccupancyGrid
       builder.append("}");
       return builder.toString();
    }
-
 }

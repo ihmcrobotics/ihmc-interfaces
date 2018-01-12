@@ -13,6 +13,7 @@ public class SetStringParameterPubSubType implements us.ihmc.pubsub.TopicDataTyp
    public static final java.lang.String name = "controller_msgs::msg::dds_::SetStringParameter_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public SetStringParameterPubSubType()
    {
 
@@ -100,7 +101,6 @@ public class SetStringParameterPubSubType implements us.ihmc.pubsub.TopicDataTyp
       ser.write_type_d("parameter_name", data.getParameter_name());
 
       ser.write_type_d("parameter_value", data.getParameter_value());
-
    }
 
    @Override
@@ -109,7 +109,6 @@ public class SetStringParameterPubSubType implements us.ihmc.pubsub.TopicDataTyp
       ser.read_type_d("parameter_name", data.getParameter_name());
 
       ser.read_type_d("parameter_value", data.getParameter_value());
-
    }
 
    @Override

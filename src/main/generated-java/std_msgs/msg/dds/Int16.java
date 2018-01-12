@@ -20,7 +20,6 @@ public class Int16
    public void set(Int16 other)
    {
       data_ = other.data_;
-
    }
 
    public short getData()
@@ -62,5 +61,4 @@ public class Int16
       builder.append("}");
       return builder.toString();
    }
-
 }

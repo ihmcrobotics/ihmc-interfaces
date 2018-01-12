@@ -13,6 +13,7 @@ public class UInt64PubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.m
    public static final java.lang.String name = "std_msgs::msg::dds_::UInt64_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public UInt64PubSubType()
    {
 
@@ -56,7 +57,6 @@ public class UInt64PubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.m
    {
 
       data.setData(cdr.read_type_12());
-
    }
 
    public static void staticCopy(std_msgs.msg.dds.UInt64 src, std_msgs.msg.dds.UInt64 dest)
@@ -84,14 +84,12 @@ public class UInt64PubSubType implements us.ihmc.pubsub.TopicDataType<std_msgs.m
    public final void serialize(std_msgs.msg.dds.UInt64 data, us.ihmc.idl.InterchangeSerializer ser)
    {
       ser.write_type_12("data", data.getData());
-
    }
 
    @Override
    public final void deserialize(us.ihmc.idl.InterchangeSerializer ser, std_msgs.msg.dds.UInt64 data)
    {
       data.setData(ser.read_type_12("data"));
-
    }
 
    @Override

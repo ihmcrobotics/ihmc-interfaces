@@ -13,6 +13,7 @@ public class SetDoubleParameterPubSubType implements us.ihmc.pubsub.TopicDataTyp
    public static final java.lang.String name = "controller_msgs::msg::dds_::SetDoubleParameter_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public SetDoubleParameterPubSubType()
    {
 
@@ -67,7 +68,6 @@ public class SetDoubleParameterPubSubType implements us.ihmc.pubsub.TopicDataTyp
       cdr.read_type_d(data.getParameter_name());
 
       data.setParameter_value(cdr.read_type_6());
-
    }
 
    public static void staticCopy(controller_msgs.msg.dds.SetDoubleParameter src, controller_msgs.msg.dds.SetDoubleParameter dest)
@@ -98,7 +98,6 @@ public class SetDoubleParameterPubSubType implements us.ihmc.pubsub.TopicDataTyp
       ser.write_type_d("parameter_name", data.getParameter_name());
 
       ser.write_type_6("parameter_value", data.getParameter_value());
-
    }
 
    @Override
@@ -107,7 +106,6 @@ public class SetDoubleParameterPubSubType implements us.ihmc.pubsub.TopicDataTyp
       ser.read_type_d("parameter_name", data.getParameter_name());
 
       data.setParameter_value(ser.read_type_6("parameter_value"));
-
    }
 
    @Override

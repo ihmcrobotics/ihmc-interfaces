@@ -20,7 +20,6 @@ public class MenuEntry
    {
       title_ = new java.lang.StringBuilder(255);
       command_ = new java.lang.StringBuilder(255);
-
    }
 
    public void set(MenuEntry other)
@@ -32,7 +31,6 @@ public class MenuEntry
       command_.setLength(0);
       command_.append(other.command_);
       command_type_ = other.command_type_;
-
    }
 
    public long getId()
@@ -150,5 +148,4 @@ public class MenuEntry
       builder.append("}");
       return builder.toString();
    }
-
 }

@@ -17,7 +17,6 @@ public class AccelWithCovarianceStamped
    {
       header_ = new std_msgs.msg.dds.Header();
       accel_ = new geometry_msgs.msg.dds.AccelWithCovariance();
-
    }
 
    public void set(AccelWithCovarianceStamped other)
@@ -71,5 +70,4 @@ public class AccelWithCovarianceStamped
       builder.append("}");
       return builder.toString();
    }
-
 }

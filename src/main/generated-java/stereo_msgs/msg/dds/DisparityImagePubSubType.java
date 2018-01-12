@@ -13,6 +13,7 @@ public class DisparityImagePubSubType implements us.ihmc.pubsub.TopicDataType<st
    public static final java.lang.String name = "stereo_msgs::msg::dds_::DisparityImage_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public DisparityImagePubSubType()
    {
 
@@ -106,7 +107,6 @@ public class DisparityImagePubSubType implements us.ihmc.pubsub.TopicDataType<st
       data.setMax_disparity(cdr.read_type_5());
 
       data.setDelta_d(cdr.read_type_5());
-
    }
 
    public static void staticCopy(stereo_msgs.msg.dds.DisparityImage src, stereo_msgs.msg.dds.DisparityImage dest)
@@ -148,7 +148,6 @@ public class DisparityImagePubSubType implements us.ihmc.pubsub.TopicDataType<st
       ser.write_type_5("max_disparity", data.getMax_disparity());
 
       ser.write_type_5("delta_d", data.getDelta_d());
-
    }
 
    @Override
@@ -169,7 +168,6 @@ public class DisparityImagePubSubType implements us.ihmc.pubsub.TopicDataType<st
       data.setMax_disparity(ser.read_type_5("max_disparity"));
 
       data.setDelta_d(ser.read_type_5("delta_d"));
-
    }
 
    @Override

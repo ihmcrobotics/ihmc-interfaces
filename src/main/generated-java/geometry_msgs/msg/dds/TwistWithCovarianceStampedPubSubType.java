@@ -13,6 +13,7 @@ public class TwistWithCovarianceStampedPubSubType implements us.ihmc.pubsub.Topi
    public static final java.lang.String name = "geometry_msgs::msg::dds_::TwistWithCovarianceStamped_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public TwistWithCovarianceStampedPubSubType()
    {
 
@@ -93,7 +94,6 @@ public class TwistWithCovarianceStampedPubSubType implements us.ihmc.pubsub.Topi
       ser.write_type_a("header", new std_msgs.msg.dds.HeaderPubSubType(), data.getHeader());
 
       ser.write_type_a("twist", new geometry_msgs.msg.dds.TwistWithCovariancePubSubType(), data.getTwist());
-
    }
 
    @Override
@@ -102,7 +102,6 @@ public class TwistWithCovarianceStampedPubSubType implements us.ihmc.pubsub.Topi
       ser.read_type_a("header", new std_msgs.msg.dds.HeaderPubSubType(), data.getHeader());
 
       ser.read_type_a("twist", new geometry_msgs.msg.dds.TwistWithCovariancePubSubType(), data.getTwist());
-
    }
 
    @Override

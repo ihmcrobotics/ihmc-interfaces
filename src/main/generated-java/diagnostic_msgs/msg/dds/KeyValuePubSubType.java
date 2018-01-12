@@ -13,6 +13,7 @@ public class KeyValuePubSubType implements us.ihmc.pubsub.TopicDataType<diagnost
    public static final java.lang.String name = "diagnostic_msgs::msg::dds_::KeyValue_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public KeyValuePubSubType()
    {
 
@@ -99,7 +100,6 @@ public class KeyValuePubSubType implements us.ihmc.pubsub.TopicDataType<diagnost
       ser.write_type_d("key", data.getKey());
 
       ser.write_type_d("value", data.getValue());
-
    }
 
    @Override
@@ -108,7 +108,6 @@ public class KeyValuePubSubType implements us.ihmc.pubsub.TopicDataType<diagnost
       ser.read_type_d("key", data.getKey());
 
       ser.read_type_d("value", data.getValue());
-
    }
 
    @Override

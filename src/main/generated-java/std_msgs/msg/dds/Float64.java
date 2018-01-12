@@ -20,7 +20,6 @@ public class Float64
    public void set(Float64 other)
    {
       data_ = other.data_;
-
    }
 
    public double getData()
@@ -62,5 +61,4 @@ public class Float64
       builder.append("}");
       return builder.toString();
    }
-
 }

@@ -23,7 +23,6 @@ public class DiagnosticStatus
       hardware_id_ = new java.lang.StringBuilder(255);
       values_ = new us.ihmc.idl.IDLSequence.Object<diagnostic_msgs.msg.dds.KeyValue>(100, diagnostic_msgs.msg.dds.KeyValue.class,
                                                                                      new diagnostic_msgs.msg.dds.KeyValuePubSubType());
-
    }
 
    public void set(DiagnosticStatus other)
@@ -154,5 +153,4 @@ public class DiagnosticStatus
       builder.append("}");
       return builder.toString();
    }
-
 }

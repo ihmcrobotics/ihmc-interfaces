@@ -15,7 +15,6 @@ public class MeshTriangle
    public MeshTriangle()
    {
       vertex_indices_ = new long[3];
-
    }
 
    public void set(MeshTriangle other)
@@ -23,9 +22,7 @@ public class MeshTriangle
       for (int b = 0; b < vertex_indices_.length; ++b)
       {
          vertex_indices_[b] = other.vertex_indices_[b];
-
       }
-
    }
 
    public long[] getVertex_indices()
@@ -48,7 +45,6 @@ public class MeshTriangle
       for (int d = 0; d < vertex_indices_.length; ++d)
       {
          returnedValue &= this.vertex_indices_[d] == otherMyClass.vertex_indices_[d];
-
       }
 
       return returnedValue;
@@ -66,5 +62,4 @@ public class MeshTriangle
       builder.append("}");
       return builder.toString();
    }
-
 }

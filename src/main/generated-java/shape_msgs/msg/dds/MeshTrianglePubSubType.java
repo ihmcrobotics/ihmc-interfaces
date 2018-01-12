@@ -13,6 +13,7 @@ public class MeshTrianglePubSubType implements us.ihmc.pubsub.TopicDataType<shap
    public static final java.lang.String name = "shape_msgs::msg::dds_::MeshTriangle_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public MeshTrianglePubSubType()
    {
 
@@ -52,7 +53,6 @@ public class MeshTrianglePubSubType implements us.ihmc.pubsub.TopicDataType<shap
       {
          cdr.write_type_4(data.getVertex_indices()[a]);
       }
-
    }
 
    public static void read(shape_msgs.msg.dds.MeshTriangle data, us.ihmc.idl.CDR cdr)
@@ -61,9 +61,7 @@ public class MeshTrianglePubSubType implements us.ihmc.pubsub.TopicDataType<shap
       for (int a = 0; a < data.getVertex_indices().length; ++a)
       {
          data.getVertex_indices()[a] = cdr.read_type_4();
-
       }
-
    }
 
    public static void staticCopy(shape_msgs.msg.dds.MeshTriangle src, shape_msgs.msg.dds.MeshTriangle dest)
@@ -97,7 +95,6 @@ public class MeshTrianglePubSubType implements us.ihmc.pubsub.TopicDataType<shap
    public final void deserialize(us.ihmc.idl.InterchangeSerializer ser, shape_msgs.msg.dds.MeshTriangle data)
    {
       ser.read_type_f("vertex_indices", data.getVertex_indices());
-
    }
 
    @Override

@@ -13,6 +13,7 @@ public class SetBooleanParameterPubSubType implements us.ihmc.pubsub.TopicDataTy
    public static final java.lang.String name = "controller_msgs::msg::dds_::SetBooleanParameter_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public SetBooleanParameterPubSubType()
    {
 
@@ -67,7 +68,6 @@ public class SetBooleanParameterPubSubType implements us.ihmc.pubsub.TopicDataTy
       cdr.read_type_d(data.getParameter_name());
 
       data.setParameter_value(cdr.read_type_7());
-
    }
 
    public static void staticCopy(controller_msgs.msg.dds.SetBooleanParameter src, controller_msgs.msg.dds.SetBooleanParameter dest)
@@ -98,7 +98,6 @@ public class SetBooleanParameterPubSubType implements us.ihmc.pubsub.TopicDataTy
       ser.write_type_d("parameter_name", data.getParameter_name());
 
       ser.write_type_7("parameter_value", data.getParameter_value());
-
    }
 
    @Override
@@ -107,7 +106,6 @@ public class SetBooleanParameterPubSubType implements us.ihmc.pubsub.TopicDataTy
       ser.read_type_d("parameter_name", data.getParameter_name());
 
       data.setParameter_value(ser.read_type_7("parameter_value"));
-
    }
 
    @Override

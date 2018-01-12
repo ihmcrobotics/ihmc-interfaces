@@ -17,7 +17,6 @@ public class LineSegment3DMessage
    {
       start_ = new us.ihmc.euclid.tuple3D.Point3D32();
       end_ = new us.ihmc.euclid.tuple3D.Point3D32();
-
    }
 
    public void set(LineSegment3DMessage other)
@@ -71,5 +70,4 @@ public class LineSegment3DMessage
       builder.append("}");
       return builder.toString();
    }
-
 }

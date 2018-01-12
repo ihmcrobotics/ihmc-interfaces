@@ -16,7 +16,6 @@ public class BoxMessage
    public BoxMessage()
    {
       some_vector_ = new us.ihmc.euclid.tuple3D.Vector3D();
-
    }
 
    public void set(BoxMessage other)
@@ -75,5 +74,4 @@ public class BoxMessage
       builder.append("}");
       return builder.toString();
    }
-
 }

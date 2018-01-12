@@ -13,6 +13,7 @@ public class OdometryPubSubType implements us.ihmc.pubsub.TopicDataType<nav_msgs
    public static final java.lang.String name = "nav_msgs::msg::dds_::Odometry_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public OdometryPubSubType()
    {
 
@@ -112,7 +113,6 @@ public class OdometryPubSubType implements us.ihmc.pubsub.TopicDataType<nav_msgs
       ser.write_type_a("pose", new geometry_msgs.msg.dds.PoseWithCovariancePubSubType(), data.getPose());
 
       ser.write_type_a("twist", new geometry_msgs.msg.dds.TwistWithCovariancePubSubType(), data.getTwist());
-
    }
 
    @Override
@@ -125,7 +125,6 @@ public class OdometryPubSubType implements us.ihmc.pubsub.TopicDataType<nav_msgs
       ser.read_type_a("pose", new geometry_msgs.msg.dds.PoseWithCovariancePubSubType(), data.getPose());
 
       ser.read_type_a("twist", new geometry_msgs.msg.dds.TwistWithCovariancePubSubType(), data.getTwist());
-
    }
 
    @Override

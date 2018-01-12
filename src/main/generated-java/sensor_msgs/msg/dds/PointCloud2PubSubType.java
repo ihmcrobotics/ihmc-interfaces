@@ -13,6 +13,7 @@ public class PointCloud2PubSubType implements us.ihmc.pubsub.TopicDataType<senso
    public static final java.lang.String name = "sensor_msgs::msg::dds_::PointCloud2_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public PointCloud2PubSubType()
    {
 
@@ -134,7 +135,6 @@ public class PointCloud2PubSubType implements us.ihmc.pubsub.TopicDataType<senso
       cdr.read_type_e(data.getData());
 
       data.setIs_dense(cdr.read_type_7());
-
    }
 
    public static void staticCopy(sensor_msgs.msg.dds.PointCloud2 src, sensor_msgs.msg.dds.PointCloud2 dest)
@@ -178,7 +178,6 @@ public class PointCloud2PubSubType implements us.ihmc.pubsub.TopicDataType<senso
       ser.write_type_e("data", data.getData());
 
       ser.write_type_7("is_dense", data.getIs_dense());
-
    }
 
    @Override
@@ -201,7 +200,6 @@ public class PointCloud2PubSubType implements us.ihmc.pubsub.TopicDataType<senso
       ser.read_type_e("data", data.getData());
 
       data.setIs_dense(ser.read_type_7("is_dense"));
-
    }
 
    @Override

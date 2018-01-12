@@ -28,7 +28,6 @@ public class RegionOfInterest
       height_ = other.height_;
       width_ = other.width_;
       do_rectify_ = other.do_rectify_;
-
    }
 
    public long getX_offset()
@@ -134,5 +133,4 @@ public class RegionOfInterest
       builder.append("}");
       return builder.toString();
    }
-
 }

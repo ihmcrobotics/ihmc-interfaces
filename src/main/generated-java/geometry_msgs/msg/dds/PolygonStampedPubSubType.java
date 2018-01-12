@@ -13,6 +13,7 @@ public class PolygonStampedPubSubType implements us.ihmc.pubsub.TopicDataType<ge
    public static final java.lang.String name = "geometry_msgs::msg::dds_::PolygonStamped_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public PolygonStampedPubSubType()
    {
 
@@ -91,7 +92,6 @@ public class PolygonStampedPubSubType implements us.ihmc.pubsub.TopicDataType<ge
       ser.write_type_a("header", new std_msgs.msg.dds.HeaderPubSubType(), data.getHeader());
 
       ser.write_type_a("polygon", new geometry_msgs.msg.dds.PolygonPubSubType(), data.getPolygon());
-
    }
 
    @Override
@@ -100,7 +100,6 @@ public class PolygonStampedPubSubType implements us.ihmc.pubsub.TopicDataType<ge
       ser.read_type_a("header", new std_msgs.msg.dds.HeaderPubSubType(), data.getHeader());
 
       ser.read_type_a("polygon", new geometry_msgs.msg.dds.PolygonPubSubType(), data.getPolygon());
-
    }
 
    @Override

@@ -13,6 +13,7 @@ public class ImageMarkerPubSubType implements us.ihmc.pubsub.TopicDataType<visua
    public static final java.lang.String name = "visualization_msgs::msg::dds_::ImageMarker_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public ImageMarkerPubSubType()
    {
 
@@ -218,7 +219,6 @@ public class ImageMarkerPubSubType implements us.ihmc.pubsub.TopicDataType<visua
       ser.write_type_e("points", data.getPoints());
 
       ser.write_type_e("outline_colors", data.getOutline_colors());
-
    }
 
    @Override
@@ -249,7 +249,6 @@ public class ImageMarkerPubSubType implements us.ihmc.pubsub.TopicDataType<visua
       ser.read_type_e("points", data.getPoints());
 
       ser.read_type_e("outline_colors", data.getOutline_colors());
-
    }
 
    @Override

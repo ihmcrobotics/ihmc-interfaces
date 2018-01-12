@@ -20,7 +20,6 @@ public class Char
    public void set(Char other)
    {
       data_ = other.data_;
-
    }
 
    public char getData()
@@ -62,5 +61,4 @@ public class Char
       builder.append("}");
       return builder.toString();
    }
-
 }

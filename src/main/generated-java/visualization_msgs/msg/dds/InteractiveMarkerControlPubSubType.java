@@ -13,6 +13,7 @@ public class InteractiveMarkerControlPubSubType implements us.ihmc.pubsub.TopicD
    public static final java.lang.String name = "visualization_msgs::msg::dds_::InteractiveMarkerControl_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public InteractiveMarkerControlPubSubType()
    {
 
@@ -170,7 +171,6 @@ public class InteractiveMarkerControlPubSubType implements us.ihmc.pubsub.TopicD
       ser.write_type_7("independent_marker_orientation", data.getIndependent_marker_orientation());
 
       ser.write_type_d("description", data.getDescription());
-
    }
 
    @Override
@@ -191,7 +191,6 @@ public class InteractiveMarkerControlPubSubType implements us.ihmc.pubsub.TopicD
       data.setIndependent_marker_orientation(ser.read_type_7("independent_marker_orientation"));
 
       ser.read_type_d("description", data.getDescription());
-
    }
 
    @Override

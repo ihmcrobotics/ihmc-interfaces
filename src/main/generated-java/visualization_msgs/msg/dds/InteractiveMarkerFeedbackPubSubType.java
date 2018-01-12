@@ -13,6 +13,7 @@ public class InteractiveMarkerFeedbackPubSubType implements us.ihmc.pubsub.Topic
    public static final java.lang.String name = "visualization_msgs::msg::dds_::InteractiveMarkerFeedback_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public InteractiveMarkerFeedbackPubSubType()
    {
 
@@ -123,7 +124,6 @@ public class InteractiveMarkerFeedbackPubSubType implements us.ihmc.pubsub.Topic
       geometry_msgs.msg.dds.PointPubSubType.read(data.getMouse_point(), cdr);
 
       data.setMouse_point_valid(cdr.read_type_7());
-
    }
 
    public static void staticCopy(visualization_msgs.msg.dds.InteractiveMarkerFeedback src, visualization_msgs.msg.dds.InteractiveMarkerFeedback dest)
@@ -169,7 +169,6 @@ public class InteractiveMarkerFeedbackPubSubType implements us.ihmc.pubsub.Topic
       ser.write_type_a("mouse_point", new geometry_msgs.msg.dds.PointPubSubType(), data.getMouse_point());
 
       ser.write_type_7("mouse_point_valid", data.getMouse_point_valid());
-
    }
 
    @Override
@@ -192,7 +191,6 @@ public class InteractiveMarkerFeedbackPubSubType implements us.ihmc.pubsub.Topic
       ser.read_type_a("mouse_point", new geometry_msgs.msg.dds.PointPubSubType(), data.getMouse_point());
 
       data.setMouse_point_valid(ser.read_type_7("mouse_point_valid"));
-
    }
 
    @Override

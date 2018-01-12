@@ -13,6 +13,7 @@ public class SetDoubleArrayParameterPubSubType implements us.ihmc.pubsub.TopicDa
    public static final java.lang.String name = "controller_msgs::msg::dds_::SetDoubleArrayParameter_";
    private final us.ihmc.idl.CDR serializeCDR = new us.ihmc.idl.CDR();
    private final us.ihmc.idl.CDR deserializeCDR = new us.ihmc.idl.CDR();
+
    public SetDoubleArrayParameterPubSubType()
    {
 
@@ -103,7 +104,6 @@ public class SetDoubleArrayParameterPubSubType implements us.ihmc.pubsub.TopicDa
       ser.write_type_d("parameter_name", data.getParameter_name());
 
       ser.write_type_e("parameter_value", data.getParameter_value());
-
    }
 
    @Override
@@ -112,7 +112,6 @@ public class SetDoubleArrayParameterPubSubType implements us.ihmc.pubsub.TopicDa
       ser.read_type_d("parameter_name", data.getParameter_name());
 
       ser.read_type_e("parameter_value", data.getParameter_value());
-
    }
 
    @Override

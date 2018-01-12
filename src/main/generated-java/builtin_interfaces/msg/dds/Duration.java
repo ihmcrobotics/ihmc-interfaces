@@ -22,7 +22,6 @@ public class Duration
    {
       sec_ = other.sec_;
       nanosec_ = other.nanosec_;
-
    }
 
    public int getSec()
@@ -80,5 +79,4 @@ public class Duration
       builder.append("}");
       return builder.toString();
    }
-
 }

@@ -19,7 +19,6 @@ public class CompressedImage
       header_ = new std_msgs.msg.dds.Header();
       format_ = new java.lang.StringBuilder(255);
       data_ = new us.ihmc.idl.IDLSequence.Byte(100, "type_9");
-
    }
 
    public void set(CompressedImage other)
@@ -97,5 +96,4 @@ public class CompressedImage
       builder.append("}");
       return builder.toString();
    }
-
 }

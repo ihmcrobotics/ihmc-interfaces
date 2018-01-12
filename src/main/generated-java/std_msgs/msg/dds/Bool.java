@@ -20,7 +20,6 @@ public class Bool
    public void set(Bool other)
    {
       data_ = other.data_;
-
    }
 
    public boolean getData()
@@ -62,5 +61,4 @@ public class Bool
       builder.append("}");
       return builder.toString();
    }
-
 }
