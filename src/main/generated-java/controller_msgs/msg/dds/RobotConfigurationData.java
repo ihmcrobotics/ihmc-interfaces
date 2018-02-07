@@ -11,14 +11,13 @@ package controller_msgs.msg.dds;
 public class RobotConfigurationData
 {
    private std_msgs.msg.dds.Header header_;
+   private long dropped_messages_;
    private long sensor_head_pps_timestamp_;
    private int joint_name_hash_;
    private us.ihmc.idl.IDLSequence.Float joint_angles_;
    private us.ihmc.idl.IDLSequence.Float joint_velocities_;
    private us.ihmc.idl.IDLSequence.Float joint_torques_;
    private us.ihmc.idl.IDLSequence.Object<controller_msgs.msg.dds.Wrench> force_sensor_data_;
-   private us.ihmc.idl.IDLSequence.Object<controller_msgs.msg.dds.ElectricJointData> electric_joint_data_;
-   private us.ihmc.idl.IDLSequence.Object<controller_msgs.msg.dds.RawImuData> raw_imu_data_;
    private us.ihmc.idl.IDLSequence.Object<sensor_msgs.msg.dds.Imu> imu_sensor_data_;
    private us.ihmc.euclid.tuple3D.Vector3D root_translation_;
    private us.ihmc.euclid.tuple4D.Quaternion root_orientation_;
@@ -26,8 +25,6 @@ public class RobotConfigurationData
    private us.ihmc.euclid.tuple3D.Vector3D pelvis_angular_velocity_;
    private us.ihmc.euclid.tuple3D.Vector3D pelvis_linear_acceleration_;
    private int robot_motion_status_;
-   private us.ihmc.idl.IDLSequence.Object<controller_msgs.msg.dds.BatteryState> battery_state_;
-   private us.ihmc.idl.IDLSequence.Object<controller_msgs.msg.dds.PumpState> pump_state_;
    private int last_received_packet_type_id_;
    private long last_received_packet_unique_id_;
    private long last_received_packet_robot_timestamp_;
@@ -41,12 +38,6 @@ public class RobotConfigurationData
       force_sensor_data_ = new us.ihmc.idl.IDLSequence.Object<controller_msgs.msg.dds.Wrench>(50, controller_msgs.msg.dds.Wrench.class,
                                                                                               new controller_msgs.msg.dds.WrenchPubSubType());
 
-      electric_joint_data_ = new us.ihmc.idl.IDLSequence.Object<controller_msgs.msg.dds.ElectricJointData>(50, controller_msgs.msg.dds.ElectricJointData.class,
-                                                                                                           new controller_msgs.msg.dds.ElectricJointDataPubSubType());
-
-      raw_imu_data_ = new us.ihmc.idl.IDLSequence.Object<controller_msgs.msg.dds.RawImuData>(15, controller_msgs.msg.dds.RawImuData.class,
-                                                                                             new controller_msgs.msg.dds.RawImuDataPubSubType());
-
       imu_sensor_data_ = new us.ihmc.idl.IDLSequence.Object<sensor_msgs.msg.dds.Imu>(5, sensor_msgs.msg.dds.Imu.class, new sensor_msgs.msg.dds.ImuPubSubType());
 
       root_translation_ = new us.ihmc.euclid.tuple3D.Vector3D();
@@ -54,24 +45,18 @@ public class RobotConfigurationData
       pelvis_linear_velocity_ = new us.ihmc.euclid.tuple3D.Vector3D();
       pelvis_angular_velocity_ = new us.ihmc.euclid.tuple3D.Vector3D();
       pelvis_linear_acceleration_ = new us.ihmc.euclid.tuple3D.Vector3D();
-      battery_state_ = new us.ihmc.idl.IDLSequence.Object<controller_msgs.msg.dds.BatteryState>(1, controller_msgs.msg.dds.BatteryState.class,
-                                                                                                new controller_msgs.msg.dds.BatteryStatePubSubType());
-
-      pump_state_ = new us.ihmc.idl.IDLSequence.Object<controller_msgs.msg.dds.PumpState>(1, controller_msgs.msg.dds.PumpState.class,
-                                                                                          new controller_msgs.msg.dds.PumpStatePubSubType());
    }
 
    public void set(RobotConfigurationData other)
    {
       std_msgs.msg.dds.HeaderPubSubType.staticCopy(other.header_, header_);
+      dropped_messages_ = other.dropped_messages_;
       sensor_head_pps_timestamp_ = other.sensor_head_pps_timestamp_;
       joint_name_hash_ = other.joint_name_hash_;
       joint_angles_.set(other.joint_angles_);
       joint_velocities_.set(other.joint_velocities_);
       joint_torques_.set(other.joint_torques_);
       force_sensor_data_.set(other.force_sensor_data_);
-      electric_joint_data_.set(other.electric_joint_data_);
-      raw_imu_data_.set(other.raw_imu_data_);
       imu_sensor_data_.set(other.imu_sensor_data_);
       geometry_msgs.msg.dds.Vector3PubSubType.staticCopy(other.root_translation_, root_translation_);
       geometry_msgs.msg.dds.QuaternionPubSubType.staticCopy(other.root_orientation_, root_orientation_);
@@ -79,8 +64,6 @@ public class RobotConfigurationData
       geometry_msgs.msg.dds.Vector3PubSubType.staticCopy(other.pelvis_angular_velocity_, pelvis_angular_velocity_);
       geometry_msgs.msg.dds.Vector3PubSubType.staticCopy(other.pelvis_linear_acceleration_, pelvis_linear_acceleration_);
       robot_motion_status_ = other.robot_motion_status_;
-      battery_state_.set(other.battery_state_);
-      pump_state_.set(other.pump_state_);
       last_received_packet_type_id_ = other.last_received_packet_type_id_;
       last_received_packet_unique_id_ = other.last_received_packet_unique_id_;
       last_received_packet_robot_timestamp_ = other.last_received_packet_robot_timestamp_;
@@ -89,6 +72,16 @@ public class RobotConfigurationData
    public std_msgs.msg.dds.Header getHeader()
    {
       return header_;
+   }
+
+   public long getDropped_messages()
+   {
+      return dropped_messages_;
+   }
+
+   public void setDropped_messages(long dropped_messages)
+   {
+      dropped_messages_ = dropped_messages;
    }
 
    public long getSensor_head_pps_timestamp()
@@ -131,16 +124,6 @@ public class RobotConfigurationData
       return force_sensor_data_;
    }
 
-   public us.ihmc.idl.IDLSequence.Object<controller_msgs.msg.dds.ElectricJointData> getElectric_joint_data()
-   {
-      return electric_joint_data_;
-   }
-
-   public us.ihmc.idl.IDLSequence.Object<controller_msgs.msg.dds.RawImuData> getRaw_imu_data()
-   {
-      return raw_imu_data_;
-   }
-
    public us.ihmc.idl.IDLSequence.Object<sensor_msgs.msg.dds.Imu> getImu_sensor_data()
    {
       return imu_sensor_data_;
@@ -179,16 +162,6 @@ public class RobotConfigurationData
    public void setRobot_motion_status(int robot_motion_status)
    {
       robot_motion_status_ = robot_motion_status;
-   }
-
-   public us.ihmc.idl.IDLSequence.Object<controller_msgs.msg.dds.BatteryState> getBattery_state()
-   {
-      return battery_state_;
-   }
-
-   public us.ihmc.idl.IDLSequence.Object<controller_msgs.msg.dds.PumpState> getPump_state()
-   {
-      return pump_state_;
    }
 
    public int getLast_received_packet_type_id()
@@ -235,6 +208,8 @@ public class RobotConfigurationData
 
       returnedValue &= this.header_.equals(otherMyClass.header_);
 
+      returnedValue &= this.dropped_messages_ == otherMyClass.dropped_messages_;
+
       returnedValue &= this.sensor_head_pps_timestamp_ == otherMyClass.sensor_head_pps_timestamp_;
 
       returnedValue &= this.joint_name_hash_ == otherMyClass.joint_name_hash_;
@@ -246,10 +221,6 @@ public class RobotConfigurationData
       returnedValue &= this.joint_torques_.equals(otherMyClass.joint_torques_);
 
       returnedValue &= this.force_sensor_data_.equals(otherMyClass.force_sensor_data_);
-
-      returnedValue &= this.electric_joint_data_.equals(otherMyClass.electric_joint_data_);
-
-      returnedValue &= this.raw_imu_data_.equals(otherMyClass.raw_imu_data_);
 
       returnedValue &= this.imu_sensor_data_.equals(otherMyClass.imu_sensor_data_);
 
@@ -264,10 +235,6 @@ public class RobotConfigurationData
       returnedValue &= this.pelvis_linear_acceleration_.equals(otherMyClass.pelvis_linear_acceleration_);
 
       returnedValue &= this.robot_motion_status_ == otherMyClass.robot_motion_status_;
-
-      returnedValue &= this.battery_state_.equals(otherMyClass.battery_state_);
-
-      returnedValue &= this.pump_state_.equals(otherMyClass.pump_state_);
 
       returnedValue &= this.last_received_packet_type_id_ == otherMyClass.last_received_packet_type_id_;
 
@@ -286,6 +253,10 @@ public class RobotConfigurationData
       builder.append("RobotConfigurationData {");
       builder.append("header=");
       builder.append(this.header_);
+
+      builder.append(", ");
+      builder.append("dropped_messages=");
+      builder.append(this.dropped_messages_);
 
       builder.append(", ");
       builder.append("sensor_head_pps_timestamp=");
@@ -310,14 +281,6 @@ public class RobotConfigurationData
       builder.append(", ");
       builder.append("force_sensor_data=");
       builder.append(this.force_sensor_data_);
-
-      builder.append(", ");
-      builder.append("electric_joint_data=");
-      builder.append(this.electric_joint_data_);
-
-      builder.append(", ");
-      builder.append("raw_imu_data=");
-      builder.append(this.raw_imu_data_);
 
       builder.append(", ");
       builder.append("imu_sensor_data=");
@@ -346,14 +309,6 @@ public class RobotConfigurationData
       builder.append(", ");
       builder.append("robot_motion_status=");
       builder.append(this.robot_motion_status_);
-
-      builder.append(", ");
-      builder.append("battery_state=");
-      builder.append(this.battery_state_);
-
-      builder.append(", ");
-      builder.append("pump_state=");
-      builder.append(this.pump_state_);
 
       builder.append(", ");
       builder.append("last_received_packet_type_id=");

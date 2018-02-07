@@ -31,6 +31,8 @@ public class RobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDat
       current_alignment += std_msgs.msg.dds.HeaderPubSubType.getMaxCdrSerializedSize(current_alignment);
       current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
 
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
@@ -49,18 +51,6 @@ public class RobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDat
       }
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
-      for (int a = 0; a < 50; ++a)
-      {
-         current_alignment += controller_msgs.msg.dds.ElectricJointDataPubSubType.getMaxCdrSerializedSize(current_alignment);
-      }
-
-      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
-      for (int a = 0; a < 15; ++a)
-      {
-         current_alignment += controller_msgs.msg.dds.RawImuDataPubSubType.getMaxCdrSerializedSize(current_alignment);
-      }
-
-      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
       for (int a = 0; a < 5; ++a)
       {
          current_alignment += sensor_msgs.msg.dds.ImuPubSubType.getMaxCdrSerializedSize(current_alignment);
@@ -72,18 +62,6 @@ public class RobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDat
       current_alignment += geometry_msgs.msg.dds.Vector3PubSubType.getMaxCdrSerializedSize(current_alignment);
       current_alignment += geometry_msgs.msg.dds.Vector3PubSubType.getMaxCdrSerializedSize(current_alignment);
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
-
-      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
-      for (int a = 0; a < 1; ++a)
-      {
-         current_alignment += controller_msgs.msg.dds.BatteryStatePubSubType.getMaxCdrSerializedSize(current_alignment);
-      }
-
-      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
-      for (int a = 0; a < 1; ++a)
-      {
-         current_alignment += controller_msgs.msg.dds.PumpStatePubSubType.getMaxCdrSerializedSize(current_alignment);
-      }
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
@@ -106,6 +84,8 @@ public class RobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDat
       current_alignment += std_msgs.msg.dds.HeaderPubSubType.getCdrSerializedSize(data.getHeader(), current_alignment);
       current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
 
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
@@ -124,18 +104,6 @@ public class RobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDat
       }
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
-      for (int a = 0; a < data.getElectric_joint_data().size(); ++a)
-      {
-         current_alignment += controller_msgs.msg.dds.ElectricJointDataPubSubType.getCdrSerializedSize(data.getElectric_joint_data().get(a), current_alignment);
-      }
-
-      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
-      for (int a = 0; a < data.getRaw_imu_data().size(); ++a)
-      {
-         current_alignment += controller_msgs.msg.dds.RawImuDataPubSubType.getCdrSerializedSize(data.getRaw_imu_data().get(a), current_alignment);
-      }
-
-      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
       for (int a = 0; a < data.getImu_sensor_data().size(); ++a)
       {
          current_alignment += sensor_msgs.msg.dds.ImuPubSubType.getCdrSerializedSize(data.getImu_sensor_data().get(a), current_alignment);
@@ -147,18 +115,6 @@ public class RobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDat
       current_alignment += geometry_msgs.msg.dds.Vector3PubSubType.getCdrSerializedSize(data.getPelvis_angular_velocity(), current_alignment);
       current_alignment += geometry_msgs.msg.dds.Vector3PubSubType.getCdrSerializedSize(data.getPelvis_linear_acceleration(), current_alignment);
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
-
-      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
-      for (int a = 0; a < data.getBattery_state().size(); ++a)
-      {
-         current_alignment += controller_msgs.msg.dds.BatteryStatePubSubType.getCdrSerializedSize(data.getBattery_state().get(a), current_alignment);
-      }
-
-      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
-      for (int a = 0; a < data.getPump_state().size(); ++a)
-      {
-         current_alignment += controller_msgs.msg.dds.PumpStatePubSubType.getCdrSerializedSize(data.getPump_state().get(a), current_alignment);
-      }
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
@@ -173,6 +129,8 @@ public class RobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDat
    {
 
       std_msgs.msg.dds.HeaderPubSubType.write(data.getHeader(), cdr);
+
+      cdr.write_type_11(data.getDropped_messages());
 
       cdr.write_type_11(data.getSensor_head_pps_timestamp());
 
@@ -198,16 +156,6 @@ public class RobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDat
       else
          throw new RuntimeException("force_sensor_data field exceeds the maximum length");
 
-      if (data.getElectric_joint_data().size() <= 50)
-         cdr.write_type_e(data.getElectric_joint_data());
-      else
-         throw new RuntimeException("electric_joint_data field exceeds the maximum length");
-
-      if (data.getRaw_imu_data().size() <= 15)
-         cdr.write_type_e(data.getRaw_imu_data());
-      else
-         throw new RuntimeException("raw_imu_data field exceeds the maximum length");
-
       if (data.getImu_sensor_data().size() <= 5)
          cdr.write_type_e(data.getImu_sensor_data());
       else
@@ -225,16 +173,6 @@ public class RobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDat
 
       cdr.write_type_2(data.getRobot_motion_status());
 
-      if (data.getBattery_state().size() <= 1)
-         cdr.write_type_e(data.getBattery_state());
-      else
-         throw new RuntimeException("battery_state field exceeds the maximum length");
-
-      if (data.getPump_state().size() <= 1)
-         cdr.write_type_e(data.getPump_state());
-      else
-         throw new RuntimeException("pump_state field exceeds the maximum length");
-
       cdr.write_type_2(data.getLast_received_packet_type_id());
 
       cdr.write_type_11(data.getLast_received_packet_unique_id());
@@ -247,6 +185,8 @@ public class RobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDat
 
       std_msgs.msg.dds.HeaderPubSubType.read(data.getHeader(), cdr);
 
+      data.setDropped_messages(cdr.read_type_11());
+
       data.setSensor_head_pps_timestamp(cdr.read_type_11());
 
       data.setJoint_name_hash(cdr.read_type_2());
@@ -258,10 +198,6 @@ public class RobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDat
       cdr.read_type_e(data.getJoint_torques());
 
       cdr.read_type_e(data.getForce_sensor_data());
-
-      cdr.read_type_e(data.getElectric_joint_data());
-
-      cdr.read_type_e(data.getRaw_imu_data());
 
       cdr.read_type_e(data.getImu_sensor_data());
 
@@ -276,10 +212,6 @@ public class RobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDat
       geometry_msgs.msg.dds.Vector3PubSubType.read(data.getPelvis_linear_acceleration(), cdr);
 
       data.setRobot_motion_status(cdr.read_type_2());
-
-      cdr.read_type_e(data.getBattery_state());
-
-      cdr.read_type_e(data.getPump_state());
 
       data.setLast_received_packet_type_id(cdr.read_type_2());
 
@@ -316,6 +248,8 @@ public class RobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDat
    {
       ser.write_type_a("header", new std_msgs.msg.dds.HeaderPubSubType(), data.getHeader());
 
+      ser.write_type_11("dropped_messages", data.getDropped_messages());
+
       ser.write_type_11("sensor_head_pps_timestamp", data.getSensor_head_pps_timestamp());
 
       ser.write_type_2("joint_name_hash", data.getJoint_name_hash());
@@ -327,10 +261,6 @@ public class RobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDat
       ser.write_type_e("joint_torques", data.getJoint_torques());
 
       ser.write_type_e("force_sensor_data", data.getForce_sensor_data());
-
-      ser.write_type_e("electric_joint_data", data.getElectric_joint_data());
-
-      ser.write_type_e("raw_imu_data", data.getRaw_imu_data());
 
       ser.write_type_e("imu_sensor_data", data.getImu_sensor_data());
 
@@ -346,10 +276,6 @@ public class RobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDat
 
       ser.write_type_2("robot_motion_status", data.getRobot_motion_status());
 
-      ser.write_type_e("battery_state", data.getBattery_state());
-
-      ser.write_type_e("pump_state", data.getPump_state());
-
       ser.write_type_2("last_received_packet_type_id", data.getLast_received_packet_type_id());
 
       ser.write_type_11("last_received_packet_unique_id", data.getLast_received_packet_unique_id());
@@ -362,6 +288,8 @@ public class RobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDat
    {
       ser.read_type_a("header", new std_msgs.msg.dds.HeaderPubSubType(), data.getHeader());
 
+      data.setDropped_messages(ser.read_type_11("dropped_messages"));
+
       data.setSensor_head_pps_timestamp(ser.read_type_11("sensor_head_pps_timestamp"));
 
       data.setJoint_name_hash(ser.read_type_2("joint_name_hash"));
@@ -373,10 +301,6 @@ public class RobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDat
       ser.read_type_e("joint_torques", data.getJoint_torques());
 
       ser.read_type_e("force_sensor_data", data.getForce_sensor_data());
-
-      ser.read_type_e("electric_joint_data", data.getElectric_joint_data());
-
-      ser.read_type_e("raw_imu_data", data.getRaw_imu_data());
 
       ser.read_type_e("imu_sensor_data", data.getImu_sensor_data());
 
@@ -391,10 +315,6 @@ public class RobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDat
       ser.read_type_a("pelvis_linear_acceleration", new geometry_msgs.msg.dds.Vector3PubSubType(), data.getPelvis_linear_acceleration());
 
       data.setRobot_motion_status(ser.read_type_2("robot_motion_status"));
-
-      ser.read_type_e("battery_state", data.getBattery_state());
-
-      ser.read_type_e("pump_state", data.getPump_state());
 
       data.setLast_received_packet_type_id(ser.read_type_2("last_received_packet_type_id"));
 
