@@ -50,7 +50,9 @@ task generateMessages(type: us.ihmc.ros2.rosidl.RosInterfaceGeneratorTask) {
       setupVendoredRepo("src/main/rosidl/common_interfaces", "https://github.com/ros2/common_interfaces.git", "0.4.0")
    }
 
-   rosPackages = files("src/main/rosidl/ihmc_interfaces")
+   rosPackages = files("src/main/rosidl/rcl_interfaces",
+                       "src/main/rosidl/common_interfaces",
+                       "src/main/rosidl/ihmc_interfaces")
    outputDirectory = file("src/main/generated-java")
 //   customIDL = files("src/main/idl")
 }
