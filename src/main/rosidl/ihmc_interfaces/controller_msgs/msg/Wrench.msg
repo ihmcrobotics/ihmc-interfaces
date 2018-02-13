@@ -1,2 +1,0 @@
-geometry_msgs/Vector3 linear_part
-geometry_msgs/Vector3 angular_part
