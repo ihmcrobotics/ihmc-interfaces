@@ -11,10 +11,12 @@ buildscript {
       classpath "us.ihmc:ihmc-build:0.12.8"
       classpath "us.ihmc:rosidl-typesupport-ihmcpubsub-java:0.2"
       classpath "us.ihmc:ihmc-pub-sub-generator:0.3.7"
+      classpath "org.ajoberstar:grgit:2.1.0"
    }
 }
 
 apply plugin: "us.ihmc.ihmc-build"
+apply plugin: "org.ajoberstar.grgit"
 
 ihmc {
    group = "us.ihmc"
@@ -33,6 +35,7 @@ mainDependencies {
    compile group: 'us.ihmc', name: 'euclid-core', version: '0.4.13'
    compile group: 'us.ihmc', name: 'euclid', version: '0.7.5'
    compile group: 'us.ihmc', name: 'ihmc-pub-sub', version: '0.4.0'
+   compile group: 'us.ihmc', name: 'ros2-common-interfaces', version: '0.4.0'
 }
 
 task show {
@@ -42,11 +45,39 @@ task show {
 }
 
 task generateMessages(type: us.ihmc.ros2.rosidl.RosInterfaceGeneratorTask) {
-   rosPackages = files("src/main/rosidl/common_interfaces", "src/main/rosidl/ihmc_interfaces")
+   doFirst {
+      setupVendoredRepo("src/main/rosidl/rcl_interfaces", "https://github.com/ros2/rcl_interfaces.git", "0.4.0")
+      setupVendoredRepo("src/main/rosidl/common_interfaces", "https://github.com/ros2/common_interfaces.git", "0.4.0")
+   }
+
+   rosPackages = files("src/main/rosidl/ihmc_interfaces")
    outputDirectory = file("src/main/generated-java")
-   customIDL = files("src/main/idl")
+//   customIDL = files("src/main/idl")
 }
 
-//compileJava.dependsOn generateMessages
+private void setupVendoredRepo(String clonePath, String vcsUrl, String tagName)
+{
+   if (!file(clonePath).exists())
+   {
+      def grgit = org.ajoberstar.grgit.Grgit.clone {
+         dir = file(clonePath)
+         uri = vcsUrl
+      }
+   } else
+   {
+      def grgit = org.ajoberstar.grgit.Grgit.open {
+         dir = file(clonePath)
+      }
+   }
 
-sourceSets.main.java.srcDirs += ['src/main/java-generated']
+   def commit
+   for (def tag : grgit.tag.list())
+   {
+      if (tag.fullName.equals(tagName))
+      {
+         commit = grgit.resolve.toCommit(tag)
+      }
+   }
+
+   grgit.reset(commit: commit, mode: "hard")
+}
