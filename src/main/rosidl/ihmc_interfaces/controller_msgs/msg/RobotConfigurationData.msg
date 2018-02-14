@@ -9,7 +9,7 @@ int32 joint_name_hash
 float32[<=50] joint_angles
 float32[<=50] joint_velocities
 float32[<=50] joint_torques
-controller_msgs/Wrench[<=50] force_sensor_data
+geometry_msgs/Wrench[<=50] force_sensor_data
 
 sensor_msgs/Imu[<=5] imu_sensor_data
 geometry_msgs/Vector3 root_translation
