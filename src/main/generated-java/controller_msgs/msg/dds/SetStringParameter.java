@@ -1,12 +1,10 @@
 package controller_msgs.msg.dds;
 
 /**
- *
  * Definition of the class "SetStringParameter" defined in SetStringParameter_.idl.
  *
  * This file was automatically generated from SetStringParameter_.idl by us.ihmc.idl.generator.IDLGenerator.
  * Do not update this file directly, edit SetStringParameter_.idl instead.
- *
  */
 public class SetStringParameter
 {

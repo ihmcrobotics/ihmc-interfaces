@@ -1,12 +1,10 @@
 package controller_msgs.msg.dds;
 
 /**
- *
  * Definition of the class "FootstepList" defined in FootstepList_.idl.
  *
  * This file was automatically generated from FootstepList_.idl by us.ihmc.idl.generator.IDLGenerator.
  * Do not update this file directly, edit FootstepList_.idl instead.
- *
  */
 public class FootstepList
 {

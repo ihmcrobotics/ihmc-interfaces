@@ -1,12 +1,10 @@
 package controller_msgs.msg.dds;
 
 /**
- *
  * Definition of the class "TaskspaceTrajectoryStamped" defined in TaskspaceTrajectoryStamped_.idl.
  *
  * This file was automatically generated from TaskspaceTrajectoryStamped_.idl by us.ihmc.idl.generator.IDLGenerator.
  * Do not update this file directly, edit TaskspaceTrajectoryStamped_.idl instead.
- *
  */
 public class TaskspaceTrajectoryStamped
 {

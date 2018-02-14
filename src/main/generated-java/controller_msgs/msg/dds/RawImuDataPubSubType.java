@@ -1,12 +1,10 @@
 package controller_msgs.msg.dds;
 
 /**
- *
  * Topic data type of the struct "RawImuData" defined in "RawImuData_.idl". Use this class to provide the TopicDataType to a Participant.
  *
  * This file was automatically generated from RawImuData_.idl by us.ihmc.idl.generator.IDLGenerator.
  * Do not update this file directly, edit RawImuData_.idl instead.
- *
  */
 public class RawImuDataPubSubType implements us.ihmc.pubsub.TopicDataType<controller_msgs.msg.dds.RawImuData>
 {

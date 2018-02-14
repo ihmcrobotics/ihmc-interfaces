@@ -1,12 +1,10 @@
 package controller_msgs.msg.dds;
 
 /**
- *
  * Topic data type of the struct "Wrench" defined in "Wrench_.idl". Use this class to provide the TopicDataType to a Participant.
  *
  * This file was automatically generated from Wrench_.idl by us.ihmc.idl.generator.IDLGenerator.
  * Do not update this file directly, edit Wrench_.idl instead.
- *
  */
 public class WrenchPubSubType implements us.ihmc.pubsub.TopicDataType<controller_msgs.msg.dds.Wrench>
 {

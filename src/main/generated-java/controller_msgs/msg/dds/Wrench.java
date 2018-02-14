@@ -1,12 +1,10 @@
 package controller_msgs.msg.dds;
 
 /**
- *
  * Definition of the class "Wrench" defined in Wrench_.idl.
  *
  * This file was automatically generated from Wrench_.idl by us.ihmc.idl.generator.IDLGenerator.
  * Do not update this file directly, edit Wrench_.idl instead.
- *
  */
 public class Wrench
 {

@@ -1,12 +1,10 @@
 package controller_msgs.msg.dds;
 
 /**
- *
  * Topic data type of the struct "SetDoubleParameter" defined in "SetDoubleParameter_.idl". Use this class to provide the TopicDataType to a Participant.
  *
  * This file was automatically generated from SetDoubleParameter_.idl by us.ihmc.idl.generator.IDLGenerator.
  * Do not update this file directly, edit SetDoubleParameter_.idl instead.
- *
  */
 public class SetDoubleParameterPubSubType implements us.ihmc.pubsub.TopicDataType<controller_msgs.msg.dds.SetDoubleParameter>
 {

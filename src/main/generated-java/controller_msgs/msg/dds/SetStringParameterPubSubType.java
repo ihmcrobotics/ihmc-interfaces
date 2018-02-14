@@ -1,12 +1,10 @@
 package controller_msgs.msg.dds;
 
 /**
- *
  * Topic data type of the struct "SetStringParameter" defined in "SetStringParameter_.idl". Use this class to provide the TopicDataType to a Participant.
  *
  * This file was automatically generated from SetStringParameter_.idl by us.ihmc.idl.generator.IDLGenerator.
  * Do not update this file directly, edit SetStringParameter_.idl instead.
- *
  */
 public class SetStringParameterPubSubType implements us.ihmc.pubsub.TopicDataType<controller_msgs.msg.dds.SetStringParameter>
 {

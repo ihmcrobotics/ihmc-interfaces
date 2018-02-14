@@ -1,12 +1,10 @@
 package controller_msgs.msg.dds;
 
 /**
- *
  * Definition of the class "ElectricJointData" defined in ElectricJointData_.idl.
  *
  * This file was automatically generated from ElectricJointData_.idl by us.ihmc.idl.generator.IDLGenerator.
  * Do not update this file directly, edit ElectricJointData_.idl instead.
- *
  */
 public class ElectricJointData
 {

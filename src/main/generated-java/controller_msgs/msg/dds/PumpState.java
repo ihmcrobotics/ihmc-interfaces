@@ -1,12 +1,10 @@
 package controller_msgs.msg.dds;
 
 /**
- *
  * Definition of the class "PumpState" defined in PumpState_.idl.
  *
  * This file was automatically generated from PumpState_.idl by us.ihmc.idl.generator.IDLGenerator.
  * Do not update this file directly, edit PumpState_.idl instead.
- *
  */
 public class PumpState
 {

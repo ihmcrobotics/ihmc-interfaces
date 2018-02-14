@@ -1,12 +1,10 @@
 package controller_msgs.msg.dds;
 
 /**
- *
  * Topic data type of the struct "SetBooleanParameter" defined in "SetBooleanParameter_.idl". Use this class to provide the TopicDataType to a Participant.
  *
  * This file was automatically generated from SetBooleanParameter_.idl by us.ihmc.idl.generator.IDLGenerator.
  * Do not update this file directly, edit SetBooleanParameter_.idl instead.
- *
  */
 public class SetBooleanParameterPubSubType implements us.ihmc.pubsub.TopicDataType<controller_msgs.msg.dds.SetBooleanParameter>
 {

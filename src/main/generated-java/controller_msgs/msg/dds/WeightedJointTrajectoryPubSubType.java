@@ -1,12 +1,10 @@
 package controller_msgs.msg.dds;
 
 /**
- *
  * Topic data type of the struct "WeightedJointTrajectory" defined in "WeightedJointTrajectory_.idl". Use this class to provide the TopicDataType to a Participant.
  *
  * This file was automatically generated from WeightedJointTrajectory_.idl by us.ihmc.idl.generator.IDLGenerator.
  * Do not update this file directly, edit WeightedJointTrajectory_.idl instead.
- *
  */
 public class WeightedJointTrajectoryPubSubType implements us.ihmc.pubsub.TopicDataType<controller_msgs.msg.dds.WeightedJointTrajectory>
 {

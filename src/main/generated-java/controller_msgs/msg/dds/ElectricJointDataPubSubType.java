@@ -1,12 +1,10 @@
 package controller_msgs.msg.dds;
 
 /**
- *
  * Topic data type of the struct "ElectricJointData" defined in "ElectricJointData_.idl". Use this class to provide the TopicDataType to a Participant.
  *
  * This file was automatically generated from ElectricJointData_.idl by us.ihmc.idl.generator.IDLGenerator.
  * Do not update this file directly, edit ElectricJointData_.idl instead.
- *
  */
 public class ElectricJointDataPubSubType implements us.ihmc.pubsub.TopicDataType<controller_msgs.msg.dds.ElectricJointData>
 {

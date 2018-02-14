@@ -1,12 +1,10 @@
 package controller_msgs.msg.dds;
 
 /**
- *
  * Definition of the class "BatteryState" defined in BatteryState_.idl.
  *
  * This file was automatically generated from BatteryState_.idl by us.ihmc.idl.generator.IDLGenerator.
  * Do not update this file directly, edit BatteryState_.idl instead.
- *
  */
 public class BatteryState
 {

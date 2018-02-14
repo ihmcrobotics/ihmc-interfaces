@@ -1,12 +1,10 @@
 package controller_msgs.msg.dds;
 
 /**
- *
  * Topic data type of the struct "RobotConfigurationData" defined in "RobotConfigurationData_.idl". Use this class to provide the TopicDataType to a Participant.
  *
  * This file was automatically generated from RobotConfigurationData_.idl by us.ihmc.idl.generator.IDLGenerator.
  * Do not update this file directly, edit RobotConfigurationData_.idl instead.
- *
  */
 public class RobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDataType<controller_msgs.msg.dds.RobotConfigurationData>
 {
@@ -47,7 +45,7 @@ public class RobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDat
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
       for (int a = 0; a < 50; ++a)
       {
-         current_alignment += controller_msgs.msg.dds.WrenchPubSubType.getMaxCdrSerializedSize(current_alignment);
+         current_alignment += geometry_msgs.msg.dds.WrenchPubSubType.getMaxCdrSerializedSize(current_alignment);
       }
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
@@ -100,7 +98,7 @@ public class RobotConfigurationDataPubSubType implements us.ihmc.pubsub.TopicDat
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
       for (int a = 0; a < data.getForce_sensor_data().size(); ++a)
       {
-         current_alignment += controller_msgs.msg.dds.WrenchPubSubType.getCdrSerializedSize(data.getForce_sensor_data().get(a), current_alignment);
+         current_alignment += geometry_msgs.msg.dds.WrenchPubSubType.getCdrSerializedSize(data.getForce_sensor_data().get(a), current_alignment);
       }
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);

@@ -1,12 +1,10 @@
 package controller_msgs.msg.dds;
 
 /**
- *
  * Topic data type of the struct "PumpState" defined in "PumpState_.idl". Use this class to provide the TopicDataType to a Participant.
  *
  * This file was automatically generated from PumpState_.idl by us.ihmc.idl.generator.IDLGenerator.
  * Do not update this file directly, edit PumpState_.idl instead.
- *
  */
 public class PumpStatePubSubType implements us.ihmc.pubsub.TopicDataType<controller_msgs.msg.dds.PumpState>
 {

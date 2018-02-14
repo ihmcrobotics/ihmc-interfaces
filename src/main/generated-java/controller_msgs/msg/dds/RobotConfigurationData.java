@@ -1,12 +1,10 @@
 package controller_msgs.msg.dds;
 
 /**
- *
  * Definition of the class "RobotConfigurationData" defined in RobotConfigurationData_.idl.
  *
  * This file was automatically generated from RobotConfigurationData_.idl by us.ihmc.idl.generator.IDLGenerator.
  * Do not update this file directly, edit RobotConfigurationData_.idl instead.
- *
  */
 public class RobotConfigurationData
 {
@@ -17,7 +15,7 @@ public class RobotConfigurationData
    private us.ihmc.idl.IDLSequence.Float joint_angles_;
    private us.ihmc.idl.IDLSequence.Float joint_velocities_;
    private us.ihmc.idl.IDLSequence.Float joint_torques_;
-   private us.ihmc.idl.IDLSequence.Object<controller_msgs.msg.dds.Wrench> force_sensor_data_;
+   private us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Wrench> force_sensor_data_;
    private us.ihmc.idl.IDLSequence.Object<sensor_msgs.msg.dds.Imu> imu_sensor_data_;
    private us.ihmc.euclid.tuple3D.Vector3D root_translation_;
    private us.ihmc.euclid.tuple4D.Quaternion root_orientation_;
@@ -35,8 +33,8 @@ public class RobotConfigurationData
       joint_angles_ = new us.ihmc.idl.IDLSequence.Float(50, "type_5");
       joint_velocities_ = new us.ihmc.idl.IDLSequence.Float(50, "type_5");
       joint_torques_ = new us.ihmc.idl.IDLSequence.Float(50, "type_5");
-      force_sensor_data_ = new us.ihmc.idl.IDLSequence.Object<controller_msgs.msg.dds.Wrench>(50, controller_msgs.msg.dds.Wrench.class,
-                                                                                              new controller_msgs.msg.dds.WrenchPubSubType());
+      force_sensor_data_ = new us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Wrench>(50, geometry_msgs.msg.dds.Wrench.class,
+                                                                                            new geometry_msgs.msg.dds.WrenchPubSubType());
 
       imu_sensor_data_ = new us.ihmc.idl.IDLSequence.Object<sensor_msgs.msg.dds.Imu>(5, sensor_msgs.msg.dds.Imu.class, new sensor_msgs.msg.dds.ImuPubSubType());
 
@@ -119,7 +117,7 @@ public class RobotConfigurationData
       return joint_torques_;
    }
 
-   public us.ihmc.idl.IDLSequence.Object<controller_msgs.msg.dds.Wrench> getForce_sensor_data()
+   public us.ihmc.idl.IDLSequence.Object<geometry_msgs.msg.dds.Wrench> getForce_sensor_data()
    {
       return force_sensor_data_;
    }

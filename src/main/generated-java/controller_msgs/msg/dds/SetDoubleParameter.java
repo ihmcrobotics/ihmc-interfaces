@@ -1,12 +1,10 @@
 package controller_msgs.msg.dds;
 
 /**
- *
  * Definition of the class "SetDoubleParameter" defined in SetDoubleParameter_.idl.
  *
  * This file was automatically generated from SetDoubleParameter_.idl by us.ihmc.idl.generator.IDLGenerator.
  * Do not update this file directly, edit SetDoubleParameter_.idl instead.
- *
  */
 public class SetDoubleParameter
 {

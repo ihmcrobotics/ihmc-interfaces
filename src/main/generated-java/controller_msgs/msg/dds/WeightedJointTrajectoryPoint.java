@@ -1,12 +1,10 @@
 package controller_msgs.msg.dds;
 
 /**
- *
  * Definition of the class "WeightedJointTrajectoryPoint" defined in WeightedJointTrajectoryPoint_.idl.
  *
  * This file was automatically generated from WeightedJointTrajectoryPoint_.idl by us.ihmc.idl.generator.IDLGenerator.
  * Do not update this file directly, edit WeightedJointTrajectoryPoint_.idl instead.
- *
  */
 public class WeightedJointTrajectoryPoint
 {

@@ -1,12 +1,10 @@
 package controller_msgs.msg.dds;
 
 /**
- *
  * Topic data type of the struct "TaskspaceTrajectoryStamped" defined in "TaskspaceTrajectoryStamped_.idl". Use this class to provide the TopicDataType to a Participant.
  *
  * This file was automatically generated from TaskspaceTrajectoryStamped_.idl by us.ihmc.idl.generator.IDLGenerator.
  * Do not update this file directly, edit TaskspaceTrajectoryStamped_.idl instead.
- *
  */
 public class TaskspaceTrajectoryStampedPubSubType implements us.ihmc.pubsub.TopicDataType<controller_msgs.msg.dds.TaskspaceTrajectoryStamped>
 {

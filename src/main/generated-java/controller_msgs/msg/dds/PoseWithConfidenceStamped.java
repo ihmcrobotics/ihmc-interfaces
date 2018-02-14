@@ -1,12 +1,10 @@
 package controller_msgs.msg.dds;
 
 /**
- *
  * Definition of the class "PoseWithConfidenceStamped" defined in PoseWithConfidenceStamped_.idl.
  *
  * This file was automatically generated from PoseWithConfidenceStamped_.idl by us.ihmc.idl.generator.IDLGenerator.
  * Do not update this file directly, edit PoseWithConfidenceStamped_.idl instead.
- *
  */
 public class PoseWithConfidenceStamped
 {

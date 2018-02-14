@@ -1,12 +1,10 @@
 package controller_msgs.msg.dds;
 
 /**
- *
  * Topic data type of the struct "FootstepList" defined in "FootstepList_.idl". Use this class to provide the TopicDataType to a Participant.
  *
  * This file was automatically generated from FootstepList_.idl by us.ihmc.idl.generator.IDLGenerator.
  * Do not update this file directly, edit FootstepList_.idl instead.
- *
  */
 public class FootstepListPubSubType implements us.ihmc.pubsub.TopicDataType<controller_msgs.msg.dds.FootstepList>
 {
