@@ -35,6 +35,7 @@ mainDependencies {
    compile group: 'us.ihmc', name: 'euclid', version: '0.7.5'
    compile group: 'us.ihmc', name: 'ihmc-pub-sub', version: '0.4.0'
    compile group: 'us.ihmc', name: 'ros2-common-interfaces', version: '0.4.0'
+   compile group: 'us.ihmc', name: 'ihmc-ros2-library', version: '0.4.0'
 }
 
 task generateMessages(type: us.ihmc.ros2.rosidl.RosInterfaceGeneratorTask) {
